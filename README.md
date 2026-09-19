@@ -1,3 +1,5 @@
+# kora
+Knowledge Object Retrieval Agent
 # KORA — Knowledge Object Retrieval Agent
 
 KORA is a Python project to build a knowledge ingestion pipeline for a synthetic company knowledge base (Nexora Systems). This repo currently covers **Phase 2: Ingestion Pipeline** only.
