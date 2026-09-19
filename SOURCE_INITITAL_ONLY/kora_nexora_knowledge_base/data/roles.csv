@@ -1,0 +1,49 @@
+role_id,title,dept_id
+ROLE-001,VP Sales,DEPT-SALES
+ROLE-002,Sales Manager,DEPT-SALES
+ROLE-003,Account Executive,DEPT-SALES
+ROLE-004,Sales Development Representative,DEPT-SALES
+ROLE-005,VP Marketing,DEPT-MKT
+ROLE-006,Demand Generation Manager,DEPT-MKT
+ROLE-007,Marketing Specialist,DEPT-MKT
+ROLE-008,Content Marketing Manager,DEPT-MKT
+ROLE-009,VP Product,DEPT-PROD
+ROLE-010,Product Manager,DEPT-PROD
+ROLE-011,Product Analyst,DEPT-PROD
+ROLE-012,VP Engineering,DEPT-ENG
+ROLE-013,Engineering Manager,DEPT-ENG
+ROLE-014,Senior Software Engineer,DEPT-ENG
+ROLE-015,Software Engineer,DEPT-ENG
+ROLE-016,QA Engineer,DEPT-ENG
+ROLE-017,DevOps Engineer,DEPT-ENG
+ROLE-018,Data & Analytics Manager,DEPT-DATA
+ROLE-019,Data Analyst,DEPT-DATA
+ROLE-020,Data Engineer,DEPT-DATA
+ROLE-021,BI Developer,DEPT-DATA
+ROLE-022,Implementation Manager,DEPT-IMPL
+ROLE-023,Solutions Architect,DEPT-IMPL
+ROLE-024,Implementation Consultant,DEPT-IMPL
+ROLE-025,VP Customer Success,DEPT-CS
+ROLE-026,Customer Success Manager,DEPT-CS
+ROLE-027,CS Ops Analyst,DEPT-CS
+ROLE-028,Support Team Lead,DEPT-SUP
+ROLE-029,Support Engineer L3,DEPT-SUP
+ROLE-030,Support Engineer L2,DEPT-SUP
+ROLE-031,Support Engineer L1,DEPT-SUP
+ROLE-032,CFO,DEPT-FIN
+ROLE-033,Finance Manager,DEPT-FIN
+ROLE-034,Accountant,DEPT-FIN
+ROLE-035,Financial Analyst,DEPT-FIN
+ROLE-036,AP/AR Specialist,DEPT-FIN
+ROLE-037,Head of HR,DEPT-HR
+ROLE-038,HR Manager,DEPT-HR
+ROLE-039,HR Business Partner,DEPT-HR
+ROLE-040,HR Generalist,DEPT-HR
+ROLE-041,Recruiter,DEPT-HR
+ROLE-042,CISO,DEPT-IT
+ROLE-043,IT Manager,DEPT-IT
+ROLE-044,Security Analyst,DEPT-IT
+ROLE-045,IT Support Specialist,DEPT-IT
+ROLE-046,Operations Manager,DEPT-OPS
+ROLE-047,Operations Analyst,DEPT-OPS
+ROLE-048,Office Manager,DEPT-OPS

@@ -1,0 +1,8 @@
+product_id,name,category,owning_dept_id,doc_id
+PROD-NEXVIEW,NexView Analytics,Business Analytics Platform,DEPT-PROD,DOC-PROD-NEXVIEW
+PROD-NEXFLOW,NexFlow,Inventory & Operations Software,DEPT-PROD,DOC-PROD-NEXFLOW
+PROD-NEXCRM,NexCRM,CRM Platform,DEPT-PROD,DOC-PROD-NEXCRM
+PROD-NEXAUTO,NexAuto,Workflow Automation,DEPT-PROD,DOC-PROD-NEXAUTO
+PROD-NEXCONNECT,NexConnect,Data Integration/Middleware,DEPT-PROD,DOC-PROD-NEXCONNECT
+PROD-CUSTDEV,Custom Development Services,Professional Services,DEPT-ENG,DOC-PROD-CUSTDEV
+PROD-IMPLSUP,Implementation & Support Services,Professional Services,DEPT-IMPL,DOC-PROD-IMPLSUP
