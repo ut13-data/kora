@@ -1,0 +1,19 @@
+Session Summary — KORA Phase 2, Day 1
+
+Goal today: Build Stages 1 and 2 of the ingestion pipeline (Upload/Input, Extraction) and get the repo onto GitHub.
+
+What we built
+Stage 1 — Upload/Input Layer (src/ingestion/file_intake.py): identifies filename, file type, size, source path, and ingestion timestamp for a file. Rejects unsupported types cleanly via a custom UnsupportedFileTypeError.
+Stage 2 — Extraction (src/extraction/extractor.py): reads actual content out of TXT, Markdown, DOCX, CSV (tested), and PDF (implemented, not yet tested). Text-based formats normalize into ExtractedDocument; CSV stays structured as ExtractedTable.
+README.md: documents the project, pipeline stages, structure, and current progress.
+Tools and concepts used
+Python built-ins: pathlib.Path, dataclasses, enum.Enum, csv.DictReader, type hints (including | union types).
+Third-party libraries: python-docx (DOCX), pypdf (PDF).
+Git/GitHub: initialized a local repo, connected it to a new private GitHub repo (ut13-data/kora), resolved a push conflict from GitHub's auto-generated README.
+Where we hit friction, and how it got resolved
+Issue	Cause	Fix
+ImportError: cannot import name 'identify_file'	Pasted file content was incomplete/mismatched	Verified full file contents against source
+UnsupportedFileTypeError: '.zip'...	Leftover test .zip file sitting in data/raw/	Removed it from the folder
+fatal: not a git repository	git init hadn't been run yet	Ran git init before staging/committing
+! [rejected] main -> main (fetch first)	GitHub auto-created a README when the repo was made, conflicting with local history	git pull origin main --allow-unrelated-histories
+CONFLICT (add/add): Merge conflict in README.md	Both local and GitHub had a README.md	Manually edited out conflict markers, kept the project README, committed the resolution
