@@ -1,3 +1,5 @@
 venvkora/
 __pycache__/
 *.pyc
+data/processed/
+data/chunks/

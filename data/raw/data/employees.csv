@@ -1,0 +1,138 @@
+employee_id,first_name,last_name,role_id,role_title,dept_id,location_id,employment_type,join_date,onboarding_stage,manager_id,international_relocation_germany
+EMP-0001,Brian,Williams,ROLE-001,VP Sales,DEPT-SALES,LOC-AUS,Full-time,2021-12-09,Completed,,No
+EMP-0002,Ashley,Davis,ROLE-002,Sales Manager,DEPT-SALES,LOC-AUS,Full-time,2023-12-04,Completed,EMP-0001,No
+EMP-0003,Brian,White,ROLE-002,Sales Manager,DEPT-SALES,LOC-AUS,Full-time,2022-10-14,Completed,EMP-0001,No
+EMP-0004,Michael,Johnson,ROLE-003,Account Executive,DEPT-SALES,LOC-AUS,Full-time,2022-04-08,Completed,EMP-0001,No
+EMP-0005,John,Thomas,ROLE-003,Account Executive,DEPT-SALES,LOC-AUS,Full-time,2021-09-07,Completed,EMP-0003,No
+EMP-0006,Megan,Jackson,ROLE-003,Account Executive,DEPT-SALES,LOC-AUS,Full-time,2025-04-15,Completed,EMP-0003,No
+EMP-0007,Emily,Miller,ROLE-003,Account Executive,DEPT-SALES,LOC-AUS,Full-time,2021-03-23,Completed,EMP-0002,No
+EMP-0008,Robert,Wilson,ROLE-003,Account Executive,DEPT-SALES,LOC-AUS,Full-time,2024-03-07,Completed,EMP-0014,No
+EMP-0009,Kevin,Wilson,ROLE-003,Account Executive,DEPT-SALES,LOC-AUS,Full-time,2022-02-13,Completed,EMP-0003,No
+EMP-0010,Jennifer,Wilson,ROLE-004,Sales Development Representative,DEPT-SALES,LOC-AUS,Full-time,2025-05-26,Completed,EMP-0001,No
+EMP-0011,Michael,White,ROLE-004,Sales Development Representative,DEPT-SALES,LOC-AUS,Full-time,2025-09-04,Completed,EMP-0014,No
+EMP-0012,Jennifer,Anderson,ROLE-004,Sales Development Representative,DEPT-SALES,LOC-AUS,Full-time,2024-11-20,Completed,EMP-0002,No
+EMP-0013,Chris,Martin,ROLE-004,Sales Development Representative,DEPT-SALES,LOC-AUS,Full-time,2025-04-23,Completed,EMP-0001,No
+EMP-0014,Emma,Smith,ROLE-002,Sales Manager,DEPT-SALES,LOC-LON,Full-time,2024-05-03,Completed,EMP-0001,No
+EMP-0015,Ella,Brown,ROLE-003,Account Executive,DEPT-SALES,LOC-LON,Full-time,2022-07-09,Completed,EMP-0001,No
+EMP-0016,Amelia,Green,ROLE-003,Account Executive,DEPT-SALES,LOC-LON,Full-time,2025-03-12,Completed,EMP-0014,No
+EMP-0017,Sophie,Brown,ROLE-005,VP Marketing,DEPT-MKT,LOC-LON,Full-time,2024-12-22,Completed,,No
+EMP-0018,William,Jones,ROLE-006,Demand Generation Manager,DEPT-MKT,LOC-LON,Full-time,2023-09-24,Completed,EMP-0017,No
+EMP-0019,Charlotte,Taylor,ROLE-007,Marketing Specialist,DEPT-MKT,LOC-LON,Full-time,2025-07-09,In Progress,EMP-0017,No
+EMP-0020,Charlotte,Green,ROLE-007,Marketing Specialist,DEPT-MKT,LOC-LON,Full-time,2025-01-08,Completed,EMP-0018,No
+EMP-0021,Ella,Smith,ROLE-007,Marketing Specialist,DEPT-MKT,LOC-LON,Full-time,2025-07-09,Completed,EMP-0018,No
+EMP-0022,Charlotte,Wood,ROLE-007,Marketing Specialist,DEPT-MKT,LOC-LON,Full-time,2025-04-21,Completed,EMP-0017,No
+EMP-0023,Tobias,Schulz,ROLE-008,Content Marketing Manager,DEPT-MKT,LOC-MUC,Full-time,2025-03-09,Completed,EMP-0017,Yes
+EMP-0024,Matthias,Bauer,ROLE-008,Content Marketing Manager,DEPT-MKT,LOC-MUC,Full-time,2024-12-19,Completed,EMP-0017,No
+EMP-0025,Lukas,Schulz,ROLE-009,VP Product,DEPT-PROD,LOC-MUC,Full-time,2025-04-05,Completed,,No
+EMP-0026,Jonas,Neumann,ROLE-010,Product Manager,DEPT-PROD,LOC-MUC,Full-time,2021-02-05,Completed,EMP-0025,No
+EMP-0027,Julia,Klein,ROLE-010,Product Manager,DEPT-PROD,LOC-MUC,Full-time,2025-02-13,Completed,EMP-0025,No
+EMP-0028,Tobias,Bauer,ROLE-010,Product Manager,DEPT-PROD,LOC-MUC,Full-time,2024-09-28,Completed,EMP-0025,No
+EMP-0029,Nina,Wolf,ROLE-010,Product Manager,DEPT-PROD,LOC-MUC,Full-time,2022-11-18,Completed,EMP-0025,No
+EMP-0030,Stefan,Huber,ROLE-011,Product Analyst,DEPT-PROD,LOC-MUC,Full-time,2024-07-06,Completed,EMP-0025,No
+EMP-0031,Matthias,Zimmermann,ROLE-011,Product Analyst,DEPT-PROD,LOC-MUC,Full-time,2024-09-25,Completed,EMP-0026,Yes
+EMP-0032,Rohan,Desai,ROLE-012,VP Engineering,DEPT-ENG,LOC-BLR,Full-time,2024-11-17,Completed,,No
+EMP-0033,Manoj,Iyer,ROLE-013,Engineering Manager,DEPT-ENG,LOC-BLR,Full-time,2023-06-25,Completed,EMP-0032,No
+EMP-0034,Vikram,Krishnan,ROLE-013,Engineering Manager,DEPT-ENG,LOC-BLR,Full-time,2021-10-11,Completed,EMP-0032,No
+EMP-0035,Ravi,Nair,ROLE-013,Engineering Manager,DEPT-ENG,LOC-BLR,Full-time,2022-06-27,Completed,EMP-0032,No
+EMP-0036,Karthik,Iyer,ROLE-013,Engineering Manager,DEPT-ENG,LOC-BLR,Full-time,2021-04-19,Completed,EMP-0032,No
+EMP-0037,Ananya,Rao,ROLE-014,Senior Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2025-02-25,Completed,EMP-0032,No
+EMP-0038,Sanjay,Kulkarni,ROLE-014,Senior Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2023-03-22,Completed,EMP-0033,No
+EMP-0039,Ravi,Krishnan,ROLE-014,Senior Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2023-05-17,Completed,EMP-0036,No
+EMP-0040,Manoj,Sharma,ROLE-014,Senior Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2024-09-25,Completed,EMP-0034,No
+EMP-0041,Sneha,Joshi,ROLE-014,Senior Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2024-07-22,Completed,EMP-0034,No
+EMP-0042,Rahul,Patel,ROLE-014,Senior Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2025-02-08,Completed,EMP-0036,No
+EMP-0043,Aditya,Rao,ROLE-014,Senior Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2025-01-19,Completed,EMP-0036,No
+EMP-0044,Sanjay,Iyer,ROLE-014,Senior Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2024-01-03,Completed,EMP-0032,No
+EMP-0045,Arjun,Iyer,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2022-01-28,Completed,EMP-0033,No
+EMP-0046,Divya,Rao,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2024-05-22,Completed,EMP-0033,No
+EMP-0047,Ravi,Iyer,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2023-12-19,Completed,EMP-0032,No
+EMP-0048,Anita,Patel,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2024-08-26,Completed,EMP-0033,No
+EMP-0049,Nikhil,Iyer,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2022-02-22,Completed,EMP-0033,No
+EMP-0050,Nikhil,Gupta,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2025-07-15,Completed,EMP-0032,No
+EMP-0051,Rohan,Nair,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2025-06-26,Completed,EMP-0034,No
+EMP-0052,Rohan,Iyer,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2024-04-18,Completed,EMP-0035,No
+EMP-0053,Shreya,Reddy,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2025-03-09,Completed,EMP-0033,No
+EMP-0054,Shreya,Iyer,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2022-08-26,Completed,EMP-0035,No
+EMP-0055,Sanjay,Rao,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2021-11-18,Completed,EMP-0036,No
+EMP-0056,Priya,Rao,ROLE-015,Software Engineer,DEPT-ENG,LOC-BLR,Full-time,2024-03-14,Completed,EMP-0034,No
+EMP-0057,Ravi,Patel,ROLE-016,QA Engineer,DEPT-ENG,LOC-BLR,Full-time,2024-07-02,Completed,EMP-0034,No
+EMP-0058,Vikram,Sharma,ROLE-016,QA Engineer,DEPT-ENG,LOC-BLR,Full-time,2021-07-09,Completed,EMP-0036,No
+EMP-0059,Shreya,Menon,ROLE-016,QA Engineer,DEPT-ENG,LOC-BLR,Full-time,2025-09-22,Completed,EMP-0032,No
+EMP-0060,Kavya,Iyer,ROLE-016,QA Engineer,DEPT-ENG,LOC-BLR,Full-time,2024-04-02,Completed,EMP-0034,No
+EMP-0061,Lukas,Wolf,ROLE-017,DevOps Engineer,DEPT-ENG,LOC-BER,Full-time,2021-12-11,Completed,EMP-0032,Yes
+EMP-0062,Lukas,Koch,ROLE-017,DevOps Engineer,DEPT-ENG,LOC-BER,Full-time,2023-01-17,Completed,EMP-0034,Yes
+EMP-0063,Anna,Huber,ROLE-017,DevOps Engineer,DEPT-ENG,LOC-BER,Full-time,2022-11-28,Completed,EMP-0033,No
+EMP-0064,Jonas,Zimmermann,ROLE-014,Senior Software Engineer,DEPT-ENG,LOC-BER,Full-time,2024-10-20,Completed,EMP-0033,Yes
+EMP-0065,Jonas,Schulz,ROLE-014,Senior Software Engineer,DEPT-ENG,LOC-BER,Full-time,2025-05-07,Completed,EMP-0034,No
+EMP-0066,Divya,Iyer,ROLE-018,Data & Analytics Manager,DEPT-DATA,LOC-BLR,Full-time,2024-07-05,Completed,,No
+EMP-0067,Karthik,Patel,ROLE-019,Data Analyst,DEPT-DATA,LOC-BLR,Full-time,2025-02-01,Completed,EMP-0066,No
+EMP-0068,Shreya,Verma,ROLE-019,Data Analyst,DEPT-DATA,LOC-BLR,Full-time,2022-02-18,Completed,EMP-0066,No
+EMP-0069,Sneha,Krishnan,ROLE-019,Data Analyst,DEPT-DATA,LOC-BLR,Full-time,2024-03-12,Completed,EMP-0066,No
+EMP-0070,Ananya,Bhat,ROLE-019,Data Analyst,DEPT-DATA,LOC-BLR,Full-time,2024-06-10,Completed,EMP-0066,No
+EMP-0071,Vikram,Patel,ROLE-020,Data Engineer,DEPT-DATA,LOC-BLR,Full-time,2024-10-26,Completed,EMP-0066,No
+EMP-0072,Deepa,Nair,ROLE-020,Data Engineer,DEPT-DATA,LOC-BLR,Full-time,2024-11-04,Completed,EMP-0066,No
+EMP-0073,Kavya,Menon,ROLE-020,Data Engineer,DEPT-DATA,LOC-BLR,Full-time,2022-02-24,Completed,EMP-0066,No
+EMP-0074,Sanjay,Reddy,ROLE-021,BI Developer,DEPT-DATA,LOC-BLR,Full-time,2024-05-20,Completed,EMP-0066,No
+EMP-0075,Meera,Krishnan,ROLE-021,BI Developer,DEPT-DATA,LOC-BLR,Full-time,2025-05-28,Completed,EMP-0066,No
+EMP-0076,Arjun,Rao,ROLE-021,BI Developer,DEPT-DATA,LOC-BLR,Full-time,2025-05-02,Completed,EMP-0066,No
+EMP-0077,Lena,Hoffmann,ROLE-022,Implementation Manager,DEPT-IMPL,LOC-MUC,Full-time,2023-11-09,Completed,,Yes
+EMP-0078,Matthias,Schulz,ROLE-023,Solutions Architect,DEPT-IMPL,LOC-MUC,Full-time,2021-02-03,Completed,EMP-0077,No
+EMP-0079,Anna,Bauer,ROLE-023,Solutions Architect,DEPT-IMPL,LOC-MUC,Full-time,2021-06-19,Completed,EMP-0077,No
+EMP-0080,Marie,Schmidt,ROLE-024,Implementation Consultant,DEPT-IMPL,LOC-MUC,Full-time,2021-05-12,Completed,EMP-0077,No
+EMP-0081,Julia,Schwarz,ROLE-024,Implementation Consultant,DEPT-IMPL,LOC-MUC,Full-time,2021-06-07,Completed,EMP-0077,No
+EMP-0082,Nina,Huber,ROLE-024,Implementation Consultant,DEPT-IMPL,LOC-MUC,Full-time,2025-09-28,Completed,EMP-0077,No
+EMP-0083,Matthias,Schmidt,ROLE-024,Implementation Consultant,DEPT-IMPL,LOC-MUC,Full-time,2024-03-26,Completed,EMP-0077,No
+EMP-0084,Claudia,Schulz,ROLE-024,Implementation Consultant,DEPT-IMPL,LOC-MUC,Full-time,2021-03-24,Completed,EMP-0077,No
+EMP-0085,Julia,Zimmermann,ROLE-024,Implementation Consultant,DEPT-IMPL,LOC-MUC,Full-time,2025-04-09,Completed,EMP-0077,Yes
+EMP-0086,Matthias,Huber,ROLE-024,Implementation Consultant,DEPT-IMPL,LOC-MUC,Full-time,2025-01-28,Completed,EMP-0077,No
+EMP-0087,Felix,Schwarz,ROLE-024,Implementation Consultant,DEPT-IMPL,LOC-MUC,Full-time,2025-06-10,Completed,EMP-0077,No
+EMP-0088,Daniel,Wagner,ROLE-024,Implementation Consultant,DEPT-IMPL,LOC-MUC,Full-time,2024-01-22,Completed,EMP-0077,No
+EMP-0089,Sarah,Miller,ROLE-025,VP Customer Success,DEPT-CS,LOC-AUS,Full-time,2022-05-12,Completed,,No
+EMP-0090,Brian,Anderson,ROLE-026,Customer Success Manager,DEPT-CS,LOC-AUS,Full-time,2025-09-11,Completed,EMP-0089,No
+EMP-0091,Jennifer,Thompson,ROLE-026,Customer Success Manager,DEPT-CS,LOC-AUS,Full-time,2024-03-19,Completed,EMP-0089,No
+EMP-0092,James,Johnson,ROLE-026,Customer Success Manager,DEPT-CS,LOC-AUS,Full-time,2022-10-14,Completed,EMP-0089,No
+EMP-0093,Sarah,White,ROLE-026,Customer Success Manager,DEPT-CS,LOC-AUS,Full-time,2025-07-20,In Progress,EMP-0089,No
+EMP-0094,Jennifer,Moore,ROLE-026,Customer Success Manager,DEPT-CS,LOC-AUS,Full-time,2024-05-02,Completed,EMP-0089,No
+EMP-0095,Megan,Moore,ROLE-026,Customer Success Manager,DEPT-CS,LOC-AUS,Full-time,2021-09-26,Completed,EMP-0089,No
+EMP-0096,John,Jackson,ROLE-027,CS Ops Analyst,DEPT-CS,LOC-AUS,Full-time,2024-06-14,Completed,EMP-0094,No
+EMP-0097,Jennifer,Jackson,ROLE-027,CS Ops Analyst,DEPT-CS,LOC-AUS,Full-time,2025-06-22,Completed,EMP-0094,No
+EMP-0098,Rohan,Joshi,ROLE-028,Support Team Lead,DEPT-SUP,LOC-BLR,Full-time,2024-09-10,Completed,,No
+EMP-0099,Pooja,Joshi,ROLE-029,Support Engineer L3,DEPT-SUP,LOC-BLR,Full-time,2024-09-05,Completed,EMP-0098,No
+EMP-0100,Sneha,Sharma,ROLE-029,Support Engineer L3,DEPT-SUP,LOC-BLR,Full-time,2025-03-20,Completed,EMP-0098,No
+EMP-0101,Anita,Menon,ROLE-029,Support Engineer L3,DEPT-SUP,LOC-BLR,Full-time,2025-09-27,Completed,EMP-0098,No
+EMP-0102,Karthik,Menon,ROLE-030,Support Engineer L2,DEPT-SUP,LOC-BLR,Full-time,2024-07-26,Completed,EMP-0098,No
+EMP-0103,Anita,Verma,ROLE-030,Support Engineer L2,DEPT-SUP,LOC-BLR,Full-time,2025-08-15,Completed,EMP-0098,No
+EMP-0104,Ravi,Kulkarni,ROLE-030,Support Engineer L2,DEPT-SUP,LOC-BLR,Full-time,2023-11-03,Completed,EMP-0098,No
+EMP-0105,Karthik,Krishnan,ROLE-030,Support Engineer L2,DEPT-SUP,LOC-BLR,Full-time,2025-02-27,Completed,EMP-0098,No
+EMP-0106,Aditya,Pillai,ROLE-031,Support Engineer L1,DEPT-SUP,LOC-BLR,Full-time,2024-04-26,Completed,EMP-0098,No
+EMP-0107,Sneha,Reddy,ROLE-031,Support Engineer L1,DEPT-SUP,LOC-BLR,Full-time,2021-01-08,Completed,EMP-0098,No
+EMP-0108,Ravi,Verma,ROLE-031,Support Engineer L1,DEPT-SUP,LOC-BLR,Full-time,2022-08-14,Completed,EMP-0098,No
+EMP-0109,Anita,Iyer,ROLE-031,Support Engineer L1,DEPT-SUP,LOC-BLR,Full-time,2025-08-13,Completed,EMP-0098,No
+EMP-0110,Kavya,Pillai,ROLE-031,Support Engineer L1,DEPT-SUP,LOC-BLR,Full-time,2021-02-25,Completed,EMP-0098,No
+EMP-0111,Vikram,Kulkarni,ROLE-031,Support Engineer L1,DEPT-SUP,LOC-BLR,Full-time,2025-01-18,Completed,EMP-0098,No
+EMP-0112,Felix,Zimmermann,ROLE-032,CFO,DEPT-FIN,LOC-MUC,Full-time,2022-08-05,Completed,,No
+EMP-0113,Nina,Bauer,ROLE-033,Finance Manager,DEPT-FIN,LOC-MUC,Full-time,2025-08-20,In Progress,EMP-0112,No
+EMP-0114,Claudia,Bauer,ROLE-034,Accountant,DEPT-FIN,LOC-MUC,Full-time,2025-03-24,Completed,EMP-0112,No
+EMP-0115,Tobias,Becker,ROLE-034,Accountant,DEPT-FIN,LOC-MUC,Full-time,2024-11-09,Completed,EMP-0112,No
+EMP-0116,Sabine,Koch,ROLE-035,Financial Analyst,DEPT-FIN,LOC-MUC,Full-time,2024-05-15,Completed,EMP-0113,Yes
+EMP-0117,Katrin,Wagner,ROLE-035,Financial Analyst,DEPT-FIN,LOC-MUC,Full-time,2024-06-11,Completed,EMP-0113,No
+EMP-0118,Jonas,Schmidt,ROLE-036,AP/AR Specialist,DEPT-FIN,LOC-MUC,Full-time,2023-04-13,Completed,EMP-0112,No
+EMP-0119,Matthias,Wagner,ROLE-036,AP/AR Specialist,DEPT-FIN,LOC-MUC,Full-time,2022-07-14,Completed,EMP-0112,No
+EMP-0120,Lena,Wagner,ROLE-037,Head of HR,DEPT-HR,LOC-MUC,Full-time,2025-07-25,In Progress,,No
+EMP-0121,Lena,Schwarz,ROLE-038,HR Manager,DEPT-HR,LOC-MUC,Full-time,2025-08-01,Completed,EMP-0120,No
+EMP-0122,Marie,Schwarz,ROLE-039,HR Business Partner,DEPT-HR,LOC-MUC,Full-time,2025-09-24,In Progress,EMP-0120,No
+EMP-0123,Claudia,Wagner,ROLE-040,HR Generalist,DEPT-HR,LOC-MUC,Full-time,2025-04-09,Completed,EMP-0121,No
+EMP-0124,Lena,Schulz,ROLE-040,HR Generalist,DEPT-HR,LOC-MUC,Full-time,2025-07-24,Completed,EMP-0121,No
+EMP-0125,Claudia,Schmidt,ROLE-041,Recruiter,DEPT-HR,LOC-MUC,Full-time,2021-07-19,Completed,EMP-0121,No
+EMP-0126,Lena,Huber,ROLE-042,CISO,DEPT-IT,LOC-MUC,Full-time,2025-03-28,Completed,,No
+EMP-0127,Lena,Becker,ROLE-043,IT Manager,DEPT-IT,LOC-MUC,Full-time,2025-06-07,Completed,EMP-0126,No
+EMP-0128,Stefan,Neumann,ROLE-044,Security Analyst,DEPT-IT,LOC-MUC,Full-time,2025-05-25,Completed,EMP-0127,No
+EMP-0129,Marie,Becker,ROLE-044,Security Analyst,DEPT-IT,LOC-MUC,Full-time,2022-08-01,Completed,EMP-0126,No
+EMP-0130,Felix,Klein,ROLE-045,IT Support Specialist,DEPT-IT,LOC-MUC,Full-time,2022-11-02,Completed,EMP-0127,No
+EMP-0131,Felix,Wagner,ROLE-045,IT Support Specialist,DEPT-IT,LOC-MUC,Full-time,2021-10-05,Completed,EMP-0126,No
+EMP-0132,Tobias,Klein,ROLE-045,IT Support Specialist,DEPT-IT,LOC-MUC,Full-time,2022-10-07,Completed,EMP-0126,No
+EMP-0133,Katrin,Neumann,ROLE-046,Operations Manager,DEPT-OPS,LOC-MUC,Full-time,2025-03-20,Completed,,No
+EMP-0134,Matthias,Wolf,ROLE-047,Operations Analyst,DEPT-OPS,LOC-MUC,Full-time,2022-03-10,Completed,EMP-0133,Yes
+EMP-0135,Lena,Zimmermann,ROLE-047,Operations Analyst,DEPT-OPS,LOC-MUC,Full-time,2024-10-22,Completed,EMP-0136,No
+EMP-0136,Marie,Schulz,ROLE-048,Office Manager,DEPT-OPS,LOC-MUC,Full-time,2024-02-19,Completed,,No
+EMP-0137,Nina,Wagner,ROLE-048,Office Manager,DEPT-OPS,LOC-MUC,Full-time,2022-12-25,Completed,,No

@@ -1,0 +1,54 @@
+doc_id,title,department,doc_type,version,status,owner_role,file_path
+DOC-CORP-001,Nexora Systems - Company Profile,Executive/Corporate,Company Overview,3.2,Active,CEO,company_profile.md
+DOC-CORP-002,Nexora Systems - Organization Structure,Executive/Corporate,Organization Structure,2.4,Active,VP People & Operations,organization.md
+DOC-CORP-003,Nexora Systems - Internal Glossary & Terminology Notes,Executive/Corporate,Glossary,1.6,Active,VP Product,glossary.md
+DOC-DEPT-SALES,Sales Department - Overview & Roles,Sales,Department Description,2.0,Active,VP Sales,departments/sales.md
+DOC-DEPT-MKT,Marketing Department - Overview & Roles,Marketing,Department Description,1.4,Active,VP Marketing,departments/marketing.md
+DOC-DEPT-PROD,Product Department - Overview & Roles,Product,Department Description,1.7,Active,VP Product,departments/product.md
+DOC-DEPT-ENG,Software Engineering Department - Overview & Roles,Software Engineering,Department Description,2.1,Active,VP Engineering,departments/engineering.md
+DOC-DEPT-DATA,Data & Analytics Department - Overview & Roles,Data & Analytics,Department Description,1.5,Active,Data & Analytics Manager,departments/data_analytics.md
+DOC-DEPT-IMPL,Implementation / Consulting Department - Overview & Roles,Implementation/Consulting,Department Description,2.0,Active,Implementation Manager,departments/implementation.md
+DOC-DEPT-CS,Customer Success Department - Overview & Roles,Customer Success,Department Description,1.9,Active,VP Customer Success,departments/customer_success.md
+DOC-DEPT-SUP,Technical Support Department - Overview & Roles,Technical Support,Department Description,2.2,Active,Support Team Lead,departments/technical_support.md
+DOC-DEPT-FIN,Finance Department - Overview & Roles,Finance,Department Description,1.6,Active,CFO,departments/finance.md
+DOC-DEPT-HR,HR Department - Overview & Roles,HR,Department Description,2.3,Active,Head of HR,departments/hr.md
+DOC-DEPT-IT,IT / Security Department - Overview & Roles,IT/Security,Department Description,2.5,Active,CISO,departments/it_security.md
+DOC-DEPT-OPS,Operations Department - Overview & Roles,Operations,Department Description,1.3,Active,Operations Manager,departments/operations.md
+DOC-PROD-NEXVIEW,NexView Analytics - Product Documentation,Product,Product Documentation,4.1,Active,Product Manager,products/nexview_analytics.md
+DOC-PROD-NEXFLOW,NexFlow - Product Documentation,Product,Product Documentation,3.3,Active,Product Manager,products/nexflow.md
+DOC-PROD-NEXCRM,NexCRM - Product Documentation,Product,Product Documentation,2.8,Active,Product Manager,products/nexcrm.md
+DOC-PROD-NEXAUTO,NexAuto - Product Documentation,Product,Product Documentation,1.9,Active,Product Manager,products/nexauto.md
+DOC-PROD-NEXCONNECT,NexConnect - Product Documentation,Product,Product Documentation,2.4,Active,Product Manager,products/nexconnect.md
+DOC-PROD-CUSTDEV,Custom Development Services - Service Documentation,Product/Engineering,Service Documentation,1.2,Active,VP Engineering,products/custom_development.md
+DOC-PROD-IMPLSUP,Implementation & Support Services - Service Documentation,Implementation/Support,Service Documentation,2.0,Active,Implementation Manager,products/implementation_support_services.md
+PROC-SALES-001,Lead Qualification Process,Sales,SOP,1.4,Active,Sales Manager,processes/lead_qualification.md
+PROC-SALES-002,Proposal and Quotation Process,Sales,SOP,2.1,Active,Account Executive,processes/proposal_quotation.md
+PROC-IMPL-001,Customer Onboarding Process,Implementation/Consulting,SOP,2.0,Active,Implementation Manager,processes/customer_onboarding.md
+PROC-IMPL-001-V1,Customer Onboarding Process (archived),Implementation/Consulting,SOP,1.0,Archived,Project Lead,processes/customer_onboarding_v1_ARCHIVED.md
+PROC-ENG-001,Software Development Lifecycle,Software Engineering,SOP,3.0,Active,VP Engineering,processes/sdlc.md
+PROC-ENG-002,Bug Reporting and Escalation Process,Software Engineering/Technical Support,SOP,2.2,Active,Support Team Lead/Engineering Manager,processes/bug_reporting_escalation.md
+PROC-SUP-001,Customer Support Procedures,Technical Support,SOP,1.8,Active,Support Team Lead,processes/customer_support_procedure.md
+PROC-SUP-002,Incident Management Process,Technical Support/IT Security,Policy/SOP,2.0,Active,IT Manager/Support Team Lead,processes/incident_management.md
+PROC-IT-001,Access Control Policy,IT/Security,Policy,2.3,Active,CISO,processes/access_control_policy.md
+PROC-IT-002,Data Security Policy,IT/Security,Policy,3.1,Active,CISO,processes/data_security_policy.md
+PROC-HR-001,Employee Onboarding Process,HR,SOP,3.0,Active,HR Manager,processes/employee_onboarding.md
+PROC-HR-001-ADDENDUM,New Hire Security Training Requirement (archived),HR,Policy Addendum,1.0,Archived,HR Manager (2022),processes/archived_new_hire_security_training_v1_ARCHIVED.md
+PROC-HR-002,Leave and HR Policies,HR,Policy,1.5,Active,HR Manager,processes/leave_policy.md
+PROC-HR-003,Internal Communication Guidelines,HR,Guideline,1.2,Active,Head of HR,processes/internal_communication_guidelines.md
+PROC-FIN-001,Expense Policy,Finance,Policy,1.9,Active,Finance Manager,processes/expense_policy.md
+PROC-FIN-002,Procurement Process,Finance/Operations,SOP,1.3,Active,Finance Manager/Operations Manager,processes/procurement_process.md
+PROC-FIN-003,Invoice and Payment Process,Finance,SOP,1.6,Active,AP/AR Specialist,processes/invoice_payment_process.md
+PROC-CS-001,Customer Escalation Policy,Customer Success,Policy,1.7,Active,VP Customer Success,processes/customer_escalation_policy.md
+DOC-CARE-001,New Joiner Life & Settling In - Program Overview,HR,Care Program Overview,1.3,Active,Head of HR,new_joiner_care.md
+DOC-CARE-002,Germany Settling-In Checklist (Full),HR,Checklist,1.5,Active,HR Generalist,germany_settling_in_checklist.md
+DOC-CARE-003,First-Week Essentials - Germany,HR,Checklist,1.1,Active,HR Generalist,first_week_germany.md
+DOC-CARE-004,First-90-Days Practical Checklist - Germany,HR,Checklist,1.2,Active,HR Generalist,first_90_days_germany.md
+DOC-COMM-001,Communication Culture & Tone Guidelines - Overview,HR,Guideline,1.4,Active,Head of HR,communication_culture.md
+DOC-COMM-002,Communication Tone Profile - Germany,HR,Cultural Communication Guidance,1.2,Active,Head of HR,germany_workplace_tone.md
+DOC-COMM-003,Communication Tone Profile - India,HR,Cultural Communication Guidance,1.2,Active,Head of HR,india_workplace_tone.md
+DOC-COMM-004,Communication Tone Profile - United States,HR,Cultural Communication Guidance,1.1,Active,Head of HR,us_workplace_tone.md
+DOC-COMM-005,Communication Tone Profile - United Kingdom,HR,Cultural Communication Guidance,1.1,Active,Head of HR,uk_workplace_tone.md
+DOC-COMM-006,International / Neutral Communication Guidance,HR,Cultural Communication Guidance,1.3,Active,Head of HR,international_communication.md
+DOC-FAQ-001,Frequently Asked Questions (Internal),Cross-Department,FAQ,1.4,Active,Operations Analyst,faq.md
+DOC-TG-001,Common Troubleshooting Guide,Technical Support,Troubleshooting Guide,1.5,Active,Support Team Lead,troubleshooting_guide.md
+DOC-SCEN-001,Common Cross-Department Business Scenarios,Cross-Department,Scenario Reference,1.2,Active,Operations Analyst,common_business_scenarios.md

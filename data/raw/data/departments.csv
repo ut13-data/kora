@@ -1,0 +1,13 @@
+dept_id,name,head_role,head_location,parent_dept_id,approx_headcount
+DEPT-SALES,Sales,VP Sales,LOC-AUS,,16
+DEPT-MKT,Marketing,VP Marketing,LOC-LON,,8
+DEPT-PROD,Product,VP Product,LOC-MUC,,7
+DEPT-ENG,Software Engineering,VP Engineering,LOC-BLR,,34
+DEPT-DATA,Data & Analytics,Data & Analytics Manager,LOC-BLR,,11
+DEPT-IMPL,Implementation / Consulting,Implementation Manager,LOC-MUC,,12
+DEPT-CS,Customer Success,VP Customer Success,LOC-AUS,,9
+DEPT-SUP,Technical Support,Support Team Lead,LOC-BLR,,14
+DEPT-FIN,Finance,CFO,LOC-MUC,,8
+DEPT-HR,HR,Head of HR,LOC-MUC,,6
+DEPT-IT,IT / Security,CISO,LOC-MUC,,7
+DEPT-OPS,Operations,Operations Manager,LOC-MUC,,5

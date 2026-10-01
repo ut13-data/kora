@@ -21,6 +21,7 @@ UNKNOWN = "unknown"
 
 @dataclass
 class DocumentMetadata:
+    source_filename: str = UNKNOWN
     document_id: str = UNKNOWN
     title: str = UNKNOWN
     department: str = UNKNOWN
@@ -37,7 +38,7 @@ class DocumentMetadata:
 # use, so "Doc ID:", "Document ID:", and "ID:" can all resolve to the same field.
 _FIELD_PATTERNS: dict[str, list[str]] = {
     "document_id": [r"Document ID", r"Doc ID", r"ID"],
-    "title": [r"Title"],
+    "title": [r"Document Title", r"Title"],
     "department": [r"Department"],
     "document_type": [r"Document Type", r"Doc Type", r"Type"],
     "owner_role": [r"Owner", r"Owner/Role", r"Owner Role"],
@@ -57,7 +58,7 @@ _LIST_FIELD_PATTERNS: dict[str, list[str]] = {
 def _find_single_value(text: str, label_variants: list[str]) -> str:
     """Search text for the first matching 'Label: value' line, return its value."""
     for label in label_variants:
-        pattern = rf'^{label}\s*:\s*(.+)$'
+        pattern = rf'^\*{{0,2}}\s*{re.escape(label)}\s*:\s*\*{{0,2}}\s*(.+)$'
         match = re.search(pattern, text, flags=re.MULTILINE | re.IGNORECASE)
         if match:
             return match.group(1).strip()
@@ -67,7 +68,7 @@ def _find_single_value(text: str, label_variants: list[str]) -> str:
 def _find_list_value(text: str, label_variants: list[str]) -> list[str]:
     """Same as _find_single_value, but splits the value on commas into a list."""
     for label in label_variants:
-        pattern = rf'^{label}\s*:\s*(.+)$'
+        pattern = rf'^\*{{0,2}}\s*{re.escape(label)}\s*:\s*\*{{0,2}}\s*(.+)$'
         match = re.search(pattern, text, flags=re.MULTILINE | re.IGNORECASE)
         if match:
             raw_value = match.group(1).strip()
@@ -84,6 +85,7 @@ def identify_document_metadata(document: ExtractedDocument) -> DocumentMetadata:
     text = document.text
 
     metadata = DocumentMetadata()
+    metadata.source_filename = document.file_info.filename  ##return the document name 
 
     for field_name, label_variants in _FIELD_PATTERNS.items():
         value = _find_single_value(text, label_variants)

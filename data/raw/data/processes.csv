@@ -1,0 +1,19 @@
+process_id,name,owning_dept_id,owner_role,doc_id,version,status
+PROC-SALES-001,Lead Qualification,DEPT-SALES,Sales Manager,PROC-SALES-001,1.4,Active
+PROC-SALES-002,Proposal and Quotation,DEPT-SALES,Account Executive,PROC-SALES-002,2.1,Active
+PROC-IMPL-001,Customer Onboarding,DEPT-IMPL,Implementation Manager,PROC-IMPL-001,2.0,Active
+PROC-IMPL-001-V1,Customer Onboarding (archived),DEPT-IMPL,Project Lead,PROC-IMPL-001,1.0,Archived
+PROC-ENG-001,Software Development Lifecycle,DEPT-ENG,VP Engineering,PROC-ENG-001,3.0,Active
+PROC-ENG-002,Bug Reporting and Escalation,DEPT-ENG,Support Team Lead / Engineering Manager,PROC-ENG-002,2.2,Active
+PROC-SUP-001,Customer Support Procedures,DEPT-SUP,Support Team Lead,PROC-SUP-001,1.8,Active
+PROC-SUP-002,Incident Management,DEPT-SUP,IT Manager / Support Team Lead,PROC-SUP-002,2.0,Active
+PROC-IT-001,Access Control Policy,DEPT-IT,CISO,PROC-IT-001,2.3,Active
+PROC-IT-002,Data Security Policy,DEPT-IT,CISO,PROC-IT-002,3.1,Active
+PROC-HR-001,Employee Onboarding,DEPT-HR,HR Manager,PROC-HR-001,3.0,Active
+PROC-HR-001-ADDENDUM,New Hire Security Training Requirement (archived),DEPT-HR,HR Manager (2022),PROC-HR-001-ADDENDUM,1.0,Archived
+PROC-HR-002,Leave and HR Policies,DEPT-HR,HR Manager,PROC-HR-002,1.5,Active
+PROC-HR-003,Internal Communication Guidelines,DEPT-HR,Head of HR,PROC-HR-003,1.2,Active
+PROC-FIN-001,Expense Policy,DEPT-FIN,Finance Manager,PROC-FIN-001,1.9,Active
+PROC-FIN-002,Procurement Process,DEPT-FIN,Finance Manager / Operations Manager,PROC-FIN-002,1.3,Active
+PROC-FIN-003,Invoice and Payment Process,DEPT-FIN,AP/AR Specialist,PROC-FIN-003,1.6,Active
+PROC-CS-001,Customer Escalation Policy,DEPT-CS,VP Customer Success,PROC-CS-001,1.7,Active
