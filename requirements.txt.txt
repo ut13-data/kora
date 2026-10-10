@@ -1,2 +1,4 @@
 python-docx
 pypdf
+langchain-text-splitters
+pytest

@@ -64,7 +64,7 @@ def save_result(result: PipelineResult, processed_dir: Path, chunks_dir: Path) -
     written.append(path)
 
     # ---- Relationships: flattened across all documents.
-    relationships = [asdict(rel) for doc in result.documents for rel in doc.relationships]
+    relationships = [asdict(rel) for rel in result.relationships]
     path = processed_dir / "relationships.json"
     _write_json(relationships, path)
     written.append(path)
@@ -87,7 +87,9 @@ def save_result(result: PipelineResult, processed_dir: Path, chunks_dir: Path) -
             "relationships": len(relationships),
             "skipped": len(result.skipped),
             "issues": len(result.validation_issues),
+            "unresolved_references": len(result.unresolved_references),
         },
+        "unresolved_references": result.unresolved_references,
         "skipped": result.skipped,
         "issues": [asdict(issue) for issue in result.validation_issues],
     }

@@ -72,7 +72,9 @@ def _find_list_value(text: str, label_variants: list[str]) -> list[str]:
         match = re.search(pattern, text, flags=re.MULTILINE | re.IGNORECASE)
         if match:
             raw_value = match.group(1).strip()
-            return [item.strip() for item in raw_value.split(",") if item.strip()]
+                       # Split on commas, but NOT commas inside (brackets).
+            parts = re.split(r",\s*(?![^()]*\))", raw_value)
+            return [item.strip() for item in parts if item.strip()]
     return []
 
 
