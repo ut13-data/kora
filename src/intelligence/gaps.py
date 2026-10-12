@@ -223,6 +223,20 @@ def _structure(report: GapReport, index: EntityIndex, processes: list[ProcessRec
     report.check("role_without_responsibilities", "Every role has documented responsibilities", n_resp)
     report.check("role_without_employees", "Every role is held by at least one employee", n_emp)
 
+    # A department with no documented process: none owned by it, none owned by one of its roles.
+    n_dept = 0
+    for dept in sorted(index.of_type(DEPARTMENT), key=lambda d: d.entity_id):
+        owns = [p for p in processes if not p.historical and p.department and p.department["dept_id"] == dept.entity_id]
+        via_roles = [p for p in processes if not p.historical and
+                     any(index.get(ROLE, o["role_id"]).attributes.get("dept_id") == dept.entity_id for o in p.owner_roles)]
+        if not owns and not via_roles:
+            report.add(Gap(gap_id("dept_no_process", dept.entity_id), "department_without_process",
+                           f"{dept.name} owns no documented process, and none of its roles owns one.",
+                           [dept.key], dept.source_documents, LOW, CONF_STRUCTURED,
+                           suggestion="May be fine for a small team; worth confirming nothing is undocumented."))
+            n_dept += 1
+    report.check("department_without_process", "Every department owns (or co-owns via a role) a documented process", n_dept)
+
     heads = {rid for d in index.of_type(DEPARTMENT) for rid in d.attributes.get("head_role_ids", [])}
     n_mgr = 0
     by_role: dict[str, list[str]] = defaultdict(list)

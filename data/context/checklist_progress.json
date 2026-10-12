@@ -2,7 +2,7 @@
   "_note": "INPUT for KORA. What employees have REPORTED as done on the Germany settling-in checklist. KORA never marks anything complete by itself: an item not listed here is 'not_reported', not 'not done'. Item IDs are in data/intelligence/germany_checklists.json.",
   "_example": {
     "EMP-0085": {
-      "completed": {"GER-HOUSING": "done", "GER-MOBILE": "2025-04-11"},
+      "completed": {"GER-HOUSING": "2025-04-12", "GER-MOBILE": "2025-04-11"},
       "not_applicable": []
     }
   },

@@ -1,5 +1,7 @@
 venvkora/
 __pycache__/
 *.pyc
+.pytest_cache/
 data/processed/
 data/chunks/
+data/intelligence/

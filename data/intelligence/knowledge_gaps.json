@@ -2,7 +2,7 @@
   "summary": {
     "high": 3,
     "medium": 5,
-    "low": 30
+    "low": 33
   },
   "gaps": [
     {
@@ -356,6 +356,57 @@
       "confidence": 0.7,
       "evidence": [],
       "suggestion": null
+    },
+    {
+      "gap_id": "GAP-49D90B08",
+      "gap_type": "department_without_process",
+      "description": "Product owns no documented process, and none of its roles owns one.",
+      "related_entities": [
+        "department:DEPT-PROD"
+      ],
+      "source_documents": [
+        "DOC-DEPT-PROD",
+        "DOC-PROD-CUSTDEV",
+        "DOC-PROD-NEXAUTO",
+        "DOC-PROD-NEXCONNECT",
+        "DOC-PROD-NEXCRM",
+        "DOC-PROD-NEXFLOW",
+        "DOC-PROD-NEXVIEW"
+      ],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [],
+      "suggestion": "May be fine for a small team; worth confirming nothing is undocumented."
+    },
+    {
+      "gap_id": "GAP-56DAF018",
+      "gap_type": "department_without_process",
+      "description": "Marketing owns no documented process, and none of its roles owns one.",
+      "related_entities": [
+        "department:DEPT-MKT"
+      ],
+      "source_documents": [
+        "DOC-DEPT-MKT"
+      ],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [],
+      "suggestion": "May be fine for a small team; worth confirming nothing is undocumented."
+    },
+    {
+      "gap_id": "GAP-F09A480B",
+      "gap_type": "department_without_process",
+      "description": "Data & Analytics owns no documented process, and none of its roles owns one.",
+      "related_entities": [
+        "department:DEPT-DATA"
+      ],
+      "source_documents": [
+        "DOC-DEPT-DATA"
+      ],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [],
+      "suggestion": "May be fine for a small team; worth confirming nothing is undocumented."
     },
     {
       "gap_id": "GAP-24193834",
@@ -770,6 +821,11 @@
       "check": "role_without_employees",
       "description": "Every role is held by at least one employee",
       "gaps_found": 0
+    },
+    {
+      "check": "department_without_process",
+      "description": "Every department owns (or co-owns via a role) a documented process",
+      "gaps_found": 3
     },
     {
       "check": "employee_without_manager",

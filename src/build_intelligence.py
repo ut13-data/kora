@@ -37,7 +37,10 @@ from src.intelligence.germany import GermanyCare, build_germany_care
 from src.intelligence.graph import KnowledgeGraph
 from src.intelligence.loader import Phase2Data, load_phase2
 from src.intelligence.outdated import detect_outdated
-from src.intelligence.output import write_json
+from src.intelligence.output import _to_jsonable, write_json
+from src.intelligence.questions import answer_all
+from src.intelligence.report import build_report
+from src.intelligence.validation import validate_outputs
 from src.intelligence.processes import ProcessRecord, analyze_processes
 from src.intelligence.models import CHECKLIST, CONF_STRUCTURED, EMPLOYEE
 from src.intelligence.relationships import Evidence, KnowledgeRelationship, build_relationships
@@ -82,6 +85,9 @@ class IntelligenceResult:
     germany: GermanyCare
     communication: CommunicationIntel
     employee_context: dict
+    validation: dict = field(default_factory=dict)
+    answers: list = field(default_factory=list)
+    outputs: dict = field(default_factory=dict)      # every output exactly as written (JSON shape)
 
     def employee(self, employee_id: str) -> dict | None:
         return next((e for e in self.employee_context["employees"] if e["employee_id"] == employee_id), None)
@@ -111,6 +117,8 @@ class IntelligenceSummary:
     germany_employees_by_status: dict
     communication_profiles: int
     new_joiners: int
+    validation: dict
+    questions_answered: str
     relationships: int
     relationships_by_name: dict
     dangling_relationships: int
@@ -153,31 +161,40 @@ def run_intelligence(settings: IntelligenceSettings | None = None) -> tuple[Inte
                                 relationships, builder.dangling, graph, topics, conflicts, outdated, gaps,
                                 germany, communication, employee_context)
 
+    # Every output, exactly as it will be written. Validation reads these JSON-shaped
+    # copies (not the Python objects), so a serialisation bug is caught too.
+    outputs = {
+        "entities": entities.to_dict(),
+        "potential_duplicates": duplicates,
+        "relationships": {"count": len(relationships), "relationships": [r.to_dict() for r in relationships],
+                          "dangling": builder.dangling},
+        "processes": [p.to_dict() for p in processes],
+        "roles": {"roles": [r.to_dict() for r in roles],
+                  "approval_rules": [r.to_dict() for r in rules if r.rule_type == "approval"],
+                  "escalation_rules": [r.to_dict() for r in rules if r.rule_type == "escalation"],
+                  "org_chart": org_chart},
+        "graph_summary": graph.summary(),
+        "topics": topics.to_dict(),
+        "conflicts": conflicts,
+        "outdated_knowledge": outdated,
+        "knowledge_gaps": gaps.to_dict(),
+        "germany_checklists": germany.to_dict(entities),
+        "communication_guidance": communication.to_dict(entities),
+        "employee_context": employee_context,
+    }
+    outputs = json.loads(json.dumps(outputs, default=_to_jsonable))
+    validation = validate_outputs(outputs, phase2.chunks)
+    result.outputs = outputs
+    result.validation = validation
+    result.answers = answer_all(result)
+
     written = []
     if settings.save_output:
         out = settings.output_dir
-        written.append(write_json(entities.to_dict(), out / "entities.json"))
-        written.append(write_json(duplicates, out / "potential_duplicates.json"))
-        written.append(write_json({
-            "count": len(relationships),
-            "relationships": [r.to_dict() for r in relationships],
-            "dangling": builder.dangling,
-        }, out / "relationships.json"))
-        written.append(write_json([p.to_dict() for p in processes], out / "processes.json"))
-        written.append(write_json({
-            "roles": [r.to_dict() for r in roles],
-            "approval_rules": [r.to_dict() for r in rules if r.rule_type == "approval"],
-            "escalation_rules": [r.to_dict() for r in rules if r.rule_type == "escalation"],
-            "org_chart": org_chart,
-        }, out / "roles.json"))
-        written.append(write_json(graph.summary(), out / "graph_summary.json"))
-        written.append(write_json(topics.to_dict(), out / "topics.json"))
-        written.append(write_json(conflicts, out / "conflicts.json"))
-        written.append(write_json(outdated, out / "outdated_knowledge.json"))
-        written.append(write_json(gaps.to_dict(), out / "knowledge_gaps.json"))
-        written.append(write_json(germany.to_dict(entities), out / "germany_checklists.json"))
-        written.append(write_json(communication.to_dict(entities), out / "communication_guidance.json"))
-        written.append(write_json(employee_context, out / "employee_context.json"))
+        for stem, data in outputs.items():
+            written.append(write_json(data, out / f"{stem}.json"))
+        written.append(write_json(validation, out / "intelligence_validation.json"))
+        written.append(write_json(result.answers, out / "test_questions.json"))
 
     summary = IntelligenceSummary(
         entities_by_type=entities.to_dict()["counts_by_type"],
@@ -194,6 +211,8 @@ def run_intelligence(settings: IntelligenceSettings | None = None) -> tuple[Inte
                                                  for e in entities.of_type(EMPLOYEE))),
         communication_profiles=len(communication.profiles),
         new_joiners=len(employee_context["new_joiners"]),
+        validation=validation["summary"],
+        questions_answered=f"{sum(a['status'] == 'answered' for a in result.answers)}/{len(result.answers)}",
         relationships=len(relationships),
         relationships_by_name=dict(sorted(Counter(r.relationship for r in relationships).items())),
         dangling_relationships=len(builder.dangling),
@@ -203,6 +222,10 @@ def run_intelligence(settings: IntelligenceSettings | None = None) -> tuple[Inte
         collisions=len(entities.collisions),
         files_written=[str(p) for p in written],
     )
+    if settings.save_output:
+        report_path = settings.output_dir / "knowledge_report.md"
+        report_path.write_text(build_report(result, summary, validation, result.answers), encoding="utf-8")
+        summary.files_written.append(str(report_path))
     return summary, result
 
 
@@ -242,6 +265,9 @@ def main() -> None:
         print(f"[UNMATCHED] {name['expected_type']} '{name['name']}': {name['reason']}")
     for d in result.dangling_relationships:
         print(f"[DANGLING] {d['source']} --{d['relationship']}--> {d['target']} (missing: {', '.join(d['missing'])})")
+    for check in result.validation["checks"]:
+        if check["status"] != "pass":
+            print(f"[{check['status'].upper()}] {check['check']}: {check['count']} -- {check['description']}")
 
 
 if __name__ == "__main__":
