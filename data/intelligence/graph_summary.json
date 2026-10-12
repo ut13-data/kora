@@ -1,0 +1,92 @@
+{
+  "nodes": 354,
+  "edges": 1921,
+  "edges_by_relationship": {
+    "about": 37,
+    "approves": 12,
+    "belongs_to": 52,
+    "defined_in": 15,
+    "disambiguates": 4,
+    "discusses": 232,
+    "documented_by": 35,
+    "for_audience": 25,
+    "governed_by": 11,
+    "handles_escalations_for": 7,
+    "has_checklist": 6,
+    "has_role": 137,
+    "has_tone_guidance": 5,
+    "head_located_in": 12,
+    "headed_by": 12,
+    "in_department": 48,
+    "located_in": 137,
+    "mentions": 356,
+    "owned_by": 25,
+    "owns": 75,
+    "participates_in": 51,
+    "performs": 35,
+    "present_in": 15,
+    "references": 11,
+    "related_to": 100,
+    "relevant_to": 120,
+    "reports_to": 152,
+    "triggers": 2,
+    "used_by": 1,
+    "uses": 4,
+    "uses_term": 50,
+    "works_in": 137
+  },
+  "historical_edges": 37,
+  "most_connected": [
+    {
+      "key": "location:LOC-MUC",
+      "name": "Munich (LOC-MUC)",
+      "degree": 78
+    },
+    {
+      "key": "location:LOC-BLR",
+      "name": "Bengaluru (LOC-BLR)",
+      "degree": 71
+    },
+    {
+      "key": "department:DEPT-ENG",
+      "name": "Software Engineering (DEPT-ENG)",
+      "degree": 51
+    },
+    {
+      "key": "process:PROC-IMPL-001",
+      "name": "Customer Onboarding (PROC-IMPL-001)",
+      "degree": 45
+    },
+    {
+      "key": "document:DOC-CORP-003",
+      "name": "Nexora Systems — Internal Glossary & Terminology Notes (DOC-CORP-003)",
+      "degree": 44
+    },
+    {
+      "key": "document:DOC-DEPT-ENG",
+      "name": "Software Engineering Department — Overview & Roles (DOC-DEPT-ENG)",
+      "degree": 37
+    },
+    {
+      "key": "document:PROC-IMPL-001",
+      "name": "Customer Onboarding Process (PROC-IMPL-001)",
+      "degree": 36
+    },
+    {
+      "key": "department:DEPT-HR",
+      "name": "HR (DEPT-HR)",
+      "degree": 34
+    },
+    {
+      "key": "location:LOC-AUS",
+      "name": "Austin (LOC-AUS)",
+      "degree": 34
+    },
+    {
+      "key": "process:PROC-SALES-002",
+      "name": "Proposal and Quotation (PROC-SALES-002)",
+      "degree": 33
+    }
+  ],
+  "isolated_nodes": []
+}

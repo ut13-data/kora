@@ -1,0 +1,6277 @@
+{
+  "roles": [
+    {
+      "role_id": "ROLE-001",
+      "name": "VP Sales",
+      "aliases": [],
+      "department_id": "DEPT-SALES",
+      "department_name": "Sales",
+      "employee_ids": [
+        "EMP-0001"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns the department's revenue target, sits on the executive leadership team, approves discounting above 30% and all multi-year contract terms.",
+          "tags": [
+            "owns",
+            "approves"
+          ],
+          "source_document": "DOC-DEPT-SALES",
+          "source_filename": "sales.md",
+          "chunk_ids": [
+            "DOC-DEPT-SALES_v2.0_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "CEO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "├── VP Sales",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-002",
+          "name": "Sales Manager"
+        }
+      ],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-SALES-002",
+          "steps": [
+            3
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-SALES-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [
+        "APR-6917D36C",
+        "APR-DD81D7B2"
+      ],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-DEPT-SALES"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-SALES",
+        "PROC-SALES-002"
+      ],
+      "heads_departments": [
+        "DEPT-SALES"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-002",
+      "name": "Sales Manager",
+      "aliases": [],
+      "department_id": "DEPT-SALES",
+      "department_name": "Sales",
+      "employee_ids": [
+        "EMP-0002",
+        "EMP-0003",
+        "EMP-0014"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Manages a pod of 4–6 AEs/SDRs, owns forecast accuracy, is the approval authority for non-standard discounting above 15%.",
+          "tags": [
+            "owns",
+            "approves",
+            "manages"
+          ],
+          "source_document": "DOC-DEPT-SALES",
+          "source_filename": "sales.md",
+          "chunk_ids": [
+            "DOC-DEPT-SALES_v2.0_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-001",
+          "name": "VP Sales",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Sales Managers → Account Executives / Sales Development Reps",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-003",
+          "name": "Account Executive"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-SALES-001",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-SALES-002",
+          "steps": [
+            3
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-SALES-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SALES-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [
+        "APR-2C7F3A2A"
+      ],
+      "escalation_rule_ids": [
+        "ESC-D784A4A6"
+      ],
+      "owned_documents": [
+        "PROC-SALES-001"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-SALES",
+        "PROC-SALES-001",
+        "PROC-SALES-002"
+      ],
+      "heads_departments": [],
+      "employee_count": 3
+    },
+    {
+      "role_id": "ROLE-003",
+      "name": "Account Executive",
+      "aliases": [
+        "AE"
+      ],
+      "department_id": "DEPT-SALES",
+      "department_name": "Sales",
+      "employee_ids": [
+        "EMP-0004",
+        "EMP-0005",
+        "EMP-0006",
+        "EMP-0007",
+        "EMP-0008",
+        "EMP-0009",
+        "EMP-0015",
+        "EMP-0016"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns the deal from qualified lead through signed contract.",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-SALES",
+          "source_filename": "sales.md",
+          "chunk_ids": [
+            "DOC-DEPT-SALES_v2.0_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "Responsible for the proposal and quotation process (PROC-SALES-002) and for the accuracy of information handed to Implementation at deal close.",
+          "tags": [],
+          "source_document": "DOC-DEPT-SALES",
+          "source_filename": "sales.md",
+          "chunk_ids": [
+            "DOC-DEPT-SALES_v2.0_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-002",
+          "name": "Sales Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Sales Managers → Account Executives / Sales Development Reps",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [
+        {
+          "process_id": "PROC-SALES-002",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-IMPL-001",
+          "steps": [
+            1
+          ],
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SALES-001",
+          "steps": [
+            6
+          ],
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SALES-002",
+          "steps": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-SALES-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SALES-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [
+        "APR-28D1A69F"
+      ],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "PROC-SALES-002"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-SALES",
+        "DOC-PROD-CUSTDEV",
+        "DOC-PROD-NEXCRM",
+        "PROC-SALES-001",
+        "PROC-SALES-002"
+      ],
+      "heads_departments": [],
+      "employee_count": 8
+    },
+    {
+      "role_id": "ROLE-004",
+      "name": "Sales Development Representative",
+      "aliases": [
+        "SDR"
+      ],
+      "department_id": "DEPT-SALES",
+      "department_name": "Sales",
+      "employee_ids": [
+        "EMP-0010",
+        "EMP-0011",
+        "EMP-0012",
+        "EMP-0013"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Qualifies inbound leads, runs initial discovery calls, books meetings for Account Executives.",
+          "tags": [],
+          "source_document": "DOC-DEPT-SALES",
+          "source_filename": "sales.md",
+          "chunk_ids": [
+            "DOC-DEPT-SALES_v2.0_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "Entry-level role, typically promoted to AE within 12–18 months.",
+          "tags": [],
+          "source_document": "DOC-DEPT-SALES",
+          "source_filename": "sales.md",
+          "chunk_ids": [
+            "DOC-DEPT-SALES_v2.0_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-SALES-001",
+          "steps": [
+            3,
+            4,
+            5
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-SALES-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [
+        "APR-28D1A69F"
+      ],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-SALES",
+        "DOC-PROD-NEXCRM",
+        "PROC-SALES-001"
+      ],
+      "heads_departments": [],
+      "employee_count": 4
+    },
+    {
+      "role_id": "ROLE-005",
+      "name": "VP Marketing",
+      "aliases": [],
+      "department_id": "DEPT-MKT",
+      "department_name": "Marketing",
+      "employee_ids": [
+        "EMP-0017"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns brand, positioning, and marketing budget",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-MKT",
+          "source_filename": "marketing.md",
+          "chunk_ids": [
+            "DOC-DEPT-MKT_v1.4_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "reports directly to CEO.",
+          "tags": [
+            "reports_to"
+          ],
+          "source_document": "DOC-DEPT-MKT",
+          "source_filename": "marketing.md",
+          "chunk_ids": [
+            "DOC-DEPT-MKT_v1.4_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "CEO",
+          "source": "marketing.md: role paragraph",
+          "quote": "reports directly to CEO.",
+          "confidence": 0.85
+        },
+        {
+          "role_id": null,
+          "name": "CEO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "├── VP Marketing → Marketing Managers → Marketing Specialists",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-DEPT-MKT"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-MKT"
+      ],
+      "heads_departments": [
+        "DEPT-MKT"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-006",
+      "name": "Demand Generation Manager",
+      "aliases": [
+        "Demand Gen Manager"
+      ],
+      "department_id": "DEPT-MKT",
+      "department_name": "Marketing",
+      "employee_ids": [
+        "EMP-0018"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns the inbound lead pipeline and lead-scoring model feeding into PROC-SALES-001 (Lead Qualification).",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-MKT",
+          "source_filename": "marketing.md",
+          "chunk_ids": [
+            "DOC-DEPT-MKT_v1.4_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-SALES-001",
+          "steps": [
+            2
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-SALES-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-MKT",
+        "PROC-SALES-001"
+      ],
+      "heads_departments": [],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-007",
+      "name": "Marketing Specialist",
+      "aliases": [],
+      "department_id": "DEPT-MKT",
+      "department_name": "Marketing",
+      "employee_ids": [
+        "EMP-0019",
+        "EMP-0020",
+        "EMP-0021",
+        "EMP-0022"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Executes campaigns (email, webinar, paid) across channels.",
+          "tags": [],
+          "source_document": "DOC-DEPT-MKT",
+          "source_filename": "marketing.md",
+          "chunk_ids": [
+            "DOC-DEPT-MKT_v1.4_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "Marketing Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "├── VP Marketing → Marketing Managers → Marketing Specialists",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-MKT"
+      ],
+      "heads_departments": [],
+      "employee_count": 4
+    },
+    {
+      "role_id": "ROLE-008",
+      "name": "Content Marketing Manager",
+      "aliases": [],
+      "department_id": "DEPT-MKT",
+      "department_name": "Marketing",
+      "employee_ids": [
+        "EMP-0023",
+        "EMP-0024"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns case studies, product content, and the company blog",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-MKT",
+          "source_filename": "marketing.md",
+          "chunk_ids": [
+            "DOC-DEPT-MKT_v1.4_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "works closely with Customer Success to source customer stories.",
+          "tags": [],
+          "source_document": "DOC-DEPT-MKT",
+          "source_filename": "marketing.md",
+          "chunk_ids": [
+            "DOC-DEPT-MKT_v1.4_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-MKT"
+      ],
+      "heads_departments": [],
+      "employee_count": 2
+    },
+    {
+      "role_id": "ROLE-009",
+      "name": "VP Product",
+      "aliases": [],
+      "department_id": "DEPT-PROD",
+      "department_name": "Product",
+      "employee_ids": [
+        "EMP-0025"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns overall product strategy, chairs the quarterly roadmap review.",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-PROD",
+          "source_filename": "product.md",
+          "chunk_ids": [
+            "DOC-DEPT-PROD_v1.7_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "CTO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   ├── VP Product → Product Managers → Product Analysts",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-010",
+          "name": "Product Manager"
+        }
+      ],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-CORP-003",
+        "DOC-DEPT-PROD"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-PROD"
+      ],
+      "heads_departments": [
+        "DEPT-PROD"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-010",
+      "name": "Product Manager",
+      "aliases": [],
+      "department_id": "DEPT-PROD",
+      "department_name": "Product",
+      "employee_ids": [
+        "EMP-0026",
+        "EMP-0027",
+        "EMP-0028",
+        "EMP-0029"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns roadmap and requirements for one or two products",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-PROD",
+          "source_filename": "product.md",
+          "chunk_ids": [
+            "DOC-DEPT-PROD_v1.7_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "writes specs consumed by Engineering in PROC-ENG-001.",
+          "tags": [],
+          "source_document": "DOC-DEPT-PROD",
+          "source_filename": "product.md",
+          "chunk_ids": [
+            "DOC-DEPT-PROD_v1.7_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-009",
+          "name": "VP Product",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   ├── VP Product → Product Managers → Product Analysts",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-011",
+          "name": "Product Analyst"
+        }
+      ],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-ENG-001",
+          "steps": [
+            1
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-ENG-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-PROD-NEXAUTO",
+        "DOC-PROD-NEXCONNECT",
+        "DOC-PROD-NEXCRM",
+        "DOC-PROD-NEXFLOW",
+        "DOC-PROD-NEXVIEW"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-PROD",
+        "DOC-PROD-NEXAUTO",
+        "DOC-PROD-NEXCONNECT",
+        "DOC-PROD-NEXCRM",
+        "DOC-PROD-NEXFLOW",
+        "DOC-PROD-NEXVIEW",
+        "PROC-ENG-001"
+      ],
+      "heads_departments": [],
+      "employee_count": 4
+    },
+    {
+      "role_id": "ROLE-011",
+      "name": "Product Analyst",
+      "aliases": [],
+      "department_id": "DEPT-PROD",
+      "department_name": "Product",
+      "employee_ids": [
+        "EMP-0030",
+        "EMP-0031"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Supports Product Managers with usage data analysis, competitive research, and customer feedback synthesis",
+          "tags": [],
+          "source_document": "DOC-DEPT-PROD",
+          "source_filename": "product.md",
+          "chunk_ids": [
+            "DOC-DEPT-PROD_v1.7_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "works closely with Data & Analytics.",
+          "tags": [],
+          "source_document": "DOC-DEPT-PROD",
+          "source_filename": "product.md",
+          "chunk_ids": [
+            "DOC-DEPT-PROD_v1.7_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-010",
+          "name": "Product Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   ├── VP Product → Product Managers → Product Analysts",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-PROD"
+      ],
+      "heads_departments": [],
+      "employee_count": 2
+    },
+    {
+      "role_id": "ROLE-012",
+      "name": "VP Engineering",
+      "aliases": [],
+      "department_id": "DEPT-ENG",
+      "department_name": "Software Engineering",
+      "employee_ids": [
+        "EMP-0032"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Reports to CTO, owns engineering headcount and delivery predictability across all squads.",
+          "tags": [
+            "owns",
+            "reports_to"
+          ],
+          "source_document": "DOC-DEPT-ENG",
+          "source_filename": "engineering.md",
+          "chunk_ids": [
+            "DOC-DEPT-ENG_v2.1_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "CTO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-013",
+          "name": "Engineering Manager"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-ENG-001",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-DEPT-ENG",
+        "DOC-PROD-CUSTDEV",
+        "PROC-ENG-001"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-ENG"
+      ],
+      "heads_departments": [
+        "DEPT-ENG"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-013",
+      "name": "Engineering Manager",
+      "aliases": [],
+      "department_id": "DEPT-ENG",
+      "department_name": "Software Engineering",
+      "employee_ids": [
+        "EMP-0033",
+        "EMP-0034",
+        "EMP-0035",
+        "EMP-0036"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Manages one squad (6–9 engineers), owns delivery timelines and is the escalation point for P1/P2 defects assigned to their squad.",
+          "tags": [
+            "owns",
+            "escalation",
+            "manages"
+          ],
+          "source_document": "DOC-DEPT-ENG",
+          "source_filename": "engineering.md",
+          "chunk_ids": [
+            "DOC-DEPT-ENG_v2.1_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-012",
+          "name": "VP Engineering",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-015",
+          "name": "Software Engineer"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-ENG-002",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-ENG-001",
+          "steps": [
+            1
+          ],
+          "historical": false
+        },
+        {
+          "process_id": "PROC-ENG-002",
+          "steps": [
+            3
+          ],
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SUP-002",
+          "steps": [
+            5
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-ENG-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-ENG-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [
+        "APR-649276AB"
+      ],
+      "escalation_rule_ids": [
+        "ESC-DC1B8CFC"
+      ],
+      "owned_documents": [
+        "PROC-ENG-002"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-ENG",
+        "PROC-ENG-001",
+        "PROC-ENG-002"
+      ],
+      "heads_departments": [],
+      "employee_count": 4
+    },
+    {
+      "role_id": "ROLE-014",
+      "name": "Senior Software Engineer",
+      "aliases": [],
+      "department_id": "DEPT-ENG",
+      "department_name": "Software Engineering",
+      "employee_ids": [
+        "EMP-0037",
+        "EMP-0038",
+        "EMP-0039",
+        "EMP-0040",
+        "EMP-0041",
+        "EMP-0042",
+        "EMP-0043",
+        "EMP-0044",
+        "EMP-0064",
+        "EMP-0065"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Same scope with additional responsibility for code review, technical design, and mentoring.",
+          "tags": [],
+          "source_document": "DOC-DEPT-ENG",
+          "source_filename": "engineering.md",
+          "chunk_ids": [
+            "DOC-DEPT-ENG_v2.1_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-ENG"
+      ],
+      "heads_departments": [],
+      "employee_count": 10
+    },
+    {
+      "role_id": "ROLE-015",
+      "name": "Software Engineer",
+      "aliases": [],
+      "department_id": "DEPT-ENG",
+      "department_name": "Software Engineering",
+      "employee_ids": [
+        "EMP-0045",
+        "EMP-0046",
+        "EMP-0047",
+        "EMP-0048",
+        "EMP-0049",
+        "EMP-0050",
+        "EMP-0051",
+        "EMP-0052",
+        "EMP-0053",
+        "EMP-0054",
+        "EMP-0055",
+        "EMP-0056"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Builds and maintains features within a squad, following PROC-ENG-001.",
+          "tags": [],
+          "source_document": "DOC-DEPT-ENG",
+          "source_filename": "engineering.md",
+          "chunk_ids": [
+            "DOC-DEPT-ENG_v2.1_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-013",
+          "name": "Engineering Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-ENG-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-ENG-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-ENG",
+        "DOC-PROD-CUSTDEV",
+        "PROC-ENG-001",
+        "PROC-ENG-002"
+      ],
+      "heads_departments": [],
+      "employee_count": 12
+    },
+    {
+      "role_id": "ROLE-016",
+      "name": "QA Engineer",
+      "aliases": [],
+      "department_id": "DEPT-ENG",
+      "department_name": "Software Engineering",
+      "employee_ids": [
+        "EMP-0057",
+        "EMP-0058",
+        "EMP-0059",
+        "EMP-0060"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns test planning and release verification for a squad.",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-ENG",
+          "source_filename": "engineering.md",
+          "chunk_ids": [
+            "DOC-DEPT-ENG_v2.1_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-ENG-001",
+          "steps": [
+            4
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-ENG-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-ENG",
+        "PROC-ENG-001"
+      ],
+      "heads_departments": [],
+      "employee_count": 4
+    },
+    {
+      "role_id": "ROLE-017",
+      "name": "DevOps Engineer",
+      "aliases": [],
+      "department_id": "DEPT-ENG",
+      "department_name": "Software Engineering",
+      "employee_ids": [
+        "EMP-0061",
+        "EMP-0062",
+        "EMP-0063"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns CI/CD pipelines, production infrastructure, and incident response tooling",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-ENG",
+          "source_filename": "engineering.md",
+          "chunk_ids": [
+            "DOC-DEPT-ENG_v2.1_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "primary responder for infrastructure-level incidents (PROC-IT-002).",
+          "tags": [],
+          "source_document": "DOC-DEPT-ENG",
+          "source_filename": "engineering.md",
+          "chunk_ids": [
+            "DOC-DEPT-ENG_v2.1_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-ENG-001",
+          "steps": [
+            5
+          ],
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SUP-002",
+          "steps": [
+            2
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-ENG-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SUP-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-ENG",
+        "PROC-ENG-001",
+        "PROC-SUP-002"
+      ],
+      "heads_departments": [],
+      "employee_count": 3
+    },
+    {
+      "role_id": "ROLE-018",
+      "name": "Data & Analytics Manager",
+      "aliases": [],
+      "department_id": "DEPT-DATA",
+      "department_name": "Data & Analytics",
+      "employee_ids": [
+        "EMP-0066"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns team prioritization and is the approval authority for new production access to the analytics data warehouse (see PROC-IT-001).",
+          "tags": [
+            "owns",
+            "approves"
+          ],
+          "source_document": "DOC-DEPT-DATA",
+          "source_filename": "data_analytics.md",
+          "chunk_ids": [
+            "DOC-DEPT-DATA_v1.5_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "CTO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Data & Analytics Manager → Data Analysts / Data Engineers / BI Developers",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-019",
+          "name": "Data Analyst"
+        },
+        {
+          "role_id": "ROLE-020",
+          "name": "Data Engineer"
+        },
+        {
+          "role_id": "ROLE-021",
+          "name": "BI Developer"
+        }
+      ],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-IT-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [
+        "APR-5AFE2B4B",
+        "APR-D21F5F9A",
+        "APR-0A7C9BEF",
+        "APR-4B33DE9D"
+      ],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-DEPT-DATA"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-DATA",
+        "PROC-IT-001"
+      ],
+      "heads_departments": [
+        "DEPT-DATA"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-019",
+      "name": "Data Analyst",
+      "aliases": [],
+      "department_id": "DEPT-DATA",
+      "department_name": "Data & Analytics",
+      "employee_ids": [
+        "EMP-0067",
+        "EMP-0068",
+        "EMP-0069",
+        "EMP-0070"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Builds internal dashboards and ad hoc analysis for Sales, Finance, and Customer Success stakeholders.",
+          "tags": [],
+          "source_document": "DOC-DEPT-DATA",
+          "source_filename": "data_analytics.md",
+          "chunk_ids": [
+            "DOC-DEPT-DATA_v1.5_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-018",
+          "name": "Data & Analytics Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Data & Analytics Manager → Data Analysts / Data Engineers / BI Developers",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-DATA"
+      ],
+      "heads_departments": [],
+      "employee_count": 4
+    },
+    {
+      "role_id": "ROLE-020",
+      "name": "Data Engineer",
+      "aliases": [],
+      "department_id": "DEPT-DATA",
+      "department_name": "Data & Analytics",
+      "employee_ids": [
+        "EMP-0071",
+        "EMP-0072",
+        "EMP-0073"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Builds and maintains data pipelines feeding both internal reporting and NexView Analytics",
+          "tags": [],
+          "source_document": "DOC-DEPT-DATA",
+          "source_filename": "data_analytics.md",
+          "chunk_ids": [
+            "DOC-DEPT-DATA_v1.5_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "owns data quality checks.",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-DATA",
+          "source_filename": "data_analytics.md",
+          "chunk_ids": [
+            "DOC-DEPT-DATA_v1.5_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-018",
+          "name": "Data & Analytics Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Data & Analytics Manager → Data Analysts / Data Engineers / BI Developers",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-DATA",
+        "DOC-PROD-NEXCONNECT"
+      ],
+      "heads_departments": [],
+      "employee_count": 3
+    },
+    {
+      "role_id": "ROLE-021",
+      "name": "BI Developer",
+      "aliases": [],
+      "department_id": "DEPT-DATA",
+      "department_name": "Data & Analytics",
+      "employee_ids": [
+        "EMP-0074",
+        "EMP-0075",
+        "EMP-0076"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Builds and maintains customer-facing report templates within NexView Analytics.",
+          "tags": [],
+          "source_document": "DOC-DEPT-DATA",
+          "source_filename": "data_analytics.md",
+          "chunk_ids": [
+            "DOC-DEPT-DATA_v1.5_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-018",
+          "name": "Data & Analytics Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Data & Analytics Manager → Data Analysts / Data Engineers / BI Developers",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-DATA",
+        "DOC-PROD-NEXVIEW"
+      ],
+      "heads_departments": [],
+      "employee_count": 3
+    },
+    {
+      "role_id": "ROLE-022",
+      "name": "Implementation Manager",
+      "aliases": [
+        "Project Lead"
+      ],
+      "department_id": "DEPT-IMPL",
+      "department_name": "Implementation / Consulting",
+      "employee_ids": [
+        "EMP-0077"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns the onboarding project plan, is the final approval authority for go-live sign-off (PROC-IMPL-001).",
+          "tags": [
+            "owns",
+            "approves"
+          ],
+          "source_document": "DOC-DEPT-IMPL",
+          "source_filename": "implementation.md",
+          "chunk_ids": [
+            "DOC-DEPT-IMPL_v2.0_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "This title replaced \"Project Lead\" as of the 2025-03-01 reorganization",
+          "tags": [],
+          "source_document": "DOC-DEPT-IMPL",
+          "source_filename": "implementation.md",
+          "chunk_ids": [
+            "DOC-DEPT-IMPL_v2.0_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "both terms refer to the same role.",
+          "tags": [],
+          "source_document": "DOC-DEPT-IMPL",
+          "source_filename": "implementation.md",
+          "chunk_ids": [
+            "DOC-DEPT-IMPL_v2.0_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-025",
+          "name": "VP Customer Success",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Implementation Manager → Implementation Consultants / Solutions Architects",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-024",
+          "name": "Implementation Consultant"
+        },
+        {
+          "role_id": "ROLE-023",
+          "name": "Solutions Architect"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-IMPL-001",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-IMPL-001-V1",
+          "source": "processes.csv: owner_role",
+          "historical": true
+        }
+      ],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-IMPL-001",
+          "steps": [
+            5,
+            6
+          ],
+          "historical": false
+        },
+        {
+          "process_id": "PROC-IMPL-001-V1",
+          "steps": [
+            5
+          ],
+          "historical": true
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-IMPL-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-IMPL-001-V1",
+          "historical": true
+        }
+      ],
+      "approval_rule_ids": [
+        "APR-79C52990",
+        "APR-E24538B1",
+        "APR-10913E9F",
+        "APR-5C528B50"
+      ],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-DEPT-IMPL",
+        "DOC-PROD-IMPLSUP",
+        "PROC-IMPL-001",
+        "PROC-IMPL-001-V1"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-IMPL",
+        "DOC-PROD-IMPLSUP",
+        "PROC-IMPL-001",
+        "PROC-IMPL-001-V1"
+      ],
+      "heads_departments": [
+        "DEPT-IMPL"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-023",
+      "name": "Solutions Architect",
+      "aliases": [],
+      "department_id": "DEPT-IMPL",
+      "department_name": "Implementation / Consulting",
+      "employee_ids": [
+        "EMP-0078",
+        "EMP-0079"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns technical design for complex or multi-product implementations",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-IMPL",
+          "source_filename": "implementation.md",
+          "chunk_ids": [
+            "DOC-DEPT-IMPL_v2.0_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "escalation point for Implementation Consultants on integration questions involving NexConnect.",
+          "tags": [
+            "escalation"
+          ],
+          "source_document": "DOC-DEPT-IMPL",
+          "source_filename": "implementation.md",
+          "chunk_ids": [
+            "DOC-DEPT-IMPL_v2.0_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-022",
+          "name": "Implementation Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Implementation Manager → Implementation Consultants / Solutions Architects",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-IMPL-001",
+          "steps": [
+            3
+          ],
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SALES-002",
+          "steps": [
+            1
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-IMPL-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SALES-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [
+        "ESC-33162ABD"
+      ],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-IMPL",
+        "DOC-PROD-CUSTDEV",
+        "DOC-PROD-NEXCONNECT",
+        "DOC-PROD-NEXFLOW",
+        "PROC-IMPL-001",
+        "PROC-SALES-002"
+      ],
+      "heads_departments": [],
+      "employee_count": 2
+    },
+    {
+      "role_id": "ROLE-024",
+      "name": "Implementation Consultant",
+      "aliases": [],
+      "department_id": "DEPT-IMPL",
+      "department_name": "Implementation / Consulting",
+      "employee_ids": [
+        "EMP-0080",
+        "EMP-0081",
+        "EMP-0082",
+        "EMP-0083",
+        "EMP-0084",
+        "EMP-0085",
+        "EMP-0086",
+        "EMP-0087",
+        "EMP-0088"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Executes customer onboarding projects day-to-day: configuration, data migration support, and training delivery.",
+          "tags": [],
+          "source_document": "DOC-DEPT-IMPL",
+          "source_filename": "implementation.md",
+          "chunk_ids": [
+            "DOC-DEPT-IMPL_v2.0_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-022",
+          "name": "Implementation Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Implementation Manager → Implementation Consultants / Solutions Architects",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-IMPL-001",
+          "steps": [
+            1
+          ],
+          "historical": false
+        },
+        {
+          "process_id": "PROC-IMPL-001-V1",
+          "steps": [
+            1
+          ],
+          "historical": true
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-IMPL-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-IMPL-001-V1",
+          "historical": true
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-IMPL",
+        "DOC-PROD-IMPLSUP",
+        "DOC-PROD-NEXAUTO",
+        "DOC-PROD-NEXFLOW",
+        "DOC-PROD-NEXVIEW",
+        "PROC-IMPL-001",
+        "PROC-IMPL-001-V1"
+      ],
+      "heads_departments": [],
+      "employee_count": 9
+    },
+    {
+      "role_id": "ROLE-025",
+      "name": "VP Customer Success",
+      "aliases": [],
+      "department_id": "DEPT-CS",
+      "department_name": "Customer Success",
+      "employee_ids": [
+        "EMP-0089"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns retention and expansion revenue targets, is the final internal escalation point for at-risk accounts before executive involvement (see PROC-CS-001).",
+          "tags": [
+            "owns",
+            "escalation"
+          ],
+          "source_document": "DOC-DEPT-CS",
+          "source_filename": "customer_success.md",
+          "chunk_ids": [
+            "DOC-DEPT-CS_v1.9_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "CEO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "├── VP Customer Success",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-026",
+          "name": "Customer Success Manager"
+        },
+        {
+          "role_id": "ROLE-022",
+          "name": "Implementation Manager"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-CS-001",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-CS-001",
+          "steps": [
+            2
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-CS-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [
+        "ESC-DD4FAE09",
+        "ESC-8CC16030"
+      ],
+      "owned_documents": [
+        "DOC-DEPT-CS",
+        "PROC-CS-001"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-CS",
+        "PROC-CS-001"
+      ],
+      "heads_departments": [
+        "DEPT-CS"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-026",
+      "name": "Customer Success Manager",
+      "aliases": [
+        "CSM"
+      ],
+      "department_id": "DEPT-CS",
+      "department_name": "Customer Success",
+      "employee_ids": [
+        "EMP-0090",
+        "EMP-0091",
+        "EMP-0092",
+        "EMP-0093",
+        "EMP-0094",
+        "EMP-0095"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns a book of ~15–20 customer accounts, runs quarterly business reviews, and is the primary point of contact for account health.",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-CS",
+          "source_filename": "customer_success.md",
+          "chunk_ids": [
+            "DOC-DEPT-CS_v1.9_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-025",
+          "name": "VP Customer Success",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   ├── Customer Success Managers",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-CS-001",
+          "steps": [
+            1
+          ],
+          "historical": false
+        },
+        {
+          "process_id": "PROC-FIN-003",
+          "steps": [
+            3
+          ],
+          "historical": false
+        },
+        {
+          "process_id": "PROC-IMPL-001",
+          "steps": [
+            6
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-CS-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-FIN-003",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-IMPL-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [
+        "ESC-2103DB88",
+        "ESC-31741840",
+        "ESC-AD074D45"
+      ],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-CS",
+        "PROC-CS-001",
+        "PROC-FIN-003",
+        "PROC-IMPL-001"
+      ],
+      "heads_departments": [],
+      "employee_count": 6
+    },
+    {
+      "role_id": "ROLE-027",
+      "name": "CS Ops Analyst",
+      "aliases": [],
+      "department_id": "DEPT-CS",
+      "department_name": "Customer Success",
+      "employee_ids": [
+        "EMP-0096",
+        "EMP-0097"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Maintains the customer health-score model and renewal forecasting data, working closely with Data & Analytics.",
+          "tags": [],
+          "source_document": "DOC-DEPT-CS",
+          "source_filename": "customer_success.md",
+          "chunk_ids": [
+            "DOC-DEPT-CS_v1.9_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-CS"
+      ],
+      "heads_departments": [],
+      "employee_count": 2
+    },
+    {
+      "role_id": "ROLE-028",
+      "name": "Support Team Lead",
+      "aliases": [],
+      "department_id": "DEPT-SUP",
+      "department_name": "Technical Support",
+      "employee_ids": [
+        "EMP-0098"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns ticket queue health, SLA compliance, and staffing",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-SUP",
+          "source_filename": "technical_support.md",
+          "chunk_ids": [
+            "DOC-DEPT-SUP_v2.2_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "escalation point for P1 incidents outside business hours.",
+          "tags": [
+            "escalation"
+          ],
+          "source_document": "DOC-DEPT-SUP",
+          "source_filename": "technical_support.md",
+          "chunk_ids": [
+            "DOC-DEPT-SUP_v2.2_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "CEO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "├── Support Team Lead → Support Engineers (L1/L2/L3)",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-031",
+          "name": "Support Engineer L1"
+        },
+        {
+          "role_id": "ROLE-030",
+          "name": "Support Engineer L2"
+        },
+        {
+          "role_id": "ROLE-029",
+          "name": "Support Engineer L3"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-ENG-002",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SUP-001",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SUP-002",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-SUP-002",
+          "steps": [
+            3
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-CS-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SUP-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [
+        "APR-F9BE6AFF"
+      ],
+      "escalation_rule_ids": [
+        "ESC-7A5283D9"
+      ],
+      "owned_documents": [
+        "DOC-DEPT-SUP",
+        "DOC-TG-001",
+        "PROC-ENG-002",
+        "PROC-SUP-001",
+        "PROC-SUP-002"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-SUP",
+        "PROC-CS-001",
+        "PROC-SUP-002"
+      ],
+      "heads_departments": [
+        "DEPT-SUP"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-029",
+      "name": "Support Engineer L3",
+      "aliases": [],
+      "department_id": "DEPT-SUP",
+      "department_name": "Technical Support",
+      "employee_ids": [
+        "EMP-0099",
+        "EMP-0100",
+        "EMP-0101"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Handles the most complex cases, works directly with Engineering on suspected product defects (see PROC-ENG-002, Bug Reporting & Escalation).",
+          "tags": [
+            "escalation"
+          ],
+          "source_document": "DOC-DEPT-SUP",
+          "source_filename": "technical_support.md",
+          "chunk_ids": [
+            "DOC-DEPT-SUP_v2.2_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-028",
+          "name": "Support Team Lead",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "├── Support Team Lead → Support Engineers (L1/L2/L3)",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-ENG-002",
+          "steps": [
+            1
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-ENG-002",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SUP-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-SUP",
+        "PROC-ENG-002",
+        "PROC-SUP-001"
+      ],
+      "heads_departments": [],
+      "employee_count": 3
+    },
+    {
+      "role_id": "ROLE-030",
+      "name": "Support Engineer L2",
+      "aliases": [],
+      "department_id": "DEPT-SUP",
+      "department_name": "Technical Support",
+      "employee_ids": [
+        "EMP-0102",
+        "EMP-0103",
+        "EMP-0104",
+        "EMP-0105"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Deeper product troubleshooting, configuration-level fixes, escalation point for L1.",
+          "tags": [
+            "escalation"
+          ],
+          "source_document": "DOC-DEPT-SUP",
+          "source_filename": "technical_support.md",
+          "chunk_ids": [
+            "DOC-DEPT-SUP_v2.2_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-028",
+          "name": "Support Team Lead",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "├── Support Team Lead → Support Engineers (L1/L2/L3)",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-SUP-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [
+        "ESC-CC01023E"
+      ],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-SUP",
+        "PROC-SUP-001"
+      ],
+      "heads_departments": [],
+      "employee_count": 4
+    },
+    {
+      "role_id": "ROLE-031",
+      "name": "Support Engineer L1",
+      "aliases": [],
+      "department_id": "DEPT-SUP",
+      "department_name": "Technical Support",
+      "employee_ids": [
+        "EMP-0106",
+        "EMP-0107",
+        "EMP-0108",
+        "EMP-0109",
+        "EMP-0110",
+        "EMP-0111"
+      ],
+      "responsibilities": [
+        {
+          "statement": "First response, known-issue resolution, ticket triage.",
+          "tags": [],
+          "source_document": "DOC-DEPT-SUP",
+          "source_filename": "technical_support.md",
+          "chunk_ids": [
+            "DOC-DEPT-SUP_v2.2_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-028",
+          "name": "Support Team Lead",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "├── Support Team Lead → Support Engineers (L1/L2/L3)",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-SUP-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-SUP",
+        "DOC-TG-001",
+        "PROC-SUP-001"
+      ],
+      "heads_departments": [],
+      "employee_count": 6
+    },
+    {
+      "role_id": "ROLE-032",
+      "name": "CFO",
+      "aliases": [],
+      "department_id": "DEPT-FIN",
+      "department_name": "Finance",
+      "employee_ids": [
+        "EMP-0112"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns company financial strategy and reporting",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-FIN",
+          "source_filename": "finance.md",
+          "chunk_ids": [
+            "DOC-DEPT-FIN_v1.6_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "final approval authority for purchases above €10,000.",
+          "tags": [
+            "approves"
+          ],
+          "source_document": "DOC-DEPT-FIN",
+          "source_filename": "finance.md",
+          "chunk_ids": [
+            "DOC-DEPT-FIN_v1.6_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "CEO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "├── CFO",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-033",
+          "name": "Finance Manager"
+        }
+      ],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-FIN-002",
+          "steps": [
+            3
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-FIN-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [
+        "APR-39BC5583",
+        "APR-FE68154F"
+      ],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-DEPT-FIN"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-FIN",
+        "PROC-FIN-002"
+      ],
+      "heads_departments": [
+        "DEPT-FIN"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-033",
+      "name": "Finance Manager",
+      "aliases": [],
+      "department_id": "DEPT-FIN",
+      "department_name": "Finance",
+      "employee_ids": [
+        "EMP-0113"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Approves expenses and purchase orders above standard employee limits (see PROC-FIN-001, PROC-FIN-002).",
+          "tags": [
+            "approves"
+          ],
+          "source_document": "DOC-DEPT-FIN",
+          "source_filename": "finance.md",
+          "chunk_ids": [
+            "DOC-DEPT-FIN_v1.6_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-032",
+          "name": "CFO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Finance Manager → Accountants / Financial Analysts / AP-AR Specialists",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-034",
+          "name": "Accountant"
+        },
+        {
+          "role_id": "ROLE-035",
+          "name": "Financial Analyst"
+        },
+        {
+          "role_id": "ROLE-036",
+          "name": "AP/AR Specialist"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-FIN-001",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-FIN-002",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-FIN-002",
+          "steps": [
+            3
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-FIN-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-FIN-002",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-FIN-003",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [
+        "APR-03598EEE",
+        "APR-9F266826",
+        "APR-07391268",
+        "APR-6A954B2B"
+      ],
+      "escalation_rule_ids": [
+        "ESC-63A67D48",
+        "ESC-AD074D45"
+      ],
+      "owned_documents": [
+        "PROC-FIN-001",
+        "PROC-FIN-002"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-FIN",
+        "PROC-FIN-001",
+        "PROC-FIN-002",
+        "PROC-FIN-003"
+      ],
+      "heads_departments": [],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-034",
+      "name": "Accountant",
+      "aliases": [],
+      "department_id": "DEPT-FIN",
+      "department_name": "Finance",
+      "employee_ids": [
+        "EMP-0114",
+        "EMP-0115"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns month-end close and general ledger accuracy.",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-FIN",
+          "source_filename": "finance.md",
+          "chunk_ids": [
+            "DOC-DEPT-FIN_v1.6_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-033",
+          "name": "Finance Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Finance Manager → Accountants / Financial Analysts / AP-AR Specialists",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-FIN"
+      ],
+      "heads_departments": [],
+      "employee_count": 2
+    },
+    {
+      "role_id": "ROLE-035",
+      "name": "Financial Analyst",
+      "aliases": [],
+      "department_id": "DEPT-FIN",
+      "department_name": "Finance",
+      "employee_ids": [
+        "EMP-0116",
+        "EMP-0117"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Supports budgeting, forecasting, and ad hoc financial analysis for department heads.",
+          "tags": [],
+          "source_document": "DOC-DEPT-FIN",
+          "source_filename": "finance.md",
+          "chunk_ids": [
+            "DOC-DEPT-FIN_v1.6_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-033",
+          "name": "Finance Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Finance Manager → Accountants / Financial Analysts / AP-AR Specialists",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-FIN"
+      ],
+      "heads_departments": [],
+      "employee_count": 2
+    },
+    {
+      "role_id": "ROLE-036",
+      "name": "AP/AR Specialist",
+      "aliases": [],
+      "department_id": "DEPT-FIN",
+      "department_name": "Finance",
+      "employee_ids": [
+        "EMP-0118",
+        "EMP-0119"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Processes accounts payable and receivable, including customer invoicing per PROC-FIN-003.",
+          "tags": [],
+          "source_document": "DOC-DEPT-FIN",
+          "source_filename": "finance.md",
+          "chunk_ids": [
+            "DOC-DEPT-FIN_v1.6_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-033",
+          "name": "Finance Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── Finance Manager → Accountants / Financial Analysts / AP-AR Specialists",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [
+        {
+          "process_id": "PROC-FIN-003",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-FIN-003",
+          "steps": [
+            3
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-FIN-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-FIN-003",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "PROC-FIN-003"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-FIN",
+        "PROC-FIN-001",
+        "PROC-FIN-003"
+      ],
+      "heads_departments": [],
+      "employee_count": 2
+    },
+    {
+      "role_id": "ROLE-037",
+      "name": "Head of HR",
+      "aliases": [],
+      "department_id": "DEPT-HR",
+      "department_name": "HR",
+      "employee_ids": [
+        "EMP-0120"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns overall people strategy, reports to CEO.",
+          "tags": [
+            "owns",
+            "reports_to"
+          ],
+          "source_document": "DOC-DEPT-HR",
+          "source_filename": "hr.md",
+          "chunk_ids": [
+            "DOC-DEPT-HR_v2.3_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "CEO",
+          "source": "hr.md: role paragraph",
+          "quote": "Owns overall people strategy, reports to CEO.",
+          "confidence": 0.85
+        },
+        {
+          "role_id": null,
+          "name": "CEO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "├── Head of HR",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-038",
+          "name": "HR Manager"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-HR-003",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-CARE-001",
+        "DOC-COMM-001",
+        "DOC-COMM-002",
+        "DOC-COMM-003",
+        "DOC-COMM-004",
+        "DOC-COMM-005",
+        "DOC-COMM-006",
+        "DOC-DEPT-HR",
+        "PROC-HR-003"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-HR"
+      ],
+      "heads_departments": [
+        "DEPT-HR"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-038",
+      "name": "HR Manager",
+      "aliases": [],
+      "department_id": "DEPT-HR",
+      "department_name": "HR",
+      "employee_ids": [
+        "EMP-0121"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns HR policy content and compliance",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-HR",
+          "source_filename": "hr.md",
+          "chunk_ids": [
+            "DOC-DEPT-HR_v2.3_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "approval authority for policy exceptions.",
+          "tags": [
+            "approves"
+          ],
+          "source_document": "DOC-DEPT-HR",
+          "source_filename": "hr.md",
+          "chunk_ids": [
+            "DOC-DEPT-HR_v2.3_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-037",
+          "name": "Head of HR",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── HR Managers → HR Business Partners / HR Generalists / Recruiters",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-039",
+          "name": "HR Business Partner"
+        },
+        {
+          "role_id": "ROLE-040",
+          "name": "HR Generalist"
+        },
+        {
+          "role_id": "ROLE-041",
+          "name": "Recruiter"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-HR-001",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-HR-001-ADDENDUM",
+          "source": "processes.csv: owner_role",
+          "historical": true
+        },
+        {
+          "process_id": "PROC-HR-002",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [
+        "APR-4BC901E8"
+      ],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "PROC-HR-001",
+        "PROC-HR-001-ADDENDUM",
+        "PROC-HR-002"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-HR"
+      ],
+      "heads_departments": [],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-039",
+      "name": "HR Business Partner",
+      "aliases": [
+        "HRBP"
+      ],
+      "department_id": "DEPT-HR",
+      "department_name": "HR",
+      "employee_ids": [
+        "EMP-0122"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Partners with department heads on org design, performance processes, and sensitive employee matters.",
+          "tags": [],
+          "source_document": "DOC-DEPT-HR",
+          "source_filename": "hr.md",
+          "chunk_ids": [
+            "DOC-DEPT-HR_v2.3_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-038",
+          "name": "HR Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── HR Managers → HR Business Partners / HR Generalists / Recruiters",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-HR"
+      ],
+      "heads_departments": [],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-040",
+      "name": "HR Generalist",
+      "aliases": [],
+      "department_id": "DEPT-HR",
+      "department_name": "HR",
+      "employee_ids": [
+        "EMP-0123",
+        "EMP-0124"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Handles day-to-day employee queries: leave, benefits, onboarding logistics.",
+          "tags": [],
+          "source_document": "DOC-DEPT-HR",
+          "source_filename": "hr.md",
+          "chunk_ids": [
+            "DOC-DEPT-HR_v2.3_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-038",
+          "name": "HR Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── HR Managers → HR Business Partners / HR Generalists / Recruiters",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-HR-001",
+          "steps": [
+            1,
+            2,
+            5
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-HR-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-HR-001-ADDENDUM",
+          "historical": true
+        },
+        {
+          "process_id": "PROC-HR-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-CARE-002",
+        "DOC-CARE-003",
+        "DOC-CARE-004"
+      ],
+      "listed_on_documents": [
+        "DOC-CARE-001",
+        "DOC-DEPT-HR",
+        "PROC-HR-001",
+        "PROC-HR-001-ADDENDUM",
+        "PROC-HR-002"
+      ],
+      "heads_departments": [],
+      "employee_count": 2
+    },
+    {
+      "role_id": "ROLE-041",
+      "name": "Recruiter",
+      "aliases": [],
+      "department_id": "DEPT-HR",
+      "department_name": "HR",
+      "employee_ids": [
+        "EMP-0125"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns sourcing and hiring process for open roles.",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-HR",
+          "source_filename": "hr.md",
+          "chunk_ids": [
+            "DOC-DEPT-HR_v2.3_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-038",
+          "name": "HR Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── HR Managers → HR Business Partners / HR Generalists / Recruiters",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-HR-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-HR",
+        "PROC-HR-001"
+      ],
+      "heads_departments": [],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-042",
+      "name": "CISO",
+      "aliases": [],
+      "department_id": "DEPT-IT",
+      "department_name": "IT / Security",
+      "employee_ids": [
+        "EMP-0126"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns company-wide security policy (PROC-IT-002) and is the final decision authority during a confirmed security incident.",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-IT",
+          "source_filename": "it_security.md",
+          "chunk_ids": [
+            "DOC-DEPT-IT_v2.5_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "CEO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "├── CISO",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-043",
+          "name": "IT Manager"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-IT-001",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-IT-002",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-IT-002",
+          "steps": [
+            4
+          ],
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SUP-002",
+          "steps": [
+            5
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-IT-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-IT-002",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-SUP-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [
+        "ESC-513F6C5B",
+        "ESC-EDB4B4D4"
+      ],
+      "owned_documents": [
+        "DOC-DEPT-IT",
+        "PROC-IT-001",
+        "PROC-IT-002"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-IT",
+        "PROC-IT-001",
+        "PROC-IT-002",
+        "PROC-SUP-002"
+      ],
+      "heads_departments": [
+        "DEPT-IT"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-043",
+      "name": "IT Manager",
+      "aliases": [],
+      "department_id": "DEPT-IT",
+      "department_name": "IT / Security",
+      "employee_ids": [
+        "EMP-0127"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns internal systems uptime and IT support SLAs.",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-IT",
+          "source_filename": "it_security.md",
+          "chunk_ids": [
+            "DOC-DEPT-IT_v2.5_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-042",
+          "name": "CISO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── IT Manager → IT Support Specialists / Security Analysts",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-045",
+          "name": "IT Support Specialist"
+        },
+        {
+          "role_id": "ROLE-044",
+          "name": "Security Analyst"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-SUP-002",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-SUP-002",
+          "steps": [
+            2
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-SUP-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "PROC-SUP-002"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-IT",
+        "PROC-SUP-002"
+      ],
+      "heads_departments": [],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-044",
+      "name": "Security Analyst",
+      "aliases": [],
+      "department_id": "DEPT-IT",
+      "department_name": "IT / Security",
+      "employee_ids": [
+        "EMP-0128",
+        "EMP-0129"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Monitors for security incidents, runs the annual security review, administers the mandatory security training program.",
+          "tags": [],
+          "source_document": "DOC-DEPT-IT",
+          "source_filename": "it_security.md",
+          "chunk_ids": [
+            "DOC-DEPT-IT_v2.5_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-043",
+          "name": "IT Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── IT Manager → IT Support Specialists / Security Analysts",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-IT-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-IT-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-IT",
+        "PROC-IT-001",
+        "PROC-IT-002"
+      ],
+      "heads_departments": [],
+      "employee_count": 2
+    },
+    {
+      "role_id": "ROLE-045",
+      "name": "IT Support Specialist",
+      "aliases": [],
+      "department_id": "DEPT-IT",
+      "department_name": "IT / Security",
+      "employee_ids": [
+        "EMP-0130",
+        "EMP-0131",
+        "EMP-0132"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Handles employee-facing IT requests: hardware, account provisioning, software access.",
+          "tags": [],
+          "source_document": "DOC-DEPT-IT",
+          "source_filename": "it_security.md",
+          "chunk_ids": [
+            "DOC-DEPT-IT_v2.5_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-043",
+          "name": "IT Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "│   └── IT Manager → IT Support Specialists / Security Analysts",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-HR-001",
+          "steps": [
+            1
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-HR-001",
+          "historical": false
+        },
+        {
+          "process_id": "PROC-IT-001",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-IT",
+        "PROC-HR-001",
+        "PROC-IT-001"
+      ],
+      "heads_departments": [],
+      "employee_count": 3
+    },
+    {
+      "role_id": "ROLE-046",
+      "name": "Operations Manager",
+      "aliases": [],
+      "department_id": "DEPT-OPS",
+      "department_name": "Operations",
+      "employee_ids": [
+        "EMP-0133"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns the department's priorities, works closely with Finance on procurement (PROC-FIN-002) and with IT on office technology rollouts.",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-OPS",
+          "source_filename": "operations.md",
+          "chunk_ids": [
+            "DOC-DEPT-OPS_v1.3_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": null,
+          "name": "CEO",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "└── Operations Manager → Operations Analysts / Office Managers",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [
+        {
+          "role_id": "ROLE-047",
+          "name": "Operations Analyst"
+        },
+        {
+          "role_id": "ROLE-048",
+          "name": "Office Manager"
+        }
+      ],
+      "owns_processes": [
+        {
+          "process_id": "PROC-FIN-002",
+          "source": "processes.csv: owner_role",
+          "historical": false
+        }
+      ],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-DEPT-OPS",
+        "PROC-FIN-002"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-OPS"
+      ],
+      "heads_departments": [
+        "DEPT-OPS"
+      ],
+      "employee_count": 1
+    },
+    {
+      "role_id": "ROLE-047",
+      "name": "Operations Analyst",
+      "aliases": [],
+      "department_id": "DEPT-OPS",
+      "department_name": "Operations",
+      "employee_ids": [
+        "EMP-0134",
+        "EMP-0135"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Supports internal process documentation, vendor coordination, and cross-department reporting requests.",
+          "tags": [],
+          "source_document": "DOC-DEPT-OPS",
+          "source_filename": "operations.md",
+          "chunk_ids": [
+            "DOC-DEPT-OPS_v1.3_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-046",
+          "name": "Operations Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "└── Operations Manager → Operations Analysts / Office Managers",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [
+        {
+          "process_id": "PROC-FIN-002",
+          "steps": [
+            4
+          ],
+          "historical": false
+        }
+      ],
+      "participates_in_processes": [
+        {
+          "process_id": "PROC-FIN-002",
+          "historical": false
+        }
+      ],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [
+        "DOC-FAQ-001",
+        "DOC-SCEN-001"
+      ],
+      "listed_on_documents": [
+        "DOC-DEPT-OPS",
+        "PROC-FIN-002"
+      ],
+      "heads_departments": [],
+      "employee_count": 2
+    },
+    {
+      "role_id": "ROLE-048",
+      "name": "Office Manager",
+      "aliases": [],
+      "department_id": "DEPT-OPS",
+      "department_name": "Operations",
+      "employee_ids": [
+        "EMP-0136",
+        "EMP-0137"
+      ],
+      "responsibilities": [
+        {
+          "statement": "Owns day-to-day office facilities at a given location (note: Austin, Bengaluru and London each have a locally-based Office Manager or equivalent contracted facilities contact",
+          "tags": [
+            "owns"
+          ],
+          "source_document": "DOC-DEPT-OPS",
+          "source_filename": "operations.md",
+          "chunk_ids": [
+            "DOC-DEPT-OPS_v1.3_001"
+          ],
+          "confidence": 0.85
+        },
+        {
+          "statement": "Munich's Office Manager is a direct Nexora employee).",
+          "tags": [],
+          "source_document": "DOC-DEPT-OPS",
+          "source_filename": "operations.md",
+          "chunk_ids": [
+            "DOC-DEPT-OPS_v1.3_001"
+          ],
+          "confidence": 0.85
+        }
+      ],
+      "reports_to": [
+        {
+          "role_id": "ROLE-046",
+          "name": "Operations Manager",
+          "source": "organization.md: Organization Structure > Reporting Lines (simplified)",
+          "quote": "└── Operations Manager → Operations Analysts / Office Managers",
+          "confidence": 0.85
+        }
+      ],
+      "direct_report_roles": [],
+      "owns_processes": [],
+      "performs_in_processes": [],
+      "participates_in_processes": [],
+      "approval_rule_ids": [],
+      "escalation_rule_ids": [],
+      "owned_documents": [],
+      "listed_on_documents": [
+        "DOC-DEPT-OPS"
+      ],
+      "heads_departments": [],
+      "employee_count": 2
+    }
+  ],
+  "approval_rules": [
+    {
+      "rule_id": "APR-5AFE2B4B",
+      "rule_type": "approval",
+      "statement": "Owns team prioritization and is the approval authority for new production access to the analytics data warehouse (see PROC-IT-001).",
+      "context": "Data & Analytics Manager",
+      "role_ids": [
+        "ROLE-018"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-IT-001"
+      ],
+      "document_id": "DOC-DEPT-DATA",
+      "source_filename": "data_analytics.md",
+      "section": "Data & Analytics Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-DATA_v1.5_001"
+      ],
+      "method": "role_paragraph",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-D21F5F9A",
+      "rule_type": "approval",
+      "statement": "New Data Analysts require Data & Analytics Manager approval plus IT provisioning to reach the production analytics environment — see PROC-IT-001, \"Analytics Environment Access.\"",
+      "context": "Access Note",
+      "role_ids": [
+        "ROLE-018"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [
+        "ROLE-019"
+      ],
+      "process_ids": [
+        "PROC-IT-001"
+      ],
+      "document_id": "DOC-DEPT-DATA",
+      "source_filename": "data_analytics.md",
+      "section": "Data & Analytics Department > Access Note",
+      "chunk_ids": [
+        "DOC-DEPT-DATA_v1.5_002"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-03598EEE",
+      "rule_type": "approval",
+      "statement": "Approves expenses and purchase orders above standard employee limits (see PROC-FIN-001, PROC-FIN-002).",
+      "context": "Finance Manager",
+      "role_ids": [
+        "ROLE-033"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-001",
+        "PROC-FIN-002"
+      ],
+      "document_id": "DOC-DEPT-FIN",
+      "source_filename": "finance.md",
+      "section": "Finance Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-FIN_v1.6_001"
+      ],
+      "method": "role_paragraph",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-39BC5583",
+      "rule_type": "approval",
+      "statement": "final approval authority for purchases above €10,000.",
+      "context": "CFO",
+      "role_ids": [
+        "ROLE-032"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [],
+      "document_id": "DOC-DEPT-FIN",
+      "source_filename": "finance.md",
+      "section": "Finance Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-FIN_v1.6_001"
+      ],
+      "method": "role_paragraph",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [
+          "€10,000"
+        ],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-4BC901E8",
+      "rule_type": "approval",
+      "statement": "approval authority for policy exceptions.",
+      "context": "HR Manager",
+      "role_ids": [
+        "ROLE-038"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [],
+      "document_id": "DOC-DEPT-HR",
+      "source_filename": "hr.md",
+      "section": "HR Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-HR_v2.3_001"
+      ],
+      "method": "role_paragraph",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-79C52990",
+      "rule_type": "approval",
+      "statement": "Owns the onboarding project plan, is the final approval authority for go-live sign-off (PROC-IMPL-001).",
+      "context": "Implementation Manager",
+      "role_ids": [
+        "ROLE-022"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-IMPL-001"
+      ],
+      "document_id": "DOC-DEPT-IMPL",
+      "source_filename": "implementation.md",
+      "section": "Implementation / Consulting Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-IMPL_v2.0_001"
+      ],
+      "method": "role_paragraph",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-28D1A69F",
+      "rule_type": "approval",
+      "statement": "Manages a pod of 4–6 AEs/SDRs, owns forecast accuracy, is the approval authority for non-standard discounting above 15%.",
+      "context": "Sales Manager",
+      "role_ids": [
+        "ROLE-003",
+        "ROLE-004"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [
+        "ROLE-002"
+      ],
+      "process_ids": [],
+      "document_id": "DOC-DEPT-SALES",
+      "source_filename": "sales.md",
+      "section": "Sales Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-SALES_v2.0_001"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [
+          "15%"
+        ],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-6917D36C",
+      "rule_type": "approval",
+      "statement": "Owns the department's revenue target, sits on the executive leadership team, approves discounting above 30% and all multi-year contract terms.",
+      "context": "VP Sales",
+      "role_ids": [
+        "ROLE-001"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [],
+      "document_id": "DOC-DEPT-SALES",
+      "source_filename": "sales.md",
+      "section": "Sales Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-SALES_v2.0_001"
+      ],
+      "method": "role_paragraph",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [
+          "30%"
+        ],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-0A698807",
+      "rule_type": "approval",
+      "statement": "Employees may submit business expenses (travel, client meals, small tools/subscriptions under €100) via the expense portal without pre-approval, up to €500/month.",
+      "context": "Standard Employee Expense Limits",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-001"
+      ],
+      "document_id": "PROC-FIN-001",
+      "source_filename": "expense_policy.md",
+      "section": "Expense Policy > Standard Employee Expense Limits",
+      "chunk_ids": [
+        "PROC-FIN-001_v1.9_000"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [
+          "€100",
+          "€500/month"
+        ],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": true,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-6CBEAC98",
+      "rule_type": "approval",
+      "statement": "€500–€2,000: requires manager pre-approval before booking/purchase where practical.",
+      "context": "Approval Thresholds",
+      "role_ids": [],
+      "generic_roles": [
+        "Manager"
+      ],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-001"
+      ],
+      "document_id": "PROC-FIN-001",
+      "source_filename": "expense_policy.md",
+      "section": "Expense Policy > Approval Thresholds",
+      "chunk_ids": [
+        "PROC-FIN-001_v1.9_001"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [
+          "€500–€2,000"
+        ],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-6D2FFFB5",
+      "rule_type": "approval",
+      "statement": "exceptions require manager approval in advance.",
+      "context": "Travel",
+      "role_ids": [],
+      "generic_roles": [
+        "Manager"
+      ],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-001"
+      ],
+      "document_id": "PROC-FIN-001",
+      "source_filename": "expense_policy.md",
+      "section": "Expense Policy > Travel",
+      "chunk_ids": [
+        "PROC-FIN-001_v1.9_002"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-9F266826",
+      "rule_type": "approval",
+      "statement": "Above €2,000: requires Finance Manager approval regardless of category.",
+      "context": "Approval Thresholds",
+      "role_ids": [
+        "ROLE-033"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-001"
+      ],
+      "document_id": "PROC-FIN-001",
+      "source_filename": "expense_policy.md",
+      "section": "Expense Policy > Approval Thresholds",
+      "chunk_ids": [
+        "PROC-FIN-001_v1.9_001"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [
+          "€2,000"
+        ],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-B76BAE1B",
+      "rule_type": "approval",
+      "statement": "Under €500/month cumulative: no pre-approval required, manager reviews on submission.",
+      "context": "Approval Thresholds",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-001"
+      ],
+      "document_id": "PROC-FIN-001",
+      "source_filename": "expense_policy.md",
+      "section": "Expense Policy > Approval Thresholds",
+      "chunk_ids": [
+        "PROC-FIN-001_v1.9_001"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [
+          "€500/month"
+        ],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": true,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-07391268",
+      "rule_type": "approval",
+      "statement": "Purchases €1,000–€10,000 require Finance Manager approval",
+      "context": "Threshold approval",
+      "role_ids": [
+        "ROLE-033"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-002"
+      ],
+      "document_id": "PROC-FIN-002",
+      "source_filename": "procurement_process.md",
+      "section": "Procurement Process > Steps",
+      "chunk_ids": [
+        "PROC-FIN-002_v1.3_001"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [
+          "€1,000–€10,000"
+        ],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-1FCE21CA",
+      "rule_type": "approval",
+      "statement": "Direct manager approves.",
+      "context": "Manager approval",
+      "role_ids": [],
+      "generic_roles": [
+        "Direct manager"
+      ],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-002"
+      ],
+      "document_id": "PROC-FIN-002",
+      "source_filename": "procurement_process.md",
+      "section": "Procurement Process > Steps",
+      "chunk_ids": [
+        "PROC-FIN-002_v1.3_001"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-A1BDD332",
+      "rule_type": "approval",
+      "statement": "Department heads may approve recurring software subscriptions under €200/month directly without going through the full procurement flow, but must still log the subscription with Operations for the annual software audit.",
+      "context": "Recurring Software Subscriptions",
+      "role_ids": [],
+      "generic_roles": [
+        "Department heads"
+      ],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-002"
+      ],
+      "document_id": "PROC-FIN-002",
+      "source_filename": "procurement_process.md",
+      "section": "Procurement Process > Recurring Software Subscriptions",
+      "chunk_ids": [
+        "PROC-FIN-002_v1.3_002"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [
+          "€200/month"
+        ],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-FE68154F",
+      "rule_type": "approval",
+      "statement": "above €10,000 requires CFO approval.",
+      "context": "Threshold approval",
+      "role_ids": [
+        "ROLE-032"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-002"
+      ],
+      "document_id": "PROC-FIN-002",
+      "source_filename": "procurement_process.md",
+      "section": "Procurement Process > Steps",
+      "chunk_ids": [
+        "PROC-FIN-002_v1.3_001"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [
+          "€10,000"
+        ],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-F6EF8790",
+      "rule_type": "approval",
+      "statement": "manager approval required for leave exceeding 5 consecutive working days.",
+      "context": "Requesting Leave",
+      "role_ids": [],
+      "generic_roles": [
+        "Manager"
+      ],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-HR-002"
+      ],
+      "document_id": "PROC-HR-002",
+      "source_filename": "leave_policy.md",
+      "section": "Leave and HR Policies > Requesting Leave",
+      "chunk_ids": [
+        "PROC-HR-002_v1.5_003"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": [
+          {
+            "text": "exceeding 5 consecutive working days",
+            "value": "5",
+            "unit": "consecutive working days"
+          }
+        ]
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-E24538B1",
+      "rule_type": "approval",
+      "statement": "The Implementation Manager provides final go-live approval after Consultant confirms all discovery items are resolved.",
+      "context": "Go-live sign-off",
+      "role_ids": [
+        "ROLE-022"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-IMPL-001"
+      ],
+      "document_id": "PROC-IMPL-001",
+      "source_filename": "customer_onboarding.md",
+      "section": "Customer Onboarding Process > Steps",
+      "chunk_ids": [
+        "PROC-IMPL-001_v2.0_002"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-10913E9F",
+      "rule_type": "approval",
+      "statement": "Project Lead provides final go-live sign-off.",
+      "context": "Steps",
+      "role_ids": [
+        "ROLE-022"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-IMPL-001-V1"
+      ],
+      "document_id": "PROC-IMPL-001-V1",
+      "source_filename": "customer_onboarding_v1_ARCHIVED.md",
+      "section": "Customer Onboarding Process > Steps",
+      "chunk_ids": [
+        "PROC-IMPL-001_v1.0_002"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": true,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-0A7C9BEF",
+      "rule_type": "approval",
+      "statement": "Analytics production data warehouse: approved by Data & Analytics Manager + IT provisioning",
+      "context": "table: System / Approver",
+      "role_ids": [
+        "ROLE-018"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [
+        "IT provisioning"
+      ],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-IT-001"
+      ],
+      "document_id": "PROC-IT-001",
+      "source_filename": "access_control_policy.md",
+      "section": "Access Control Policy > Role-Specific Access (requires request + approval)",
+      "chunk_ids": [
+        "PROC-IT-001_v2.3_002"
+      ],
+      "method": "approver_table",
+      "confidence": 0.95,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-4B33DE9D",
+      "rule_type": "approval",
+      "statement": "New Data Analysts require explicit Data & Analytics Manager approval before IT provisions production data warehouse access — this is not automatic at hire, even for the Data & Analytics department, because the warehouse contains customer data alongside internal data.",
+      "context": "Analytics Environment Access",
+      "role_ids": [
+        "ROLE-018"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [
+        "ROLE-019"
+      ],
+      "process_ids": [
+        "PROC-IT-001"
+      ],
+      "document_id": "PROC-IT-001",
+      "source_filename": "access_control_policy.md",
+      "section": "Access Control Policy > Analytics Environment Access",
+      "chunk_ids": [
+        "PROC-IT-001_v2.3_003"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-5C528B50",
+      "rule_type": "approval",
+      "statement": "Customer production tenants (Implementation tooling): approved by Implementation Manager",
+      "context": "table: System / Approver",
+      "role_ids": [
+        "ROLE-022"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-IT-001"
+      ],
+      "document_id": "PROC-IT-001",
+      "source_filename": "access_control_policy.md",
+      "section": "Access Control Policy > Role-Specific Access (requires request + approval)",
+      "chunk_ids": [
+        "PROC-IT-001_v2.3_002"
+      ],
+      "method": "approver_table",
+      "confidence": 0.95,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-649276AB",
+      "rule_type": "approval",
+      "statement": "Production code deployment: approved by Engineering Manager",
+      "context": "table: System / Approver",
+      "role_ids": [
+        "ROLE-013"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-IT-001"
+      ],
+      "document_id": "PROC-IT-001",
+      "source_filename": "access_control_policy.md",
+      "section": "Access Control Policy > Role-Specific Access (requires request + approval)",
+      "chunk_ids": [
+        "PROC-IT-001_v2.3_002"
+      ],
+      "method": "approver_table",
+      "confidence": 0.95,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-6A954B2B",
+      "rule_type": "approval",
+      "statement": "Billing/finance systems: approved by Finance Manager",
+      "context": "table: System / Approver",
+      "role_ids": [
+        "ROLE-033"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-IT-001"
+      ],
+      "document_id": "PROC-IT-001",
+      "source_filename": "access_control_policy.md",
+      "section": "Access Control Policy > Role-Specific Access (requires request + approval)",
+      "chunk_ids": [
+        "PROC-IT-001_v2.3_002"
+      ],
+      "method": "approver_table",
+      "confidence": 0.95,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-C79276E2",
+      "rule_type": "approval",
+      "statement": "Access to internal systems and customer data is granted on a least-privilege, role-based basis and must be requested and approved — it is never granted by default beyond standard company-wide tools (email, chat, HR system).",
+      "context": "Principle",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-IT-001"
+      ],
+      "document_id": "PROC-IT-001",
+      "source_filename": "access_control_policy.md",
+      "section": "Access Control Policy > Principle",
+      "chunk_ids": [
+        "PROC-IT-001_v2.3_000"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": false
+    },
+    {
+      "rule_id": "APR-F9BE6AFF",
+      "rule_type": "approval",
+      "statement": "Customer production tenants (Support tooling): approved by Support Team Lead",
+      "context": "table: System / Approver",
+      "role_ids": [
+        "ROLE-028"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-IT-001"
+      ],
+      "document_id": "PROC-IT-001",
+      "source_filename": "access_control_policy.md",
+      "section": "Access Control Policy > Role-Specific Access (requires request + approval)",
+      "chunk_ids": [
+        "PROC-IT-001_v2.3_002"
+      ],
+      "method": "approver_table",
+      "confidence": 0.95,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-11814885",
+      "rule_type": "approval",
+      "statement": "Discounts up to 15% require no additional approval.",
+      "context": "Discount approval",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-SALES-002"
+      ],
+      "document_id": "PROC-SALES-002",
+      "source_filename": "proposal_quotation.md",
+      "section": "Proposal and Quotation Process > Steps",
+      "chunk_ids": [
+        "PROC-SALES-002_v2.1_001"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [
+          "15%"
+        ],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": true,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-2C7F3A2A",
+      "rule_type": "approval",
+      "statement": "15–30% requires Sales Manager approval.",
+      "context": "Discount approval",
+      "role_ids": [
+        "ROLE-002"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-SALES-002"
+      ],
+      "document_id": "PROC-SALES-002",
+      "source_filename": "proposal_quotation.md",
+      "section": "Proposal and Quotation Process > Steps",
+      "chunk_ids": [
+        "PROC-SALES-002_v2.1_001"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [
+          "15–30%"
+        ],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "APR-DD81D7B2",
+      "rule_type": "approval",
+      "statement": "Above 30%, or any multi-year term, requires VP Sales approval.",
+      "context": "Discount approval",
+      "role_ids": [
+        "ROLE-001"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-SALES-002"
+      ],
+      "document_id": "PROC-SALES-002",
+      "source_filename": "proposal_quotation.md",
+      "section": "Proposal and Quotation Process > Steps",
+      "chunk_ids": [
+        "PROC-SALES-002_v2.1_001"
+      ],
+      "method": "approval_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [
+          "30%"
+        ],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    }
+  ],
+  "escalation_rules": [
+    {
+      "rule_id": "ESC-CAF1778A",
+      "rule_type": "escalation",
+      "statement": "Customer Success owns the ongoing relationship with a customer after go-live: renewal, expansion, health monitoring, and executive escalations.",
+      "context": "Customer Success Department",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [],
+      "document_id": "DOC-DEPT-CS",
+      "source_filename": "customer_success.md",
+      "section": "Customer Success Department",
+      "chunk_ids": [
+        "DOC-DEPT-CS_v1.9_000"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": false
+    },
+    {
+      "rule_id": "ESC-DD4FAE09",
+      "rule_type": "escalation",
+      "statement": "Owns retention and expansion revenue targets, is the final internal escalation point for at-risk accounts before executive involvement (see PROC-CS-001).",
+      "context": "VP Customer Success",
+      "role_ids": [
+        "ROLE-025"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-CS-001"
+      ],
+      "document_id": "DOC-DEPT-CS",
+      "source_filename": "customer_success.md",
+      "section": "Customer Success Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-CS_v1.9_001"
+      ],
+      "method": "role_paragraph",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-DC1B8CFC",
+      "rule_type": "escalation",
+      "statement": "Manages one squad (6–9 engineers), owns delivery timelines and is the escalation point for P1/P2 defects assigned to their squad.",
+      "context": "Engineering Manager",
+      "role_ids": [
+        "ROLE-013"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [],
+      "document_id": "DOC-DEPT-ENG",
+      "source_filename": "engineering.md",
+      "section": "Software Engineering Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-ENG_v2.1_001"
+      ],
+      "method": "role_paragraph",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-33162ABD",
+      "rule_type": "escalation",
+      "statement": "escalation point for Implementation Consultants on integration questions involving NexConnect.",
+      "context": "Solutions Architect",
+      "role_ids": [
+        "ROLE-023"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [
+        "ROLE-024"
+      ],
+      "process_ids": [],
+      "document_id": "DOC-DEPT-IMPL",
+      "source_filename": "implementation.md",
+      "section": "Implementation / Consulting Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-IMPL_v2.0_001"
+      ],
+      "method": "role_paragraph",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-650077CE",
+      "rule_type": "escalation",
+      "statement": "Handles the most complex cases, works directly with Engineering on suspected product defects (see PROC-ENG-002, Bug Reporting & Escalation).",
+      "context": "Support Engineer L3",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-ENG-002"
+      ],
+      "document_id": "DOC-DEPT-SUP",
+      "source_filename": "technical_support.md",
+      "section": "Technical Support Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-SUP_v2.2_001"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": false
+    },
+    {
+      "rule_id": "ESC-7A5283D9",
+      "rule_type": "escalation",
+      "statement": "escalation point for P1 incidents outside business hours.",
+      "context": "Support Team Lead",
+      "role_ids": [
+        "ROLE-028"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [],
+      "document_id": "DOC-DEPT-SUP",
+      "source_filename": "technical_support.md",
+      "section": "Technical Support Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-SUP_v2.2_001"
+      ],
+      "method": "role_paragraph",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-AC2837D3",
+      "rule_type": "escalation",
+      "statement": "Technical Support handles customer-reported issues (tickets) after go-live, following a tiered escalation model.",
+      "context": "Technical Support Department",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [],
+      "document_id": "DOC-DEPT-SUP",
+      "source_filename": "technical_support.md",
+      "section": "Technical Support Department",
+      "chunk_ids": [
+        "DOC-DEPT-SUP_v2.2_000"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": false
+    },
+    {
+      "rule_id": "ESC-CC01023E",
+      "rule_type": "escalation",
+      "statement": "Deeper product troubleshooting, configuration-level fixes, escalation point for L1.",
+      "context": "Support Engineer L2",
+      "role_ids": [
+        "ROLE-030"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [],
+      "document_id": "DOC-DEPT-SUP",
+      "source_filename": "technical_support.md",
+      "section": "Technical Support Department > Roles",
+      "chunk_ids": [
+        "DOC-DEPT-SUP_v2.2_001"
+      ],
+      "method": "role_paragraph",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-2103DB88",
+      "rule_type": "escalation",
+      "statement": "Level 1 — CSM-handled: Standard account concerns (usage questions, minor dissatisfaction) handled directly by the assigned Customer Success Manager.",
+      "context": "Level 1 — CSM-handled",
+      "role_ids": [
+        "ROLE-026"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-CS-001"
+      ],
+      "document_id": "PROC-CS-001",
+      "source_filename": "customer_escalation_policy.md",
+      "section": "Customer Escalation Policy > Escalation Levels",
+      "chunk_ids": [
+        "PROC-CS-001_v1.7_001"
+      ],
+      "method": "escalation_level",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": 1,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-2CDBEFBC",
+      "rule_type": "escalation",
+      "statement": "Level 3 — Executive (CEO/CTO): Reserved for strategic accounts, contract-value accounts above €100,000 ARR, or reputational-risk situations (e.g., public complaint, data exposure incident).",
+      "context": "Level 3 — Executive (CEO/CTO)",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [
+        "Executive (CEO/CTO)"
+      ],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-CS-001"
+      ],
+      "document_id": "PROC-CS-001",
+      "source_filename": "customer_escalation_policy.md",
+      "section": "Customer Escalation Policy > Escalation Levels",
+      "chunk_ids": [
+        "PROC-CS-001_v1.7_001"
+      ],
+      "method": "escalation_level",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [
+          "€100,000"
+        ],
+        "percents": [],
+        "durations": []
+      },
+      "level": 3,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-55E5A6F2",
+      "rule_type": "escalation",
+      "statement": "Define how at-risk or unhappy customer situations are escalated internally.",
+      "context": "Purpose",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-CS-001"
+      ],
+      "document_id": "PROC-CS-001",
+      "source_filename": "customer_escalation_policy.md",
+      "section": "Customer Escalation Policy > Purpose",
+      "chunk_ids": [
+        "PROC-CS-001_v1.7_000"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": false
+    },
+    {
+      "rule_id": "ESC-8CC16030",
+      "rule_type": "escalation",
+      "statement": "Level 2 — VP Customer Success: Escalate when: a customer explicitly threatens churn, requests a call with Nexora leadership, or an unresolved P1 incident has affected the account for more than 24 hours.",
+      "context": "Level 2 — VP Customer Success",
+      "role_ids": [
+        "ROLE-025"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-CS-001"
+      ],
+      "document_id": "PROC-CS-001",
+      "source_filename": "customer_escalation_policy.md",
+      "section": "Customer Escalation Policy > Escalation Levels",
+      "chunk_ids": [
+        "PROC-CS-001_v1.7_001"
+      ],
+      "method": "escalation_level",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": [
+          {
+            "text": "more than 24 hours",
+            "value": "24",
+            "unit": "hours"
+          }
+        ]
+      },
+      "level": 2,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-DBAD87B7",
+      "rule_type": "escalation",
+      "statement": "A technical P1 incident (PROC-SUP-002) affecting a customer does not automatically trigger a Level 2 customer escalation — the CSM makes that judgment based on customer relationship context and incident duration.",
+      "context": "Relationship to Incident Management",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [
+        "ROLE-026"
+      ],
+      "process_ids": [
+        "PROC-CS-001",
+        "PROC-SUP-002"
+      ],
+      "document_id": "PROC-CS-001",
+      "source_filename": "customer_escalation_policy.md",
+      "section": "Customer Escalation Policy > Relationship to Incident Management",
+      "chunk_ids": [
+        "PROC-CS-001_v1.7_002"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": false
+    },
+    {
+      "rule_id": "ESC-31741840",
+      "rule_type": "escalation",
+      "statement": "overdue invoices (30+ days) trigger an automatic reminder, then escalation to the account's Customer Success Manager at 45 days.",
+      "context": "Customer Invoicing (Accounts Receivable)",
+      "role_ids": [
+        "ROLE-026"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-003"
+      ],
+      "document_id": "PROC-FIN-003",
+      "source_filename": "invoice_payment_process.md",
+      "section": "Invoice and Payment Process > Customer Invoicing (Accounts Receivable)",
+      "chunk_ids": [
+        "PROC-FIN-003_v1.6_000"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": [
+          {
+            "text": "30+ days",
+            "value": "30+",
+            "unit": "days"
+          },
+          {
+            "text": "at 45 days",
+            "value": "45",
+            "unit": "days"
+          }
+        ]
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-63A67D48",
+      "rule_type": "escalation",
+      "statement": "Billing disputes are logged by the AP/AR Specialist and routed to the Finance Manager",
+      "context": "Dispute Handling",
+      "role_ids": [
+        "ROLE-033"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [
+        "ROLE-036"
+      ],
+      "process_ids": [
+        "PROC-FIN-003"
+      ],
+      "document_id": "PROC-FIN-003",
+      "source_filename": "invoice_payment_process.md",
+      "section": "Invoice and Payment Process > Dispute Handling",
+      "chunk_ids": [
+        "PROC-FIN-003_v1.6_002"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-AD074D45",
+      "rule_type": "escalation",
+      "statement": "disputes involving contract interpretation are routed jointly to the Customer Success Manager and Finance Manager.",
+      "context": "Dispute Handling",
+      "role_ids": [
+        "ROLE-026",
+        "ROLE-033"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-FIN-003"
+      ],
+      "document_id": "PROC-FIN-003",
+      "source_filename": "invoice_payment_process.md",
+      "section": "Invoice and Payment Process > Dispute Handling",
+      "chunk_ids": [
+        "PROC-FIN-003_v1.6_002"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-513F6C5B",
+      "rule_type": "escalation",
+      "statement": "Any suspected data exposure must be reported to the CISO within 24 hours of discovery, regardless of confirmed severity (see PROC-SUP-002).",
+      "context": "Incident Reporting",
+      "role_ids": [
+        "ROLE-042"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-IT-002",
+        "PROC-SUP-002"
+      ],
+      "document_id": "PROC-IT-002",
+      "source_filename": "data_security_policy.md",
+      "section": "Data Security Policy > Key Requirements",
+      "chunk_ids": [
+        "PROC-IT-002_v3.1_001"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": [
+          {
+            "text": "within 24 hours",
+            "value": "24",
+            "unit": "hours"
+          }
+        ]
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-D784A4A6",
+      "rule_type": "escalation",
+      "statement": "Leads unactioned after 3 business days are automatically re-queued and flagged to the Sales Manager.",
+      "context": "SLA",
+      "role_ids": [
+        "ROLE-002"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-SALES-001"
+      ],
+      "document_id": "PROC-SALES-001",
+      "source_filename": "lead_qualification.md",
+      "section": "Lead Qualification Process > SLA",
+      "chunk_ids": [
+        "PROC-SALES-001_v1.4_002"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": [
+          {
+            "text": "after 3 business days",
+            "value": "3",
+            "unit": "business days"
+          }
+        ]
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-82D4F484",
+      "rule_type": "escalation",
+      "statement": "no formal escalation path exists.",
+      "context": "Known Gap",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-SALES-002"
+      ],
+      "document_id": "PROC-SALES-002",
+      "source_filename": "proposal_quotation.md",
+      "section": "Proposal and Quotation Process > Known Gap",
+      "chunk_ids": [
+        "PROC-SALES-002_v2.1_002"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": true,
+      "identified": false
+    },
+    {
+      "rule_id": "ESC-46652603",
+      "rule_type": "escalation",
+      "statement": "Unresolved or complex issues escalate to L2, then L3 if a product defect is suspected.",
+      "context": "Resolution or escalation",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [
+        "L2, then L3"
+      ],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-SUP-001"
+      ],
+      "document_id": "PROC-SUP-001",
+      "source_filename": "customer_support_procedure.md",
+      "section": "Customer Support Procedures > Ticket Lifecycle",
+      "chunk_ids": [
+        "PROC-SUP-001_v1.8_001"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    },
+    {
+      "rule_id": "ESC-79FCEAB8",
+      "rule_type": "escalation",
+      "statement": "Via monitoring alert (DevOps), Support ticket escalation, or direct customer report.",
+      "context": "Detection",
+      "role_ids": [],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-SUP-002"
+      ],
+      "document_id": "PROC-SUP-002",
+      "source_filename": "incident_management.md",
+      "section": "Incident Management Process > Steps",
+      "chunk_ids": [
+        "PROC-SUP-002_v2.0_001"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": false
+    },
+    {
+      "rule_id": "ESC-EDB4B4D4",
+      "rule_type": "escalation",
+      "statement": "Any incident with suspected unauthorized data access must be escalated immediately to the CISO, in parallel with standard incident response — see PROC-IT-002.",
+      "context": "Escalation to Security",
+      "role_ids": [
+        "ROLE-042"
+      ],
+      "generic_roles": [],
+      "unresolved_targets": [],
+      "mentioned_role_ids": [],
+      "process_ids": [
+        "PROC-SUP-002",
+        "PROC-IT-002"
+      ],
+      "document_id": "PROC-SUP-002",
+      "source_filename": "incident_management.md",
+      "section": "Incident Management Process > Escalation to Security",
+      "chunk_ids": [
+        "PROC-SUP-002_v2.0_002"
+      ],
+      "method": "escalation_pattern",
+      "confidence": 0.85,
+      "historical": false,
+      "conditions": {
+        "amounts": [],
+        "percents": [],
+        "durations": []
+      },
+      "level": null,
+      "no_approval_required": false,
+      "states_absence": false,
+      "identified": true
+    }
+  ],
+  "org_chart": {
+    "edges": [
+      {
+        "child": "CTO",
+        "parent": "CEO",
+        "quote": "├── CTO",
+        "child_role_ids": [],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CTO",
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "VP Engineering",
+        "parent": "CTO",
+        "quote": "│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps",
+        "child_role_ids": [
+          "ROLE-012"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CTO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Engineering Managers",
+        "parent": "VP Engineering",
+        "quote": "│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps",
+        "child_role_ids": [
+          "ROLE-013"
+        ],
+        "parent_role_ids": [
+          "ROLE-012"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Software Engineers",
+        "parent": "Engineering Managers",
+        "quote": "│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps",
+        "child_role_ids": [
+          "ROLE-015"
+        ],
+        "parent_role_ids": [
+          "ROLE-013"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "QA",
+        "parent": "Engineering Managers",
+        "quote": "│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps",
+        "child_role_ids": [],
+        "parent_role_ids": [
+          "ROLE-013"
+        ],
+        "unresolved": [
+          "QA"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "DevOps",
+        "parent": "Engineering Managers",
+        "quote": "│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps",
+        "child_role_ids": [],
+        "parent_role_ids": [
+          "ROLE-013"
+        ],
+        "unresolved": [
+          "DevOps"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "VP Product",
+        "parent": "CTO",
+        "quote": "│   ├── VP Product → Product Managers → Product Analysts",
+        "child_role_ids": [
+          "ROLE-009"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CTO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Product Managers",
+        "parent": "VP Product",
+        "quote": "│   ├── VP Product → Product Managers → Product Analysts",
+        "child_role_ids": [
+          "ROLE-010"
+        ],
+        "parent_role_ids": [
+          "ROLE-009"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Product Analysts",
+        "parent": "Product Managers",
+        "quote": "│   ├── VP Product → Product Managers → Product Analysts",
+        "child_role_ids": [
+          "ROLE-011"
+        ],
+        "parent_role_ids": [
+          "ROLE-010"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Data & Analytics Manager",
+        "parent": "CTO",
+        "quote": "│   └── Data & Analytics Manager → Data Analysts / Data Engineers / BI Developers",
+        "child_role_ids": [
+          "ROLE-018"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CTO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Data Analysts",
+        "parent": "Data & Analytics Manager",
+        "quote": "│   └── Data & Analytics Manager → Data Analysts / Data Engineers / BI Developers",
+        "child_role_ids": [
+          "ROLE-019"
+        ],
+        "parent_role_ids": [
+          "ROLE-018"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Data Engineers",
+        "parent": "Data & Analytics Manager",
+        "quote": "│   └── Data & Analytics Manager → Data Analysts / Data Engineers / BI Developers",
+        "child_role_ids": [
+          "ROLE-020"
+        ],
+        "parent_role_ids": [
+          "ROLE-018"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "BI Developers",
+        "parent": "Data & Analytics Manager",
+        "quote": "│   └── Data & Analytics Manager → Data Analysts / Data Engineers / BI Developers",
+        "child_role_ids": [
+          "ROLE-021"
+        ],
+        "parent_role_ids": [
+          "ROLE-018"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "VP Sales",
+        "parent": "CEO",
+        "quote": "├── VP Sales",
+        "child_role_ids": [
+          "ROLE-001"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Sales Managers",
+        "parent": "VP Sales",
+        "quote": "│   └── Sales Managers → Account Executives / Sales Development Reps",
+        "child_role_ids": [
+          "ROLE-002"
+        ],
+        "parent_role_ids": [
+          "ROLE-001"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Account Executives",
+        "parent": "Sales Managers",
+        "quote": "│   └── Sales Managers → Account Executives / Sales Development Reps",
+        "child_role_ids": [
+          "ROLE-003"
+        ],
+        "parent_role_ids": [
+          "ROLE-002"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Sales Development Reps",
+        "parent": "Sales Managers",
+        "quote": "│   └── Sales Managers → Account Executives / Sales Development Reps",
+        "child_role_ids": [],
+        "parent_role_ids": [
+          "ROLE-002"
+        ],
+        "unresolved": [
+          "Sales Development Rep"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "VP Marketing",
+        "parent": "CEO",
+        "quote": "├── VP Marketing → Marketing Managers → Marketing Specialists",
+        "child_role_ids": [
+          "ROLE-005"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Marketing Managers",
+        "parent": "VP Marketing",
+        "quote": "├── VP Marketing → Marketing Managers → Marketing Specialists",
+        "child_role_ids": [],
+        "parent_role_ids": [
+          "ROLE-005"
+        ],
+        "unresolved": [
+          "Marketing Manager"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Marketing Specialists",
+        "parent": "Marketing Managers",
+        "quote": "├── VP Marketing → Marketing Managers → Marketing Specialists",
+        "child_role_ids": [
+          "ROLE-007"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "Marketing Manager"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "VP Customer Success",
+        "parent": "CEO",
+        "quote": "├── VP Customer Success",
+        "child_role_ids": [
+          "ROLE-025"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Customer Success Managers",
+        "parent": "VP Customer Success",
+        "quote": "│   ├── Customer Success Managers",
+        "child_role_ids": [
+          "ROLE-026"
+        ],
+        "parent_role_ids": [
+          "ROLE-025"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Implementation Manager",
+        "parent": "VP Customer Success",
+        "quote": "│   └── Implementation Manager → Implementation Consultants / Solutions Architects",
+        "child_role_ids": [
+          "ROLE-022"
+        ],
+        "parent_role_ids": [
+          "ROLE-025"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Implementation Consultants",
+        "parent": "Implementation Manager",
+        "quote": "│   └── Implementation Manager → Implementation Consultants / Solutions Architects",
+        "child_role_ids": [
+          "ROLE-024"
+        ],
+        "parent_role_ids": [
+          "ROLE-022"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Solutions Architects",
+        "parent": "Implementation Manager",
+        "quote": "│   └── Implementation Manager → Implementation Consultants / Solutions Architects",
+        "child_role_ids": [
+          "ROLE-023"
+        ],
+        "parent_role_ids": [
+          "ROLE-022"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Support Team Lead",
+        "parent": "CEO",
+        "quote": "├── Support Team Lead → Support Engineers (L1/L2/L3)",
+        "child_role_ids": [
+          "ROLE-028"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Support Engineers (L1/L2/L3)",
+        "parent": "Support Team Lead",
+        "quote": "├── Support Team Lead → Support Engineers (L1/L2/L3)",
+        "child_role_ids": [
+          "ROLE-031",
+          "ROLE-030",
+          "ROLE-029"
+        ],
+        "parent_role_ids": [
+          "ROLE-028"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "CFO",
+        "parent": "CEO",
+        "quote": "├── CFO",
+        "child_role_ids": [
+          "ROLE-032"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Finance Manager",
+        "parent": "CFO",
+        "quote": "│   └── Finance Manager → Accountants / Financial Analysts / AP-AR Specialists",
+        "child_role_ids": [
+          "ROLE-033"
+        ],
+        "parent_role_ids": [
+          "ROLE-032"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Accountants",
+        "parent": "Finance Manager",
+        "quote": "│   └── Finance Manager → Accountants / Financial Analysts / AP-AR Specialists",
+        "child_role_ids": [
+          "ROLE-034"
+        ],
+        "parent_role_ids": [
+          "ROLE-033"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Financial Analysts",
+        "parent": "Finance Manager",
+        "quote": "│   └── Finance Manager → Accountants / Financial Analysts / AP-AR Specialists",
+        "child_role_ids": [
+          "ROLE-035"
+        ],
+        "parent_role_ids": [
+          "ROLE-033"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "AP-AR Specialists",
+        "parent": "Finance Manager",
+        "quote": "│   └── Finance Manager → Accountants / Financial Analysts / AP-AR Specialists",
+        "child_role_ids": [
+          "ROLE-036"
+        ],
+        "parent_role_ids": [
+          "ROLE-033"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Head of HR",
+        "parent": "CEO",
+        "quote": "├── Head of HR",
+        "child_role_ids": [
+          "ROLE-037"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "HR Managers",
+        "parent": "Head of HR",
+        "quote": "│   └── HR Managers → HR Business Partners / HR Generalists / Recruiters",
+        "child_role_ids": [
+          "ROLE-038"
+        ],
+        "parent_role_ids": [
+          "ROLE-037"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "HR Business Partners",
+        "parent": "HR Managers",
+        "quote": "│   └── HR Managers → HR Business Partners / HR Generalists / Recruiters",
+        "child_role_ids": [
+          "ROLE-039"
+        ],
+        "parent_role_ids": [
+          "ROLE-038"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "HR Generalists",
+        "parent": "HR Managers",
+        "quote": "│   └── HR Managers → HR Business Partners / HR Generalists / Recruiters",
+        "child_role_ids": [
+          "ROLE-040"
+        ],
+        "parent_role_ids": [
+          "ROLE-038"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Recruiters",
+        "parent": "HR Managers",
+        "quote": "│   └── HR Managers → HR Business Partners / HR Generalists / Recruiters",
+        "child_role_ids": [
+          "ROLE-041"
+        ],
+        "parent_role_ids": [
+          "ROLE-038"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "CISO",
+        "parent": "CEO",
+        "quote": "├── CISO",
+        "child_role_ids": [
+          "ROLE-042"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "IT Manager",
+        "parent": "CISO",
+        "quote": "│   └── IT Manager → IT Support Specialists / Security Analysts",
+        "child_role_ids": [
+          "ROLE-043"
+        ],
+        "parent_role_ids": [
+          "ROLE-042"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "IT Support Specialists",
+        "parent": "IT Manager",
+        "quote": "│   └── IT Manager → IT Support Specialists / Security Analysts",
+        "child_role_ids": [
+          "ROLE-045"
+        ],
+        "parent_role_ids": [
+          "ROLE-043"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Security Analysts",
+        "parent": "IT Manager",
+        "quote": "│   └── IT Manager → IT Support Specialists / Security Analysts",
+        "child_role_ids": [
+          "ROLE-044"
+        ],
+        "parent_role_ids": [
+          "ROLE-043"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Operations Manager",
+        "parent": "CEO",
+        "quote": "└── Operations Manager → Operations Analysts / Office Managers",
+        "child_role_ids": [
+          "ROLE-046"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Operations Analysts",
+        "parent": "Operations Manager",
+        "quote": "└── Operations Manager → Operations Analysts / Office Managers",
+        "child_role_ids": [
+          "ROLE-047"
+        ],
+        "parent_role_ids": [
+          "ROLE-046"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Office Managers",
+        "parent": "Operations Manager",
+        "quote": "└── Operations Manager → Operations Analysts / Office Managers",
+        "child_role_ids": [
+          "ROLE-048"
+        ],
+        "parent_role_ids": [
+          "ROLE-046"
+        ],
+        "unresolved": [],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      }
+    ],
+    "unresolved": [
+      {
+        "child": "CTO",
+        "parent": "CEO",
+        "quote": "├── CTO",
+        "child_role_ids": [],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CTO",
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "VP Engineering",
+        "parent": "CTO",
+        "quote": "│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps",
+        "child_role_ids": [
+          "ROLE-012"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CTO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "QA",
+        "parent": "Engineering Managers",
+        "quote": "│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps",
+        "child_role_ids": [],
+        "parent_role_ids": [
+          "ROLE-013"
+        ],
+        "unresolved": [
+          "QA"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "DevOps",
+        "parent": "Engineering Managers",
+        "quote": "│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps",
+        "child_role_ids": [],
+        "parent_role_ids": [
+          "ROLE-013"
+        ],
+        "unresolved": [
+          "DevOps"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "VP Product",
+        "parent": "CTO",
+        "quote": "│   ├── VP Product → Product Managers → Product Analysts",
+        "child_role_ids": [
+          "ROLE-009"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CTO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Data & Analytics Manager",
+        "parent": "CTO",
+        "quote": "│   └── Data & Analytics Manager → Data Analysts / Data Engineers / BI Developers",
+        "child_role_ids": [
+          "ROLE-018"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CTO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "VP Sales",
+        "parent": "CEO",
+        "quote": "├── VP Sales",
+        "child_role_ids": [
+          "ROLE-001"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Sales Development Reps",
+        "parent": "Sales Managers",
+        "quote": "│   └── Sales Managers → Account Executives / Sales Development Reps",
+        "child_role_ids": [],
+        "parent_role_ids": [
+          "ROLE-002"
+        ],
+        "unresolved": [
+          "Sales Development Rep"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "VP Marketing",
+        "parent": "CEO",
+        "quote": "├── VP Marketing → Marketing Managers → Marketing Specialists",
+        "child_role_ids": [
+          "ROLE-005"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Marketing Managers",
+        "parent": "VP Marketing",
+        "quote": "├── VP Marketing → Marketing Managers → Marketing Specialists",
+        "child_role_ids": [],
+        "parent_role_ids": [
+          "ROLE-005"
+        ],
+        "unresolved": [
+          "Marketing Manager"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Marketing Specialists",
+        "parent": "Marketing Managers",
+        "quote": "├── VP Marketing → Marketing Managers → Marketing Specialists",
+        "child_role_ids": [
+          "ROLE-007"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "Marketing Manager"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "VP Customer Success",
+        "parent": "CEO",
+        "quote": "├── VP Customer Success",
+        "child_role_ids": [
+          "ROLE-025"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Support Team Lead",
+        "parent": "CEO",
+        "quote": "├── Support Team Lead → Support Engineers (L1/L2/L3)",
+        "child_role_ids": [
+          "ROLE-028"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "CFO",
+        "parent": "CEO",
+        "quote": "├── CFO",
+        "child_role_ids": [
+          "ROLE-032"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Head of HR",
+        "parent": "CEO",
+        "quote": "├── Head of HR",
+        "child_role_ids": [
+          "ROLE-037"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "CISO",
+        "parent": "CEO",
+        "quote": "├── CISO",
+        "child_role_ids": [
+          "ROLE-042"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "child": "Operations Manager",
+        "parent": "CEO",
+        "quote": "└── Operations Manager → Operations Analysts / Office Managers",
+        "child_role_ids": [
+          "ROLE-046"
+        ],
+        "parent_role_ids": [],
+        "unresolved": [
+          "CEO"
+        ],
+        "source_document": "DOC-CORP-002",
+        "source_filename": "organization.md",
+        "section": "Organization Structure > Reporting Lines (simplified)",
+        "chunk_ids": [
+          "DOC-CORP-002_v2.4_001"
+        ],
+        "confidence": 0.85
+      }
+    ]
+  }
+}

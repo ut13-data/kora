@@ -1,0 +1,4552 @@
+{
+  "method": {
+    "similarity_threshold": 0.3,
+    "min_section_words": 25,
+    "vectorizer": {
+      "stop_words": "english",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 2,
+      "max_df": 0.3,
+      "sublinear_tf": true
+    }
+  },
+  "topics": [
+    {
+      "topic_id": "TOPIC-CUSTOMER-SUCCESS",
+      "name": "Customer Success",
+      "level": "domain",
+      "anchor_key": "department:DEPT-CS",
+      "home_documents": [
+        "DOC-DEPT-CS",
+        "PROC-CS-001"
+      ],
+      "keywords": [
+        "csm",
+        "customer success",
+        "success",
+        "escalation",
+        "incident",
+        "customer escalation",
+        "level",
+        "accounts",
+        "account",
+        "escalation policy"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-DEPT-CS",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-CS-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-SCEN-001",
+          "method": "text_similarity",
+          "detail": "section 'Common Cross-Department Business Scenarios'",
+          "confidence": 0.5,
+          "similarity": {
+            "similarity": 0.34,
+            "section": "Common Cross-Department Business Scenarios",
+            "chunk_ids": [
+              "DOC-SCEN-001_v1.2_000",
+              "DOC-SCEN-001_v1.2_001"
+            ],
+            "shared_terms": [
+              "csm",
+              "success",
+              "customer success",
+              "incident",
+              "level"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-DATA-ANALYTICS",
+      "name": "Data & Analytics",
+      "level": "domain",
+      "anchor_key": "department:DEPT-DATA",
+      "home_documents": [
+        "DOC-DEPT-DATA"
+      ],
+      "keywords": [
+        "analytics",
+        "data analytics",
+        "data",
+        "internal",
+        "reporting",
+        "prioritization",
+        "internal reporting",
+        "backlog",
+        "nexview analytics",
+        "analytics department"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-DEPT-DATA",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-IT-001",
+          "method": "text_similarity",
+          "detail": "section 'Access Control Policy > Analytics Environment Access'",
+          "confidence": 0.5,
+          "similarity": {
+            "similarity": 0.327,
+            "section": "Access Control Policy > Analytics Environment Access",
+            "chunk_ids": [
+              "PROC-IT-001_v2.3_003"
+            ],
+            "shared_terms": [
+              "analytics",
+              "data",
+              "data analytics",
+              "analytics department",
+              "internal"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-SOFTWARE-ENGINEERING",
+      "name": "Software Engineering",
+      "level": "domain",
+      "anchor_key": "department:DEPT-ENG",
+      "home_documents": [
+        "DOC-DEPT-ENG",
+        "PROC-ENG-001",
+        "PROC-ENG-002"
+      ],
+      "keywords": [
+        "squad",
+        "engineering",
+        "software",
+        "engineer",
+        "sprint",
+        "engineering department",
+        "squads",
+        "software engineering",
+        "platform",
+        "engineering manager"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-DEPT-ENG",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-ENG-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-ENG-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-SUP-002",
+          "method": "text_similarity",
+          "detail": "section 'Incident Management Process > Steps'",
+          "confidence": 0.5,
+          "similarity": {
+            "similarity": 0.328,
+            "section": "Incident Management Process > Steps",
+            "chunk_ids": [
+              "PROC-SUP-002_v2.0_001"
+            ],
+            "shared_terms": [
+              "squad",
+              "engineering",
+              "devops",
+              "engineer",
+              "incident"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-FINANCE",
+      "name": "Finance",
+      "level": "domain",
+      "anchor_key": "department:DEPT-FIN",
+      "home_documents": [
+        "DOC-DEPT-FIN",
+        "PROC-FIN-001",
+        "PROC-FIN-002",
+        "PROC-FIN-003"
+      ],
+      "keywords": [
+        "finance",
+        "payment",
+        "finance manager",
+        "purchase",
+        "invoices",
+        "approval",
+        "contract",
+        "billing",
+        "procurement",
+        "vendor"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-DEPT-FIN",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-FIN-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-FIN-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-FIN-003",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-HR",
+      "name": "HR",
+      "level": "domain",
+      "anchor_key": "department:DEPT-HR",
+      "home_documents": [
+        "DOC-CARE-001",
+        "DOC-CARE-002",
+        "DOC-CARE-003",
+        "DOC-CARE-004",
+        "DOC-COMM-001",
+        "DOC-COMM-002",
+        "DOC-COMM-003",
+        "DOC-COMM-004",
+        "DOC-COMM-005",
+        "DOC-COMM-006",
+        "DOC-DEPT-HR",
+        "PROC-HR-001",
+        "PROC-HR-001-ADDENDUM",
+        "PROC-HR-002",
+        "PROC-HR-003"
+      ],
+      "keywords": [
+        "germany",
+        "tone",
+        "checklist",
+        "guidance",
+        "communication",
+        "settling-in checklist",
+        "settling-in",
+        "germany settling-in",
+        "german",
+        "individual"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-CARE-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CARE-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CARE-003",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CARE-004",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-003",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-004",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-005",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-006",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-DEPT-HR",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-HR-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-HR-001-ADDENDUM",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-HR-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-HR-003",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-IMPLEMENTATION-CONSULTING",
+      "name": "Implementation / Consulting",
+      "level": "domain",
+      "anchor_key": "department:DEPT-IMPL",
+      "home_documents": [
+        "DOC-DEPT-IMPL",
+        "DOC-PROD-IMPLSUP",
+        "PROC-IMPL-001",
+        "PROC-IMPL-001-V1"
+      ],
+      "keywords": [
+        "implementation",
+        "support",
+        "go-live",
+        "handoff",
+        "consultant",
+        "customer onboarding",
+        "consulting department",
+        "onboarding",
+        "implementation consulting",
+        "consulting"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-DEPT-IMPL",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-PROD-IMPLSUP",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-IMPL-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-IMPL-001-V1",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-002",
+          "method": "text_similarity",
+          "detail": "section 'Organization Structure > Note on Titles — Known Inconsistency'",
+          "confidence": 0.5,
+          "similarity": {
+            "similarity": 0.348,
+            "section": "Organization Structure > Note on Titles — Known Inconsistency",
+            "chunk_ids": [
+              "DOC-CORP-002_v2.4_002"
+            ],
+            "shared_terms": [
+              "implementation",
+              "project",
+              "project lead",
+              "lead",
+              "consulting department"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-DEPT-CS",
+          "method": "text_similarity",
+          "detail": "section 'Customer Success Department > Handoff from Implementation'",
+          "confidence": 0.5,
+          "similarity": {
+            "similarity": 0.322,
+            "section": "Customer Success Department > Handoff from Implementation",
+            "chunk_ids": [
+              "DOC-DEPT-CS_v1.9_002"
+            ],
+            "shared_terms": [
+              "implementation",
+              "handoff",
+              "go-live",
+              "success",
+              "customer success"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-SCEN-001",
+          "method": "text_similarity",
+          "detail": "section 'Common Cross-Department Business Scenarios'",
+          "confidence": 0.5,
+          "similarity": {
+            "similarity": 0.301,
+            "section": "Common Cross-Department Business Scenarios",
+            "chunk_ids": [
+              "DOC-SCEN-001_v1.2_000",
+              "DOC-SCEN-001_v1.2_001"
+            ],
+            "shared_terms": [
+              "implementation",
+              "consultant",
+              "implementation consultant",
+              "proc-impl-",
+              "go-live"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-IT-SECURITY",
+      "name": "IT / Security",
+      "level": "domain",
+      "anchor_key": "department:DEPT-IT",
+      "home_documents": [
+        "DOC-DEPT-IT",
+        "PROC-IT-001",
+        "PROC-IT-002",
+        "PROC-SUP-002"
+      ],
+      "keywords": [
+        "access",
+        "security",
+        "data",
+        "control",
+        "access control",
+        "policy",
+        "production data",
+        "production",
+        "control policy",
+        "systems"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-DEPT-IT",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-IT-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-IT-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-SUP-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-FAQ-001",
+          "method": "text_similarity",
+          "detail": "section 'Internal FAQ'",
+          "confidence": 0.5,
+          "similarity": {
+            "similarity": 0.305,
+            "section": "Internal FAQ",
+            "chunk_ids": [
+              "DOC-FAQ-001_v1.4_000",
+              "DOC-FAQ-001_v1.4_001"
+            ],
+            "shared_terms": [
+              "access",
+              "data",
+              "security",
+              "policy",
+              "production"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-MARKETING",
+      "name": "Marketing",
+      "level": "domain",
+      "anchor_key": "department:DEPT-MKT",
+      "home_documents": [
+        "DOC-DEPT-MKT"
+      ],
+      "keywords": [
+        "marketing",
+        "marketing department",
+        "pipeline",
+        "crm",
+        "content",
+        "content marketing",
+        "positioning",
+        "marketing manager",
+        "department",
+        "sales"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-DEPT-MKT",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-OPERATIONS",
+      "name": "Operations",
+      "level": "domain",
+      "anchor_key": "department:DEPT-OPS",
+      "home_documents": [
+        "DOC-DEPT-OPS",
+        "PROC-FIN-002"
+      ],
+      "keywords": [
+        "operations",
+        "procurement",
+        "vendor",
+        "facilities",
+        "finance",
+        "process",
+        "recurring",
+        "office",
+        "procurement process",
+        "operations department"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-DEPT-OPS",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-FIN-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-PRODUCT",
+      "name": "Product",
+      "level": "domain",
+      "anchor_key": "department:DEPT-PROD",
+      "home_documents": [
+        "DOC-DEPT-PROD",
+        "DOC-PROD-CUSTDEV",
+        "DOC-PROD-NEXAUTO",
+        "DOC-PROD-NEXCONNECT",
+        "DOC-PROD-NEXCRM",
+        "DOC-PROD-NEXFLOW",
+        "DOC-PROD-NEXVIEW"
+      ],
+      "keywords": [
+        "nexview",
+        "nexflow",
+        "analytics",
+        "product",
+        "nexview analytics",
+        "custom",
+        "nexconnect",
+        "data",
+        "nexauto",
+        "core"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-DEPT-PROD",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-PROD-CUSTDEV",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-PROD-NEXAUTO",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-PROD-NEXCONNECT",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-PROD-NEXCRM",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-PROD-NEXFLOW",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-PROD-NEXVIEW",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-001",
+          "method": "text_similarity",
+          "detail": "section 'Nexora Systems > Products (see products/ for full documentation)'",
+          "confidence": 0.5,
+          "similarity": {
+            "similarity": 0.411,
+            "section": "Nexora Systems > Products (see products/ for full documentation)",
+            "chunk_ids": [
+              "DOC-CORP-001_v3.2_003"
+            ],
+            "shared_terms": [
+              "analytics",
+              "nexview",
+              "nexflow",
+              "custom",
+              "nexview analytics"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-TG-001",
+          "method": "text_similarity",
+          "detail": "section 'Common Troubleshooting Guide'",
+          "confidence": 0.5,
+          "similarity": {
+            "similarity": 0.324,
+            "section": "Common Troubleshooting Guide",
+            "chunk_ids": [
+              "DOC-TG-001_v1.5_000",
+              "DOC-TG-001_v1.5_001"
+            ],
+            "shared_terms": [
+              "nexview",
+              "nexflow",
+              "custom",
+              "nexconnect",
+              "source"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-SALES",
+      "name": "Sales",
+      "level": "domain",
+      "anchor_key": "department:DEPT-SALES",
+      "home_documents": [
+        "DOC-DEPT-SALES",
+        "PROC-SALES-001",
+        "PROC-SALES-002"
+      ],
+      "keywords": [
+        "sales",
+        "sales manager",
+        "proposal",
+        "sdr",
+        "sales department",
+        "process",
+        "leads",
+        "deal",
+        "qualification",
+        "signed"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-DEPT-SALES",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-SALES-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-SALES-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-TECHNICAL-SUPPORT",
+      "name": "Technical Support",
+      "level": "domain",
+      "anchor_key": "department:DEPT-SUP",
+      "home_documents": [
+        "DOC-DEPT-SUP",
+        "DOC-PROD-IMPLSUP",
+        "DOC-TG-001",
+        "PROC-ENG-002",
+        "PROC-SUP-001",
+        "PROC-SUP-002"
+      ],
+      "keywords": [
+        "support",
+        "support engineer",
+        "engineer",
+        "defect",
+        "engineering",
+        "bug",
+        "ticket",
+        "priority",
+        "sla",
+        "business"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-DEPT-SUP",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-PROD-IMPLSUP",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-TG-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-ENG-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-SUP-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-SUP-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-CUSTOM-DEVELOPMENT-SERVICES",
+      "name": "Custom Development Services",
+      "level": "product",
+      "anchor_key": "product:PROD-CUSTDEV",
+      "home_documents": [
+        "DOC-PROD-CUSTDEV"
+      ],
+      "keywords": [
+        "custom development",
+        "custom",
+        "development",
+        "development services",
+        "services",
+        "engagement",
+        "product",
+        "standard",
+        "customers",
+        "configuration"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-PROD-CUSTDEV",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-IMPLEMENTATION-SUPPORT-SERVICES",
+      "name": "Implementation & Support Services",
+      "level": "product",
+      "anchor_key": "product:PROD-IMPLSUP",
+      "home_documents": [
+        "DOC-PROD-IMPLSUP"
+      ],
+      "keywords": [
+        "support",
+        "paid add-on",
+        "support tiers",
+        "add-on",
+        "tiers",
+        "support services",
+        "implementation support",
+        "sla",
+        "paid",
+        "services"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-PROD-IMPLSUP",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-NEXAUTO",
+      "name": "NexAuto",
+      "level": "product",
+      "anchor_key": "product:PROD-NEXAUTO",
+      "home_documents": [
+        "DOC-PROD-NEXAUTO"
+      ],
+      "keywords": [
+        "nexauto",
+        "automation",
+        "support",
+        "logging",
+        "draft",
+        "builder",
+        "knowledge base",
+        "knowledge",
+        "included",
+        "base"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-PROD-NEXAUTO",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-ENG",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-PROD",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-PROD-CUSTDEV",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-PROD-NEXFLOW",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-TG-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-NEXCONNECT",
+      "name": "NexConnect",
+      "level": "product",
+      "anchor_key": "product:PROD-NEXCONNECT",
+      "home_documents": [
+        "DOC-PROD-NEXCONNECT"
+      ],
+      "keywords": [
+        "nexconnect",
+        "connector",
+        "analytics nexflow",
+        "accounting",
+        "erp accounting",
+        "custom connector",
+        "pre-built",
+        "erp",
+        "layer",
+        "data"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-PROD-NEXCONNECT",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7,
+          "similarity": {
+            "similarity": 0.323,
+            "section": "Nexora Systems > Products (see products/ for full documentation)",
+            "chunk_ids": [
+              "DOC-CORP-001_v3.2_003"
+            ],
+            "shared_terms": [
+              "nexconnect",
+              "layer",
+              "analytics",
+              "products",
+              "nexview analytics"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-DEPT-ENG",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-IMPL",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-PROD",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-PROD-NEXVIEW",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7,
+          "similarity": {
+            "similarity": 0.302,
+            "section": "NexView Analytics > Common Configuration Dependencies",
+            "chunk_ids": [
+              "DOC-PROD-NEXVIEW_v4.1_003"
+            ],
+            "shared_terms": [
+              "nexconnect",
+              "data source",
+              "nexview",
+              "data",
+              "source"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-TG-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-IMPL-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-NEXCRM",
+      "name": "NexCRM",
+      "level": "product",
+      "anchor_key": "product:PROD-NEXCRM",
+      "home_documents": [
+        "DOC-PROD-NEXCRM"
+      ],
+      "keywords": [
+        "nexcrm",
+        "nexflow nexview",
+        "nexflow",
+        "nexview",
+        "proc-sales-",
+        "email",
+        "size",
+        "verticals",
+        "sale",
+        "customer customer"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-PROD-NEXCRM",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-ENG",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-MKT",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-PROD",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-PROD-NEXAUTO",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-SCEN-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-TG-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-SALES-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-SALES-002",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-NEXFLOW",
+      "name": "NexFlow",
+      "level": "product",
+      "anchor_key": "product:PROD-NEXFLOW",
+      "home_documents": [
+        "DOC-PROD-NEXFLOW"
+      ],
+      "keywords": [
+        "nexflow",
+        "tracking",
+        "batch lot",
+        "lot",
+        "batch",
+        "currently",
+        "stock",
+        "reorder",
+        "enabled",
+        "distributors"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-PROD-NEXFLOW",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-ENG",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-PROD",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-PROD-NEXAUTO",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-PROD-NEXCONNECT",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-PROD-NEXCRM",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-SCEN-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-TG-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-ENG-002",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-IMPL-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-NEXVIEW-ANALYTICS",
+      "name": "NexView Analytics",
+      "level": "product",
+      "anchor_key": "product:PROD-NEXVIEW",
+      "home_documents": [
+        "DOC-PROD-NEXVIEW"
+      ],
+      "keywords": [
+        "nexview",
+        "analytics",
+        "nexview analytics",
+        "data",
+        "distribution",
+        "pharma distribution",
+        "pharma",
+        "source",
+        "vertical",
+        "data source"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-PROD-NEXVIEW",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-DATA",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7,
+          "similarity": {
+            "similarity": 0.302,
+            "section": "Data & Analytics Department",
+            "chunk_ids": [
+              "DOC-DEPT-DATA_v1.5_000"
+            ],
+            "shared_terms": [
+              "analytics",
+              "nexview",
+              "nexview analytics",
+              "data",
+              "source"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-DEPT-ENG",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-PROD",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-PROD-NEXCONNECT",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7,
+          "similarity": {
+            "similarity": 0.397,
+            "section": "NexConnect > Typical Customer Profile",
+            "chunk_ids": [
+              "DOC-PROD-NEXCONNECT_v2.4_002"
+            ],
+            "shared_terms": [
+              "nexview",
+              "nexview analytics",
+              "analytics",
+              "data source",
+              "nexconnect"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-PROD-NEXCRM",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-PROD-NEXFLOW",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-TG-001",
+          "method": "linked",
+          "detail": "text mentions the product",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-CUSTOMER-ESCALATION-POLICY",
+      "name": "Customer Escalation Policy",
+      "level": "process",
+      "anchor_key": "process:PROC-CS-001",
+      "home_documents": [
+        "PROC-CS-001"
+      ],
+      "keywords": [
+        "incident",
+        "customer escalation",
+        "level",
+        "escalation",
+        "level customer",
+        "escalation policy",
+        "judgment",
+        "csm",
+        "relationship",
+        "policy"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-CS-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-DEPT-CS",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-SCEN-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-IMPL-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-SOFTWARE-DEVELOPMENT-LIFECYCLE",
+      "name": "Software Development Lifecycle",
+      "level": "process",
+      "anchor_key": "process:PROC-ENG-001",
+      "home_documents": [
+        "PROC-ENG-001"
+      ],
+      "keywords": [
+        "release",
+        "squad",
+        "sprint",
+        "engineers",
+        "engineer",
+        "development",
+        "planning",
+        "test",
+        "two-week sprint",
+        "two-week"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-ENG-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-DEPT-ENG",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85,
+          "similarity": {
+            "similarity": 0.403,
+            "section": "Software Engineering Department > Roles",
+            "chunk_ids": [
+              "DOC-DEPT-ENG_v2.1_001"
+            ],
+            "shared_terms": [
+              "squad",
+              "engineer",
+              "release",
+              "engineers",
+              "software"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-DEPT-PROD",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-PROD-CUSTDEV",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-PROD-NEXAUTO",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-PROD-NEXCONNECT",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-PROD-NEXFLOW",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-PROD-NEXVIEW",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-ENG-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-SUP-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-BUG-REPORTING-AND-ESCALATION",
+      "name": "Bug Reporting and Escalation",
+      "level": "process",
+      "anchor_key": "process:PROC-ENG-002",
+      "home_documents": [
+        "PROC-ENG-002"
+      ],
+      "keywords": [
+        "customer communication",
+        "bug",
+        "escalation process",
+        "defect",
+        "bug reporting",
+        "reporting escalation",
+        "process",
+        "severity",
+        "engineering",
+        "legacy"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-ENG-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-003",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-ENG",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-DEPT-SUP",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-FAQ-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-ENG-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-SUP-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-EXPENSE-POLICY",
+      "name": "Expense Policy",
+      "level": "process",
+      "anchor_key": "process:PROC-FIN-001",
+      "home_documents": [
+        "PROC-FIN-001"
+      ],
+      "keywords": [
+        "requires",
+        "approval",
+        "reviews",
+        "month",
+        "purchase",
+        "regardless",
+        "required",
+        "practical",
+        "manager approval",
+        "finance manager"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-FIN-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-DEPT-FIN",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-FIN-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85,
+          "similarity": {
+            "similarity": 0.325,
+            "section": "Procurement Process > Steps",
+            "chunk_ids": [
+              "PROC-FIN-002_v1.3_001"
+            ],
+            "shared_terms": [
+              "approval",
+              "purchase",
+              "manager approval",
+              "requires",
+              "finance"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-PROCUREMENT-PROCESS",
+      "name": "Procurement Process",
+      "level": "process",
+      "anchor_key": "process:PROC-FIN-002",
+      "home_documents": [
+        "PROC-FIN-002"
+      ],
+      "keywords": [
+        "procurement",
+        "recurring",
+        "procurement process",
+        "software",
+        "operations",
+        "vendor",
+        "going",
+        "log",
+        "flow",
+        "approval"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-FIN-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-DEPT-FIN",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-DEPT-OPS",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-FIN-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-FIN-003",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-INVOICE-AND-PAYMENT-PROCESS",
+      "name": "Invoice and Payment Process",
+      "level": "process",
+      "anchor_key": "process:PROC-FIN-003",
+      "home_documents": [
+        "PROC-FIN-003"
+      ],
+      "keywords": [
+        "payment",
+        "invoice",
+        "payment process",
+        "invoice payment",
+        "invoices",
+        "contract",
+        "billing",
+        "finance",
+        "finance manager",
+        "vendor"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-FIN-003",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-DEPT-FIN",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-PROD-IMPLSUP",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-FIN-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-FIN-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-EMPLOYEE-ONBOARDING",
+      "name": "Employee Onboarding",
+      "level": "process",
+      "anchor_key": "process:PROC-HR-001",
+      "home_documents": [
+        "PROC-HR-001"
+      ],
+      "keywords": [
+        "hiring",
+        "version",
+        "day",
+        "onboarding",
+        "employee",
+        "version effective",
+        "days",
+        "history note",
+        "version history",
+        "training"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-HR-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CARE-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-CORP-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-CORP-003",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-HR",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-FAQ-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-HR-001-ADDENDUM",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85,
+          "similarity": {
+            "similarity": 0.497,
+            "section": "New Hire Security Training Requirement (ARCHIVED)",
+            "chunk_ids": [
+              "PROC-HR-001-ADDENDUM_v1.0_000"
+            ],
+            "shared_terms": [
+              "days",
+              "training",
+              "security",
+              "version",
+              "requirement"
+            ]
+          }
+        },
+        {
+          "document_id": "PROC-HR-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-IMPL-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7,
+          "similarity": {
+            "similarity": 0.357,
+            "section": "Customer Onboarding Process > VERSION HISTORY NOTE",
+            "chunk_ids": [
+              "PROC-IMPL-001_v2.0_004"
+            ],
+            "shared_terms": [
+              "version",
+              "version effective",
+              "version history",
+              "history note",
+              "effective"
+            ]
+          }
+        },
+        {
+          "document_id": "PROC-IT-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-IT-002",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-LEAVE-AND-HR-POLICIES",
+      "name": "Leave and HR Policies",
+      "level": "process",
+      "anchor_key": "process:PROC-HR-002",
+      "home_documents": [
+        "PROC-HR-002"
+      ],
+      "keywords": [
+        "leave",
+        "statutory",
+        "policies",
+        "leave policies",
+        "plus",
+        "employees",
+        "days",
+        "public",
+        "provide",
+        "country"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-HR-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-DEPT-HR",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-INTERNAL-COMMUNICATION-GUIDELINES",
+      "name": "Internal Communication Guidelines",
+      "level": "process",
+      "anchor_key": "process:PROC-HR-003",
+      "home_documents": [
+        "PROC-HR-003"
+      ],
+      "keywords": [
+        "internal communication",
+        "communication guidelines",
+        "guidelines",
+        "internal",
+        "communication",
+        "default",
+        "meetings",
+        "reasonably",
+        "office locations",
+        "expectations"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-HR-003",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-COMM-006",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-HR",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-CUSTOMER-ONBOARDING",
+      "name": "Customer Onboarding",
+      "level": "process",
+      "anchor_key": "process:PROC-IMPL-001",
+      "home_documents": [
+        "PROC-IMPL-001"
+      ],
+      "keywords": [
+        "handoff",
+        "onboarding process",
+        "consultant",
+        "customer onboarding",
+        "record",
+        "handoff record",
+        "implementation",
+        "process",
+        "kickoff",
+        "onboarding"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-IMPL-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-002",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-CORP-003",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-CS",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7,
+          "similarity": {
+            "similarity": 0.32,
+            "section": "Customer Success Department > Handoff from Implementation",
+            "chunk_ids": [
+              "DOC-DEPT-CS_v1.9_002"
+            ],
+            "shared_terms": [
+              "handoff",
+              "implementation",
+              "record",
+              "implementation manager",
+              "go-live"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-DEPT-IMPL",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85,
+          "similarity": {
+            "similarity": 0.324,
+            "section": "Implementation / Consulting Department > Roles",
+            "chunk_ids": [
+              "DOC-DEPT-IMPL_v2.0_001"
+            ],
+            "shared_terms": [
+              "implementation",
+              "onboarding",
+              "consultant",
+              "project",
+              "customer onboarding"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-DEPT-SALES",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7,
+          "similarity": {
+            "similarity": 0.362,
+            "section": "Sales Department > Handoff to Implementation",
+            "chunk_ids": [
+              "DOC-DEPT-SALES_v2.0_002"
+            ],
+            "shared_terms": [
+              "handoff",
+              "handoff record",
+              "record",
+              "deal",
+              "deal closed"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-FAQ-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-PROD-IMPLSUP",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-PROD-NEXCONNECT",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-PROD-NEXFLOW",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-PROD-NEXVIEW",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-SCEN-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7,
+          "similarity": {
+            "similarity": 0.302,
+            "section": "Common Cross-Department Business Scenarios",
+            "chunk_ids": [
+              "DOC-SCEN-001_v1.2_000",
+              "DOC-SCEN-001_v1.2_001"
+            ],
+            "shared_terms": [
+              "consultant",
+              "implementation",
+              "implementation consultant",
+              "handoff record",
+              "kickoff"
+            ]
+          }
+        },
+        {
+          "document_id": "PROC-CS-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-FIN-003",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-HR-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-IMPL-001-V1",
+          "method": "text_similarity",
+          "detail": "section 'Customer Onboarding Process > Steps'",
+          "confidence": 0.5,
+          "similarity": {
+            "similarity": 0.444,
+            "section": "Customer Onboarding Process > Steps",
+            "chunk_ids": [
+              "PROC-IMPL-001_v1.0_002"
+            ],
+            "shared_terms": [
+              "version",
+              "onboarding process",
+              "consultant",
+              "customer onboarding",
+              "kickoff"
+            ]
+          }
+        },
+        {
+          "document_id": "PROC-SALES-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-ACCESS-CONTROL-POLICY",
+      "name": "Access Control Policy",
+      "level": "process",
+      "anchor_key": "process:PROC-IT-001",
+      "home_documents": [
+        "PROC-IT-001"
+      ],
+      "keywords": [
+        "access",
+        "control policy",
+        "control",
+        "access control",
+        "policy",
+        "data",
+        "granted",
+        "role-specific",
+        "role-specific access",
+        "warehouse"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-IT-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-DEPT-DATA",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-DEPT-IT",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85,
+          "similarity": {
+            "similarity": 0.397,
+            "section": "IT / Security Department > Note",
+            "chunk_ids": [
+              "DOC-DEPT-IT_v2.5_002"
+            ],
+            "shared_terms": [
+              "access",
+              "access control",
+              "control",
+              "policy",
+              "systems"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-FAQ-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7,
+          "similarity": {
+            "similarity": 0.305,
+            "section": "Internal FAQ",
+            "chunk_ids": [
+              "DOC-FAQ-001_v1.4_000",
+              "DOC-FAQ-001_v1.4_001"
+            ],
+            "shared_terms": [
+              "access",
+              "data",
+              "analytics",
+              "data analytics",
+              "policy"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-SCEN-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-TG-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-HR-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-IT-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-DATA-SECURITY-POLICY",
+      "name": "Data Security Policy",
+      "level": "process",
+      "anchor_key": "process:PROC-IT-002",
+      "home_documents": [
+        "PROC-IT-002"
+      ],
+      "keywords": [
+        "retention",
+        "security",
+        "data",
+        "customer data",
+        "customer production",
+        "production data",
+        "deadline",
+        "proc-it-",
+        "employees",
+        "training"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-IT-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-DEPT-ENG",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-IT",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-HR-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-IT-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-SUP-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-LEAD-QUALIFICATION",
+      "name": "Lead Qualification",
+      "level": "process",
+      "anchor_key": "process:PROC-SALES-001",
+      "home_documents": [
+        "PROC-SALES-001"
+      ],
+      "keywords": [
+        "qualification",
+        "sdr",
+        "leads",
+        "qualification process",
+        "lead qualification",
+        "lead",
+        "business day",
+        "business",
+        "automatically",
+        "day"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-SALES-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-DEPT-MKT",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-DEPT-SALES",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-PROD-NEXCRM",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-SALES-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-PROPOSAL-AND-QUOTATION",
+      "name": "Proposal and Quotation",
+      "level": "process",
+      "anchor_key": "process:PROC-SALES-002",
+      "home_documents": [
+        "PROC-SALES-002"
+      ],
+      "keywords": [
+        "proposal",
+        "discount",
+        "quotation process",
+        "quotation",
+        "proposal quotation",
+        "sales manager",
+        "quote",
+        "process",
+        "sales",
+        "requires sales"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-SALES-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-DEPT-SALES",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-FAQ-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-PROD-CUSTDEV",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-PROD-NEXCRM",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-SCEN-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-IMPL-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-IMPL-001-V1",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-SALES-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-CUSTOMER-SUPPORT-PROCEDURES",
+      "name": "Customer Support Procedures",
+      "level": "process",
+      "anchor_key": "process:PROC-SUP-001",
+      "home_documents": [
+        "PROC-SUP-001"
+      ],
+      "keywords": [
+        "proc-eng-",
+        "defect",
+        "bug",
+        "procedures",
+        "customer support",
+        "support procedures",
+        "uses",
+        "ticket",
+        "support",
+        "product"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-SUP-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-003",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7,
+          "similarity": {
+            "similarity": 0.305,
+            "section": "Glossary > Terminology Notes (Known Inconsistencies)",
+            "chunk_ids": [
+              "DOC-CORP-003_v1.6_001",
+              "DOC-CORP-003_v1.6_002"
+            ],
+            "shared_terms": [
+              "uses",
+              "defect",
+              "bug",
+              "tn-",
+              "proc-eng-"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-DEPT-SUP",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85,
+          "similarity": {
+            "similarity": 0.341,
+            "section": "Technical Support Department > Roles",
+            "chunk_ids": [
+              "DOC-DEPT-SUP_v2.2_001"
+            ],
+            "shared_terms": [
+              "ticket",
+              "support",
+              "proc-eng-",
+              "bug",
+              "product"
+            ]
+          }
+        },
+        {
+          "document_id": "DOC-PROD-IMPLSUP",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-TG-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-ENG-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85,
+          "similarity": {
+            "similarity": 0.304,
+            "section": "Bug Reporting and Escalation Process > Steps",
+            "chunk_ids": [
+              "PROC-ENG-002_v2.2_001"
+            ],
+            "shared_terms": [
+              "defect",
+              "support",
+              "bug",
+              "ticket",
+              "product defect"
+            ]
+          }
+        },
+        {
+          "document_id": "PROC-SUP-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-INCIDENT-MANAGEMENT",
+      "name": "Incident Management",
+      "level": "process",
+      "anchor_key": "process:PROC-SUP-002",
+      "home_documents": [
+        "PROC-SUP-002"
+      ],
+      "keywords": [
+        "incident",
+        "management process",
+        "risk",
+        "business",
+        "business days",
+        "incident management",
+        "feature",
+        "devops",
+        "management",
+        "priority"
+      ],
+      "documents": [
+        {
+          "document_id": "PROC-SUP-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CORP-003",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "DOC-DEPT-SUP",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "DOC-SCEN-001",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7
+        },
+        {
+          "document_id": "PROC-CS-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-ENG-002",
+          "method": "linked",
+          "detail": "text mentions the process",
+          "confidence": 0.7,
+          "similarity": {
+            "similarity": 0.312,
+            "section": "Bug Reporting and Escalation Process > Steps",
+            "chunk_ids": [
+              "PROC-ENG-002_v2.2_001"
+            ],
+            "shared_terms": [
+              "incident",
+              "fix",
+              "priority",
+              "customer communication",
+              "engineering"
+            ]
+          }
+        },
+        {
+          "document_id": "PROC-IT-002",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        },
+        {
+          "document_id": "PROC-SUP-001",
+          "method": "linked",
+          "detail": "header names the process",
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+      "name": "New Joiner Life & Settling In",
+      "level": "program",
+      "anchor_key": "document:DOC-CARE-001",
+      "home_documents": [
+        "DOC-CARE-001",
+        "DOC-CARE-002",
+        "DOC-CARE-003",
+        "DOC-CARE-004"
+      ],
+      "keywords": [
+        "checklist",
+        "settling-in",
+        "settling-in checklist",
+        "germany",
+        "germany settling-in",
+        "address",
+        "german",
+        "new",
+        "check",
+        "current"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-CARE-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CARE-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CARE-003",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-CARE-004",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "topic_id": "TOPIC-COMMUNICATION-CULTURE-TONE-GUIDELINES",
+      "name": "Communication Culture & Tone Guidelines",
+      "level": "program",
+      "anchor_key": "document:DOC-COMM-001",
+      "home_documents": [
+        "DOC-COMM-001",
+        "DOC-COMM-002",
+        "DOC-COMM-003",
+        "DOC-COMM-004",
+        "DOC-COMM-005",
+        "DOC-COMM-006",
+        "PROC-HR-003"
+      ],
+      "keywords": [
+        "tone",
+        "communication",
+        "individual",
+        "profile",
+        "deadline",
+        "communication tone",
+        "tone profile",
+        "guidance",
+        "cultural",
+        "guidelines"
+      ],
+      "documents": [
+        {
+          "document_id": "DOC-COMM-001",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-002",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-003",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-004",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-005",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "DOC-COMM-006",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        },
+        {
+          "document_id": "PROC-HR-003",
+          "method": "home_document",
+          "detail": "the topic's own document",
+          "confidence": 1.0
+        }
+      ]
+    }
+  ],
+  "documents_without_topic": [],
+  "topics_per_document": {
+    "DOC-CARE-001": 3,
+    "DOC-CARE-002": 2,
+    "DOC-CARE-003": 2,
+    "DOC-CARE-004": 2,
+    "DOC-COMM-001": 3,
+    "DOC-COMM-002": 2,
+    "DOC-COMM-003": 2,
+    "DOC-COMM-004": 2,
+    "DOC-COMM-005": 2,
+    "DOC-COMM-006": 3,
+    "DOC-CORP-001": 8,
+    "DOC-CORP-002": 3,
+    "DOC-CORP-003": 5,
+    "DOC-DEPT-CS": 4,
+    "DOC-DEPT-DATA": 3,
+    "DOC-DEPT-ENG": 9,
+    "DOC-DEPT-FIN": 4,
+    "DOC-DEPT-HR": 4,
+    "DOC-DEPT-IMPL": 3,
+    "DOC-DEPT-IT": 3,
+    "DOC-DEPT-MKT": 3,
+    "DOC-DEPT-OPS": 2,
+    "DOC-DEPT-PROD": 7,
+    "DOC-DEPT-SALES": 4,
+    "DOC-DEPT-SUP": 4,
+    "DOC-FAQ-001": 6,
+    "DOC-PROD-CUSTDEV": 5,
+    "DOC-PROD-IMPLSUP": 6,
+    "DOC-PROD-NEXAUTO": 5,
+    "DOC-PROD-NEXCONNECT": 6,
+    "DOC-PROD-NEXCRM": 6,
+    "DOC-PROD-NEXFLOW": 6,
+    "DOC-PROD-NEXVIEW": 5,
+    "DOC-SCEN-001": 9,
+    "DOC-TG-001": 9,
+    "PROC-CS-001": 4,
+    "PROC-ENG-001": 3,
+    "PROC-ENG-002": 7,
+    "PROC-FIN-001": 4,
+    "PROC-FIN-002": 5,
+    "PROC-FIN-003": 4,
+    "PROC-HR-001": 5,
+    "PROC-HR-001-ADDENDUM": 2,
+    "PROC-HR-002": 3,
+    "PROC-HR-003": 3,
+    "PROC-IMPL-001": 7,
+    "PROC-IMPL-001-V1": 3,
+    "PROC-IT-001": 5,
+    "PROC-IT-002": 5,
+    "PROC-SALES-001": 4,
+    "PROC-SALES-002": 5,
+    "PROC-SUP-001": 5,
+    "PROC-SUP-002": 6
+  },
+  "document_keywords": {
+    "DOC-CARE-001": [
+      "new joiner",
+      "joiner",
+      "life",
+      "new",
+      "life settling",
+      "joiner life",
+      "settling",
+      "feel"
+    ],
+    "DOC-CARE-002": [
+      "germany settling-in",
+      "checklist",
+      "settling-in checklist",
+      "settling-in",
+      "germany",
+      "german",
+      "address",
+      "local"
+    ],
+    "DOC-CARE-003": [
+      "short",
+      "list",
+      "address",
+      "local sim",
+      "remember",
+      "don need",
+      "question",
+      "need remember"
+    ],
+    "DOC-CARE-004": [
+      "end",
+      "month",
+      "tax",
+      "week",
+      "registration",
+      "address registration",
+      "local",
+      "official"
+    ],
+    "DOC-COMM-001": [
+      "tone",
+      "tone guidelines",
+      "communication culture",
+      "culture",
+      "culture tone",
+      "guidelines",
+      "contexts",
+      "common"
+    ],
+    "DOC-COMM-002": [
+      "munich berlin",
+      "berlin",
+      "offices",
+      "profile germany",
+      "germany munich",
+      "berlin offices",
+      "colleague",
+      "tone"
+    ],
+    "DOC-COMM-003": [
+      "india",
+      "bengaluru",
+      "profile india",
+      "bengaluru office",
+      "india bengaluru",
+      "profile",
+      "communication",
+      "tenure"
+    ],
+    "DOC-COMM-004": [
+      "positive",
+      "states",
+      "austin office",
+      "united states",
+      "positive framing",
+      "states austin",
+      "framing",
+      "land"
+    ],
+    "DOC-COMM-005": [
+      "london",
+      "london office",
+      "kingdom london",
+      "united kingdom",
+      "kingdom",
+      "profile united",
+      "united",
+      "profile"
+    ],
+    "DOC-COMM-006": [
+      "neutral communication",
+      "international neutral",
+      "neutral",
+      "communication guidance",
+      "international",
+      "guidance",
+      "communicating",
+      "communication"
+    ],
+    "DOC-CORP-001": [
+      "nexora systems",
+      "systems",
+      "nexora",
+      "far",
+      "customers",
+      "software",
+      "products",
+      "distribution"
+    ],
+    "DOC-CORP-002": [
+      "structure",
+      "organization structure",
+      "loc-muc",
+      "organization",
+      "implementation",
+      "managers",
+      "marketing",
+      "analysts"
+    ],
+    "DOC-CORP-003": [
+      "term",
+      "tn-",
+      "onboarding",
+      "support",
+      "account",
+      "issue",
+      "single",
+      "terminology"
+    ],
+    "DOC-DEPT-CS": [
+      "customer success",
+      "success",
+      "csm",
+      "success department",
+      "handoff",
+      "account",
+      "accounts",
+      "point"
+    ],
+    "DOC-DEPT-DATA": [
+      "analytics",
+      "data analytics",
+      "data",
+      "internal",
+      "reporting",
+      "prioritization",
+      "internal reporting",
+      "backlog"
+    ],
+    "DOC-DEPT-ENG": [
+      "squad",
+      "engineering",
+      "squads",
+      "engineering department",
+      "software",
+      "software engineering",
+      "platform",
+      "infrastructure"
+    ],
+    "DOC-DEPT-FIN": [
+      "finance",
+      "finance department",
+      "financial",
+      "record",
+      "proc-fin-",
+      "department note",
+      "refers billable",
+      "use account"
+    ],
+    "DOC-DEPT-HR": [
+      "employee",
+      "owns",
+      "new joiner",
+      "joiner",
+      "onboarding",
+      "department",
+      "new",
+      "join"
+    ],
+    "DOC-DEPT-IMPL": [
+      "implementation",
+      "consulting department",
+      "implementation consulting",
+      "consulting",
+      "go-live",
+      "day-to-day",
+      "support",
+      "complex"
+    ],
+    "DOC-DEPT-IT": [
+      "security",
+      "owns internal",
+      "access security",
+      "security department",
+      "systems",
+      "security policy",
+      "internal systems",
+      "access"
+    ],
+    "DOC-DEPT-MKT": [
+      "marketing",
+      "marketing department",
+      "pipeline",
+      "crm",
+      "content",
+      "content marketing",
+      "positioning",
+      "marketing manager"
+    ],
+    "DOC-DEPT-OPS": [
+      "operations",
+      "facilities",
+      "office",
+      "operations department",
+      "internal process",
+      "office facilities",
+      "vendor",
+      "office manager"
+    ],
+    "DOC-DEPT-PROD": [
+      "product",
+      "product owns",
+      "product department",
+      "owns",
+      "roadmap",
+      "owns roadmap",
+      "closely",
+      "products"
+    ],
+    "DOC-DEPT-SALES": [
+      "sales",
+      "sales department",
+      "deal",
+      "pod",
+      "signed",
+      "department",
+      "implementation deal",
+      "inbound"
+    ],
+    "DOC-DEPT-SUP": [
+      "support",
+      "technical support",
+      "technical",
+      "support department",
+      "support engineer",
+      "engineer",
+      "escalation",
+      "business hours"
+    ],
+    "DOC-FAQ-001": [
+      "data",
+      "data analytics",
+      "analytics",
+      "current",
+      "access",
+      "days",
+      "approval",
+      "new"
+    ],
+    "DOC-PROD-CUSTDEV": [
+      "custom development",
+      "custom",
+      "development",
+      "development services",
+      "services",
+      "engagement",
+      "product",
+      "standard"
+    ],
+    "DOC-PROD-IMPLSUP": [
+      "support",
+      "paid add-on",
+      "support tiers",
+      "add-on",
+      "tiers",
+      "support services",
+      "implementation support",
+      "sla"
+    ],
+    "DOC-PROD-NEXAUTO": [
+      "nexauto",
+      "automation",
+      "support",
+      "logging",
+      "draft",
+      "builder",
+      "knowledge base",
+      "knowledge"
+    ],
+    "DOC-PROD-NEXCONNECT": [
+      "nexconnect",
+      "connector",
+      "analytics nexflow",
+      "accounting",
+      "erp accounting",
+      "custom connector",
+      "pre-built",
+      "erp"
+    ],
+    "DOC-PROD-NEXCRM": [
+      "nexcrm",
+      "nexflow nexview",
+      "nexflow",
+      "nexview",
+      "proc-sales-",
+      "email",
+      "size",
+      "verticals"
+    ],
+    "DOC-PROD-NEXFLOW": [
+      "nexflow",
+      "tracking",
+      "batch lot",
+      "lot",
+      "batch",
+      "currently",
+      "stock",
+      "reorder"
+    ],
+    "DOC-PROD-NEXVIEW": [
+      "nexview",
+      "analytics",
+      "nexview analytics",
+      "data",
+      "distribution",
+      "pharma distribution",
+      "pharma",
+      "source"
+    ],
+    "DOC-SCEN-001": [
+      "scenario",
+      "csm",
+      "automatic",
+      "access",
+      "implementation consultant",
+      "relationship",
+      "gap",
+      "consultant"
+    ],
+    "DOC-TG-001": [
+      "tg-",
+      "reorder",
+      "tier",
+      "reorder point",
+      "customer reports",
+      "refresh",
+      "sync",
+      "alerts"
+    ],
+    "PROC-CS-001": [
+      "incident",
+      "customer escalation",
+      "level",
+      "escalation",
+      "level customer",
+      "escalation policy",
+      "judgment",
+      "csm"
+    ],
+    "PROC-ENG-001": [
+      "release",
+      "squad",
+      "sprint",
+      "engineers",
+      "engineer",
+      "development",
+      "planning",
+      "test"
+    ],
+    "PROC-ENG-002": [
+      "customer communication",
+      "bug",
+      "escalation process",
+      "defect",
+      "bug reporting",
+      "reporting escalation",
+      "process",
+      "severity"
+    ],
+    "PROC-FIN-001": [
+      "requires",
+      "approval",
+      "reviews",
+      "month",
+      "purchase",
+      "regardless",
+      "required",
+      "practical"
+    ],
+    "PROC-FIN-002": [
+      "procurement",
+      "recurring",
+      "procurement process",
+      "software",
+      "operations",
+      "vendor",
+      "going",
+      "log"
+    ],
+    "PROC-FIN-003": [
+      "payment",
+      "invoice",
+      "payment process",
+      "invoice payment",
+      "invoices",
+      "contract",
+      "billing",
+      "finance"
+    ],
+    "PROC-HR-001": [
+      "hiring",
+      "version",
+      "day",
+      "onboarding",
+      "employee",
+      "version effective",
+      "days",
+      "history note"
+    ],
+    "PROC-HR-001-ADDENDUM": [
+      "requirement",
+      "training",
+      "security",
+      "days",
+      "new",
+      "retained historical",
+      "new hire",
+      "module"
+    ],
+    "PROC-HR-002": [
+      "leave",
+      "statutory",
+      "policies",
+      "leave policies",
+      "plus",
+      "employees",
+      "days",
+      "public"
+    ],
+    "PROC-HR-003": [
+      "internal communication",
+      "communication guidelines",
+      "guidelines",
+      "internal",
+      "communication",
+      "default",
+      "meetings",
+      "reasonably"
+    ],
+    "PROC-IMPL-001": [
+      "handoff",
+      "onboarding process",
+      "consultant",
+      "customer onboarding",
+      "record",
+      "handoff record",
+      "implementation",
+      "process"
+    ],
+    "PROC-IMPL-001-V1": [
+      "management",
+      "version",
+      "provides",
+      "note account",
+      "steps kickoff",
+      "historical",
+      "historical reference",
+      "kickoff scheduled"
+    ],
+    "PROC-IT-001": [
+      "access",
+      "control policy",
+      "control",
+      "access control",
+      "policy",
+      "data",
+      "granted",
+      "role-specific"
+    ],
+    "PROC-IT-002": [
+      "retention",
+      "security",
+      "data",
+      "customer data",
+      "customer production",
+      "production data",
+      "deadline",
+      "proc-it-"
+    ],
+    "PROC-SALES-001": [
+      "qualification",
+      "sdr",
+      "leads",
+      "qualification process",
+      "lead qualification",
+      "lead",
+      "business day",
+      "business"
+    ],
+    "PROC-SALES-002": [
+      "proposal",
+      "discount",
+      "quotation process",
+      "quotation",
+      "proposal quotation",
+      "sales manager",
+      "quote",
+      "process"
+    ],
+    "PROC-SUP-001": [
+      "proc-eng-",
+      "defect",
+      "bug",
+      "procedures",
+      "customer support",
+      "support procedures",
+      "uses",
+      "ticket"
+    ],
+    "PROC-SUP-002": [
+      "incident",
+      "management process",
+      "risk",
+      "business",
+      "business days",
+      "incident management",
+      "feature",
+      "devops"
+    ]
+  },
+  "emergent_themes": {
+    "k": 30,
+    "silhouette": 0.099,
+    "note": "Unsupervised clusters of sections; labels are top terms, not names. Low silhouette is expected for ~50 short documents: use for exploration only.",
+    "themes": [
+      {
+        "theme_id": "THEME-01",
+        "top_terms": [
+          "profile",
+          "tone",
+          "tone profile",
+          "communication tone",
+          "communication",
+          "individual",
+          "land",
+          "direct"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Common German Workplace Practices"
+          },
+          {
+            "document_id": "DOC-COMM-002",
+            "section": "Communication Tone Profile — Germany (Munich, Berlin offices)"
+          },
+          {
+            "document_id": "DOC-COMM-002",
+            "section": "Communication Tone Profile — Germany (Munich, Berlin offices) > What May Unintentionally Land Wrong"
+          },
+          {
+            "document_id": "DOC-COMM-002",
+            "section": "Communication Tone Profile — Germany (Munich, Berlin offices) > Individual Preference Reminder"
+          },
+          {
+            "document_id": "DOC-COMM-003",
+            "section": "Communication Tone Profile — India (Bengaluru office)"
+          },
+          {
+            "document_id": "DOC-COMM-003",
+            "section": "Communication Tone Profile — India (Bengaluru office) > What May Unintentionally Land Wrong"
+          },
+          {
+            "document_id": "DOC-COMM-003",
+            "section": "Communication Tone Profile — India (Bengaluru office) > Individual Preference Reminder"
+          },
+          {
+            "document_id": "DOC-COMM-004",
+            "section": "Communication Tone Profile — United States (Austin office)"
+          },
+          {
+            "document_id": "DOC-COMM-004",
+            "section": "Communication Tone Profile — United States (Austin office) > What May Unintentionally Land Wrong"
+          },
+          {
+            "document_id": "DOC-COMM-005",
+            "section": "Communication Tone Profile — United Kingdom (London office)"
+          },
+          {
+            "document_id": "DOC-COMM-005",
+            "section": "Communication Tone Profile — United Kingdom (London office) > What May Unintentionally Land Wrong"
+          },
+          {
+            "document_id": "DOC-COMM-005",
+            "section": "Communication Tone Profile — United Kingdom (London office) > Individual Preference Reminder"
+          }
+        ],
+        "documents": [
+          "DOC-CARE-002",
+          "DOC-COMM-002",
+          "DOC-COMM-003",
+          "DOC-COMM-004",
+          "DOC-COMM-005"
+        ],
+        "closest_anchored_topic": "TOPIC-COMMUNICATION-CULTURE-TONE-GUIDELINES",
+        "overlap": 0.5,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-02",
+        "top_terms": [
+          "nexview",
+          "analytics",
+          "nexview analytics",
+          "distribution",
+          "nexconnect",
+          "data",
+          "typical customer",
+          "typical"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-CORP-001",
+            "section": "Nexora Systems > Products (see products/ for full documentation)"
+          },
+          {
+            "document_id": "DOC-CORP-001",
+            "section": "Nexora Systems > Customers"
+          },
+          {
+            "document_id": "DOC-PROD-NEXCONNECT",
+            "section": "NexConnect"
+          },
+          {
+            "document_id": "DOC-PROD-NEXCONNECT",
+            "section": "NexConnect > Typical Customer Profile"
+          },
+          {
+            "document_id": "DOC-PROD-NEXCRM",
+            "section": "NexCRM > Typical Customer Profile"
+          },
+          {
+            "document_id": "DOC-PROD-NEXFLOW",
+            "section": "NexFlow > Typical Customer Profile"
+          },
+          {
+            "document_id": "DOC-PROD-NEXVIEW",
+            "section": "NexView Analytics"
+          },
+          {
+            "document_id": "DOC-PROD-NEXVIEW",
+            "section": "NexView Analytics > Core Capabilities"
+          },
+          {
+            "document_id": "DOC-PROD-NEXVIEW",
+            "section": "NexView Analytics > Typical Customer Profile"
+          },
+          {
+            "document_id": "DOC-PROD-NEXVIEW",
+            "section": "NexView Analytics > Common Configuration Dependencies"
+          }
+        ],
+        "documents": [
+          "DOC-CORP-001",
+          "DOC-PROD-NEXCONNECT",
+          "DOC-PROD-NEXCRM",
+          "DOC-PROD-NEXFLOW",
+          "DOC-PROD-NEXVIEW"
+        ],
+        "closest_anchored_topic": "TOPIC-PRODUCT",
+        "overlap": 0.56,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-03",
+        "top_terms": [
+          "implementation",
+          "handoff",
+          "go-live",
+          "proc-impl-",
+          "record",
+          "consultant",
+          "customer success",
+          "success"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-CORP-002",
+            "section": "Organization Structure > Note on Titles — Known Inconsistency"
+          },
+          {
+            "document_id": "DOC-DEPT-CS",
+            "section": "Customer Success Department > Handoff from Implementation"
+          },
+          {
+            "document_id": "DOC-DEPT-IMPL",
+            "section": "Implementation / Consulting Department"
+          },
+          {
+            "document_id": "DOC-DEPT-IMPL",
+            "section": "Implementation / Consulting Department > Roles"
+          },
+          {
+            "document_id": "DOC-DEPT-IMPL",
+            "section": "Implementation / Consulting Department > Notes"
+          },
+          {
+            "document_id": "DOC-DEPT-SALES",
+            "section": "Sales Department > Handoff to Implementation"
+          },
+          {
+            "document_id": "DOC-SCEN-001",
+            "section": "Common Cross-Department Business Scenarios"
+          },
+          {
+            "document_id": "PROC-IMPL-001",
+            "section": "Customer Onboarding Process > Steps"
+          },
+          {
+            "document_id": "PROC-IMPL-001",
+            "section": "Customer Onboarding Process > Known Gap — KG-01"
+          },
+          {
+            "document_id": "PROC-IMPL-001-V1",
+            "section": "Customer Onboarding Process > Steps"
+          }
+        ],
+        "documents": [
+          "DOC-CORP-002",
+          "DOC-DEPT-CS",
+          "DOC-DEPT-IMPL",
+          "DOC-DEPT-SALES",
+          "DOC-SCEN-001",
+          "PROC-IMPL-001",
+          "PROC-IMPL-001-V1"
+        ],
+        "closest_anchored_topic": "TOPIC-IMPLEMENTATION-CONSULTING",
+        "overlap": 0.75,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-04",
+        "top_terms": [
+          "check",
+          "official",
+          "current official",
+          "official guidance",
+          "check current",
+          "current",
+          "guidance",
+          "circumstances"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-CARE-001",
+            "section": "New Joiner Life & Settling In > What This Is NOT"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Address Registration (Anmeldung)"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Health Insurance"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Tax Registration"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Public Transport"
+          },
+          {
+            "document_id": "DOC-CARE-003",
+            "section": "First-Week Essentials — Germany"
+          },
+          {
+            "document_id": "DOC-CARE-004",
+            "section": "First-90-Days Practical Checklist — Germany"
+          },
+          {
+            "document_id": "PROC-HR-002",
+            "section": "Leave and HR Policies > Annual Leave"
+          },
+          {
+            "document_id": "PROC-HR-002",
+            "section": "Leave and HR Policies > Parental Leave"
+          }
+        ],
+        "documents": [
+          "DOC-CARE-001",
+          "DOC-CARE-002",
+          "DOC-CARE-003",
+          "DOC-CARE-004",
+          "PROC-HR-002"
+        ],
+        "closest_anchored_topic": "TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+        "overlap": 0.8,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-05",
+        "top_terms": [
+          "engineer",
+          "support",
+          "engineering",
+          "squad",
+          "support engineer",
+          "escalation",
+          "ticket",
+          "defect"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-DEPT-ENG",
+            "section": "Software Engineering Department > Roles"
+          },
+          {
+            "document_id": "DOC-DEPT-SUP",
+            "section": "Technical Support Department"
+          },
+          {
+            "document_id": "DOC-DEPT-SUP",
+            "section": "Technical Support Department > Roles"
+          },
+          {
+            "document_id": "DOC-DEPT-SUP",
+            "section": "Technical Support Department > Relationship to Engineering"
+          },
+          {
+            "document_id": "PROC-ENG-001",
+            "section": "Software Development Lifecycle > Steps"
+          },
+          {
+            "document_id": "PROC-ENG-002",
+            "section": "Bug Reporting and Escalation Process > Steps"
+          },
+          {
+            "document_id": "PROC-SUP-001",
+            "section": "Customer Support Procedures > Ticket Lifecycle"
+          },
+          {
+            "document_id": "PROC-SUP-002",
+            "section": "Incident Management Process > Steps"
+          }
+        ],
+        "documents": [
+          "DOC-DEPT-ENG",
+          "DOC-DEPT-SUP",
+          "PROC-ENG-001",
+          "PROC-ENG-002",
+          "PROC-SUP-001",
+          "PROC-SUP-002"
+        ],
+        "closest_anchored_topic": "TOPIC-SOFTWARE-ENGINEERING",
+        "overlap": 0.67,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-06",
+        "top_terms": [
+          "data",
+          "analytics",
+          "data analytics",
+          "access",
+          "loc-blr",
+          "sales",
+          "engineering",
+          "analytics manager"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-CORP-001",
+            "section": "Nexora Systems > Locations"
+          },
+          {
+            "document_id": "DOC-CORP-002",
+            "section": "Organization Structure > Reporting Lines (simplified)"
+          },
+          {
+            "document_id": "DOC-CORP-002",
+            "section": "Organization Structure > Departments Index"
+          },
+          {
+            "document_id": "DOC-DEPT-DATA",
+            "section": "Data & Analytics Department"
+          },
+          {
+            "document_id": "DOC-DEPT-DATA",
+            "section": "Data & Analytics Department > Roles"
+          },
+          {
+            "document_id": "DOC-FAQ-001",
+            "section": "Internal FAQ"
+          },
+          {
+            "document_id": "PROC-IT-001",
+            "section": "Access Control Policy > Role-Specific Access (requires request + approval)"
+          },
+          {
+            "document_id": "PROC-IT-001",
+            "section": "Access Control Policy > Analytics Environment Access"
+          }
+        ],
+        "documents": [
+          "DOC-CORP-001",
+          "DOC-CORP-002",
+          "DOC-DEPT-DATA",
+          "DOC-FAQ-001",
+          "PROC-IT-001"
+        ],
+        "closest_anchored_topic": "TOPIC-DATA-ANALYTICS",
+        "overlap": 0.4,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-07",
+        "top_terms": [
+          "tone",
+          "guidance",
+          "cultural",
+          "communication",
+          "guidelines",
+          "style",
+          "individual",
+          "neutral"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-COMM-001",
+            "section": "Communication Culture & Tone Guidelines > Purpose"
+          },
+          {
+            "document_id": "DOC-COMM-001",
+            "section": "Communication Culture & Tone Guidelines > The Four-Layer Framework"
+          },
+          {
+            "document_id": "DOC-COMM-001",
+            "section": "Communication Culture & Tone Guidelines > Example: Same Instruction, Different Phrasing"
+          },
+          {
+            "document_id": "DOC-COMM-001",
+            "section": "Communication Culture & Tone Guidelines > Guidance Language Used Throughout These Documents"
+          },
+          {
+            "document_id": "DOC-COMM-006",
+            "section": "International / Neutral Communication Guidance"
+          },
+          {
+            "document_id": "DOC-COMM-006",
+            "section": "International / Neutral Communication Guidance > Baseline Approach"
+          },
+          {
+            "document_id": "DOC-COMM-006",
+            "section": "International / Neutral Communication Guidance > The One Rule That Doesn't Change"
+          },
+          {
+            "document_id": "PROC-HR-003",
+            "section": "Internal Communication Guidelines > Cross-Cultural Note"
+          }
+        ],
+        "documents": [
+          "DOC-COMM-001",
+          "DOC-COMM-006",
+          "PROC-HR-003"
+        ],
+        "closest_anchored_topic": "TOPIC-INTERNAL-COMMUNICATION-GUIDELINES",
+        "overlap": 0.75,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-08",
+        "top_terms": [
+          "germany settling-in",
+          "settling-in checklist",
+          "settling-in",
+          "checklist",
+          "germany",
+          "german",
+          "internet",
+          "local"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Housing"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Bank Account"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Mobile / SIM Card"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Recycling & Waste Rules"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Internet Setup"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Emergency Contacts"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > A Few Useful Everyday German Phrases"
+          },
+          {
+            "document_id": "DOC-CARE-002",
+            "section": "Germany Settling-In Checklist > Three Things People Commonly Forget (informal HR observation, not a formal statistic)"
+          }
+        ],
+        "documents": [
+          "DOC-CARE-002"
+        ],
+        "closest_anchored_topic": "TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+        "overlap": 0.25,
+        "unanchored": true
+      },
+      {
+        "theme_id": "THEME-09",
+        "top_terms": [
+          "custom",
+          "custom development",
+          "development",
+          "development services",
+          "services",
+          "connector",
+          "standard",
+          "custom connector"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-PROD-CUSTDEV",
+            "section": "Custom Development Services"
+          },
+          {
+            "document_id": "DOC-PROD-CUSTDEV",
+            "section": "Custom Development Services > Engagement Model"
+          },
+          {
+            "document_id": "DOC-PROD-CUSTDEV",
+            "section": "Custom Development Services > Constraints"
+          },
+          {
+            "document_id": "DOC-PROD-NEXCONNECT",
+            "section": "NexConnect > Core Capabilities"
+          },
+          {
+            "document_id": "DOC-PROD-NEXCONNECT",
+            "section": "NexConnect > Ownership Note"
+          }
+        ],
+        "documents": [
+          "DOC-PROD-CUSTDEV",
+          "DOC-PROD-NEXCONNECT"
+        ],
+        "closest_anchored_topic": "TOPIC-CUSTOM-DEVELOPMENT-SERVICES",
+        "overlap": 0.33,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-10",
+        "top_terms": [
+          "marketing",
+          "sdr",
+          "leads",
+          "qualification",
+          "marketing department",
+          "lead",
+          "pipeline",
+          "lead qualification"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-DEPT-MKT",
+            "section": "Marketing Department"
+          },
+          {
+            "document_id": "DOC-DEPT-MKT",
+            "section": "Marketing Department > Roles"
+          },
+          {
+            "document_id": "DOC-DEPT-MKT",
+            "section": "Marketing Department > Notes"
+          },
+          {
+            "document_id": "PROC-SALES-001",
+            "section": "Lead Qualification Process > Steps"
+          },
+          {
+            "document_id": "PROC-SALES-001",
+            "section": "Lead Qualification Process > SLA"
+          }
+        ],
+        "documents": [
+          "DOC-DEPT-MKT",
+          "PROC-SALES-001"
+        ],
+        "closest_anchored_topic": "TOPIC-MARKETING",
+        "overlap": 0.5,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-11",
+        "top_terms": [
+          "finance",
+          "billing",
+          "tn-",
+          "contract",
+          "account",
+          "glossary",
+          "uses",
+          "glossary tn-"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-CORP-003",
+            "section": "Glossary > Terminology Notes (Known Inconsistencies)"
+          },
+          {
+            "document_id": "DOC-DEPT-FIN",
+            "section": "Finance Department > Note on \"Account\""
+          },
+          {
+            "document_id": "PROC-FIN-003",
+            "section": "Invoice and Payment Process > Customer Invoicing (Accounts Receivable)"
+          },
+          {
+            "document_id": "PROC-FIN-003",
+            "section": "Invoice and Payment Process > Dispute Handling"
+          },
+          {
+            "document_id": "PROC-SUP-001",
+            "section": "Customer Support Procedures > Terminology Note"
+          }
+        ],
+        "documents": [
+          "DOC-CORP-003",
+          "DOC-DEPT-FIN",
+          "PROC-FIN-003",
+          "PROC-SUP-001"
+        ],
+        "closest_anchored_topic": "TOPIC-FINANCE",
+        "overlap": 0.33,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-12",
+        "top_terms": [
+          "joiner",
+          "new joiner",
+          "new",
+          "life",
+          "life settling",
+          "joiner life",
+          "settling",
+          "feel"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-CARE-001",
+            "section": "New Joiner Life & Settling In > Philosophy"
+          },
+          {
+            "document_id": "DOC-CARE-001",
+            "section": "New Joiner Life & Settling In > What This Is"
+          },
+          {
+            "document_id": "DOC-CARE-001",
+            "section": "New Joiner Life & Settling In > Example Interactions"
+          },
+          {
+            "document_id": "DOC-CARE-001",
+            "section": "New Joiner Life & Settling In > Tone"
+          },
+          {
+            "document_id": "DOC-DEPT-HR",
+            "section": "HR Department > New Joiner Care"
+          }
+        ],
+        "documents": [
+          "DOC-CARE-001",
+          "DOC-DEPT-HR"
+        ],
+        "closest_anchored_topic": "TOPIC-LEAVE-AND-HR-POLICIES",
+        "overlap": 0.33,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-13",
+        "top_terms": [
+          "access",
+          "security",
+          "policy",
+          "access control",
+          "control",
+          "internal systems",
+          "systems",
+          "security policy"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-DEPT-IT",
+            "section": "IT / Security Department > Roles"
+          },
+          {
+            "document_id": "DOC-DEPT-IT",
+            "section": "IT / Security Department > Note"
+          },
+          {
+            "document_id": "PROC-IT-001",
+            "section": "Access Control Policy > Principle"
+          },
+          {
+            "document_id": "PROC-IT-001",
+            "section": "Access Control Policy > Access Review"
+          },
+          {
+            "document_id": "PROC-IT-002",
+            "section": "Data Security Policy > Key Requirements"
+          }
+        ],
+        "documents": [
+          "DOC-DEPT-IT",
+          "PROC-IT-001",
+          "PROC-IT-002"
+        ],
+        "closest_anchored_topic": "TOPIC-IT-SECURITY",
+        "overlap": 0.6,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-14",
+        "top_terms": [
+          "owns",
+          "operations",
+          "department",
+          "facilities",
+          "employee",
+          "finance",
+          "proc-fin-",
+          "roles"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-DEPT-FIN",
+            "section": "Finance Department > Roles"
+          },
+          {
+            "document_id": "DOC-DEPT-HR",
+            "section": "HR Department > Roles"
+          },
+          {
+            "document_id": "DOC-DEPT-OPS",
+            "section": "Operations Department"
+          },
+          {
+            "document_id": "DOC-DEPT-OPS",
+            "section": "Operations Department > Roles"
+          }
+        ],
+        "documents": [
+          "DOC-DEPT-FIN",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-OPS"
+        ],
+        "closest_anchored_topic": "TOPIC-PROCUREMENT-PROCESS",
+        "overlap": 0.33,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-15",
+        "top_terms": [
+          "incident",
+          "csm",
+          "escalation",
+          "success",
+          "customer success",
+          "customer escalation",
+          "level",
+          "accounts"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-CORP-003",
+            "section": "Glossary"
+          },
+          {
+            "document_id": "DOC-DEPT-CS",
+            "section": "Customer Success Department > Roles"
+          },
+          {
+            "document_id": "PROC-CS-001",
+            "section": "Customer Escalation Policy > Escalation Levels"
+          },
+          {
+            "document_id": "PROC-CS-001",
+            "section": "Customer Escalation Policy > Relationship to Incident Management"
+          }
+        ],
+        "documents": [
+          "DOC-CORP-003",
+          "DOC-DEPT-CS",
+          "PROC-CS-001"
+        ],
+        "closest_anchored_topic": "TOPIC-CUSTOMER-SUCCESS",
+        "overlap": 0.5,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-16",
+        "top_terms": [
+          "product",
+          "roadmap",
+          "product owns",
+          "product department",
+          "owns",
+          "nexauto",
+          "owns roadmap",
+          "feedback"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-DEPT-PROD",
+            "section": "Product Department"
+          },
+          {
+            "document_id": "DOC-DEPT-PROD",
+            "section": "Product Department > Roles"
+          },
+          {
+            "document_id": "DOC-DEPT-PROD",
+            "section": "Product Department > Notes"
+          },
+          {
+            "document_id": "DOC-PROD-NEXAUTO",
+            "section": "NexAuto > Known Limitation"
+          }
+        ],
+        "documents": [
+          "DOC-DEPT-PROD",
+          "DOC-PROD-NEXAUTO"
+        ],
+        "closest_anchored_topic": "TOPIC-NEXAUTO",
+        "overlap": 0.29,
+        "unanchored": true
+      },
+      {
+        "theme_id": "THEME-17",
+        "top_terms": [
+          "version",
+          "version effective",
+          "training",
+          "effective",
+          "requirement",
+          "days",
+          "security",
+          "version history"
+        ],
+        "sections": [
+          {
+            "document_id": "PROC-HR-001",
+            "section": "Employee Onboarding Process > Steps"
+          },
+          {
+            "document_id": "PROC-HR-001",
+            "section": "Employee Onboarding Process > VERSION HISTORY NOTE — Known Conflict"
+          },
+          {
+            "document_id": "PROC-HR-001-ADDENDUM",
+            "section": "New Hire Security Training Requirement (ARCHIVED)"
+          },
+          {
+            "document_id": "PROC-IMPL-001",
+            "section": "Customer Onboarding Process > VERSION HISTORY NOTE"
+          }
+        ],
+        "documents": [
+          "PROC-HR-001",
+          "PROC-HR-001-ADDENDUM",
+          "PROC-IMPL-001"
+        ],
+        "closest_anchored_topic": "TOPIC-EMPLOYEE-ONBOARDING",
+        "overlap": 0.27,
+        "unanchored": true
+      },
+      {
+        "theme_id": "THEME-18",
+        "top_terms": [
+          "support",
+          "sla",
+          "support tiers",
+          "paid add-on",
+          "add-on",
+          "priority",
+          "standard",
+          "tiers"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-PROD-IMPLSUP",
+            "section": "Implementation & Support Services"
+          },
+          {
+            "document_id": "DOC-PROD-IMPLSUP",
+            "section": "Implementation & Support Services > Standard Support Tiers"
+          },
+          {
+            "document_id": "PROC-SUP-002",
+            "section": "Incident Management Process > Priority Definitions"
+          }
+        ],
+        "documents": [
+          "DOC-PROD-IMPLSUP",
+          "PROC-SUP-002"
+        ],
+        "closest_anchored_topic": "TOPIC-TECHNICAL-SUPPORT",
+        "overlap": 0.33,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-19",
+        "top_terms": [
+          "core capabilities",
+          "capabilities",
+          "automation",
+          "core",
+          "nexauto",
+          "tracking",
+          "generation",
+          "integration"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-PROD-NEXAUTO",
+            "section": "NexAuto > Core Capabilities"
+          },
+          {
+            "document_id": "DOC-PROD-NEXCRM",
+            "section": "NexCRM > Core Capabilities"
+          },
+          {
+            "document_id": "DOC-PROD-NEXFLOW",
+            "section": "NexFlow > Core Capabilities"
+          }
+        ],
+        "documents": [
+          "DOC-PROD-NEXAUTO",
+          "DOC-PROD-NEXCRM",
+          "DOC-PROD-NEXFLOW"
+        ],
+        "closest_anchored_topic": "TOPIC-PRODUCT",
+        "overlap": 0.33,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-20",
+        "top_terms": [
+          "purchase",
+          "vendor",
+          "approval",
+          "requires",
+          "manager approval",
+          "invoices",
+          "payment",
+          "finance"
+        ],
+        "sections": [
+          {
+            "document_id": "PROC-FIN-001",
+            "section": "Expense Policy > Approval Thresholds"
+          },
+          {
+            "document_id": "PROC-FIN-002",
+            "section": "Procurement Process > Steps"
+          },
+          {
+            "document_id": "PROC-FIN-003",
+            "section": "Invoice and Payment Process > Vendor Payments (Accounts Payable)"
+          }
+        ],
+        "documents": [
+          "PROC-FIN-001",
+          "PROC-FIN-002",
+          "PROC-FIN-003"
+        ],
+        "closest_anchored_topic": "TOPIC-FINANCE",
+        "overlap": 0.75,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-21",
+        "top_terms": [
+          "tier",
+          "tg-",
+          "refresh",
+          "nexview",
+          "real-time",
+          "real-time sub-",
+          "sub- minute",
+          "sub-"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-PROD-NEXVIEW",
+            "section": "NexView Analytics > Known Limitation"
+          },
+          {
+            "document_id": "DOC-TG-001",
+            "section": "Common Troubleshooting Guide"
+          }
+        ],
+        "documents": [
+          "DOC-PROD-NEXVIEW",
+          "DOC-TG-001"
+        ],
+        "closest_anchored_topic": "TOPIC-NEXCONNECT",
+        "overlap": 0.25,
+        "unanchored": true
+      },
+      {
+        "theme_id": "THEME-22",
+        "top_terms": [
+          "strictly",
+          "prefer",
+          "written updates",
+          "isn",
+          "message",
+          "updates",
+          "clearly",
+          "written"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-COMM-006",
+            "section": "International / Neutral Communication Guidance > When Communicating Across Time Zones"
+          },
+          {
+            "document_id": "PROC-HR-003",
+            "section": "Internal Communication Guidelines > General Principles"
+          }
+        ],
+        "documents": [
+          "DOC-COMM-006",
+          "PROC-HR-003"
+        ],
+        "closest_anchored_topic": "TOPIC-INTERNAL-COMMUNICATION-GUIDELINES",
+        "overlap": 0.5,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-23",
+        "top_terms": [
+          "nexora systems",
+          "far",
+          "systems",
+          "explain",
+          "clarity",
+          "breaks",
+          "company",
+          "nexora"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-CORP-001",
+            "section": "Nexora Systems > Who We Are"
+          },
+          {
+            "document_id": "DOC-CORP-001",
+            "section": "Nexora Systems > Company Values"
+          }
+        ],
+        "documents": [
+          "DOC-CORP-001"
+        ],
+        "closest_anchored_topic": "TOPIC-IMPLEMENTATION-SUPPORT-SERVICES",
+        "overlap": 0.5,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-24",
+        "top_terms": [
+          "proposal",
+          "sales",
+          "approval",
+          "deal",
+          "quote",
+          "multi-year",
+          "quotation process",
+          "contract"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-DEPT-SALES",
+            "section": "Sales Department > Roles"
+          },
+          {
+            "document_id": "PROC-SALES-002",
+            "section": "Proposal and Quotation Process > Steps"
+          }
+        ],
+        "documents": [
+          "DOC-DEPT-SALES",
+          "PROC-SALES-002"
+        ],
+        "closest_anchored_topic": "TOPIC-SALES",
+        "overlap": 0.67,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-25",
+        "top_terms": [
+          "handled",
+          "existing",
+          "expansion",
+          "nexcrm",
+          "customer success",
+          "success",
+          "nexflow nexview",
+          "sale"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-DEPT-SALES",
+            "section": "Sales Department"
+          },
+          {
+            "document_id": "DOC-PROD-NEXCRM",
+            "section": "NexCRM > Cross-Sell Note"
+          }
+        ],
+        "documents": [
+          "DOC-DEPT-SALES",
+          "DOC-PROD-NEXCRM"
+        ],
+        "closest_anchored_topic": "TOPIC-LEAD-QUALIFICATION",
+        "overlap": 0.4,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-26",
+        "top_terms": [
+          "platform",
+          "squad",
+          "platform squad",
+          "squads",
+          "engineering department",
+          "software engineering",
+          "engineering",
+          "software"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-DEPT-ENG",
+            "section": "Software Engineering Department"
+          },
+          {
+            "document_id": "DOC-DEPT-ENG",
+            "section": "Software Engineering Department > Notes"
+          }
+        ],
+        "documents": [
+          "DOC-DEPT-ENG"
+        ],
+        "closest_anchored_topic": "TOPIC-SOFTWARE-ENGINEERING",
+        "overlap": 0.25,
+        "unanchored": true
+      },
+      {
+        "theme_id": "THEME-27",
+        "top_terms": [
+          "process does",
+          "happens",
+          "happens customer",
+          "practice",
+          "process",
+          "process known",
+          "known gap",
+          "known"
+        ],
+        "sections": [
+          {
+            "document_id": "PROC-ENG-002",
+            "section": "Bug Reporting and Escalation Process > Known Gap — KG-02"
+          },
+          {
+            "document_id": "PROC-SALES-002",
+            "section": "Proposal and Quotation Process > Known Gap"
+          }
+        ],
+        "documents": [
+          "PROC-ENG-002",
+          "PROC-SALES-002"
+        ],
+        "closest_anchored_topic": "TOPIC-SALES",
+        "overlap": 0.25,
+        "unanchored": true
+      },
+      {
+        "theme_id": "THEME-28",
+        "top_terms": [
+          "recurring",
+          "procurement",
+          "software",
+          "log",
+          "procurement process",
+          "going",
+          "flow",
+          "heads"
+        ],
+        "sections": [
+          {
+            "document_id": "PROC-FIN-002",
+            "section": "Procurement Process > Recurring Software Subscriptions"
+          }
+        ],
+        "documents": [
+          "PROC-FIN-002"
+        ],
+        "closest_anchored_topic": "TOPIC-OPERATIONS",
+        "overlap": 0.5,
+        "unanchored": false
+      },
+      {
+        "theme_id": "THEME-29",
+        "top_terms": [
+          "enabled",
+          "nexflow configuration",
+          "tracking enabled",
+          "lot tracking",
+          "enabled tenant",
+          "lot",
+          "implementation consultants",
+          "confirm"
+        ],
+        "sections": [
+          {
+            "document_id": "DOC-PROD-NEXFLOW",
+            "section": "NexFlow > Configuration Note"
+          }
+        ],
+        "documents": [
+          "DOC-PROD-NEXFLOW"
+        ],
+        "closest_anchored_topic": "TOPIC-NEXAUTO",
+        "overlap": 0.14,
+        "unanchored": true
+      },
+      {
+        "theme_id": "THEME-30",
+        "top_terms": [
+          "default",
+          "internal",
+          "limited",
+          "discussions",
+          "channels",
+          "calls",
+          "overlap",
+          "tool"
+        ],
+        "sections": [
+          {
+            "document_id": "PROC-HR-003",
+            "section": "Internal Communication Guidelines > Channels"
+          }
+        ],
+        "documents": [
+          "PROC-HR-003"
+        ],
+        "closest_anchored_topic": "TOPIC-INTERNAL-COMMUNICATION-GUIDELINES",
+        "overlap": 0.25,
+        "unanchored": true
+      }
+    ]
+  }
+}

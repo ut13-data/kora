@@ -1,0 +1,1273 @@
+{
+  "approach": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+  "thresholds": {
+    "fact_similarity": 0.6,
+    "approver_subject_similarity": 0.4,
+    "approximate_count_tolerance": 0.1
+  },
+  "fact_statements_compared": 46,
+  "conflicts": [
+    {
+      "conflict_id": "CONF-98434E88",
+      "conflict_type": "numeric_fact",
+      "topic": "training, security, awareness, new",
+      "sides": [
+        {
+          "document_id": "PROC-HR-001",
+          "statement": "Security training: New hires must complete mandatory security awareness training within the first 10 working days of their start date.",
+          "values": [
+            "10 working day"
+          ],
+          "section": "Employee Onboarding Process > Steps",
+          "chunk_ids": [
+            "PROC-HR-001_v3.0_002"
+          ],
+          "version": "3.0",
+          "status": "Active",
+          "effective_date": "2025-06-01",
+          "owner_role": "HR Manager",
+          "document_type": "SOP"
+        },
+        {
+          "document_id": "PROC-HR-001-ADDENDUM",
+          "statement": "All new hires must complete the mandatory security awareness training module within 30 days of their start date.",
+          "values": [
+            "30 day"
+          ],
+          "section": "New Hire Security Training Requirement (ARCHIVED)",
+          "chunk_ids": [
+            "PROC-HR-001-ADDENDUM_v1.0_000"
+          ],
+          "version": "1.0",
+          "status": "Archived",
+          "effective_date": "2022-08-01",
+          "owner_role": "HR Manager (2022)",
+          "document_type": "Policy Addendum"
+        }
+      ],
+      "signals": {
+        "active_vs_archived": {
+          "active": [
+            "PROC-HR-001"
+          ],
+          "archived": [
+            "PROC-HR-001-ADDENDUM"
+          ]
+        },
+        "later_effective_date": {
+          "latest": [
+            "PROC-HR-001"
+          ],
+          "dates": {
+            "PROC-HR-001": "2025-06-01",
+            "PROC-HR-001-ADDENDUM": "2022-08-01"
+          }
+        },
+        "newer_version_same_lineage": {
+          "newest": [
+            "PROC-HR-001"
+          ],
+          "versions": {
+            "PROC-HR-001": "3.0",
+            "PROC-HR-001-ADDENDUM": "1.0"
+          }
+        },
+        "declared_by_source": [
+          {
+            "document_id": "PROC-HR-001",
+            "quote": "This current document (Version 3.0, effective 2025-06-01) supersedes that guidance with the 10 working days requirement above.",
+            "chunk_ids": [
+              "PROC-HR-001_v3.0_003"
+            ]
+          },
+          {
+            "document_id": "PROC-HR-001-ADDENDUM",
+            "quote": "*This requirement was superseded by PROC-HR-001 Version 3.0 (effective 2025-06-01), which shortened the requirement to 10 working days.",
+            "chunk_ids": [
+              "PROC-HR-001-ADDENDUM_v1.0_000"
+            ]
+          }
+        ],
+        "signals_favour": {
+          "PROC-HR-001": 3
+        }
+      },
+      "status": "superseded_per_source",
+      "confidence": 0.88,
+      "detail": "Similar statements (TF-IDF cosine 0.88) state different duration values.",
+      "method": "tfidf_similarity + value comparison",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [
+        "PROC-HR-001",
+        "PROC-HR-001-ADDENDUM"
+      ],
+      "document_versions": {
+        "PROC-HR-001": "3.0",
+        "PROC-HR-001-ADDENDUM": "1.0"
+      },
+      "effective_dates": {
+        "PROC-HR-001": "2025-06-01",
+        "PROC-HR-001-ADDENDUM": "2022-08-01"
+      },
+      "conflicting_information": [
+        {
+          "document_id": "PROC-HR-001",
+          "statement": "Security training: New hires must complete mandatory security awareness training within the first 10 working days of their start date.",
+          "values": [
+            "10 working day"
+          ]
+        },
+        {
+          "document_id": "PROC-HR-001-ADDENDUM",
+          "statement": "All new hires must complete the mandatory security awareness training module within 30 days of their start date.",
+          "values": [
+            "30 day"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-91EBA1C7",
+      "conflict_type": "count_claim",
+      "topic": "number of locations",
+      "sides": [
+        {
+          "document_id": "DOC-CORP-001",
+          "statement": "Nexora is privately held, profitable, and employs approximately 130 people across four office locations.",
+          "values": [
+            "4"
+          ],
+          "section": "Nexora Systems > Who We Are",
+          "chunk_ids": [
+            "DOC-CORP-001_v3.2_000"
+          ],
+          "version": "3.2",
+          "status": "Active",
+          "effective_date": "2025-01-06",
+          "owner_role": "Chief Executive Officer (CEO)",
+          "document_type": "Company Overview"
+        },
+        {
+          "document_id": "DOC-DEPT-HR",
+          "statement": "HR is based in Munich (LOC-MUC) and supports all four office locations, working with local relocation partners for international hires joining the Germany offices.",
+          "values": [
+            "4"
+          ],
+          "section": "HR Department",
+          "chunk_ids": [
+            "DOC-DEPT-HR_v2.3_000"
+          ],
+          "version": "2.3",
+          "status": "Active",
+          "effective_date": "2025-04-01",
+          "owner_role": "Head of HR",
+          "document_type": "Department Description"
+        },
+        {
+          "document_id": "DOC-DEPT-OPS",
+          "statement": "Operations is a small (5-person) team based in Munich (LOC-MUC) that owns office facilities across all four locations, vendor relationships not owned by IT or Finance, and general internal process improvement.",
+          "values": [
+            "4"
+          ],
+          "section": "Operations Department",
+          "chunk_ids": [
+            "DOC-DEPT-OPS_v1.3_000"
+          ],
+          "version": "1.3",
+          "status": "Active",
+          "effective_date": "2024-10-01",
+          "owner_role": "Operations Manager",
+          "document_type": "Department Description"
+        },
+        {
+          "document_id": "",
+          "statement": "locations.csv rows: 5",
+          "values": [
+            "5"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "structured_source": "locations.csv rows",
+        "documents_claiming": [
+          "DOC-CORP-001",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-OPS"
+        ]
+      },
+      "status": "open",
+      "confidence": 0.85,
+      "detail": "3 statement(s) give a different number of locations than locations.csv rows (5).",
+      "method": "count_claim vs table",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [
+        "DOC-CORP-001",
+        "DOC-DEPT-HR",
+        "DOC-DEPT-OPS"
+      ],
+      "document_versions": {
+        "DOC-CORP-001": "3.2",
+        "DOC-DEPT-HR": "2.3",
+        "DOC-DEPT-OPS": "1.3"
+      },
+      "effective_dates": {
+        "DOC-CORP-001": "2025-01-06",
+        "DOC-DEPT-HR": "2025-04-01",
+        "DOC-DEPT-OPS": "2024-10-01"
+      },
+      "conflicting_information": [
+        {
+          "document_id": "DOC-CORP-001",
+          "statement": "Nexora is privately held, profitable, and employs approximately 130 people across four office locations.",
+          "values": [
+            "4"
+          ]
+        },
+        {
+          "document_id": "DOC-DEPT-HR",
+          "statement": "HR is based in Munich (LOC-MUC) and supports all four office locations, working with local relocation partners for international hires joining the Germany offices.",
+          "values": [
+            "4"
+          ]
+        },
+        {
+          "document_id": "DOC-DEPT-OPS",
+          "statement": "Operations is a small (5-person) team based in Munich (LOC-MUC) that owns office facilities across all four locations, vendor relationships not owned by IT or Finance, and general internal process improvement.",
+          "values": [
+            "4"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "locations.csv rows: 5",
+          "values": [
+            "5"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-816ACA6F",
+      "conflict_type": "org_statement",
+      "topic": "reporting line of Implementation Manager (head of DEPT-IMPL)",
+      "sides": [
+        {
+          "document_id": "DOC-CORP-002",
+          "statement": "Nexora Systems is organized into 12 departments, each led by a department head who reports to the CEO or, for Engineering/Product/Data, to the CTO.",
+          "values": [
+            "CEO",
+            "CTO"
+          ],
+          "section": "Organization Structure",
+          "chunk_ids": [
+            "DOC-CORP-002_v2.4_000"
+          ],
+          "version": "2.4",
+          "status": "Active",
+          "effective_date": "2025-03-01",
+          "owner_role": "VP People & Operations",
+          "document_type": "Organization Structure"
+        },
+        {
+          "document_id": "DOC-CORP-002",
+          "statement": "│   └── Implementation Manager → Implementation Consultants / Solutions Architects",
+          "values": [
+            "VP Customer Success"
+          ],
+          "section": "Organization Structure > Reporting Lines (simplified)",
+          "chunk_ids": [
+            "DOC-CORP-002_v2.4_001"
+          ],
+          "version": "2.4",
+          "status": "Active",
+          "effective_date": "2025-03-01",
+          "owner_role": "VP People & Operations",
+          "document_type": "Organization Structure"
+        }
+      ],
+      "signals": {
+        "same_document": "DOC-CORP-002"
+      },
+      "status": "open",
+      "confidence": 0.7,
+      "detail": "The text says department heads report to CEO or CTO; the org chart places Implementation Manager under VP Customer Success.",
+      "method": "statement vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [
+        "DOC-CORP-002"
+      ],
+      "document_versions": {
+        "DOC-CORP-002": "2.4"
+      },
+      "effective_dates": {
+        "DOC-CORP-002": "2025-03-01"
+      },
+      "conflicting_information": [
+        {
+          "document_id": "DOC-CORP-002",
+          "statement": "Nexora Systems is organized into 12 departments, each led by a department head who reports to the CEO or, for Engineering/Product/Data, to the CTO.",
+          "values": [
+            "CEO",
+            "CTO"
+          ]
+        },
+        {
+          "document_id": "DOC-CORP-002",
+          "statement": "│   └── Implementation Manager → Implementation Consultants / Solutions Architects",
+          "values": [
+            "VP Customer Success"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-E95F0259",
+      "conflict_type": "identifier",
+      "topic": "document identifier",
+      "sides": [
+        {
+          "document_id": "PROC-IMPL-001",
+          "statement": "customer_onboarding.md: header says Document ID PROC-IMPL-001; documents.csv lists the file as PROC-IMPL-001",
+          "values": [
+            "PROC-IMPL-001"
+          ],
+          "section": "header",
+          "chunk_ids": [],
+          "version": "2.0",
+          "status": "Active",
+          "effective_date": "2025-03-01",
+          "owner_role": "Implementation Manager",
+          "document_type": "SOP"
+        },
+        {
+          "document_id": "PROC-IMPL-001-V1",
+          "statement": "customer_onboarding_v1_ARCHIVED.md: header says Document ID PROC-IMPL-001; documents.csv lists the file as PROC-IMPL-001-V1",
+          "values": [
+            "PROC-IMPL-001"
+          ],
+          "section": "header",
+          "chunk_ids": [],
+          "version": "1.0",
+          "status": "Archived",
+          "effective_date": "2023-06-01",
+          "owner_role": "Project Lead",
+          "document_type": "SOP"
+        }
+      ],
+      "signals": {},
+      "status": "open",
+      "confidence": 1.0,
+      "detail": "Both customer_onboarding.md and customer_onboarding_v1_ARCHIVED.md say 'Document ID: PROC-IMPL-001' in their headers; documents.csv lists them as PROC-IMPL-001 and PROC-IMPL-001-V1. Fix the header in the source data.",
+      "method": "header vs documents.csv",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [
+        "PROC-IMPL-001",
+        "PROC-IMPL-001-V1"
+      ],
+      "document_versions": {
+        "PROC-IMPL-001": "2.0",
+        "PROC-IMPL-001-V1": "1.0"
+      },
+      "effective_dates": {
+        "PROC-IMPL-001": "2025-03-01",
+        "PROC-IMPL-001-V1": "2023-06-01"
+      },
+      "conflicting_information": [
+        {
+          "document_id": "PROC-IMPL-001",
+          "statement": "customer_onboarding.md: header says Document ID PROC-IMPL-001; documents.csv lists the file as PROC-IMPL-001",
+          "values": [
+            "PROC-IMPL-001"
+          ]
+        },
+        {
+          "document_id": "PROC-IMPL-001-V1",
+          "statement": "customer_onboarding_v1_ARCHIVED.md: header says Document ID PROC-IMPL-001; documents.csv lists the file as PROC-IMPL-001-V1",
+          "values": [
+            "PROC-IMPL-001"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-333597C2",
+      "conflict_type": "org_vs_employees",
+      "topic": "reporting line of HR Business Partner",
+      "sides": [
+        {
+          "document_id": "",
+          "statement": "org chart: HR Business Partner reports to HR Manager",
+          "values": [
+            "HR Manager"
+          ],
+          "section": "Reporting Lines (simplified)",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 1 HR Business Partner(s) with manager role 'Head of HR'",
+          "values": [
+            "Head of HR"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "employees": [
+          "EMP-0122"
+        ],
+        "chart_is_simplified": true
+      },
+      "status": "open",
+      "confidence": 0.5,
+      "detail": "employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error.",
+      "method": "employees.csv vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [],
+      "document_versions": {},
+      "effective_dates": {},
+      "conflicting_information": [
+        {
+          "document_id": "",
+          "statement": "org chart: HR Business Partner reports to HR Manager",
+          "values": [
+            "HR Manager"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 1 HR Business Partner(s) with manager role 'Head of HR'",
+          "values": [
+            "Head of HR"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-39BC56B5",
+      "conflict_type": "org_vs_employees",
+      "topic": "reporting line of Software Engineer",
+      "sides": [
+        {
+          "document_id": "",
+          "statement": "org chart: Software Engineer reports to Engineering Manager",
+          "values": [
+            "Engineering Manager"
+          ],
+          "section": "Reporting Lines (simplified)",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 Software Engineer(s) with manager role 'VP Engineering'",
+          "values": [
+            "VP Engineering"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "employees": [
+          "EMP-0047",
+          "EMP-0050"
+        ],
+        "chart_is_simplified": true
+      },
+      "status": "open",
+      "confidence": 0.5,
+      "detail": "employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error.",
+      "method": "employees.csv vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [],
+      "document_versions": {},
+      "effective_dates": {},
+      "conflicting_information": [
+        {
+          "document_id": "",
+          "statement": "org chart: Software Engineer reports to Engineering Manager",
+          "values": [
+            "Engineering Manager"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 Software Engineer(s) with manager role 'VP Engineering'",
+          "values": [
+            "VP Engineering"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-46B46FAF",
+      "conflict_type": "org_vs_employees",
+      "topic": "reporting line of Account Executive",
+      "sides": [
+        {
+          "document_id": "",
+          "statement": "org chart: Account Executive reports to Sales Manager",
+          "values": [
+            "Sales Manager"
+          ],
+          "section": "Reporting Lines (simplified)",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 Account Executive(s) with manager role 'VP Sales'",
+          "values": [
+            "VP Sales"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "employees": [
+          "EMP-0004",
+          "EMP-0015"
+        ],
+        "chart_is_simplified": true
+      },
+      "status": "open",
+      "confidence": 0.5,
+      "detail": "employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error.",
+      "method": "employees.csv vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [],
+      "document_versions": {},
+      "effective_dates": {},
+      "conflicting_information": [
+        {
+          "document_id": "",
+          "statement": "org chart: Account Executive reports to Sales Manager",
+          "values": [
+            "Sales Manager"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 Account Executive(s) with manager role 'VP Sales'",
+          "values": [
+            "VP Sales"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-4DC4E6B1",
+      "conflict_type": "org_vs_employees",
+      "topic": "reporting line of Implementation Manager",
+      "sides": [
+        {
+          "document_id": "",
+          "statement": "org chart: Implementation Manager reports to VP Customer Success",
+          "values": [
+            "VP Customer Success"
+          ],
+          "section": "Reporting Lines (simplified)",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 1 Implementation Manager(s) with manager role 'no manager_id'",
+          "values": [
+            "no manager_id"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "employees": [
+          "EMP-0077"
+        ],
+        "chart_is_simplified": true
+      },
+      "status": "open",
+      "confidence": 0.5,
+      "detail": "employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error.",
+      "method": "employees.csv vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [],
+      "document_versions": {},
+      "effective_dates": {},
+      "conflicting_information": [
+        {
+          "document_id": "",
+          "statement": "org chart: Implementation Manager reports to VP Customer Success",
+          "values": [
+            "VP Customer Success"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 1 Implementation Manager(s) with manager role 'no manager_id'",
+          "values": [
+            "no manager_id"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-6CBEB70B",
+      "conflict_type": "org_vs_employees",
+      "topic": "reporting line of Accountant",
+      "sides": [
+        {
+          "document_id": "",
+          "statement": "org chart: Accountant reports to Finance Manager",
+          "values": [
+            "Finance Manager"
+          ],
+          "section": "Reporting Lines (simplified)",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 Accountant(s) with manager role 'CFO'",
+          "values": [
+            "CFO"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "employees": [
+          "EMP-0114",
+          "EMP-0115"
+        ],
+        "chart_is_simplified": true
+      },
+      "status": "open",
+      "confidence": 0.5,
+      "detail": "employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error.",
+      "method": "employees.csv vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [],
+      "document_versions": {},
+      "effective_dates": {},
+      "conflicting_information": [
+        {
+          "document_id": "",
+          "statement": "org chart: Accountant reports to Finance Manager",
+          "values": [
+            "Finance Manager"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 Accountant(s) with manager role 'CFO'",
+          "values": [
+            "CFO"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-82B0EE71",
+      "conflict_type": "org_vs_employees",
+      "topic": "reporting line of Security Analyst",
+      "sides": [
+        {
+          "document_id": "",
+          "statement": "org chart: Security Analyst reports to IT Manager",
+          "values": [
+            "IT Manager"
+          ],
+          "section": "Reporting Lines (simplified)",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 1 Security Analyst(s) with manager role 'CISO'",
+          "values": [
+            "CISO"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "employees": [
+          "EMP-0129"
+        ],
+        "chart_is_simplified": true
+      },
+      "status": "open",
+      "confidence": 0.5,
+      "detail": "employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error.",
+      "method": "employees.csv vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [],
+      "document_versions": {},
+      "effective_dates": {},
+      "conflicting_information": [
+        {
+          "document_id": "",
+          "statement": "org chart: Security Analyst reports to IT Manager",
+          "values": [
+            "IT Manager"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 1 Security Analyst(s) with manager role 'CISO'",
+          "values": [
+            "CISO"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-905D5F63",
+      "conflict_type": "org_vs_employees",
+      "topic": "reporting line of Office Manager",
+      "sides": [
+        {
+          "document_id": "",
+          "statement": "org chart: Office Manager reports to Operations Manager",
+          "values": [
+            "Operations Manager"
+          ],
+          "section": "Reporting Lines (simplified)",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 Office Manager(s) with manager role 'no manager_id'",
+          "values": [
+            "no manager_id"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "employees": [
+          "EMP-0136",
+          "EMP-0137"
+        ],
+        "chart_is_simplified": true
+      },
+      "status": "open",
+      "confidence": 0.5,
+      "detail": "employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error.",
+      "method": "employees.csv vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [],
+      "document_versions": {},
+      "effective_dates": {},
+      "conflicting_information": [
+        {
+          "document_id": "",
+          "statement": "org chart: Office Manager reports to Operations Manager",
+          "values": [
+            "Operations Manager"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 Office Manager(s) with manager role 'no manager_id'",
+          "values": [
+            "no manager_id"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-C291CAF7",
+      "conflict_type": "org_vs_employees",
+      "topic": "reporting line of IT Support Specialist",
+      "sides": [
+        {
+          "document_id": "",
+          "statement": "org chart: IT Support Specialist reports to IT Manager",
+          "values": [
+            "IT Manager"
+          ],
+          "section": "Reporting Lines (simplified)",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 IT Support Specialist(s) with manager role 'CISO'",
+          "values": [
+            "CISO"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "employees": [
+          "EMP-0131",
+          "EMP-0132"
+        ],
+        "chart_is_simplified": true
+      },
+      "status": "open",
+      "confidence": 0.5,
+      "detail": "employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error.",
+      "method": "employees.csv vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [],
+      "document_versions": {},
+      "effective_dates": {},
+      "conflicting_information": [
+        {
+          "document_id": "",
+          "statement": "org chart: IT Support Specialist reports to IT Manager",
+          "values": [
+            "IT Manager"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 IT Support Specialist(s) with manager role 'CISO'",
+          "values": [
+            "CISO"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-D6568134",
+      "conflict_type": "org_vs_employees",
+      "topic": "reporting line of Operations Analyst",
+      "sides": [
+        {
+          "document_id": "",
+          "statement": "org chart: Operations Analyst reports to Operations Manager",
+          "values": [
+            "Operations Manager"
+          ],
+          "section": "Reporting Lines (simplified)",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 1 Operations Analyst(s) with manager role 'Office Manager'",
+          "values": [
+            "Office Manager"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "employees": [
+          "EMP-0135"
+        ],
+        "chart_is_simplified": true
+      },
+      "status": "open",
+      "confidence": 0.5,
+      "detail": "employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error.",
+      "method": "employees.csv vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [],
+      "document_versions": {},
+      "effective_dates": {},
+      "conflicting_information": [
+        {
+          "document_id": "",
+          "statement": "org chart: Operations Analyst reports to Operations Manager",
+          "values": [
+            "Operations Manager"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 1 Operations Analyst(s) with manager role 'Office Manager'",
+          "values": [
+            "Office Manager"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-EB9B8AE9",
+      "conflict_type": "org_vs_employees",
+      "topic": "reporting line of AP/AR Specialist",
+      "sides": [
+        {
+          "document_id": "",
+          "statement": "org chart: AP/AR Specialist reports to Finance Manager",
+          "values": [
+            "Finance Manager"
+          ],
+          "section": "Reporting Lines (simplified)",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 AP/AR Specialist(s) with manager role 'CFO'",
+          "values": [
+            "CFO"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "employees": [
+          "EMP-0118",
+          "EMP-0119"
+        ],
+        "chart_is_simplified": true
+      },
+      "status": "open",
+      "confidence": 0.5,
+      "detail": "employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error.",
+      "method": "employees.csv vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [],
+      "document_versions": {},
+      "effective_dates": {},
+      "conflicting_information": [
+        {
+          "document_id": "",
+          "statement": "org chart: AP/AR Specialist reports to Finance Manager",
+          "values": [
+            "Finance Manager"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 2 AP/AR Specialist(s) with manager role 'CFO'",
+          "values": [
+            "CFO"
+          ]
+        }
+      ]
+    },
+    {
+      "conflict_id": "CONF-F7E9CE39",
+      "conflict_type": "org_vs_employees",
+      "topic": "reporting line of Product Analyst",
+      "sides": [
+        {
+          "document_id": "",
+          "statement": "org chart: Product Analyst reports to Product Manager",
+          "values": [
+            "Product Manager"
+          ],
+          "section": "Reporting Lines (simplified)",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 1 Product Analyst(s) with manager role 'VP Product'",
+          "values": [
+            "VP Product"
+          ],
+          "section": "",
+          "chunk_ids": [],
+          "version": null,
+          "status": null,
+          "effective_date": null,
+          "owner_role": null,
+          "document_type": null
+        }
+      ],
+      "signals": {
+        "employees": [
+          "EMP-0030"
+        ],
+        "chart_is_simplified": true
+      },
+      "status": "open",
+      "confidence": 0.5,
+      "detail": "employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error.",
+      "method": "employees.csv vs org chart",
+      "note": "KORA reports both sides and the signals; it does not decide which statement is correct.",
+      "documents_involved": [],
+      "document_versions": {},
+      "effective_dates": {},
+      "conflicting_information": [
+        {
+          "document_id": "",
+          "statement": "org chart: Product Analyst reports to Product Manager",
+          "values": [
+            "Product Manager"
+          ]
+        },
+        {
+          "document_id": "",
+          "statement": "employees.csv: 1 Product Analyst(s) with manager role 'VP Product'",
+          "values": [
+            "VP Product"
+          ]
+        }
+      ]
+    }
+  ],
+  "corroborations": [
+    {
+      "type": "numeric_fact",
+      "topic": "term, multi-year, approval, requires",
+      "similarity": 0.9,
+      "documents": [
+        "DOC-FAQ-001",
+        "PROC-SALES-002"
+      ],
+      "statements": [
+        "Above 30%, or any multi-year term, requires VP Sales approval.",
+        "Discount approval: Above 30%, or any multi-year term, requires VP Sales approval."
+      ]
+    },
+    {
+      "type": "approver",
+      "topic": "warehouse, data, analytics, production",
+      "similarity": 0.46,
+      "documents": [
+        "DOC-DEPT-DATA",
+        "PROC-IT-001"
+      ],
+      "statements": [
+        "Owns team prioritization and is the approval authority for new production access to the analytics data warehouse (see PROC-IT-001).",
+        "Analytics production data warehouse: approved by Data & Analytics Manager + IT provisioning"
+      ],
+      "rule_ids": [
+        "APR-5AFE2B4B",
+        "APR-0A7C9BEF"
+      ],
+      "approver": [
+        "ROLE-018"
+      ],
+      "note": "same approver"
+    },
+    {
+      "type": "approver",
+      "topic": "data, access, warehouse, analytics",
+      "similarity": 0.55,
+      "documents": [
+        "DOC-DEPT-DATA",
+        "PROC-IT-001"
+      ],
+      "statements": [
+        "Owns team prioritization and is the approval authority for new production access to the analytics data warehouse (see PROC-IT-001).",
+        "New Data Analysts require explicit Data & Analytics Manager approval before IT provisions production data warehouse access — this is not automatic at hire, even for the Data & Analytics department, because the warehouse contains customer data alongside internal data."
+      ],
+      "rule_ids": [
+        "APR-5AFE2B4B",
+        "APR-4B33DE9D"
+      ],
+      "approver": [
+        "ROLE-018"
+      ],
+      "note": "same approver"
+    },
+    {
+      "type": "approver",
+      "topic": "access, analytics, environment, new",
+      "similarity": 0.41,
+      "documents": [
+        "DOC-DEPT-DATA",
+        "PROC-IT-001"
+      ],
+      "statements": [
+        "New Data Analysts require Data & Analytics Manager approval plus IT provisioning to reach the production analytics environment — see PROC-IT-001, \"Analytics Environment Access.\"",
+        "New Data Analysts require explicit Data & Analytics Manager approval before IT provisions production data warehouse access — this is not automatic at hire, even for the Data & Analytics department, because the warehouse contains customer data alongside internal data."
+      ],
+      "rule_ids": [
+        "APR-D21F5F9A",
+        "APR-4B33DE9D"
+      ],
+      "approver": [
+        "ROLE-018"
+      ],
+      "note": "same approver"
+    },
+    {
+      "type": "approval_tiers",
+      "topic": "purchases",
+      "similarity": 0.71,
+      "documents": [
+        "DOC-DEPT-FIN",
+        "PROC-FIN-002"
+      ],
+      "statements": [
+        "final approval authority for purchases above €10,000.",
+        "Purchases €1,000–€10,000 require Finance Manager approval"
+      ],
+      "rule_ids": [
+        "APR-39BC5583",
+        "APR-07391268"
+      ],
+      "note": "same subject, different ranges: tiers of one rule, not a conflict"
+    },
+    {
+      "type": "approver",
+      "topic": "live, provides",
+      "similarity": 0.44,
+      "documents": [
+        "PROC-IMPL-001",
+        "PROC-IMPL-001-V1"
+      ],
+      "statements": [
+        "The Implementation Manager provides final go-live approval after Consultant confirms all discovery items are resolved.",
+        "Project Lead provides final go-live sign-off."
+      ],
+      "rule_ids": [
+        "APR-E24538B1",
+        "APR-10913E9F"
+      ],
+      "approver": [
+        "ROLE-022"
+      ],
+      "note": "same approver; different names in the text are documented aliases"
+    },
+    {
+      "type": "count_claim",
+      "document": "DOC-CORP-001",
+      "statement": "Nexora is privately held, profitable, and employs approximately 130 people across four office locations.",
+      "claimed": 130,
+      "approximate": true,
+      "actual": 137,
+      "basis": "employees.csv rows"
+    },
+    {
+      "type": "count_claim",
+      "document": "DOC-DEPT-ENG",
+      "statement": "Engineering is Nexora's largest department (34 people) and is concentrated in Bengaluru (LOC-BLR), with a secondary pod in Berlin (LOC-BER) owning NexConnect and platform infrastructure.",
+      "claimed": 34,
+      "approximate": false,
+      "actual": 34,
+      "basis": "employees.csv rows for DEPT-ENG (departments.csv approx_headcount: 34)"
+    },
+    {
+      "type": "count_claim",
+      "document": "DOC-DEPT-OPS",
+      "statement": "Operations is a small (5-person) team based in Munich (LOC-MUC) that owns office facilities across all four locations, vendor relationships not owned by IT or Finance, and general internal process improvement.",
+      "claimed": 5,
+      "approximate": false,
+      "actual": 5,
+      "basis": "employees.csv rows for DEPT-OPS (departments.csv approx_headcount: 5)"
+    },
+    {
+      "type": "count_claim",
+      "document": "DOC-CORP-002",
+      "statement": "Nexora Systems is organized into 12 departments, each led by a department head who reports to the CEO or, for Engineering/Product/Data, to the CTO.",
+      "claimed": 12,
+      "actual": 12,
+      "basis": "departments.csv rows"
+    }
+  ]
+}

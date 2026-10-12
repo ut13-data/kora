@@ -1,0 +1,4385 @@
+[
+  {
+    "process_id": "PROC-CS-001",
+    "name": "Customer Escalation Policy",
+    "kind": "policy",
+    "status": "Active",
+    "version": "1.7",
+    "effective_date": "2025-02-20",
+    "historical": false,
+    "document_id": "PROC-CS-001",
+    "source_filename": "customer_escalation_policy.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-025",
+        "name": "VP Customer Success",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-CS",
+      "name": "Customer Success",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-025",
+        "name": "VP Customer Success",
+        "how": [
+          "document header: Related Roles",
+          "named in step 2 (Level 2 — VP Customer Success)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-026",
+        "name": "Customer Success Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 1 (Level 1 — CSM-handled)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-028",
+        "name": "Support Team Lead",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Level 1 — CSM-handled",
+        "text": "Standard account concerns (usage questions, minor dissatisfaction) handled directly by the assigned Customer Success Manager.",
+        "section": "Escalation Levels",
+        "role_ids": [
+          "ROLE-026"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-CS-001_v1.7_001"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Level 2 — VP Customer Success",
+        "text": "Escalate when: a customer explicitly threatens churn, requests a call with Nexora leadership, or an unresolved P1 incident has affected the account for more than 24 hours.",
+        "section": "Escalation Levels",
+        "role_ids": [
+          "ROLE-025"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [
+          {
+            "text": "more than 24 hours",
+            "value": "24",
+            "unit": "hours"
+          }
+        ],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-CS-001_v1.7_001"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Level 3 — Executive (CEO/CTO)",
+        "text": "Reserved for strategic accounts, contract-value accounts above €100,000 ARR, or reputational-risk situations (e.g., public complaint, data exposure incident).",
+        "section": "Escalation Levels",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-CS-001_v1.7_001"
+        ]
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [],
+    "escalation_rule_ids": [
+      "ESC-DD4FAE09",
+      "ESC-2103DB88",
+      "ESC-2CDBEFBC",
+      "ESC-55E5A6F2",
+      "ESC-8CC16030",
+      "ESC-DBAD87B7"
+    ],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-SUP-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-IMPL-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [],
+    "related_documents": [
+      {
+        "document_id": "DOC-DEPT-CS",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-SCEN-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "PROC-CS-001",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-IMPL-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "Escalate when: a customer explicitly threatens churn, requests a call with Nexora leadership, or an unresolved P1 incident has affected the account for more than 24 hours.",
+        "context": "Level 2 — VP Customer Success",
+        "durations": [
+          {
+            "text": "more than 24 hours",
+            "value": "24",
+            "unit": "hours"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-CS-001_v1.7_001"
+        ]
+      }
+    ],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-ENG-001",
+    "name": "Software Development Lifecycle",
+    "kind": "procedure",
+    "status": "Active",
+    "version": "3.0",
+    "effective_date": "2025-01-08",
+    "historical": false,
+    "document_id": "PROC-ENG-001",
+    "source_filename": "sdlc.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-012",
+        "name": "VP Engineering",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-ENG",
+      "name": "Software Engineering",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-010",
+        "name": "Product Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 1 (Spec handoff)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-013",
+        "name": "Engineering Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 1 (Spec handoff)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-015",
+        "name": "Software Engineer",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-016",
+        "name": "QA Engineer",
+        "how": [
+          "document header: Related Roles",
+          "named in step 4 (QA verification)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-017",
+        "name": "DevOps Engineer",
+        "how": [
+          "document header: Related Roles",
+          "named in step 5 (Release)"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Spec handoff",
+        "text": "Product Manager delivers a written spec to the squad's Engineering Manager.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-010",
+          "ROLE-013"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-001_v3.0_001"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Sprint planning",
+        "text": "Squad breaks the spec into tickets, estimates, and commits to a two-week sprint.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-001_v3.0_001"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Development",
+        "text": "Engineers implement against a feature branch; Senior Engineers perform code review before merge.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-001_v3.0_001"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "QA verification",
+        "text": "QA Engineer runs the test plan against a staging environment.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-016"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-001_v3.0_001"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Release",
+        "text": "DevOps Engineer deploys to production via the CI/CD pipeline, typically on a Wednesday release window.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-017"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-001_v3.0_001"
+        ]
+      },
+      {
+        "number": 6,
+        "title": "Post-release monitoring",
+        "text": "Squad monitors error rates for 48 hours post-release.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [
+          {
+            "text": "for 48 hours",
+            "value": "48",
+            "unit": "hours"
+          }
+        ],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-001_v3.0_001"
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "item": "specification",
+        "quote": "Standardize how features move from specification to production release across all Engineering squads.",
+        "method": "purpose_from_to",
+        "confidence": 0.85,
+        "chunk_ids": [
+          "PROC-ENG-001_v3.0_000"
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "item": "production release",
+        "quote": "Standardize how features move from specification to production release across all Engineering squads.",
+        "method": "purpose_from_to",
+        "confidence": 0.85,
+        "chunk_ids": [
+          "PROC-ENG-001_v3.0_000"
+        ]
+      }
+    ],
+    "inputs_outputs_stated": true,
+    "approval_rule_ids": [],
+    "escalation_rule_ids": [],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-ENG-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [],
+    "related_documents": [
+      {
+        "document_id": "DOC-DEPT-ENG",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-DEPT-PROD",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-CUSTDEV",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-NEXAUTO",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-NEXCONNECT",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-NEXFLOW",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-NEXVIEW",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-ENG-001",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-ENG-002",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SUP-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "Squad monitors error rates for 48 hours post-release.",
+        "context": "Post-release monitoring",
+        "durations": [
+          {
+            "text": "for 48 hours",
+            "value": "48",
+            "unit": "hours"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-ENG-001_v3.0_001"
+        ]
+      }
+    ],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-ENG-002",
+    "name": "Bug Reporting and Escalation",
+    "kind": "procedure",
+    "status": "Active",
+    "version": "2.2",
+    "effective_date": "2025-03-20",
+    "historical": false,
+    "document_id": "PROC-ENG-002",
+    "source_filename": "bug_reporting_escalation.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-028",
+        "name": "Support Team Lead",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-013",
+        "name": "Engineering Manager",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-ENG",
+      "name": "Software Engineering",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [
+      {
+        "dept_id": "DEPT-SUP",
+        "name": "Technical Support",
+        "source": "bug_reporting_escalation.md: Department header",
+        "confidence": 1.0
+      }
+    ],
+    "participants": [
+      {
+        "role_id": "ROLE-013",
+        "name": "Engineering Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 3 (Severity triage)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-015",
+        "name": "Software Engineer",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-029",
+        "name": "Support Engineer L3",
+        "how": [
+          "document header: Related Roles",
+          "named in step 1 (Confirmation)"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Confirmation",
+        "text": "A Support Engineer L3 reproduces the issue and confirms it is a genuine product defect (not user error or configuration issue).",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-029"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-002_v2.2_001"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Defect logging",
+        "text": "L3 logs the defect in the Engineering defect tracker with severity, reproduction steps, and affected customer(s).",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-002_v2.2_001"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Severity triage",
+        "text": "Engineering Manager for the relevant squad triages severity (P1–P4, aligned with incident priority definitions in PROC-SUP-002) within 1 business day.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-013"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "PROC-SUP-002",
+            "types": [
+              "process",
+              "policy",
+              "document"
+            ]
+          }
+        ],
+        "durations": [
+          {
+            "text": "within 1 business day",
+            "value": "1",
+            "unit": "business day"
+          }
+        ],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-002_v2.2_001"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Fix scheduling",
+        "text": "P1/P2 defects are pulled into the current or next sprint. P3/P4 are backlog-prioritized in the normal roadmap process.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-002_v2.2_001"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Customer communication",
+        "text": "Support (not Engineering) owns all customer communication about defect status throughout.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-002_v2.2_001"
+        ]
+      },
+      {
+        "number": 6,
+        "title": "Resolution & verification",
+        "text": "Once fixed and released, the original L3 Support Engineer verifies the fix against the customer's reported scenario before closing the ticket.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-ENG-002_v2.2_001"
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "item": "Support",
+        "quote": "Define how a customer-reported issue confirmed as a product defect moves from Support into Engineering's backlog.",
+        "method": "purpose_from_to",
+        "confidence": 0.85,
+        "chunk_ids": [
+          "PROC-ENG-002_v2.2_000"
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "item": "Engineering's backlog",
+        "quote": "Define how a customer-reported issue confirmed as a product defect moves from Support into Engineering's backlog.",
+        "method": "purpose_from_to",
+        "confidence": 0.85,
+        "chunk_ids": [
+          "PROC-ENG-002_v2.2_000"
+        ]
+      }
+    ],
+    "inputs_outputs_stated": true,
+    "approval_rule_ids": [],
+    "escalation_rule_ids": [
+      "ESC-650077CE"
+    ],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-SUP-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-ENG-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [
+      {
+        "product_id": "PROD-NEXFLOW",
+        "how": "mentioned elsewhere in the process document",
+        "relationship": "related_to",
+        "confidence": 0.7
+      }
+    ],
+    "related_policies": [
+      {
+        "policy_id": "PROC-SUP-002",
+        "how": [
+          "step 3 refers to the policy"
+        ],
+        "confidence": 0.85
+      }
+    ],
+    "related_documents": [
+      {
+        "document_id": "DOC-CORP-003",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-DEPT-ENG",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-DEPT-SUP",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-FAQ-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "PROC-ENG-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-ENG-002",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SUP-001",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "Engineering Manager for the relevant squad triages severity (P1–P4, aligned with incident priority definitions in PROC-SUP-002) within 1 business day.",
+        "context": "Severity triage",
+        "durations": [
+          {
+            "text": "within 1 business day",
+            "value": "1",
+            "unit": "business day"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-ENG-002_v2.2_001"
+        ]
+      }
+    ],
+    "tables": [],
+    "known_gaps": [
+      {
+        "heading": "Known Gap — KG-02",
+        "gap_codes": [
+          "KG-02"
+        ],
+        "text": "This process does not document what happens when a customer reports a bug on a deprecated product version that is no longer receiving active development (e.g., a legacy NexFlow configuration mode retired from new sales but still running for a small number of legacy customers). In practice, these reports are currently triaged case-by-case by the Engineering Manager with no documented standard, which has led to inconsistent customer communication in at least two known cases.",
+        "chunk_ids": [
+          "PROC-ENG-002_v2.2_002"
+        ]
+      }
+    ],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-FIN-001",
+    "name": "Expense Policy",
+    "kind": "policy",
+    "status": "Active",
+    "version": "1.9",
+    "effective_date": "2024-11-15",
+    "historical": false,
+    "document_id": "PROC-FIN-001",
+    "source_filename": "expense_policy.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-033",
+        "name": "Finance Manager",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-FIN",
+      "name": "Finance",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-033",
+        "name": "Finance Manager",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-036",
+        "name": "AP/AR Specialist",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [
+      "APR-03598EEE",
+      "APR-0A698807",
+      "APR-6CBEAC98",
+      "APR-6D2FFFB5",
+      "APR-9F266826",
+      "APR-B76BAE1B"
+    ],
+    "escalation_rule_ids": [],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-FIN-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-FIN-003",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [],
+    "related_documents": [
+      {
+        "document_id": "DOC-DEPT-FIN",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-FIN-001",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-FIN-002",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "Approved expenses are reimbursed in the next payroll cycle following approval, typically within 10 business days.",
+        "context": "Reimbursement Timeline",
+        "durations": [
+          {
+            "text": "within 10 business days",
+            "value": "10",
+            "unit": "business days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-FIN-001_v1.9_003"
+        ]
+      }
+    ],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-FIN-002",
+    "name": "Procurement Process",
+    "kind": "procedure",
+    "status": "Active",
+    "version": "1.3",
+    "effective_date": "2024-08-01",
+    "historical": false,
+    "document_id": "PROC-FIN-002",
+    "source_filename": "procurement_process.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-033",
+        "name": "Finance Manager",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-046",
+        "name": "Operations Manager",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-FIN",
+      "name": "Finance",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [
+      {
+        "dept_id": "DEPT-OPS",
+        "name": "Operations",
+        "source": "procurement_process.md: Department header",
+        "confidence": 1.0
+      }
+    ],
+    "participants": [
+      {
+        "role_id": "ROLE-032",
+        "name": "CFO",
+        "how": [
+          "document header: Related Roles",
+          "named in step 3 (Threshold approval)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-033",
+        "name": "Finance Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 3 (Threshold approval)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-047",
+        "name": "Operations Analyst",
+        "how": [
+          "document header: Related Roles",
+          "named in step 4 (Vendor setup)"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Request",
+        "text": "Requester submits a purchase request via the internal procurement tool, including business justification.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-FIN-002_v1.3_001"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Manager approval",
+        "text": "Direct manager approves.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [
+          "Manager",
+          "Direct manager"
+        ],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-FIN-002_v1.3_001"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Threshold approval",
+        "text": "Purchases €1,000–€10,000 require Finance Manager approval; above €10,000 requires CFO approval.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-033",
+          "ROLE-032"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-FIN-002_v1.3_001"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Vendor setup",
+        "text": "Operations Analyst confirms the vendor is set up in the finance system (new vendors require a basic due-diligence check).",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-047"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-FIN-002_v1.3_001"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Purchase order issuance",
+        "text": "Finance issues a PO; vendor invoices are matched against the PO at payment time (see PROC-FIN-003).",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "PROC-FIN-003",
+            "types": [
+              "process",
+              "document"
+            ]
+          }
+        ],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-FIN-002_v1.3_001"
+        ]
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [
+      "APR-03598EEE",
+      "APR-07391268",
+      "APR-1FCE21CA",
+      "APR-A1BDD332",
+      "APR-FE68154F"
+    ],
+    "escalation_rule_ids": [],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-FIN-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-FIN-003",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [
+      {
+        "policy_id": "PROC-FIN-001",
+        "how": [
+          "process document header lists the policy as related",
+          "policy header lists this process as related"
+        ],
+        "confidence": 0.7
+      }
+    ],
+    "related_documents": [
+      {
+        "document_id": "DOC-DEPT-FIN",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-DEPT-OPS",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-FIN-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-FIN-002",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-FIN-003",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-FIN-003",
+    "name": "Invoice and Payment Process",
+    "kind": "procedure",
+    "status": "Active",
+    "version": "1.6",
+    "effective_date": "2025-01-15",
+    "historical": false,
+    "document_id": "PROC-FIN-003",
+    "source_filename": "invoice_payment_process.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-036",
+        "name": "AP/AR Specialist",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-FIN",
+      "name": "Finance",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-026",
+        "name": "Customer Success Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 3 (Customer Invoicing (Accounts Receivable))"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-033",
+        "name": "Finance Manager",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-036",
+        "name": "AP/AR Specialist",
+        "how": [
+          "document header: Related Roles",
+          "named in step 3 (Customer Invoicing (Accounts Receivable))"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": null,
+        "text": "Contract terms (from signed SOW) are entered into the billing system at deal close, creating the formal customer account record (see glossary.md TN-004 — this is the \"account\" in Finance's sense, distinct from \"client\" in Sales' sense).",
+        "section": "Customer Invoicing (Accounts Receivable)",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-FIN-003_v1.6_000"
+        ]
+      },
+      {
+        "number": 2,
+        "title": null,
+        "text": "Invoices are generated per the contract's billing cadence (monthly, quarterly, or annual — most Nexora contracts are annual, paid upfront).",
+        "section": "Customer Invoicing (Accounts Receivable)",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-FIN-003_v1.6_000"
+        ]
+      },
+      {
+        "number": 3,
+        "title": null,
+        "text": "AP/AR Specialist monitors payment status; overdue invoices (30+ days) trigger an automatic reminder, then escalation to the account's Customer Success Manager at 45 days.",
+        "section": "Customer Invoicing (Accounts Receivable)",
+        "role_ids": [
+          "ROLE-036",
+          "ROLE-026"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [
+          {
+            "text": "30+ days",
+            "value": "30+",
+            "unit": "days"
+          },
+          {
+            "text": "at 45 days",
+            "value": "45",
+            "unit": "days"
+          }
+        ],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-FIN-003_v1.6_000"
+        ]
+      },
+      {
+        "number": 1,
+        "title": null,
+        "text": "Vendor invoices are matched against the originating purchase order (PROC-FIN-002).",
+        "section": "Vendor Payments (Accounts Payable)",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "PROC-FIN-002",
+            "types": [
+              "process",
+              "document"
+            ]
+          }
+        ],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-FIN-003_v1.6_001"
+        ]
+      },
+      {
+        "number": 2,
+        "title": null,
+        "text": "Approved invoices are paid on Nexora's standard 30-day payment terms unless a vendor contract specifies otherwise.",
+        "section": "Vendor Payments (Accounts Payable)",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-FIN-003_v1.6_001"
+        ]
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [],
+    "escalation_rule_ids": [
+      "ESC-31741840",
+      "ESC-63A67D48",
+      "ESC-AD074D45"
+    ],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-FIN-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-IMPL-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [
+      {
+        "policy_id": "PROC-FIN-001",
+        "how": [
+          "policy header lists this process as related"
+        ],
+        "confidence": 0.7
+      }
+    ],
+    "related_documents": [
+      {
+        "document_id": "DOC-DEPT-FIN",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-IMPLSUP",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "PROC-FIN-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-FIN-002",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-FIN-003",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "AP/AR Specialist monitors payment status; overdue invoices (30+ days) trigger an automatic reminder, then escalation to the account's Customer Success Manager at 45 days.",
+        "context": "Customer Invoicing (Accounts Receivable)",
+        "durations": [
+          {
+            "text": "30+ days",
+            "value": "30+",
+            "unit": "days"
+          },
+          {
+            "text": "at 45 days",
+            "value": "45",
+            "unit": "days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-FIN-003_v1.6_000"
+        ]
+      }
+    ],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-HR-001",
+    "name": "Employee Onboarding",
+    "kind": "procedure",
+    "status": "Active",
+    "version": "3.0",
+    "effective_date": "2025-06-01",
+    "historical": false,
+    "document_id": "PROC-HR-001",
+    "source_filename": "employee_onboarding.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-038",
+        "name": "HR Manager",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-HR",
+      "name": "HR",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-040",
+        "name": "HR Generalist",
+        "how": [
+          "document header: Related Roles",
+          "named in step 1 (Pre-start)",
+          "named in step 2 (Day 1)",
+          "named in step 5 (30-day check-in)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-041",
+        "name": "Recruiter",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-045",
+        "name": "IT Support Specialist",
+        "how": [
+          "document header: Related Roles",
+          "named in step 1 (Pre-start)"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Pre-start",
+        "text": "HR Generalist sends welcome pack and Day-1 logistics; IT Support Specialist provisions standard access (email, chat, HR portal — see PROC-IT-001) to be ready before Day 1.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-040",
+          "ROLE-045"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "PROC-IT-001",
+            "types": [
+              "process",
+              "policy",
+              "document"
+            ]
+          }
+        ],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-HR-001_v3.0_002"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Day 1",
+        "text": "Hiring Manager and HR Generalist run orientation; new hire completes employment paperwork.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-040"
+        ],
+        "generic_roles": [
+          "Hiring Manager"
+        ],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-HR-001_v3.0_002"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "First week",
+        "text": "New hire completes department-specific onboarding tasks assigned by Hiring Manager; for employees relocating to Germany, HR also shares the New Joiner Life & Settling In materials (see new_joiner_care.md).",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [
+          "Hiring Manager"
+        ],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-HR-001_v3.0_002"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Security training",
+        "text": "New hires must complete mandatory security awareness training within the first 10 working days of their start date. (See Version History Note below regarding a discrepancy with an older document.)",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [
+          {
+            "text": "within the first 10 working days",
+            "value": "10",
+            "unit": "working days"
+          }
+        ],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-HR-001_v3.0_002"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "30-day check-in",
+        "text": "HR Generalist holds a structured check-in with the new hire and Hiring Manager.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-040"
+        ],
+        "generic_roles": [
+          "Hiring Manager"
+        ],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-HR-001_v3.0_002"
+        ]
+      },
+      {
+        "number": 6,
+        "title": "90-day review",
+        "text": "Hiring Manager completes a formal 90-day performance check-in.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [
+          "Hiring Manager"
+        ],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-HR-001_v3.0_002"
+        ]
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [],
+    "escalation_rule_ids": [],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-IT-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-IT-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [
+      {
+        "policy_id": "PROC-HR-001-ADDENDUM",
+        "how": [
+          "policy header lists this process as related"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "policy_id": "PROC-HR-002",
+        "how": [
+          "policy header lists this process as related"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "policy_id": "PROC-IT-001",
+        "how": [
+          "process document header lists the policy as related",
+          "step 1 refers to the policy",
+          "policy header lists this process as related"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "policy_id": "PROC-IT-002",
+        "how": [
+          "process document header lists the policy as related"
+        ],
+        "confidence": 0.7
+      }
+    ],
+    "related_documents": [
+      {
+        "document_id": "DOC-CARE-001",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-CORP-002",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-CORP-003",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-DEPT-HR",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-FAQ-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "PROC-HR-001",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-HR-001-ADDENDUM",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-HR-002",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-IMPL-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "PROC-IT-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-IT-002",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "New hires must complete mandatory security awareness training within the first 10 working days of their start date.",
+        "context": "Security training",
+        "durations": [
+          {
+            "text": "within the first 10 working days",
+            "value": "10",
+            "unit": "working days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-HR-001_v3.0_002"
+        ]
+      },
+      {
+        "statement": "An earlier version of new-hire onboarding guidance (see archived_new_hire_security_training_v1_ARCHIVED.md, Version 1.0, effective 2022-08-01) stated that security training must be completed \"within 30 days\" of start date.",
+        "context": "VERSION HISTORY NOTE — Known Conflict",
+        "durations": [
+          {
+            "text": "within 30 days",
+            "value": "30",
+            "unit": "days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-HR-001_v3.0_003"
+        ]
+      },
+      {
+        "statement": "This current document (Version 3.0, effective 2025-06-01) supersedes that guidance with the 10 working days requirement above.",
+        "context": "VERSION HISTORY NOTE — Known Conflict",
+        "durations": [
+          {
+            "text": "10 working days",
+            "value": "10",
+            "unit": "working days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-HR-001_v3.0_003"
+        ]
+      }
+    ],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [
+      {
+        "heading": "VERSION HISTORY NOTE — Known Conflict",
+        "text": "An earlier version of new-hire onboarding guidance (see archived_new_hire_security_training_v1_ARCHIVED.md, Version 1.0, effective 2022-08-01) stated that security training must be completed \"within 30 days\" of start date. This current document (Version 3.0, effective 2025-06-01) supersedes that guidance with the 10 working days requirement above. The 2025-06-01 version is current; the 30-day figure should not be used going forward, but it may still appear in older printed materials or an employee's memory of what they were told during a hiring process before mid-2025.",
+        "chunk_ids": [
+          "PROC-HR-001_v3.0_003"
+        ]
+      }
+    ],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-HR-001-ADDENDUM",
+    "name": "New Hire Security Training Requirement (archived)",
+    "kind": "policy",
+    "status": "Archived",
+    "version": "1.0",
+    "effective_date": "2022-08-01",
+    "historical": true,
+    "document_id": "PROC-HR-001-ADDENDUM",
+    "source_filename": "archived_new_hire_security_training_v1_ARCHIVED.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-038",
+        "name": "HR Manager",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-HR",
+      "name": "HR",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-040",
+        "name": "HR Generalist",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [],
+    "escalation_rule_ids": [],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-HR-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [],
+    "related_documents": [
+      {
+        "document_id": "PROC-HR-001-ADDENDUM",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "All new hires must complete the mandatory security awareness training module within 30 days of their start date.",
+        "context": "New Hire Security Training Requirement (ARCHIVED)",
+        "durations": [
+          {
+            "text": "within 30 days",
+            "value": "30",
+            "unit": "days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-HR-001-ADDENDUM_v1.0_000"
+        ]
+      },
+      {
+        "statement": "*This requirement was superseded by PROC-HR-001 Version 3.0 (effective 2025-06-01), which shortened the requirement to 10 working days.",
+        "context": "New Hire Security Training Requirement (ARCHIVED)",
+        "durations": [
+          {
+            "text": "10 working days",
+            "value": "10",
+            "unit": "working days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-HR-001-ADDENDUM_v1.0_000"
+        ]
+      }
+    ],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-HR-002",
+    "name": "Leave and HR Policies",
+    "kind": "policy",
+    "status": "Active",
+    "version": "1.5",
+    "effective_date": "2025-01-01",
+    "historical": false,
+    "document_id": "PROC-HR-002",
+    "source_filename": "leave_policy.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-038",
+        "name": "HR Manager",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-HR",
+      "name": "HR",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-040",
+        "name": "HR Generalist",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [
+      "APR-F6EF8790"
+    ],
+    "escalation_rule_ids": [],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-HR-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [],
+    "related_documents": [
+      {
+        "document_id": "DOC-DEPT-HR",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-HR-002",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "Germany-based employees (LOC-MUC, LOC-BER): 28 days/year, per German statutory minimum plus company standard.",
+        "context": "Annual Leave",
+        "durations": [
+          {
+            "text": "28 days",
+            "value": "28",
+            "unit": "days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-HR-002_v1.5_000"
+        ]
+      },
+      {
+        "statement": "India-based employees (LOC-BLR): 24 days/year plus public holidays per Karnataka state calendar.",
+        "context": "Annual Leave",
+        "durations": [
+          {
+            "text": "24 days",
+            "value": "24",
+            "unit": "days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-HR-002_v1.5_000"
+        ]
+      },
+      {
+        "statement": "US-based employees (LOC-AUS): 20 days/year (company policy; no federal statutory minimum applies).",
+        "context": "Annual Leave",
+        "durations": [
+          {
+            "text": "20 days",
+            "value": "20",
+            "unit": "days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-HR-002_v1.5_000"
+        ]
+      },
+      {
+        "statement": "UK-based employees (LOC-LON): 25 days/year plus UK public holidays.",
+        "context": "Annual Leave",
+        "durations": [
+          {
+            "text": "25 days",
+            "value": "25",
+            "unit": "days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-HR-002_v1.5_000"
+        ]
+      },
+      {
+        "statement": "All leave is requested and approved through the HR self-service portal; manager approval required for leave exceeding 5 consecutive working days.",
+        "context": "Requesting Leave",
+        "durations": [
+          {
+            "text": "exceeding 5 consecutive working days",
+            "value": "5",
+            "unit": "consecutive working days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-HR-002_v1.5_003"
+        ]
+      }
+    ],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-HR-003",
+    "name": "Internal Communication Guidelines",
+    "kind": "guideline",
+    "status": "Active",
+    "version": "1.2",
+    "effective_date": "2024-10-15",
+    "historical": false,
+    "document_id": "PROC-HR-003",
+    "source_filename": "internal_communication_guidelines.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-037",
+        "name": "Head of HR",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-HR",
+      "name": "HR",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [],
+    "steps": [],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [],
+    "escalation_rule_ids": [],
+    "triggers": [],
+    "related_processes": [],
+    "related_products": [],
+    "related_policies": [],
+    "related_documents": [
+      {
+        "document_id": "DOC-COMM-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-COMM-006",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-DEPT-HR",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-HR-003",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-IMPL-001",
+    "name": "Customer Onboarding",
+    "kind": "procedure",
+    "status": "Active",
+    "version": "2.0",
+    "effective_date": "2025-03-01",
+    "historical": false,
+    "document_id": "PROC-IMPL-001",
+    "source_filename": "customer_onboarding.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-022",
+        "name": "Implementation Manager",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-IMPL",
+      "name": "Implementation / Consulting",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-003",
+        "name": "Account Executive",
+        "how": [
+          "named in step 1 (Kickoff)"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "role_id": "ROLE-022",
+        "name": "Implementation Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 5 (Go-live sign-off)",
+          "named in step 6 (Handoff to Customer Success)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-023",
+        "name": "Solutions Architect",
+        "how": [
+          "document header: Related Roles",
+          "named in step 3 (Configuration & data migration)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-024",
+        "name": "Implementation Consultant",
+        "how": [
+          "document header: Related Roles",
+          "named in step 1 (Kickoff)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-026",
+        "name": "Customer Success Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 6 (Handoff to Customer Success)"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Kickoff",
+        "text": "Implementation Consultant reviews the AE's \"Deal Closed\" handoff record and schedules a kickoff call within 5 business days of contract signature.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-024",
+          "ROLE-003"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [
+          {
+            "text": "within 5 business days",
+            "value": "5",
+            "unit": "business days"
+          }
+        ],
+        "artifacts": [
+          "\"Deal Closed\" handoff record"
+        ],
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_002"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Discovery",
+        "text": "Consultant confirms configuration requirements (e.g., NexFlow batch/lot tracking, NexConnect data sources) directly with the customer.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [
+          "PROD-NEXFLOW",
+          "PROD-NEXCONNECT"
+        ],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_002"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Configuration & data migration",
+        "text": "Consultant (or Solutions Architect, for custom integrations) configures the tenant and migrates initial data.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-023"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_002"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Training",
+        "text": "Consultant delivers admin and end-user training sessions.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_002"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Go-live sign-off",
+        "text": "The Implementation Manager provides final go-live approval after Consultant confirms all discovery items are resolved.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-022"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_002"
+        ]
+      },
+      {
+        "number": 6,
+        "title": "Handoff to Customer Success",
+        "text": "Implementation Manager and the assigned Customer Success Manager hold a formal handoff call; open items are logged in the account record.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-022",
+          "ROLE-026"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_002"
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "item": "signed contract",
+        "quote": "Move a customer from signed contract to live production usage.",
+        "method": "purpose_from_to",
+        "confidence": 0.85,
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_001"
+        ]
+      },
+      {
+        "item": "\"Deal Closed\" handoff record",
+        "quote": "Implementation Consultant reviews the AE's \"Deal Closed\" handoff record and schedules a kickoff call within 5 business days of contract signature.",
+        "method": "step_artifact",
+        "confidence": 0.85,
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_002"
+        ],
+        "step": 1
+      }
+    ],
+    "outputs": [
+      {
+        "item": "live production usage",
+        "quote": "Move a customer from signed contract to live production usage.",
+        "method": "purpose_from_to",
+        "confidence": 0.85,
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_001"
+        ]
+      }
+    ],
+    "inputs_outputs_stated": true,
+    "approval_rule_ids": [
+      "APR-79C52990",
+      "APR-E24538B1"
+    ],
+    "escalation_rule_ids": [],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-SALES-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-CS-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [
+      {
+        "product_id": "PROD-NEXCONNECT",
+        "how": "named in step(s) [2]",
+        "relationship": "uses",
+        "confidence": 0.85
+      },
+      {
+        "product_id": "PROD-NEXFLOW",
+        "how": "named in step(s) [2]",
+        "relationship": "uses",
+        "confidence": 0.85
+      }
+    ],
+    "related_policies": [
+      {
+        "policy_id": "PROC-CS-001",
+        "how": [
+          "process document header lists the policy as related",
+          "policy header lists this process as related"
+        ],
+        "confidence": 0.7
+      }
+    ],
+    "related_documents": [
+      {
+        "document_id": "DOC-CORP-002",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-CORP-003",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-DEPT-CS",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-DEPT-IMPL",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-DEPT-SALES",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-FAQ-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-PROD-IMPLSUP",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-NEXCONNECT",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-NEXFLOW",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-NEXVIEW",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-SCEN-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "PROC-CS-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-FIN-003",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-HR-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "PROC-IMPL-001",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SALES-002",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "Implementation Consultant reviews the AE's \"Deal Closed\" handoff record and schedules a kickoff call within 5 business days of contract signature.",
+        "context": "Kickoff",
+        "durations": [
+          {
+            "text": "within 5 business days",
+            "value": "5",
+            "unit": "business days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_002"
+        ]
+      }
+    ],
+    "tables": [],
+    "known_gaps": [
+      {
+        "heading": "Known Gap — KG-01",
+        "gap_codes": [
+          "KG-01"
+        ],
+        "text": "This process assumes the AE's \"Deal Closed\" handoff record is complete. It does not specify what the Implementation Consultant should do if the handoff record is missing required fields (e.g., agreed go-live date not documented). In practice this causes kickoff delays; there is no formal fallback procedure. ---",
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_003"
+        ]
+      }
+    ],
+    "version_notes": [
+      {
+        "heading": "VERSION HISTORY NOTE",
+        "text": "Version 1.0 (Effective 2023-06-01, now superseded) of this document referred to the final approval role as \"Project Lead.\" As of Version 2.0 (2025-03-01), this role is titled \"Implementation Manager.\" Some archived training materials and older customer correspondence templates still reference \"Project Lead\" — treat as equivalent.",
+        "chunk_ids": [
+          "PROC-IMPL-001_v2.0_004"
+        ]
+      }
+    ],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-IMPL-001-V1",
+    "name": "Customer Onboarding (archived)",
+    "kind": "procedure",
+    "status": "Archived",
+    "version": "1.0",
+    "effective_date": "2023-06-01",
+    "historical": true,
+    "document_id": "PROC-IMPL-001-V1",
+    "source_filename": "customer_onboarding_v1_ARCHIVED.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-022",
+        "name": "Implementation Manager",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-IMPL",
+      "name": "Implementation / Consulting",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-022",
+        "name": "Implementation Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 5 (Steps)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-024",
+        "name": "Implementation Consultant",
+        "how": [
+          "document header: Related Roles",
+          "named in step 1 (Steps)"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": null,
+        "text": "Kickoff call scheduled by Implementation Consultant.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-024"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IMPL-001_v1.0_002"
+        ]
+      },
+      {
+        "number": 2,
+        "title": null,
+        "text": "Discovery and configuration.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IMPL-001_v1.0_002"
+        ]
+      },
+      {
+        "number": 3,
+        "title": null,
+        "text": "Data migration.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IMPL-001_v1.0_002"
+        ]
+      },
+      {
+        "number": 4,
+        "title": null,
+        "text": "Training.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": []
+      },
+      {
+        "number": 5,
+        "title": null,
+        "text": "Project Lead provides final go-live sign-off.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-022"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IMPL-001_v1.0_002"
+        ]
+      },
+      {
+        "number": 6,
+        "title": null,
+        "text": "Handoff to Account Management (note: the \"Account Management\" function referenced here was reorganized into the Customer Success department in 2024; this document was not updated to reflect that change prior to being superseded).",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IMPL-001_v1.0_002"
+        ]
+      }
+    ],
+    "inputs": [
+      {
+        "item": "signed contract",
+        "quote": "Move a customer from signed contract to live production usage.",
+        "method": "purpose_from_to",
+        "confidence": 0.85,
+        "chunk_ids": [
+          "PROC-IMPL-001_v1.0_001"
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "item": "live production usage",
+        "quote": "Move a customer from signed contract to live production usage.",
+        "method": "purpose_from_to",
+        "confidence": 0.85,
+        "chunk_ids": [
+          "PROC-IMPL-001_v1.0_001"
+        ]
+      }
+    ],
+    "inputs_outputs_stated": true,
+    "approval_rule_ids": [
+      "APR-10913E9F"
+    ],
+    "escalation_rule_ids": [],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-SALES-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [],
+    "related_documents": [
+      {
+        "document_id": "PROC-IMPL-001-V1",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-IT-001",
+    "name": "Access Control Policy",
+    "kind": "policy",
+    "status": "Active",
+    "version": "2.3",
+    "effective_date": "2025-04-15",
+    "historical": false,
+    "document_id": "PROC-IT-001",
+    "source_filename": "access_control_policy.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-042",
+        "name": "CISO",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-IT",
+      "name": "IT / Security",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-018",
+        "name": "Data & Analytics Manager",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-042",
+        "name": "CISO",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-044",
+        "name": "Security Analyst",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-045",
+        "name": "IT Support Specialist",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [
+      "APR-5AFE2B4B",
+      "APR-D21F5F9A",
+      "APR-0A7C9BEF",
+      "APR-4B33DE9D",
+      "APR-5C528B50",
+      "APR-649276AB",
+      "APR-6A954B2B",
+      "APR-C79276E2",
+      "APR-F9BE6AFF"
+    ],
+    "escalation_rule_ids": [],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-IT-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-HR-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [],
+    "related_documents": [
+      {
+        "document_id": "DOC-DEPT-DATA",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-DEPT-IT",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-FAQ-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-SCEN-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-TG-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "PROC-HR-001",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-IT-001",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-IT-002",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "All role-specific access is reviewed quarterly by IT/Security in coordination with each approving manager; unused access (no login in 90 days) is automatically revoked pending manager confirmation.",
+        "context": "Access Review",
+        "durations": [
+          {
+            "text": "in 90 days",
+            "value": "90",
+            "unit": "days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-IT-001_v2.3_004"
+        ]
+      }
+    ],
+    "tables": [
+      [
+        {
+          "System": "Analytics production data warehouse",
+          "Approver": "Data & Analytics Manager + IT provisioning"
+        },
+        {
+          "System": "Customer production tenants (Support tooling)",
+          "Approver": "Support Team Lead"
+        },
+        {
+          "System": "Customer production tenants (Implementation tooling)",
+          "Approver": "Implementation Manager"
+        },
+        {
+          "System": "Production code deployment",
+          "Approver": "Engineering Manager"
+        },
+        {
+          "System": "Billing/finance systems",
+          "Approver": "Finance Manager"
+        }
+      ]
+    ],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-IT-002",
+    "name": "Data Security Policy",
+    "kind": "policy",
+    "status": "Active",
+    "version": "3.1",
+    "effective_date": "2025-05-01",
+    "historical": false,
+    "document_id": "PROC-IT-002",
+    "source_filename": "data_security_policy.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-042",
+        "name": "CISO",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-IT",
+      "name": "IT / Security",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-042",
+        "name": "CISO",
+        "how": [
+          "document header: Related Roles",
+          "named in step 4 (Incident Reporting)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-044",
+        "name": "Security Analyst",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Mandatory Security Training",
+        "text": "All employees must complete annual security awareness training. See PROC-HR-001 (Employee Onboarding) for the new-hire deadline — note there is a known version discrepancy between HR onboarding materials on this deadline; this document (PROC-IT-002) does not itself set the deadline, HR does.",
+        "section": "Key Requirements",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "PROC-HR-001",
+            "types": [
+              "process",
+              "document"
+            ]
+          },
+          {
+            "id": "PROC-IT-002",
+            "types": [
+              "process",
+              "policy",
+              "document"
+            ]
+          }
+        ],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IT-002_v3.1_001"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Customer Data Handling",
+        "text": "Customer production data may only be accessed by employees with an approved, logged business reason (see PROC-IT-001).",
+        "section": "Key Requirements",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "PROC-IT-001",
+            "types": [
+              "process",
+              "policy",
+              "document"
+            ]
+          }
+        ],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IT-002_v3.1_001"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Device Security",
+        "text": "Company laptops must have disk encryption and endpoint protection enabled; personal devices may not access customer production data.",
+        "section": "Key Requirements",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IT-002_v3.1_001"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Incident Reporting",
+        "text": "Any suspected data exposure must be reported to the CISO within 24 hours of discovery, regardless of confirmed severity (see PROC-SUP-002).",
+        "section": "Key Requirements",
+        "role_ids": [
+          "ROLE-042"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "PROC-SUP-002",
+            "types": [
+              "process",
+              "policy",
+              "document"
+            ]
+          }
+        ],
+        "durations": [
+          {
+            "text": "within 24 hours",
+            "value": "24",
+            "unit": "hours"
+          }
+        ],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IT-002_v3.1_001"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Data Retention",
+        "text": "Customer data is retained per the signed contract's data retention terms; default is 90 days post-contract-termination unless otherwise specified.",
+        "section": "Key Requirements",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [
+          {
+            "text": "90 days",
+            "value": "90",
+            "unit": "days"
+          }
+        ],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-IT-002_v3.1_001"
+        ]
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [],
+    "escalation_rule_ids": [
+      "ESC-513F6C5B",
+      "ESC-EDB4B4D4"
+    ],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-IT-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-SUP-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [],
+    "related_documents": [
+      {
+        "document_id": "DOC-DEPT-ENG",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-DEPT-IT",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-HR-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-IT-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-IT-002",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SUP-002",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "Any suspected data exposure must be reported to the CISO within 24 hours of discovery, regardless of confirmed severity (see PROC-SUP-002).",
+        "context": "Incident Reporting",
+        "durations": [
+          {
+            "text": "within 24 hours",
+            "value": "24",
+            "unit": "hours"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-IT-002_v3.1_001"
+        ]
+      },
+      {
+        "statement": "Customer data is retained per the signed contract's data retention terms; default is 90 days post-contract-termination unless otherwise specified.",
+        "context": "Data Retention",
+        "durations": [
+          {
+            "text": "90 days",
+            "value": "90",
+            "unit": "days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-IT-002_v3.1_001"
+        ]
+      }
+    ],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-SALES-001",
+    "name": "Lead Qualification",
+    "kind": "procedure",
+    "status": "Active",
+    "version": "1.4",
+    "effective_date": "2025-01-15",
+    "historical": false,
+    "document_id": "PROC-SALES-001",
+    "source_filename": "lead_qualification.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-002",
+        "name": "Sales Manager",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-SALES",
+      "name": "Sales",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-002",
+        "name": "Sales Manager",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-003",
+        "name": "Account Executive",
+        "how": [
+          "document header: Related Roles",
+          "named in step 6 (Handoff to AE)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-004",
+        "name": "Sales Development Representative",
+        "how": [
+          "document header: Related Roles",
+          "named in step 3 (SDR triage)",
+          "named in step 4 (Discovery call)",
+          "named in step 5 (Qualification decision)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-006",
+        "name": "Demand Generation Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 2 (Initial scoring)"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Lead capture",
+        "text": "Marketing-qualified leads (MQLs) enter NexCRM automatically from web forms, webinar signups, and outbound campaigns.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [
+          "PROD-NEXCRM"
+        ],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SALES-001_v1.4_001"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Initial scoring",
+        "text": "Demand Generation Manager's lead-scoring model assigns a score 0–100 based on company size, industry, and engagement behavior.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-006"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SALES-001_v1.4_001"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "SDR triage",
+        "text": "Leads scoring above 60 are assigned to an SDR within 1 business day.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-004"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [
+          {
+            "text": "within 1 business day",
+            "value": "1",
+            "unit": "business day"
+          }
+        ],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SALES-001_v1.4_001"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Discovery call",
+        "text": "SDR runs a 15-minute qualification call using the standard BANT-style discovery script (Budget, Authority, Need, Timeline).",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-004"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SALES-001_v1.4_001"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Qualification decision",
+        "text": "SDR marks the lead as Sales Qualified Lead (SQL) or Disqualified, with a reason code.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-004"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SALES-001_v1.4_001"
+        ]
+      },
+      {
+        "number": 6,
+        "title": "Handoff to AE",
+        "text": "SQLs are assigned to an Account Executive based on territory (geography) and, for larger deals, industry specialization.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-003"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SALES-001_v1.4_001"
+        ]
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [],
+    "escalation_rule_ids": [
+      "ESC-D784A4A6"
+    ],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-SALES-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [
+      {
+        "product_id": "PROD-NEXCRM",
+        "how": "named in step(s) [1]",
+        "relationship": "uses",
+        "confidence": 0.85
+      }
+    ],
+    "related_policies": [],
+    "related_documents": [
+      {
+        "document_id": "DOC-DEPT-MKT",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-DEPT-SALES",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-NEXCRM",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SALES-001",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SALES-002",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "Leads scoring above 60 are assigned to an SDR within 1 business day.",
+        "context": "SDR triage",
+        "durations": [
+          {
+            "text": "within 1 business day",
+            "value": "1",
+            "unit": "business day"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-SALES-001_v1.4_001"
+        ]
+      },
+      {
+        "statement": "SDR must action every MQL within 1 business day of assignment.",
+        "context": "SLA",
+        "durations": [
+          {
+            "text": "within 1 business day",
+            "value": "1",
+            "unit": "business day"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-SALES-001_v1.4_002"
+        ]
+      },
+      {
+        "statement": "Leads unactioned after 3 business days are automatically re-queued and flagged to the Sales Manager.",
+        "context": "SLA",
+        "durations": [
+          {
+            "text": "after 3 business days",
+            "value": "3",
+            "unit": "business days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-SALES-001_v1.4_002"
+        ]
+      }
+    ],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-SALES-002",
+    "name": "Proposal and Quotation",
+    "kind": "procedure",
+    "status": "Active",
+    "version": "2.1",
+    "effective_date": "2025-02-01",
+    "historical": false,
+    "document_id": "PROC-SALES-002",
+    "source_filename": "proposal_quotation.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-003",
+        "name": "Account Executive",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-SALES",
+      "name": "Sales",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-001",
+        "name": "VP Sales",
+        "how": [
+          "document header: Related Roles",
+          "named in step 3 (Discount approval)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-002",
+        "name": "Sales Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 3 (Discount approval)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-003",
+        "name": "Account Executive",
+        "how": [
+          "document header: Related Roles",
+          "named in step 1 (Scoping call)",
+          "named in step 2 (Quote generation)",
+          "named in step 4 (Proposal delivery)",
+          "named in step 5 (Contract signature)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-023",
+        "name": "Solutions Architect",
+        "how": [
+          "document header: Related Roles",
+          "named in step 1 (Scoping call)"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Scoping call",
+        "text": "AE confirms which products, tiers, and (if applicable) custom development or complex integration needs apply. Complex integration scope requires a Solutions Architect review before quoting (see DOC-PROD-NEXCONNECT).",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-003",
+          "ROLE-023"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "DOC-PROD-NEXCONNECT",
+            "types": [
+              "document"
+            ]
+          }
+        ],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SALES-002_v2.1_001"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Quote generation",
+        "text": "AE builds the quote in NexCRM using standard pricing tables.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-003"
+        ],
+        "generic_roles": [],
+        "product_ids": [
+          "PROD-NEXCRM"
+        ],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SALES-002_v2.1_001"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Discount approval",
+        "text": "Discounts up to 15% require no additional approval. 15–30% requires Sales Manager approval. Above 30%, or any multi-year term, requires VP Sales approval.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-002",
+          "ROLE-001"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SALES-002_v2.1_001"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Proposal delivery",
+        "text": "AE sends the proposal (quote + SOW) to the prospect, typically with a 30-day validity window.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-003"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SALES-002_v2.1_001"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Contract signature",
+        "text": "Once signed, AE triggers the \"Deal Closed\" handoff record for Implementation (see PROC-IMPL-001, Step 1).",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-003"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "PROC-IMPL-001",
+            "types": [
+              "process",
+              "document"
+            ]
+          }
+        ],
+        "durations": [],
+        "artifacts": [
+          "\"Deal Closed\" handoff record"
+        ],
+        "chunk_ids": [
+          "PROC-SALES-002_v2.1_001"
+        ]
+      }
+    ],
+    "inputs": [],
+    "outputs": [
+      {
+        "item": "\"Deal Closed\" handoff record",
+        "quote": "Once signed, AE triggers the \"Deal Closed\" handoff record for Implementation (see PROC-IMPL-001, Step 1).",
+        "method": "step_artifact",
+        "confidence": 0.85,
+        "chunk_ids": [
+          "PROC-SALES-002_v2.1_001"
+        ],
+        "step": 5
+      }
+    ],
+    "inputs_outputs_stated": true,
+    "approval_rule_ids": [
+      "APR-11814885",
+      "APR-2C7F3A2A",
+      "APR-DD81D7B2"
+    ],
+    "escalation_rule_ids": [
+      "ESC-82D4F484"
+    ],
+    "triggers": [
+      {
+        "process_id": "PROC-IMPL-001",
+        "step": 5,
+        "quote": "Once signed, AE triggers the \"Deal Closed\" handoff record for Implementation (see PROC-IMPL-001, Step 1).",
+        "chunk_ids": [
+          "PROC-SALES-002_v2.1_001"
+        ],
+        "via_artifact": "\"Deal Closed\" handoff record",
+        "confidence": 0.85
+      }
+    ],
+    "related_processes": [
+      {
+        "process_id": "PROC-SALES-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-IMPL-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [
+      {
+        "product_id": "PROD-NEXCRM",
+        "how": "named in step(s) [2]",
+        "relationship": "uses",
+        "confidence": 0.85
+      }
+    ],
+    "related_policies": [],
+    "related_documents": [
+      {
+        "document_id": "DOC-DEPT-SALES",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-FAQ-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-PROD-CUSTDEV",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-NEXCRM",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-SCEN-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "PROC-IMPL-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-IMPL-001-V1",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SALES-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SALES-002",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [],
+    "tables": [],
+    "known_gaps": [
+      {
+        "heading": "Known Gap",
+        "gap_codes": [],
+        "text": "This process does not currently specify what happens if a customer requests mid-negotiation changes to committed go-live dates after a proposal has already been approved at a given discount tier. In practice this is resolved ad hoc between the AE and Sales Manager; no formal escalation path exists.",
+        "chunk_ids": [
+          "PROC-SALES-002_v2.1_002"
+        ]
+      }
+    ],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-SUP-001",
+    "name": "Customer Support Procedures",
+    "kind": "procedure",
+    "status": "Active",
+    "version": "1.8",
+    "effective_date": "2025-02-10",
+    "historical": false,
+    "document_id": "PROC-SUP-001",
+    "source_filename": "customer_support_procedure.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-028",
+        "name": "Support Team Lead",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-SUP",
+      "name": "Technical Support",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [],
+    "participants": [
+      {
+        "role_id": "ROLE-029",
+        "name": "Support Engineer L3",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-030",
+        "name": "Support Engineer L2",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-031",
+        "name": "Support Engineer L1",
+        "how": [
+          "document header: Related Roles"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Intake",
+        "text": "Ticket created via customer portal, email, or (Priority tier only) phone.",
+        "section": "Ticket Lifecycle",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SUP-001_v1.8_001"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Triage (L1)",
+        "text": "L1 Support Engineer classifies ticket type (question, known issue, potential bug) and priority (P1–P4, see PROC-SUP-002).",
+        "section": "Ticket Lifecycle",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "PROC-SUP-002",
+            "types": [
+              "process",
+              "policy",
+              "document"
+            ]
+          }
+        ],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SUP-001_v1.8_001"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "First response",
+        "text": "Per SLA tier (see DOC-PROD-IMPLSUP).",
+        "section": "Ticket Lifecycle",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "DOC-PROD-IMPLSUP",
+            "types": [
+              "document"
+            ]
+          }
+        ],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SUP-001_v1.8_001"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Resolution or escalation",
+        "text": "L1 resolves known issues directly. Unresolved or complex issues escalate to L2, then L3 if a product defect is suspected.",
+        "section": "Ticket Lifecycle",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SUP-001_v1.8_001"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Bug confirmation path",
+        "text": "If L3 confirms a product defect, PROC-ENG-002 is triggered.",
+        "section": "Ticket Lifecycle",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [
+          {
+            "id": "PROC-ENG-002",
+            "types": [
+              "process",
+              "document"
+            ]
+          }
+        ],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SUP-001_v1.8_001"
+        ]
+      },
+      {
+        "number": 6,
+        "title": "Closure",
+        "text": "Ticket closed with resolution notes; customer receives a closure summary.",
+        "section": "Ticket Lifecycle",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SUP-001_v1.8_001"
+        ]
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [],
+    "escalation_rule_ids": [
+      "ESC-46652603"
+    ],
+    "triggers": [
+      {
+        "process_id": "PROC-ENG-002",
+        "step": 5,
+        "quote": "If L3 confirms a product defect, PROC-ENG-002 is triggered.",
+        "chunk_ids": [
+          "PROC-SUP-001_v1.8_001"
+        ],
+        "confidence": 0.85
+      }
+    ],
+    "related_processes": [
+      {
+        "process_id": "PROC-ENG-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-SUP-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [
+      {
+        "policy_id": "PROC-SUP-002",
+        "how": [
+          "process document header lists the policy as related",
+          "step 2 refers to the policy",
+          "policy header lists this process as related"
+        ],
+        "confidence": 0.85
+      }
+    ],
+    "related_documents": [
+      {
+        "document_id": "DOC-CORP-003",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-DEPT-SUP",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-PROD-IMPLSUP",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-TG-001",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-ENG-002",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SUP-001",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SUP-002",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [],
+    "tables": [],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  },
+  {
+    "process_id": "PROC-SUP-002",
+    "name": "Incident Management",
+    "kind": "policy_and_procedure",
+    "status": "Active",
+    "version": "2.0",
+    "effective_date": "2025-04-01",
+    "historical": false,
+    "document_id": "PROC-SUP-002",
+    "source_filename": "incident_management.md",
+    "owner_roles": [
+      {
+        "role_id": "ROLE-043",
+        "name": "IT Manager",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-028",
+        "name": "Support Team Lead",
+        "source": "processes.csv: owner_role",
+        "confidence": 1.0
+      }
+    ],
+    "department": {
+      "dept_id": "DEPT-SUP",
+      "name": "Technical Support",
+      "source": "processes.csv: owning_dept_id",
+      "confidence": 1.0
+    },
+    "supporting_departments": [
+      {
+        "dept_id": "DEPT-IT",
+        "name": "IT / Security",
+        "source": "incident_management.md: Department header",
+        "confidence": 1.0
+      }
+    ],
+    "participants": [
+      {
+        "role_id": "ROLE-013",
+        "name": "Engineering Manager",
+        "how": [
+          "named in step 5 (Post-incident review)"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "role_id": "ROLE-017",
+        "name": "DevOps Engineer",
+        "how": [
+          "document header: Related Roles",
+          "named in step 2 (Incident declaration)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-028",
+        "name": "Support Team Lead",
+        "how": [
+          "document header: Related Roles",
+          "named in step 3 (Response)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-042",
+        "name": "CISO",
+        "how": [
+          "document header: Related Roles",
+          "named in step 5 (Post-incident review)"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "role_id": "ROLE-043",
+        "name": "IT Manager",
+        "how": [
+          "document header: Related Roles",
+          "named in step 2 (Incident declaration)"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "steps": [
+      {
+        "number": 1,
+        "title": "Detection",
+        "text": "Via monitoring alert (DevOps), Support ticket escalation, or direct customer report.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SUP-002_v2.0_001"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Incident declaration",
+        "text": "Any P1 is declared a formal incident; IT Manager or on-call DevOps Engineer opens an incident channel.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-043",
+          "ROLE-017"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SUP-002_v2.0_001"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Response",
+        "text": "Relevant Engineering squad and DevOps investigate; Support Team Lead owns customer communication cadence (updates at least every 2 hours during an active P1).",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-028"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [
+          {
+            "text": "at least every 2 hours",
+            "value": "2",
+            "unit": "hours"
+          }
+        ],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SUP-002_v2.0_001"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Resolution",
+        "text": "Fix deployed or mitigation applied; incident downgraded or closed.",
+        "section": "Steps",
+        "role_ids": [],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SUP-002_v2.0_001"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Post-incident review",
+        "text": "Required for all P1 incidents within 5 business days; owned by the Engineering Manager of the affected squad, reviewed by CISO if the incident involved any data exposure risk.",
+        "section": "Steps",
+        "role_ids": [
+          "ROLE-013",
+          "ROLE-042"
+        ],
+        "generic_roles": [],
+        "product_ids": [],
+        "references": [],
+        "durations": [
+          {
+            "text": "within 5 business days",
+            "value": "5",
+            "unit": "business days"
+          }
+        ],
+        "artifacts": [],
+        "chunk_ids": [
+          "PROC-SUP-002_v2.0_001"
+        ]
+      }
+    ],
+    "inputs": [],
+    "outputs": [],
+    "inputs_outputs_stated": false,
+    "approval_rule_ids": [],
+    "escalation_rule_ids": [
+      "ESC-DBAD87B7",
+      "ESC-513F6C5B",
+      "ESC-79FCEAB8",
+      "ESC-EDB4B4D4"
+    ],
+    "triggers": [],
+    "related_processes": [
+      {
+        "process_id": "PROC-SUP-001",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      },
+      {
+        "process_id": "PROC-IT-002",
+        "how": "document header: Related Processes",
+        "confidence": 1.0
+      }
+    ],
+    "related_products": [],
+    "related_policies": [
+      {
+        "policy_id": "PROC-CS-001",
+        "how": [
+          "policy header lists this process as related"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "policy_id": "PROC-IT-002",
+        "how": [
+          "process document header lists the policy as related",
+          "policy header lists this process as related"
+        ],
+        "confidence": 0.7
+      }
+    ],
+    "related_documents": [
+      {
+        "document_id": "DOC-CORP-003",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "DOC-DEPT-SUP",
+        "how": [
+          "header Related Processes"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "DOC-SCEN-001",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "PROC-CS-001",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-ENG-002",
+        "how": [
+          "mentioned in text"
+        ],
+        "confidence": 0.7
+      },
+      {
+        "document_id": "PROC-IT-002",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SUP-001",
+        "how": [
+          "header Related Processes",
+          "mentioned in text"
+        ],
+        "confidence": 1.0
+      },
+      {
+        "document_id": "PROC-SUP-002",
+        "how": [
+          "the process's own document"
+        ],
+        "confidence": 1.0
+      }
+    ],
+    "timing_rules": [
+      {
+        "statement": "Relevant Engineering squad and DevOps investigate; Support Team Lead owns customer communication cadence (updates at least every 2 hours during an active P1).",
+        "context": "Response",
+        "durations": [
+          {
+            "text": "at least every 2 hours",
+            "value": "2",
+            "unit": "hours"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-SUP-002_v2.0_001"
+        ]
+      },
+      {
+        "statement": "Required for all P1 incidents within 5 business days; owned by the Engineering Manager of the affected squad, reviewed by CISO if the incident involved any data exposure risk.",
+        "context": "Post-incident review",
+        "durations": [
+          {
+            "text": "within 5 business days",
+            "value": "5",
+            "unit": "business days"
+          }
+        ],
+        "chunk_ids": [
+          "PROC-SUP-002_v2.0_001"
+        ]
+      }
+    ],
+    "tables": [
+      [
+        {
+          "Priority": "P1",
+          "Definition": "Production down / data loss risk, affecting multiple customers or one customer's core operations",
+          "Response SLA (Standard)": "4 business hours"
+        },
+        {
+          "Priority": "P2",
+          "Definition": "Major feature unusable, workaround exists",
+          "Response SLA (Standard)": "1 business day"
+        },
+        {
+          "Priority": "P3",
+          "Definition": "Minor feature issue, limited impact",
+          "Response SLA (Standard)": "3 business days"
+        },
+        {
+          "Priority": "P4",
+          "Definition": "Cosmetic / low impact",
+          "Response SLA (Standard)": "Best effort"
+        }
+      ]
+    ],
+    "known_gaps": [],
+    "version_notes": [],
+    "notes": []
+  }
+]

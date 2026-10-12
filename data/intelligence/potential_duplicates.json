@@ -1,0 +1,322 @@
+{
+  "potential_duplicates": [
+    {
+      "duplicate_id": "DUP-001",
+      "entity_a": "product:PROD-NEXVIEW",
+      "entity_b": "alias:NexView",
+      "method": "documented_alias",
+      "reason": "'NexView' and 'NexView Analytics' name the same product.",
+      "confidence": 0.95,
+      "evidence": [
+        "Phase 2 product alias table (src/metadata/discovery.py)"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-002",
+      "entity_a": "role:ROLE-003",
+      "entity_b": "alias:AE",
+      "method": "documented_alias",
+      "reason": "'AE' and 'Account Executive' name the same role.",
+      "confidence": 0.95,
+      "evidence": [
+        "glossary.md: 'AE' defined as 'Account Executive'",
+        "sales.md: role heading 'Account Executive (AE)'"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-003",
+      "entity_a": "role:ROLE-004",
+      "entity_b": "alias:SDR",
+      "method": "documented_alias",
+      "reason": "'SDR' and 'Sales Development Representative' name the same role.",
+      "confidence": 0.95,
+      "evidence": [
+        "glossary.md: 'SDR' defined as 'Sales Development Representative'",
+        "sales.md: role heading 'Sales Development Representative (SDR)'"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-004",
+      "entity_a": "role:ROLE-006",
+      "entity_b": "alias:Demand Gen Manager",
+      "method": "documented_alias",
+      "reason": "'Demand Gen Manager' and 'Demand Generation Manager' name the same role.",
+      "confidence": 0.95,
+      "evidence": [
+        "Phase 2 alias table (src/metadata/relationships.py)"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-005",
+      "entity_a": "role:ROLE-022",
+      "entity_b": "alias:Project Lead",
+      "method": "documented_alias",
+      "reason": "'Project Lead' and 'Implementation Manager' name the same role.",
+      "confidence": 0.95,
+      "evidence": [
+        "glossary.md: TN-006 says 'Same role'"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-006",
+      "entity_a": "role:ROLE-026",
+      "entity_b": "alias:CSM",
+      "method": "documented_alias",
+      "reason": "'CSM' and 'Customer Success Manager' name the same role.",
+      "confidence": 0.95,
+      "evidence": [
+        "glossary.md: 'CSM' defined as 'Customer Success Manager'",
+        "customer_success.md: role heading 'Customer Success Manager (CSM)'"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-007",
+      "entity_a": "role:ROLE-039",
+      "entity_b": "alias:HRBP",
+      "method": "documented_alias",
+      "reason": "'HRBP' and 'HR Business Partner' name the same role.",
+      "confidence": 0.95,
+      "evidence": [
+        "hr.md: role heading 'HR Business Partner (HRBP)'"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-008",
+      "entity_a": "terminology:TERM-TN-008",
+      "entity_b": "term:Bug | Defect | Issue",
+      "method": "documented_alias",
+      "reason": "TN-008 says 'Bug', 'Defect', 'Issue' refer to the same thing.",
+      "confidence": 0.95,
+      "evidence": [
+        "glossary TN-008: 'same underlying concept'"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-009",
+      "entity_a": "process:PROC-HR-001",
+      "entity_b": "process:PROC-IMPL-001",
+      "method": "documented_distinct",
+      "reason": "'Employee Onboarding' and 'Customer Onboarding' share the word 'Onboarding', but TN-002 says it means two different things. NOT duplicates.",
+      "confidence": 0.95,
+      "evidence": [
+        "glossary TN-002: 'used for two different things'"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-010",
+      "entity_a": "terminology:TERM-TN-004",
+      "entity_b": "term:Client | Customer | Account | Customer Account",
+      "method": "documented_related",
+      "reason": "TN-004: 'Client', 'Customer', 'Account', 'Customer Account' overlap but are not always interchangeable. Resolve by context, not by merging.",
+      "confidence": 0.95,
+      "evidence": [
+        "glossary TN-004: 'not always perfectly interchangeable'"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-011",
+      "entity_a": "document:PROC-IMPL-001",
+      "entity_b": "document:PROC-IMPL-001-V1",
+      "method": "version_pair",
+      "reason": "Same name. PROC-IMPL-001 is Active (v2.0); PROC-IMPL-001-V1 is Archived (v1.0). Two versions of one document, both kept as history.",
+      "confidence": 1.0,
+      "evidence": [
+        "status column / header of PROC-IMPL-001 and PROC-IMPL-001-V1"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-012",
+      "entity_a": "process:PROC-IMPL-001",
+      "entity_b": "process:PROC-IMPL-001-V1",
+      "method": "version_pair",
+      "reason": "Same name. PROC-IMPL-001 is Active (v2.0); PROC-IMPL-001-V1 is Archived (v1.0). Two versions of one process, both kept as history.",
+      "confidence": 1.0,
+      "evidence": [
+        "status column / header of PROC-IMPL-001 and PROC-IMPL-001-V1"
+      ],
+      "status": "documented"
+    },
+    {
+      "duplicate_id": "DUP-013",
+      "entity_a": "document:PROC-IMPL-001",
+      "entity_b": "document:PROC-IMPL-001-V1",
+      "method": "shared_header_id",
+      "reason": "Both customer_onboarding.md and customer_onboarding_v1_ARCHIVED.md say 'Document ID: PROC-IMPL-001' in their headers; documents.csv lists them as PROC-IMPL-001 and PROC-IMPL-001-V1. Fix the header in the source data.",
+      "confidence": 1.0,
+      "evidence": [
+        "customer_onboarding.md: header",
+        "customer_onboarding_v1_ARCHIVED.md: header",
+        "documents.csv: doc_id"
+      ],
+      "status": "unreviewed"
+    },
+    {
+      "duplicate_id": "DUP-014",
+      "entity_a": "department:DEPT-ENG",
+      "entity_b": "unresolved:Engineering",
+      "method": "unresolved_reference",
+      "reason": "'Engineering' is used in the documents but no department has that name; 'Software Engineering' is a possible match (token subset).",
+      "confidence": 0.5,
+      "evidence": [
+        "unresolved department name 'Engineering'"
+      ],
+      "status": "unreviewed"
+    },
+    {
+      "duplicate_id": "DUP-015",
+      "entity_a": "role:ROLE-004",
+      "entity_b": "unresolved:Sales Development Rep",
+      "method": "unresolved_reference",
+      "reason": "'Sales Development Rep' is used in the documents but no role has that name; 'Sales Development Representative' is a possible match (acronym).",
+      "confidence": 0.5,
+      "evidence": [
+        "unresolved role name 'Sales Development Rep'"
+      ],
+      "status": "unreviewed"
+    },
+    {
+      "duplicate_id": "DUP-016",
+      "entity_a": "role:ROLE-008",
+      "entity_b": "unresolved:Marketing Manager",
+      "method": "unresolved_reference",
+      "reason": "'Marketing Manager' is used in the documents but no role has that name; 'Content Marketing Manager' is a possible match (token subset).",
+      "confidence": 0.5,
+      "evidence": [
+        "unresolved role name 'Marketing Manager'"
+      ],
+      "status": "unreviewed"
+    },
+    {
+      "duplicate_id": "DUP-017",
+      "entity_a": "role:ROLE-016",
+      "entity_b": "unresolved:QA",
+      "method": "unresolved_reference",
+      "reason": "'QA' is used in the documents but no role has that name; 'QA Engineer' is a possible match (token subset).",
+      "confidence": 0.5,
+      "evidence": [
+        "unresolved role name 'QA'"
+      ],
+      "status": "unreviewed"
+    },
+    {
+      "duplicate_id": "DUP-018",
+      "entity_a": "role:ROLE-017",
+      "entity_b": "unresolved:DevOps",
+      "method": "unresolved_reference",
+      "reason": "'DevOps' is used in the documents but no role has that name; 'DevOps Engineer' is a possible match (token subset).",
+      "confidence": 0.5,
+      "evidence": [
+        "unresolved role name 'DevOps'"
+      ],
+      "status": "unreviewed"
+    },
+    {
+      "duplicate_id": "DUP-019",
+      "entity_a": "role:ROLE-029",
+      "entity_b": "unresolved:L3",
+      "method": "unresolved_reference",
+      "reason": "'L3' is used in the documents but no role has that name; 'Support Engineer L3' is a possible match (token subset).",
+      "confidence": 0.5,
+      "evidence": [
+        "unresolved role name 'L3'"
+      ],
+      "status": "unreviewed"
+    },
+    {
+      "duplicate_id": "DUP-020",
+      "entity_a": "role:ROLE-029",
+      "entity_b": "unresolved:Support Engineer",
+      "method": "unresolved_reference",
+      "reason": "'Support Engineer' is used in the documents but no role has that name; 'Support Engineer L3' is a possible match (token subset).",
+      "confidence": 0.5,
+      "evidence": [
+        "unresolved role name 'Support Engineer'"
+      ],
+      "status": "unreviewed"
+    },
+    {
+      "duplicate_id": "DUP-021",
+      "entity_a": "role:ROLE-030",
+      "entity_b": "unresolved:L2",
+      "method": "unresolved_reference",
+      "reason": "'L2' is used in the documents but no role has that name; 'Support Engineer L2' is a possible match (token subset).",
+      "confidence": 0.5,
+      "evidence": [
+        "unresolved role name 'L2'"
+      ],
+      "status": "unreviewed"
+    },
+    {
+      "duplicate_id": "DUP-022",
+      "entity_a": "role:ROLE-030",
+      "entity_b": "unresolved:Support Engineer",
+      "method": "unresolved_reference",
+      "reason": "'Support Engineer' is used in the documents but no role has that name; 'Support Engineer L2' is a possible match (token subset).",
+      "confidence": 0.5,
+      "evidence": [
+        "unresolved role name 'Support Engineer'"
+      ],
+      "status": "unreviewed"
+    },
+    {
+      "duplicate_id": "DUP-023",
+      "entity_a": "role:ROLE-031",
+      "entity_b": "unresolved:Support Engineer",
+      "method": "unresolved_reference",
+      "reason": "'Support Engineer' is used in the documents but no role has that name; 'Support Engineer L1' is a possible match (token subset).",
+      "confidence": 0.5,
+      "evidence": [
+        "unresolved role name 'Support Engineer'"
+      ],
+      "status": "unreviewed"
+    }
+  ],
+  "unmatched_names": [
+    {
+      "name": "Executive / Corporate",
+      "expected_type": "department",
+      "reason": "no similar entity"
+    },
+    {
+      "name": "CEO",
+      "expected_type": "role",
+      "reason": "no similar entity"
+    },
+    {
+      "name": "CTO",
+      "expected_type": "role",
+      "reason": "no similar entity"
+    },
+    {
+      "name": "Chief Executive Officer",
+      "expected_type": "role",
+      "reason": "no similar entity"
+    },
+    {
+      "name": "Hiring Manager",
+      "expected_type": "role",
+      "reason": "no similar entity"
+    },
+    {
+      "name": "VP People & Operations",
+      "expected_type": "role",
+      "reason": "no similar entity"
+    },
+    {
+      "name": "especially cross-timezone/cross-team communication",
+      "expected_type": "role",
+      "reason": "no similar entity"
+    }
+  ]
+}

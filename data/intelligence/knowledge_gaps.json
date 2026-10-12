@@ -1,0 +1,676 @@
+{
+  "summary": {
+    "high": 3,
+    "medium": 5,
+    "low": 24
+  },
+  "gaps": [
+    {
+      "gap_id": "GAP-632E5429",
+      "gap_type": "declared_gap",
+      "description": "Proposal and Quotation: This process does not currently specify what happens if a customer requests mid-negotiation changes to committed go-live dates after a proposal has already been approved at a given discount tier. In practice this is resolved ad hoc between the AE and Sales Manager; no formal escalation path exists.",
+      "related_entities": [
+        "process:PROC-SALES-002"
+      ],
+      "source_documents": [
+        "PROC-SALES-002"
+      ],
+      "severity": "high",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "document_id": "PROC-SALES-002",
+          "section": "Known Gap",
+          "chunk_ids": [
+            "PROC-SALES-002_v2.1_002"
+          ],
+          "gap_code": null
+        }
+      ],
+      "suggestion": "Declared by the source document itself; the fix belongs to the process owner."
+    },
+    {
+      "gap_id": "GAP-673F5A99",
+      "gap_type": "declared_gap",
+      "description": "Bug Reporting and Escalation: This process does not document what happens when a customer reports a bug on a deprecated product version that is no longer receiving active development (e.g., a legacy NexFlow configuration mode retired from new sales but still running for a small number of legacy customers). In practice, these reports are currently triaged case-by-case by the Engineering Manager with no documented standard, which has led to inconsistent customer communication in at least two known cases.",
+      "related_entities": [
+        "process:PROC-ENG-002"
+      ],
+      "source_documents": [
+        "DOC-FAQ-001",
+        "PROC-ENG-002"
+      ],
+      "severity": "high",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "document_id": "PROC-ENG-002",
+          "section": "Known Gap — KG-02",
+          "chunk_ids": [
+            "PROC-ENG-002_v2.2_002"
+          ],
+          "gap_code": "KG-02"
+        }
+      ],
+      "suggestion": "Declared by the source document itself; the fix belongs to the process owner."
+    },
+    {
+      "gap_id": "GAP-BDD5A0AD",
+      "gap_type": "declared_gap",
+      "description": "Customer Onboarding: This process assumes the AE's \"Deal Closed\" handoff record is complete. It does not specify what the Implementation Consultant should do if the handoff record is missing required fields (e.g., agreed go-live date not documented). In practice this causes kickoff delays; there is no formal fallback procedure. ---",
+      "related_entities": [
+        "process:PROC-IMPL-001"
+      ],
+      "source_documents": [
+        "DOC-DEPT-SALES",
+        "DOC-SCEN-001",
+        "PROC-IMPL-001"
+      ],
+      "severity": "high",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "document_id": "PROC-IMPL-001",
+          "section": "Known Gap — KG-01",
+          "chunk_ids": [
+            "PROC-IMPL-001_v2.0_003"
+          ],
+          "gap_code": "KG-01"
+        }
+      ],
+      "suggestion": "Declared by the source document itself; the fix belongs to the process owner."
+    },
+    {
+      "gap_id": "GAP-7EAF46E4",
+      "gap_type": "escalation_target_unclear",
+      "description": "Escalation statement without an identifiable role: \"Level 3 — Executive (CEO/CTO): Reserved for strategic accounts, contract-value accounts above €100,000 ARR, or reputational-risk situations (e.g., public complaint, data exposure incident).\"",
+      "related_entities": [
+        "process:PROC-CS-001"
+      ],
+      "source_documents": [
+        "PROC-CS-001"
+      ],
+      "severity": "medium",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "rule_id": "ESC-2CDBEFBC",
+          "chunk_ids": [
+            "PROC-CS-001_v1.7_001"
+          ],
+          "unresolved": [
+            "Executive (CEO/CTO)"
+          ]
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-11670CA7",
+      "gap_type": "product_without_implementation_guidance",
+      "description": "NexCRM has product documentation, but nothing explains how it is configured or implemented for a customer (no configuration section, not named in Customer Onboarding steps).",
+      "related_entities": [
+        "product:PROD-NEXCRM"
+      ],
+      "source_documents": [
+        "DOC-PROD-NEXCRM"
+      ],
+      "severity": "medium",
+      "confidence": 0.85,
+      "evidence": [],
+      "suggestion": "Ask the product's Product Manager or the Implementation Manager."
+    },
+    {
+      "gap_id": "GAP-243ADF68",
+      "gap_type": "product_without_implementation_guidance",
+      "description": "NexAuto has product documentation, but nothing explains how it is configured or implemented for a customer (no configuration section, not named in Customer Onboarding steps).",
+      "related_entities": [
+        "product:PROD-NEXAUTO"
+      ],
+      "source_documents": [
+        "DOC-PROD-NEXAUTO"
+      ],
+      "severity": "medium",
+      "confidence": 0.85,
+      "evidence": [],
+      "suggestion": "Ask the product's Product Manager or the Implementation Manager."
+    },
+    {
+      "gap_id": "GAP-2A0294B0",
+      "gap_type": "undefined_role",
+      "description": "'Chief Executive Officer' is used as a role but is not in roles.csv. It is an owner, approver or escalation target, so questions that depend on it can't be routed.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "medium",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "owner of DOC-CORP-001"
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-531DEF5A",
+      "gap_type": "undefined_role",
+      "description": "'VP People & Operations' is used as a role but is not in roles.csv. It is an owner, approver or escalation target, so questions that depend on it can't be routed.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "medium",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "owner of DOC-CORP-002"
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-670F7B92",
+      "gap_type": "approval_target_unclear",
+      "description": "Approval statement without an identifiable role: \"Access to internal systems and customer data is granted on a least-privilege, role-based basis and must be requested and approved — it is never granted by default beyond standard company-wide tools (email, chat, HR system).\"",
+      "related_entities": [
+        "process:PROC-IT-001"
+      ],
+      "source_documents": [
+        "PROC-IT-001"
+      ],
+      "severity": "low",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "rule_id": "APR-C79276E2",
+          "chunk_ids": [
+            "PROC-IT-001_v2.3_000"
+          ],
+          "unresolved": []
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-08954776",
+      "gap_type": "customer_without_product",
+      "description": "Rheinland Industrial Supply is named as a customer, but no document says which products it uses.",
+      "related_entities": [
+        "customer:CUST-RHEINLAND-INDUSTRIAL-SUPPLY"
+      ],
+      "source_documents": [
+        "DOC-CORP-001"
+      ],
+      "severity": "low",
+      "confidence": 0.7,
+      "evidence": [],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-353AF0A6",
+      "gap_type": "customer_without_product",
+      "description": "Meridian Retail Group is named as a customer, but no document says which products it uses.",
+      "related_entities": [
+        "customer:CUST-MERIDIAN-RETAIL-GROUP"
+      ],
+      "source_documents": [
+        "DOC-CORP-001"
+      ],
+      "severity": "low",
+      "confidence": 0.7,
+      "evidence": [],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-41B09890",
+      "gap_type": "customer_without_product",
+      "description": "Crestline Manufacturing Co. is named as a customer, but no document says which products it uses.",
+      "related_entities": [
+        "customer:CUST-CRESTLINE-MANUFACTURING-CO"
+      ],
+      "source_documents": [
+        "DOC-CORP-001"
+      ],
+      "severity": "low",
+      "confidence": 0.7,
+      "evidence": [],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-24193834",
+      "gap_type": "documented_limitation",
+      "description": "NexView Analytics — Product Documentation: Real-time (sub-15-minute) refresh is only available on the \"NexView Pro\" tier; standard tier refreshes hourly. This is a frequent source of customer confusion during onboarding — see troubleshooting_guide.md, TG-03.",
+      "related_entities": [
+        "document:DOC-PROD-NEXVIEW"
+      ],
+      "source_documents": [
+        "DOC-PROD-NEXVIEW"
+      ],
+      "severity": "low",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "document_id": "DOC-PROD-NEXVIEW",
+          "section": "NexView Analytics > Known Limitation",
+          "chunk_ids": [
+            "DOC-PROD-NEXVIEW_v4.1_004"
+          ]
+        }
+      ],
+      "suggestion": "A product limitation, documented on purpose: answer with it, don't work around it."
+    },
+    {
+      "gap_id": "GAP-EA93A3D8",
+      "gap_type": "documented_limitation",
+      "description": "NexAuto — Product Documentation: NexAuto automations do not currently support conditional branching beyond two levels of nesting. This is a common Product roadmap request; see product feedback backlog (not included in this knowledge base export).",
+      "related_entities": [
+        "document:DOC-PROD-NEXAUTO"
+      ],
+      "source_documents": [
+        "DOC-PROD-NEXAUTO"
+      ],
+      "severity": "low",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "document_id": "DOC-PROD-NEXAUTO",
+          "section": "NexAuto > Known Limitation",
+          "chunk_ids": [
+            "DOC-PROD-NEXAUTO_v1.9_003"
+          ]
+        }
+      ],
+      "suggestion": "A product limitation, documented on purpose: answer with it, don't work around it."
+    },
+    {
+      "gap_id": "GAP-BE5D33CA",
+      "gap_type": "employee_without_manager",
+      "description": "2 Office Manager(s) have no manager_id, and the role does not head a department.",
+      "related_entities": [
+        "employee:EMP-0136",
+        "employee:EMP-0137"
+      ],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "source": "employees.csv: manager_id"
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-95EDE7D2",
+      "gap_type": "escalation_target_unclear",
+      "description": "Escalation statement without an identifiable role: \"Unresolved or complex issues escalate to L2, then L3 if a product defect is suspected.\"",
+      "related_entities": [
+        "process:PROC-SUP-001"
+      ],
+      "source_documents": [
+        "PROC-SUP-001"
+      ],
+      "severity": "low",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "rule_id": "ESC-46652603",
+          "chunk_ids": [
+            "PROC-SUP-001_v1.8_001"
+          ],
+          "unresolved": [
+            "L2, then L3"
+          ]
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-118F95FA",
+      "gap_type": "referenced_source_missing",
+      "description": "DOC-PROD-NEXAUTO refers to material that is not in the knowledge base: \"This is a common Product roadmap request; see product feedback backlog (not included in this knowledge base export).\"",
+      "related_entities": [
+        "document:DOC-PROD-NEXAUTO"
+      ],
+      "source_documents": [
+        "DOC-PROD-NEXAUTO"
+      ],
+      "severity": "low",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "document_id": "DOC-PROD-NEXAUTO",
+          "section": "NexAuto > Known Limitation",
+          "chunk_ids": [
+            "DOC-PROD-NEXAUTO_v1.9_003"
+          ]
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-1C917773",
+      "gap_type": "terminology_ambiguity",
+      "description": "\"Onboarding\" is used for two different things. HR uses \"onboarding\" to mean *employee* onboarding (PROC-HR-001). Implementation and Customer Success use \"onboarding\" to mean *customer* onboarding (PROC-IMPL-001). Always disambiguate: \"employee onboarding\" vs. \"customer onboarding.\" Several older Support tickets and Slack references use bare \"onboarding\" and must be interpreted from context.",
+      "related_entities": [
+        "terminology:TERM-TN-002"
+      ],
+      "source_documents": [
+        "DOC-CORP-003",
+        "PROC-HR-001",
+        "PROC-IMPL-001"
+      ],
+      "severity": "low",
+      "confidence": 0.95,
+      "evidence": [],
+      "suggestion": "Disambiguate by context (department, document) before answering."
+    },
+    {
+      "gap_id": "GAP-F9D8DC6C",
+      "gap_type": "terminology_ambiguity",
+      "description": "\"Client\" vs. \"Customer\" vs. \"Account\" vs. \"Customer Account.\" - Sales and Marketing materials predominantly say **\"client.\"** - Customer Success and Support predominantly say **\"customer.\"** - Finance and the billing system use **\"account\"** or **\"customer account\"** as the formal record-keeping unit (one account can technically map to multiple tenants/contracts). These are not always perfectly interchangeable — a \"client\" in a Sales context may refer to a prospective company before a contract exists, whereas \"account\" in Finance always refers to a billable, contracted entity. There is no single company-wide style guide enforcing one term; this is a long-standing, low-priority inconsistency.",
+      "related_entities": [
+        "terminology:TERM-TN-004"
+      ],
+      "source_documents": [
+        "DOC-CORP-003"
+      ],
+      "severity": "low",
+      "confidence": 0.95,
+      "evidence": [],
+      "suggestion": "Disambiguate by context (department, document) before answering."
+    },
+    {
+      "gap_id": "GAP-49091815",
+      "gap_type": "undefined_department",
+      "description": "'Executive / Corporate' is used as a department but is not in departments.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "named in a document header or text"
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-A1933567",
+      "gap_type": "undefined_department",
+      "description": "'Engineering' is used as a department but is not in departments.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "named in a document header or text"
+        }
+      ],
+      "suggestion": "Possible matches to review: department:DEPT-ENG"
+    },
+    {
+      "gap_id": "GAP-1357AA53",
+      "gap_type": "undefined_role",
+      "description": "'Sales Development Rep' is used as a role but is not in roles.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "org chart line '│   └── Sales Managers → Account Executives / Sales Development Reps'"
+        }
+      ],
+      "suggestion": "Possible matches to review: role:ROLE-004"
+    },
+    {
+      "gap_id": "GAP-43809275",
+      "gap_type": "undefined_role",
+      "description": "'CEO' is used as a role but is not in roles.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "org chart line '├── CTO'"
+        },
+        {
+          "used_as": "org chart line '├── VP Sales'"
+        },
+        {
+          "used_as": "org chart line '├── VP Marketing → Marketing Managers → Marketing Specialists'"
+        },
+        {
+          "used_as": "org chart line '├── VP Customer Success'"
+        },
+        {
+          "used_as": "org chart line '├── Support Team Lead → Support Engineers (L1/L2/L3)'"
+        },
+        {
+          "used_as": "org chart line '├── CFO'"
+        },
+        {
+          "used_as": "org chart line '├── Head of HR'"
+        },
+        {
+          "used_as": "org chart line '├── CISO'"
+        },
+        {
+          "used_as": "org chart line '└── Operations Manager → Operations Analysts / Office Managers'"
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-47E700F4",
+      "gap_type": "undefined_role",
+      "description": "'Support Engineer' is used as a role but is not in roles.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "Related Roles header of implementation_support_services.md"
+        }
+      ],
+      "suggestion": "Possible matches to review: role:ROLE-029, role:ROLE-030, role:ROLE-031"
+    },
+    {
+      "gap_id": "GAP-5E23AEC9",
+      "gap_type": "undefined_role",
+      "description": "'Marketing Manager' is used as a role but is not in roles.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "org chart line '├── VP Marketing → Marketing Managers → Marketing Specialists'"
+        }
+      ],
+      "suggestion": "Possible matches to review: role:ROLE-008"
+    },
+    {
+      "gap_id": "GAP-5F9B6C6F",
+      "gap_type": "undefined_role",
+      "description": "'Hiring Manager' is used as a role but is not in roles.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "Related Roles header of employee_onboarding.md"
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-82364227",
+      "gap_type": "undefined_role",
+      "description": "'QA' is used as a role but is not in roles.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "org chart line '│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps'"
+        }
+      ],
+      "suggestion": "Possible matches to review: role:ROLE-016"
+    },
+    {
+      "gap_id": "GAP-8707D79D",
+      "gap_type": "undefined_role",
+      "description": "'CTO' is used as a role but is not in roles.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "org chart line '├── CTO'"
+        },
+        {
+          "used_as": "org chart line '│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps'"
+        },
+        {
+          "used_as": "org chart line '│   ├── VP Product → Product Managers → Product Analysts'"
+        },
+        {
+          "used_as": "org chart line '│   └── Data & Analytics Manager → Data Analysts / Data Engineers / BI Developers'"
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-A5D31D2E",
+      "gap_type": "undefined_role",
+      "description": "'L3' is used as a role but is not in roles.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "Related Roles header of troubleshooting_guide.md"
+        }
+      ],
+      "suggestion": "Possible matches to review: role:ROLE-029"
+    },
+    {
+      "gap_id": "GAP-E272D0BF",
+      "gap_type": "undefined_role",
+      "description": "'L2' is used as a role but is not in roles.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "Related Roles header of troubleshooting_guide.md"
+        }
+      ],
+      "suggestion": "Possible matches to review: role:ROLE-030"
+    },
+    {
+      "gap_id": "GAP-EFDD387D",
+      "gap_type": "undefined_role",
+      "description": "'DevOps' is used as a role but is not in roles.csv.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "org chart line '│   ├── VP Engineering → Engineering Managers → Software Engineers / QA / DevOps'"
+        }
+      ],
+      "suggestion": "Possible matches to review: role:ROLE-017"
+    },
+    {
+      "gap_id": "GAP-E7FEAA2C",
+      "gap_type": "unparsed_header_value",
+      "description": "Header value 'especially cross-timezone/cross-team communication' could not be read as a role.",
+      "related_entities": [],
+      "source_documents": [],
+      "severity": "low",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "used_as": "Related Roles header of international_communication.md"
+        }
+      ],
+      "suggestion": null
+    }
+  ],
+  "checks": [
+    {
+      "check": "declared_gap",
+      "description": "'Known Gap' sections in process documents (and every document citing the KG code)",
+      "gaps_found": 3
+    },
+    {
+      "check": "documented_limitation",
+      "description": "'Known Limitation' sections and references to material outside the knowledge base",
+      "gaps_found": 3
+    },
+    {
+      "check": "undefined_name",
+      "description": "Role/department names in documents that match no table row",
+      "gaps_found": 15
+    },
+    {
+      "check": "process_owner_missing",
+      "description": "Every current process has an owner role",
+      "gaps_found": 0
+    },
+    {
+      "check": "process_without_document",
+      "description": "Every current process has a document",
+      "gaps_found": 0
+    },
+    {
+      "check": "procedure_without_steps",
+      "description": "Every procedure has numbered steps",
+      "gaps_found": 0
+    },
+    {
+      "check": "role_without_responsibilities",
+      "description": "Every role has documented responsibilities",
+      "gaps_found": 0
+    },
+    {
+      "check": "role_without_employees",
+      "description": "Every role is held by at least one employee",
+      "gaps_found": 0
+    },
+    {
+      "check": "employee_without_manager",
+      "description": "Employees without a manager are department heads",
+      "gaps_found": 1
+    },
+    {
+      "check": "rule_target_unclear",
+      "description": "Approval/escalation statements name who approves or receives them",
+      "gaps_found": 3
+    },
+    {
+      "check": "product_without_implementation_guidance",
+      "description": "Each software product has implementation/configuration guidance",
+      "gaps_found": 2
+    },
+    {
+      "check": "customer_without_product",
+      "description": "Named customers are linked to the products they use",
+      "gaps_found": 3
+    },
+    {
+      "check": "terminology_ambiguity",
+      "description": "Terms the glossary itself flags as ambiguous or overloaded",
+      "gaps_found": 2
+    }
+  ]
+}

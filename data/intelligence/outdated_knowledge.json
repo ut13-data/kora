@@ -1,0 +1,177 @@
+{
+  "policy": "Archived documents are kept and linked to what replaced them; nothing is deleted.",
+  "superseded_documents": [
+    {
+      "document_id": "PROC-HR-001-ADDENDUM",
+      "title": "New Hire Security Training Requirement (Addendum)",
+      "version": "1.0",
+      "status": "Archived",
+      "effective_date": "2022-08-01",
+      "source_filename": "archived_new_hire_security_training_v1_ARCHIVED.md",
+      "superseded_by": [
+        {
+          "document_id": "PROC-HR-001",
+          "title": "Employee Onboarding Process",
+          "version": "3.0",
+          "status": "Active",
+          "effective_date": "2025-06-01",
+          "source_filename": "employee_onboarding.md",
+          "evidence": [
+            "its own text: \"...*This requirement was superseded by PROC-HR-001 Version 3.0 (effective 2025-06-01), which shortened...\"",
+            "processes.csv: archived row PROC-HR-001-ADDENDUM sits next to current PROC-HR-001"
+          ],
+          "signals": {
+            "archived_vs_active": "Archived vs Active",
+            "effective_dates": "2022-08-01 -> 2025-06-01",
+            "version": "1.0 -> 3.0 (same process)"
+          }
+        }
+      ],
+      "changes": [],
+      "approver_changes": null,
+      "terminology": [],
+      "conflicts": [
+        "CONF-98434E88"
+      ],
+      "kept_because": "History stays: KORA can answer 'what was the rule before?' and explain changes."
+    },
+    {
+      "document_id": "PROC-IMPL-001-V1",
+      "title": "Customer Onboarding Process",
+      "version": "1.0",
+      "status": "Archived",
+      "effective_date": "2023-06-01",
+      "source_filename": "customer_onboarding_v1_ARCHIVED.md",
+      "superseded_by": [
+        {
+          "document_id": "PROC-IMPL-001",
+          "title": "Customer Onboarding Process",
+          "version": "2.0",
+          "status": "Active",
+          "effective_date": "2025-03-01",
+          "source_filename": "customer_onboarding.md",
+          "evidence": [
+            "its own text: \"...# Customer Onboarding Process (ARCHIVED — superseded by PROC-IMPL-001 v2.0, effective 2025-03-01) ## Purpose Move...\"",
+            "same title, different status (DUP-011)",
+            "processes.csv: archived row PROC-IMPL-001-V1 sits next to current PROC-IMPL-001"
+          ],
+          "signals": {
+            "archived_vs_active": "Archived vs Active",
+            "effective_dates": "2023-06-01 -> 2025-03-01",
+            "version": "1.0 -> 2.0 (same process)"
+          }
+        }
+      ],
+      "changes": [
+        {
+          "step": 1,
+          "before": "Kickoff call scheduled by Implementation Consultant.",
+          "after": "Kickoff: Implementation Consultant reviews the AE's \"Deal Closed\" handoff record and schedules a kickoff call within 5 business days of contract signature.",
+          "text_similarity": 0.33,
+          "roles_added": [
+            "Account Executive"
+          ],
+          "roles_removed": []
+        },
+        {
+          "step": 2,
+          "before": "Discovery and configuration.",
+          "after": "Discovery: Consultant confirms configuration requirements (e.g., NexFlow batch/lot tracking, NexConnect data sources) directly with the customer.",
+          "text_similarity": 0.31,
+          "roles_added": [],
+          "roles_removed": []
+        },
+        {
+          "step": 3,
+          "before": "Data migration.",
+          "after": "Configuration & data migration: Consultant (or Solutions Architect, for custom integrations) configures the tenant and migrates initial data.",
+          "text_similarity": 0.19,
+          "roles_added": [
+            "Solutions Architect"
+          ],
+          "roles_removed": []
+        },
+        {
+          "step": 4,
+          "before": "Training.",
+          "after": "Training: Consultant delivers admin and end-user training sessions.",
+          "text_similarity": 0.24,
+          "roles_added": [],
+          "roles_removed": []
+        },
+        {
+          "step": 5,
+          "before": "Project Lead provides final go-live sign-off.",
+          "after": "Go-live sign-off: The Implementation Manager provides final go-live approval after Consultant confirms all discovery items are resolved.",
+          "text_similarity": 0.35,
+          "roles_added": [],
+          "roles_removed": []
+        },
+        {
+          "step": 6,
+          "before": "Handoff to Account Management (note: the \"Account Management\" function referenced here was reorganized into the Customer Success department in 2024; this document was not updated to reflect that change prior to being superseded).",
+          "after": "Handoff to Customer Success: Implementation Manager and the assigned Customer Success Manager hold a formal handoff call; open items are logged in the account record.",
+          "text_similarity": 0.37,
+          "roles_added": [
+            "Implementation Manager",
+            "Customer Success Manager"
+          ],
+          "roles_removed": []
+        }
+      ],
+      "approver_changes": {
+        "before": [
+          "ROLE-022"
+        ],
+        "after": [
+          "ROLE-022"
+        ],
+        "unchanged": true,
+        "note": "Compared by role ID, so a renamed title that is a documented alias (e.g. 'Project Lead' = Implementation Manager) does not count as a change."
+      },
+      "terminology": [
+        {
+          "term": "Project Lead",
+          "current_name": "Implementation Manager",
+          "role_id": "ROLE-022",
+          "quoted": false,
+          "context": "Consultant. 2. Discovery and configuration. 3. Data migration. 4. Training. 5. Project Lead provides final go-live sign-off. 6. Handoff to Account Management (note: the \"A",
+          "alias_evidence": [
+            "glossary.md: TN-006 says 'Same role'"
+          ]
+        }
+      ],
+      "conflicts": [
+        "CONF-E95F0259"
+      ],
+      "kept_because": "History stays: KORA can answer 'what was the rule before?' and explain changes."
+    }
+  ],
+  "legacy_terminology_in_active_documents": [],
+  "stale_references_in_active_documents": [],
+  "history_notes_in_active_documents": [
+    {
+      "process_id": "PROC-HR-001",
+      "document_id": "PROC-HR-001",
+      "heading": "VERSION HISTORY NOTE — Known Conflict",
+      "text": "An earlier version of new-hire onboarding guidance (see archived_new_hire_security_training_v1_ARCHIVED.md, Version 1.0, effective 2022-08-01) stated that security training must be completed \"within 30 days\" of start date. This current document (Version 3.0, effective 2025-06-01) supersedes that guidance with the 10 working days requirement above. The 2025-06-01 version is current; the 30-day figure should not be used going forward, but it may still appear in older printed materials or an employee's memory of what they were told during a hiring process before mid-2025.",
+      "chunk_ids": [
+        "PROC-HR-001_v3.0_003"
+      ]
+    },
+    {
+      "process_id": "PROC-IMPL-001",
+      "document_id": "PROC-IMPL-001",
+      "heading": "VERSION HISTORY NOTE",
+      "text": "Version 1.0 (Effective 2023-06-01, now superseded) of this document referred to the final approval role as \"Project Lead.\" As of Version 2.0 (2025-03-01), this role is titled \"Implementation Manager.\" Some archived training materials and older customer correspondence templates still reference \"Project Lead\" — treat as equivalent.",
+      "chunk_ids": [
+        "PROC-IMPL-001_v2.0_004"
+      ]
+    }
+  ],
+  "checks": {
+    "archived_documents": 2,
+    "archived_without_known_replacement": [],
+    "active_documents_checked": 51
+  }
+}
