@@ -369,7 +369,10 @@ def _from_topics(b: RelationshipBuilder, topics) -> None:
 
 
 def build_relationships(data: Phase2Data, index: EntityIndex, processes: list[ProcessRecord],
-                        roles: list[RoleRecord], rules: list[Rule], topics=None) -> RelationshipBuilder:
+                        roles: list[RoleRecord], rules: list[Rule], topics=None,
+                        extra: list[tuple] | None = None) -> RelationshipBuilder:
+    """extra: (source_type, source_id, relationship, target_type, target_id, Evidence) tuples
+    from later modules (e.g. Germany eligibility), validated exactly like every other link."""
     b = RelationshipBuilder(index)
     _lift_phase2(b, data, index)
     _from_tables(b, data, index)
@@ -379,4 +382,6 @@ def build_relationships(data: Phase2Data, index: EntityIndex, processes: list[Pr
     _from_rules(b, rules)
     _from_roles(b, roles, index)
     _from_topics(b, topics or [])
+    for link in extra or []:
+        b.add(*link)
     return b

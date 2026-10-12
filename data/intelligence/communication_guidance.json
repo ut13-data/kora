@@ -1,0 +1,1073 @@
+{
+  "framework": {
+    "document_id": "DOC-COMM-001",
+    "layers": [
+      {
+        "rank": 1,
+        "layer": "Fact",
+        "definition": "Something objectively true and unchanging regardless of audience.",
+        "example": "The security training deadline is 10 working days from start date."
+      },
+      {
+        "rank": 2,
+        "layer": "Company Preference",
+        "definition": "A Nexora-specific standard or expectation, documented in an internal policy.",
+        "example": "Nexora prefers written follow-up after verbal agreements."
+      },
+      {
+        "rank": 3,
+        "layer": "Cultural Communication Guidance",
+        "definition": "A general tendency observed in a given professional/cultural context, offered as guidance, not a rule.",
+        "example": "Direct, explicit phrasing is a common workplace tendency in Germany."
+      },
+      {
+        "rank": 4,
+        "layer": "Individual Preference",
+        "definition": "How a specific person actually prefers to communicate, which always takes precedence over the cultural guidance layer.",
+        "example": null
+      }
+    ],
+    "precedence": "Individual preference overrides cultural assumption, always.",
+    "invariance_rule": "The underlying instruction — deadline, action required — is identical in both. Only tone adapts.",
+    "tone_examples": [
+      {
+        "tone": "neutral",
+        "label": "Neutral",
+        "context_hint": null,
+        "example": "Please complete the security training by Friday."
+      },
+      {
+        "tone": "direct",
+        "label": "More direct style (common in some German professional contexts)",
+        "context_hint": "common in some German professional contexts",
+        "example": "Please complete the security training by Friday, 18 September."
+      },
+      {
+        "tone": "relationship_oriented",
+        "label": "More relationship-oriented style (common in some other contexts)",
+        "context_hint": "common in some other contexts",
+        "example": "Please complete the security training by Friday. Let me know if you need any help accessing the training."
+      }
+    ]
+  },
+  "company_layer": [
+    {
+      "statement": "Regardless of audience or tone adaptation: the underlying fact, request, or deadline communicated must always be accurate and identical. Tone adapts; substance does not. See DOC-COMM-001 for the full FACT / COMPANY PREFERENCE / CULTURAL GUIDANCE / INDIVIDUAL PREFERENCE framework this is built on.",
+      "section": "International / Neutral Communication Guidance > The One Rule That Doesn't Change",
+      "source_document": "DOC-COMM-006",
+      "chunk_ids": [
+        "DOC-COMM-006_v1.3_003"
+      ]
+    },
+    {
+      "statement": "Chat (internal messaging tool): Default for quick questions, day-to-day coordination. Response expectation: same working day.",
+      "section": "Internal Communication Guidelines > Channels",
+      "source_document": "PROC-HR-003",
+      "chunk_ids": [
+        "PROC-HR-003_v1.2_000"
+      ]
+    },
+    {
+      "statement": "Email: Formal communications, external-facing content, anything requiring a documented record.",
+      "section": "Internal Communication Guidelines > Channels",
+      "source_document": "PROC-HR-003",
+      "chunk_ids": [
+        "PROC-HR-003_v1.2_000"
+      ]
+    },
+    {
+      "statement": "Video calls: Default for cross-timezone discussions and anything requiring real-time back-and-forth (Munich–Bengaluru overlap is limited; see DOC-DEPT-PROD).",
+      "section": "Internal Communication Guidelines > Channels",
+      "source_document": "PROC-HR-003",
+      "chunk_ids": [
+        "PROC-HR-003_v1.2_000"
+      ]
+    },
+    {
+      "statement": "State the ask clearly, including any deadline, in the first two sentences of a message.",
+      "section": "Internal Communication Guidelines > General Principles",
+      "source_document": "PROC-HR-003",
+      "chunk_ids": [
+        "PROC-HR-003_v1.2_001"
+      ]
+    },
+    {
+      "statement": "Copy the relevant manager on decisions that affect budget, headcount, or customer commitments.",
+      "section": "Internal Communication Guidelines > General Principles",
+      "source_document": "PROC-HR-003",
+      "chunk_ids": [
+        "PROC-HR-003_v1.2_001"
+      ]
+    },
+    {
+      "statement": "Prefer asynchronous written updates over meetings where a meeting isn't strictly necessary — Nexora is a multi-timezone company and meetings have a real cost for someone's evening or early morning.",
+      "section": "Internal Communication Guidelines > General Principles",
+      "source_document": "PROC-HR-003",
+      "chunk_ids": [
+        "PROC-HR-003_v1.2_001"
+      ]
+    },
+    {
+      "statement": "These are company-wide baseline expectations. How individuals *phrase* requests, give feedback, or signal urgency may reasonably vary by cultural background and personal style — see communication_culture.md for guidance on adapting tone (not substance) across Nexora's office locations.",
+      "section": "Internal Communication Guidelines > Cross-Cultural Note",
+      "source_document": "PROC-HR-003",
+      "chunk_ids": [
+        "PROC-HR-003_v1.2_002"
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "profile_id": "COMM-PROFILE-GERMANY",
+      "context": "Germany",
+      "document_id": "DOC-COMM-002",
+      "is_default": false,
+      "location_ids": [
+        "LOC-BER",
+        "LOC-MUC"
+      ],
+      "statements": [
+        {
+          "dimension": "directness",
+          "text": "A common workplace tendency toward explicit, direct requests (\"Please send X by Friday\" rather than \"It would be great if we could look at X at some point\").",
+          "label": "Directness",
+          "hedged": true,
+          "source_document": "DOC-COMM-002",
+          "section": "Communication Tone Profile — Germany (Munich, Berlin offices)",
+          "chunk_ids": [
+            "DOC-COMM-002_v1.2_000"
+          ]
+        },
+        {
+          "dimension": "formality",
+          "text": "Moderate; first names are standard once introduced, but written communication tends to stay professional and to-the-point rather than casual.",
+          "label": "Formality",
+          "hedged": true,
+          "source_document": "DOC-COMM-002",
+          "section": "Communication Tone Profile — Germany (Munich, Berlin offices)",
+          "chunk_ids": [
+            "DOC-COMM-002_v1.2_000"
+          ]
+        },
+        {
+          "dimension": "disagreement",
+          "text": "Often communicated relatively directly and early, sometimes framed as a factual objection rather than softened — this is not typically intended as personal criticism.",
+          "label": "Disagreement",
+          "hedged": true,
+          "source_document": "DOC-COMM-002",
+          "section": "Communication Tone Profile — Germany (Munich, Berlin offices)",
+          "chunk_ids": [
+            "DOC-COMM-002_v1.2_000"
+          ]
+        },
+        {
+          "dimension": "feedback_style",
+          "text": "Tends to be specific and given fairly directly, often separated clearly from social/personal rapport (\"professional clarity\" is valued independent of personal friendliness).",
+          "label": "Feedback",
+          "hedged": true,
+          "source_document": "DOC-COMM-002",
+          "section": "Communication Tone Profile — Germany (Munich, Berlin offices)",
+          "chunk_ids": [
+            "DOC-COMM-002_v1.2_000"
+          ]
+        },
+        {
+          "dimension": "urgency",
+          "text": "Often communicated explicitly with a stated deadline rather than implied through tone or repetition.",
+          "label": "Urgency",
+          "hedged": true,
+          "source_document": "DOC-COMM-002",
+          "section": "Communication Tone Profile — Germany (Munich, Berlin offices)",
+          "chunk_ids": [
+            "DOC-COMM-002_v1.2_000"
+          ]
+        },
+        {
+          "dimension": "meeting_style",
+          "text": "Tend to start on time, follow an agenda, and end with clear action items and owners.",
+          "label": "Meetings",
+          "hedged": true,
+          "source_document": "DOC-COMM-002",
+          "section": "Communication Tone Profile — Germany (Munich, Berlin offices)",
+          "chunk_ids": [
+            "DOC-COMM-002_v1.2_000"
+          ]
+        },
+        {
+          "dimension": "message_conventions",
+          "text": "Relatively concise; long preambles before the actual request are less common.",
+          "label": "Email/message conventions",
+          "hedged": true,
+          "source_document": "DOC-COMM-002",
+          "section": "Communication Tone Profile — Germany (Munich, Berlin offices)",
+          "chunk_ids": [
+            "DOC-COMM-002_v1.2_001"
+          ]
+        },
+        {
+          "dimension": "meeting_style",
+          "text": "Punctuality for meetings is generally valued.",
+          "label": null,
+          "hedged": true,
+          "source_document": "DOC-CARE-002",
+          "section": "Germany Settling-In Checklist > Common German Workplace Practices",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_011"
+          ]
+        },
+        {
+          "dimension": "directness",
+          "text": "Clear, direct written communication (e.g., in email/chat) is common and not intended as unfriendly — see communication_culture.md and germany_workplace_tone.md.",
+          "label": null,
+          "hedged": true,
+          "source_document": "DOC-CARE-002",
+          "section": "Germany Settling-In Checklist > Common German Workplace Practices",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_011"
+          ]
+        },
+        {
+          "dimension": "message_conventions",
+          "text": "Clear, direct written communication (e.g., in email/chat) is common and not intended as unfriendly — see communication_culture.md and germany_workplace_tone.md.",
+          "label": null,
+          "hedged": true,
+          "source_document": "DOC-CARE-002",
+          "section": "Germany Settling-In Checklist > Common German Workplace Practices",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_011"
+          ]
+        },
+        {
+          "dimension": "clarity",
+          "text": "Clear, direct written communication (e.g., in email/chat) is common and not intended as unfriendly — see communication_culture.md and germany_workplace_tone.md.",
+          "label": null,
+          "hedged": true,
+          "source_document": "DOC-CARE-002",
+          "section": "Germany Settling-In Checklist > Common German Workplace Practices",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_011"
+          ]
+        },
+        {
+          "dimension": "urgency",
+          "text": "A relatively firm separation between work hours and personal time is common; being contacted about non-urgent work matters outside hours is less common than in some other cultures.",
+          "label": null,
+          "hedged": true,
+          "source_document": "DOC-CARE-002",
+          "section": "Germany Settling-In Checklist > Common German Workplace Practices",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_011"
+          ]
+        },
+        {
+          "dimension": "professional_boundaries",
+          "text": "A relatively firm separation between work hours and personal time is common; being contacted about non-urgent work matters outside hours is less common than in some other cultures.",
+          "label": null,
+          "hedged": true,
+          "source_document": "DOC-CARE-002",
+          "section": "Germany Settling-In Checklist > Common German Workplace Practices",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_011"
+          ]
+        }
+      ],
+      "pitfalls": [
+        {
+          "label": "Too indirect",
+          "text": "A vague request without a clear deadline or owner may be read as unclear rather than as polite, and may need to be re-asked more explicitly.",
+          "chunk_ids": [
+            "DOC-COMM-002_v1.2_002"
+          ]
+        },
+        {
+          "label": "Too direct (in the other direction)",
+          "text": "Extremely blunt feedback with no acknowledgment of effort can still land poorly here too — directness is not the same as bluntness without context.",
+          "chunk_ids": [
+            "DOC-COMM-002_v1.2_002"
+          ]
+        }
+      ],
+      "appropriate_example": "The report needs an update to section 3 — can you send a revised version by Thursday?\" (clear ask, clear deadline, professional tone).",
+      "individual_preference_reminder": "Not every colleague based in Munich or Berlin is German, and not every German colleague matches this profile. Ask, or notice how a specific colleague actually communicates, and adapt accordingly.",
+      "suggested_starting_tone": {
+        "tone": "direct",
+        "basis": "The report needs an update to section 3 — can you send a revised version by Thursday?\" (clear ask, clear deadline, professional tone).",
+        "markers": [
+          "no softening or warmth phrases"
+        ],
+        "note": "A hypothesis from the profile's own example message, never a fact about a person. An individual preference, once known, replaces it."
+      },
+      "dimensions": [
+        "clarity",
+        "directness",
+        "disagreement",
+        "feedback_style",
+        "formality",
+        "meeting_style",
+        "message_conventions",
+        "professional_boundaries",
+        "urgency"
+      ]
+    },
+    {
+      "profile_id": "COMM-PROFILE-INDIA",
+      "context": "India",
+      "document_id": "DOC-COMM-003",
+      "is_default": false,
+      "location_ids": [
+        "LOC-BLR"
+      ],
+      "statements": [
+        {
+          "dimension": "directness",
+          "text": "May be preferred in some professional contexts to soften direct requests with more relational framing (\"Would it be possible to...\" / \"When you get a chance...\") even when the underlying need is time-sensitive — the urgency may not always be explicit in the phrasing itself.",
+          "label": "Directness",
+          "hedged": true,
+          "source_document": "DOC-COMM-003",
+          "section": "Communication Tone Profile — India (Bengaluru office)",
+          "chunk_ids": [
+            "DOC-COMM-003_v1.2_000"
+          ]
+        },
+        {
+          "dimension": "formality",
+          "text": "Titles and hierarchy may be acknowledged somewhat more visibly in written communication with senior stakeholders than in some other contexts, though this varies significantly by individual and by company tenure.",
+          "label": "Formality",
+          "hedged": true,
+          "source_document": "DOC-COMM-003",
+          "section": "Communication Tone Profile — India (Bengaluru office)",
+          "chunk_ids": [
+            "DOC-COMM-003_v1.2_000"
+          ]
+        },
+        {
+          "dimension": "disagreement",
+          "text": "May sometimes be communicated less directly upward in a hierarchy, particularly in group settings; a private follow-up conversation can sometimes surface a concern that wasn't raised in a group call.",
+          "label": "Disagreement",
+          "hedged": true,
+          "source_document": "DOC-COMM-003",
+          "section": "Communication Tone Profile — India (Bengaluru office)",
+          "chunk_ids": [
+            "DOC-COMM-003_v1.2_000"
+          ]
+        },
+        {
+          "dimension": "feedback_style",
+          "text": "May be appreciated when framed constructively alongside acknowledgment of what's working, though this varies by individual and by how long someone has worked in an international team environment.",
+          "label": "Feedback",
+          "hedged": true,
+          "source_document": "DOC-COMM-003",
+          "section": "Communication Tone Profile — India (Bengaluru office)",
+          "chunk_ids": [
+            "DOC-COMM-003_v1.2_000"
+          ]
+        },
+        {
+          "dimension": "urgency",
+          "text": "A stated deadline is still the most reliable way to communicate urgency clearly, since relational phrasing can sometimes obscure time-sensitivity.",
+          "label": "Urgency",
+          "hedged": true,
+          "source_document": "DOC-COMM-003",
+          "section": "Communication Tone Profile — India (Bengaluru office)",
+          "chunk_ids": [
+            "DOC-COMM-003_v1.2_001"
+          ]
+        },
+        {
+          "dimension": "meeting_style",
+          "text": "Punctuality expectations align with general company norms; some colleagues may be more comfortable contributing in follow-up written comments than live in a large group call, particularly early in their tenure.",
+          "label": "Meetings",
+          "hedged": true,
+          "source_document": "DOC-COMM-003",
+          "section": "Communication Tone Profile — India (Bengaluru office)",
+          "chunk_ids": [
+            "DOC-COMM-003_v1.2_001"
+          ]
+        }
+      ],
+      "pitfalls": [
+        {
+          "label": "Too indirect",
+          "text": "A softened request with no explicit deadline may genuinely not be understood as urgent, even if that was the intent.",
+          "chunk_ids": [
+            "DOC-COMM-003_v1.2_002"
+          ]
+        },
+        {
+          "label": "Too direct",
+          "text": "Blunt criticism delivered in front of a group, without private follow-up, may land harder than intended, regardless of cultural background.",
+          "chunk_ids": [
+            "DOC-COMM-003_v1.2_002"
+          ]
+        }
+      ],
+      "appropriate_example": "Could you take a look at the report and send an update by Thursday? Happy to help if anything's unclear.",
+      "individual_preference_reminder": "Bengaluru is Nexora's largest single-office location and includes people with a wide range of personal communication styles, tenure levels, and prior international work experience. Treat this profile as a starting hypothesis, not a conclusion about any one colleague.",
+      "suggested_starting_tone": {
+        "tone": "relationship_oriented",
+        "basis": "Could you take a look at the report and send an update by Thursday? Happy to help if anything's unclear.",
+        "markers": [
+          "help"
+        ],
+        "note": "A hypothesis from the profile's own example message, never a fact about a person. An individual preference, once known, replaces it."
+      },
+      "dimensions": [
+        "directness",
+        "disagreement",
+        "feedback_style",
+        "formality",
+        "meeting_style",
+        "urgency"
+      ]
+    },
+    {
+      "profile_id": "COMM-PROFILE-UNITED-STATES",
+      "context": "United States",
+      "document_id": "DOC-COMM-004",
+      "is_default": false,
+      "location_ids": [
+        "LOC-AUS"
+      ],
+      "statements": [
+        {
+          "dimension": "directness",
+          "text": "Often fairly direct, frequently paired with positive framing (\"Great progress — one thing to adjust before Friday...\").",
+          "label": "Directness",
+          "hedged": true,
+          "source_document": "DOC-COMM-004",
+          "section": "Communication Tone Profile — United States (Austin office)",
+          "chunk_ids": [
+            "DOC-COMM-004_v1.1_000"
+          ]
+        },
+        {
+          "dimension": "formality",
+          "text": "Generally informal; first names and casual tone in chat are standard from day one, including with senior leadership.",
+          "label": "Formality",
+          "hedged": true,
+          "source_document": "DOC-COMM-004",
+          "section": "Communication Tone Profile — United States (Austin office)",
+          "chunk_ids": [
+            "DOC-COMM-004_v1.1_000"
+          ]
+        },
+        {
+          "dimension": "disagreement",
+          "text": "Often raised fairly openly, sometimes framed constructively (\"I see it a bit differently — here's why\") rather than left unsaid.",
+          "label": "Disagreement",
+          "hedged": true,
+          "source_document": "DOC-COMM-004",
+          "section": "Communication Tone Profile — United States (Austin office)",
+          "chunk_ids": [
+            "DOC-COMM-004_v1.1_000"
+          ]
+        },
+        {
+          "dimension": "feedback_style",
+          "text": "Frequently structured with a positive opener before the critical point (\"sandwich\" style is a common, though not universal, tendency).",
+          "label": "Feedback",
+          "hedged": true,
+          "source_document": "DOC-COMM-004",
+          "section": "Communication Tone Profile — United States (Austin office)",
+          "chunk_ids": [
+            "DOC-COMM-004_v1.1_000"
+          ]
+        },
+        {
+          "dimension": "urgency",
+          "text": "Often communicated explicitly and sometimes with informal intensifiers (\"this is pretty time-sensitive\") alongside a stated deadline.",
+          "label": "Urgency",
+          "hedged": true,
+          "source_document": "DOC-COMM-004",
+          "section": "Communication Tone Profile — United States (Austin office)",
+          "chunk_ids": [
+            "DOC-COMM-004_v1.1_000"
+          ]
+        },
+        {
+          "dimension": "meeting_style",
+          "text": "Tend to start close to on time; a degree of small talk before getting to business is common but usually brief.",
+          "label": "Meetings",
+          "hedged": true,
+          "source_document": "DOC-COMM-004",
+          "section": "Communication Tone Profile — United States (Austin office)",
+          "chunk_ids": [
+            "DOC-COMM-004_v1.1_000"
+          ]
+        }
+      ],
+      "pitfalls": [
+        {
+          "label": "Too indirect",
+          "text": "Excessive hedging can read as lacking confidence in the request.",
+          "chunk_ids": [
+            "DOC-COMM-004_v1.1_001"
+          ]
+        },
+        {
+          "label": "Too direct",
+          "text": "Criticism with no positive framing at all can land as unnecessarily harsh, even when the content is fair.",
+          "chunk_ids": [
+            "DOC-COMM-004_v1.1_001"
+          ]
+        }
+      ],
+      "appropriate_example": "Nice work on the draft — can we tighten section 2 and get a revised version by Thursday?",
+      "individual_preference_reminder": "Austin is a relatively small Nexora office (Sales and Customer Success); individual communication style varies by role and tenure as much as by geography.",
+      "suggested_starting_tone": {
+        "tone": "relationship_oriented",
+        "basis": "Nice work on the draft — can we tighten section 2 and get a revised version by Thursday?",
+        "markers": [
+          "Nice work"
+        ],
+        "note": "A hypothesis from the profile's own example message, never a fact about a person. An individual preference, once known, replaces it."
+      },
+      "dimensions": [
+        "directness",
+        "disagreement",
+        "feedback_style",
+        "formality",
+        "meeting_style",
+        "urgency"
+      ]
+    },
+    {
+      "profile_id": "COMM-PROFILE-UNITED-KINGDOM",
+      "context": "United Kingdom",
+      "document_id": "DOC-COMM-005",
+      "is_default": false,
+      "location_ids": [
+        "LOC-LON"
+      ],
+      "statements": [
+        {
+          "dimension": "directness",
+          "text": "Requests are often softened with polite hedging (\"Would you mind taking a look at...\") even when there's a firm underlying deadline — the actual urgency may need to be stated explicitly rather than inferred from tone.",
+          "label": "Directness",
+          "hedged": true,
+          "source_document": "DOC-COMM-005",
+          "section": "Communication Tone Profile — United Kingdom (London office)",
+          "chunk_ids": [
+            "DOC-COMM-005_v1.1_000"
+          ]
+        },
+        {
+          "dimension": "formality",
+          "text": "Moderate; polite phrasing is common even in casual chat messages.",
+          "label": "Formality",
+          "hedged": true,
+          "source_document": "DOC-COMM-005",
+          "section": "Communication Tone Profile — United Kingdom (London office)",
+          "chunk_ids": [
+            "DOC-COMM-005_v1.1_000"
+          ]
+        },
+        {
+          "dimension": "disagreement",
+          "text": "Sometimes communicated indirectly, via understatement (\"I wonder if there might be a small issue with...\") rather than a flat statement of disagreement.",
+          "label": "Disagreement",
+          "hedged": true,
+          "source_document": "DOC-COMM-005",
+          "section": "Communication Tone Profile — United Kingdom (London office)",
+          "chunk_ids": [
+            "DOC-COMM-005_v1.1_000"
+          ]
+        },
+        {
+          "dimension": "feedback_style",
+          "text": "Often wrapped in polite framing; direct criticism may be softened enough that its seriousness isn't immediately obvious to someone unfamiliar with the style.",
+          "label": "Feedback",
+          "hedged": true,
+          "source_document": "DOC-COMM-005",
+          "section": "Communication Tone Profile — United Kingdom (London office)",
+          "chunk_ids": [
+            "DOC-COMM-005_v1.1_000"
+          ]
+        },
+        {
+          "dimension": "urgency",
+          "text": "Because requests are often politely phrased, it's worth explicitly stating a deadline rather than relying on tone to convey time pressure.",
+          "label": "Urgency",
+          "hedged": true,
+          "source_document": "DOC-COMM-005",
+          "section": "Communication Tone Profile — United Kingdom (London office)",
+          "chunk_ids": [
+            "DOC-COMM-005_v1.1_000"
+          ]
+        },
+        {
+          "dimension": "meeting_style",
+          "text": "Generally structured and punctual; humor and understatement are common even in fairly serious discussions.",
+          "label": "Meetings",
+          "hedged": true,
+          "source_document": "DOC-COMM-005",
+          "section": "Communication Tone Profile — United Kingdom (London office)",
+          "chunk_ids": [
+            "DOC-COMM-005_v1.1_000"
+          ]
+        }
+      ],
+      "pitfalls": [
+        {
+          "label": "Too indirect",
+          "text": "A softly-phrased concern can be misread as a minor comment rather than the real issue it's raising.",
+          "chunk_ids": [
+            "DOC-COMM-005_v1.1_001"
+          ]
+        },
+        {
+          "label": "Too direct",
+          "text": "Very blunt phrasing, without any softening, can read as unnecessarily harsh even if the content itself is reasonable.",
+          "chunk_ids": [
+            "DOC-COMM-005_v1.1_001"
+          ]
+        }
+      ],
+      "appropriate_example": "Really appreciate the work on this — one thing worth flagging: could we get an updated version by Thursday?",
+      "individual_preference_reminder": "London houses Sales and Marketing at Nexora; individual style varies significantly, and this profile should be treated as a light prior, not a fixed expectation.",
+      "suggested_starting_tone": {
+        "tone": "relationship_oriented",
+        "basis": "Really appreciate the work on this — one thing worth flagging: could we get an updated version by Thursday?",
+        "markers": [
+          "appreciate"
+        ],
+        "note": "A hypothesis from the profile's own example message, never a fact about a person. An individual preference, once known, replaces it."
+      },
+      "dimensions": [
+        "directness",
+        "disagreement",
+        "feedback_style",
+        "formality",
+        "meeting_style",
+        "urgency"
+      ]
+    },
+    {
+      "profile_id": "COMM-PROFILE-INTERNATIONAL-NEUTRAL",
+      "context": "International / Neutral",
+      "document_id": "DOC-COMM-006",
+      "is_default": true,
+      "location_ids": [],
+      "statements": [
+        {
+          "dimension": "directness",
+          "text": "State the ask and, if applicable, the deadline explicitly and early in the message — this works across every profile described in this document set and avoids relying on tone to carry information.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "urgency",
+          "text": "State the ask and, if applicable, the deadline explicitly and early in the message — this works across every profile described in this document set and avoids relying on tone to carry information.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "request_phrasing",
+          "text": "State the ask and, if applicable, the deadline explicitly and early in the message — this works across every profile described in this document set and avoids relying on tone to carry information.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "clarity",
+          "text": "State the ask and, if applicable, the deadline explicitly and early in the message — this works across every profile described in this document set and avoids relying on tone to carry information.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "request_phrasing",
+          "text": "Avoid idioms, sports metaphors, or culturally specific humor that may not translate.",
+          "label": null,
+          "hedged": true,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "directness",
+          "text": "When giving feedback to someone whose style you don't know yet, default to a moderately direct but warm tone: clear about the issue, clear that it's not personal.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "feedback_style",
+          "text": "When giving feedback to someone whose style you don't know yet, default to a moderately direct but warm tone: clear about the issue, clear that it's not personal.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "clarity",
+          "text": "When giving feedback to someone whose style you don't know yet, default to a moderately direct but warm tone: clear about the issue, clear that it's not personal.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "directness",
+          "text": "When in doubt about urgency, say the deadline explicitly rather than assuming tone will convey it.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "urgency",
+          "text": "When in doubt about urgency, say the deadline explicitly rather than assuming tone will convey it.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "clarity",
+          "text": "When in doubt about urgency, say the deadline explicitly rather than assuming tone will convey it.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "professional_boundaries",
+          "text": "Note the recipient's likely working hours when sending a message outside your own hours; mark clearly if something is or isn't expected to be read/actioned same-day.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > When Communicating Across Time Zones",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_002"
+          ]
+        },
+        {
+          "dimension": "general",
+          "text": "Prefer async, written updates (see PROC-HR-003) for anything that doesn't strictly need real-time discussion.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > When Communicating Across Time Zones",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_002"
+          ]
+        }
+      ],
+      "pitfalls": [],
+      "appropriate_example": null,
+      "individual_preference_reminder": null,
+      "suggested_starting_tone": {
+        "tone": "neutral",
+        "basis": null,
+        "markers": [],
+        "note": "A hypothesis from the profile's own example message, never a fact about a person. An individual preference, once known, replaces it."
+      },
+      "dimensions": [
+        "clarity",
+        "directness",
+        "feedback_style",
+        "general",
+        "professional_boundaries",
+        "request_phrasing",
+        "urgency"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "location_id": "LOC-AUS",
+      "city": "Austin",
+      "profile_id": "COMM-PROFILE-UNITED-STATES"
+    },
+    {
+      "location_id": "LOC-BER",
+      "city": "Berlin",
+      "profile_id": "COMM-PROFILE-GERMANY"
+    },
+    {
+      "location_id": "LOC-BLR",
+      "city": "Bengaluru",
+      "profile_id": "COMM-PROFILE-INDIA"
+    },
+    {
+      "location_id": "LOC-LON",
+      "city": "London",
+      "profile_id": "COMM-PROFILE-UNITED-KINGDOM"
+    },
+    {
+      "location_id": "LOC-MUC",
+      "city": "Munich",
+      "profile_id": "COMM-PROFILE-GERMANY"
+    }
+  ],
+  "tone_options": [
+    {
+      "tone": "neutral",
+      "label": "Neutral"
+    },
+    {
+      "tone": "direct",
+      "label": "More direct style"
+    },
+    {
+      "tone": "relationship_oriented",
+      "label": "More relationship-oriented style"
+    }
+  ],
+  "tone_aliases": {
+    "friendly": "relationship_oriented",
+    "warm": "relationship_oriented"
+  },
+  "culture_options": [
+    "COMM-PROFILE-GERMANY",
+    "COMM-PROFILE-INDIA",
+    "COMM-PROFILE-UNITED-STATES",
+    "COMM-PROFILE-UNITED-KINGDOM",
+    "COMM-PROFILE-INTERNATIONAL-NEUTRAL"
+  ],
+  "dimension_coverage": {
+    "directness": [
+      "COMM-PROFILE-GERMANY",
+      "COMM-PROFILE-INDIA",
+      "COMM-PROFILE-INTERNATIONAL-NEUTRAL",
+      "COMM-PROFILE-UNITED-KINGDOM",
+      "COMM-PROFILE-UNITED-STATES"
+    ],
+    "formality": [
+      "COMM-PROFILE-GERMANY",
+      "COMM-PROFILE-INDIA",
+      "COMM-PROFILE-UNITED-KINGDOM",
+      "COMM-PROFILE-UNITED-STATES"
+    ],
+    "disagreement": [
+      "COMM-PROFILE-GERMANY",
+      "COMM-PROFILE-INDIA",
+      "COMM-PROFILE-UNITED-KINGDOM",
+      "COMM-PROFILE-UNITED-STATES"
+    ],
+    "feedback_style": [
+      "COMM-PROFILE-GERMANY",
+      "COMM-PROFILE-INDIA",
+      "COMM-PROFILE-INTERNATIONAL-NEUTRAL",
+      "COMM-PROFILE-UNITED-KINGDOM",
+      "COMM-PROFILE-UNITED-STATES"
+    ],
+    "urgency": [
+      "COMM-PROFILE-GERMANY",
+      "COMM-PROFILE-INDIA",
+      "COMM-PROFILE-INTERNATIONAL-NEUTRAL",
+      "COMM-PROFILE-UNITED-KINGDOM",
+      "COMM-PROFILE-UNITED-STATES"
+    ],
+    "meeting_style": [
+      "COMM-PROFILE-GERMANY",
+      "COMM-PROFILE-INDIA",
+      "COMM-PROFILE-UNITED-KINGDOM",
+      "COMM-PROFILE-UNITED-STATES"
+    ],
+    "message_conventions": [
+      "COMM-PROFILE-GERMANY"
+    ],
+    "request_phrasing": [
+      "COMM-PROFILE-INTERNATIONAL-NEUTRAL"
+    ],
+    "clarity": [
+      "COMM-PROFILE-GERMANY",
+      "COMM-PROFILE-INTERNATIONAL-NEUTRAL"
+    ],
+    "professional_boundaries": [
+      "COMM-PROFILE-GERMANY",
+      "COMM-PROFILE-INTERNATIONAL-NEUTRAL"
+    ]
+  },
+  "hedging_check": {
+    "rule": "Profiles must describe tendencies with hedged language (DOC-COMM-001).",
+    "profiles_checked": [
+      "COMM-PROFILE-GERMANY",
+      "COMM-PROFILE-INDIA",
+      "COMM-PROFILE-UNITED-STATES",
+      "COMM-PROFILE-UNITED-KINGDOM"
+    ],
+    "unhedged_statements": []
+  },
+  "individual_preferences": {
+    "source": "loaded data\\context\\communication_preferences.json",
+    "count": 0
+  },
+  "presentation_contract": {
+    "input": {
+      "fact": "text, never modified",
+      "culture": [
+        "COMM-PROFILE-GERMANY",
+        "COMM-PROFILE-INDIA",
+        "COMM-PROFILE-UNITED-STATES",
+        "COMM-PROFILE-UNITED-KINGDOM",
+        "COMM-PROFILE-INTERNATIONAL-NEUTRAL"
+      ],
+      "tone": [
+        "neutral",
+        "direct",
+        "relationship_oriented",
+        "friendly",
+        "warm"
+      ]
+    },
+    "output": [
+      "fact",
+      "rendered",
+      "added_phrase",
+      "checks",
+      "guidance"
+    ],
+    "example": {
+      "fact": "Please complete the security training by Friday.",
+      "fact_unchanged": true,
+      "culture": "COMM-PROFILE-INTERNATIONAL-NEUTRAL",
+      "tone": "relationship_oriented",
+      "rendered": "Please complete the security training by Friday. Happy to help if anything's unclear.",
+      "added_phrase": {
+        "text": "Happy to help if anything's unclear.",
+        "source_document": "DOC-COMM-003"
+      },
+      "checks": [
+        {
+          "check": "explicit_deadline_in_fact",
+          "result": true,
+          "why": "Every profile recommends stating the deadline explicitly rather than relying on tone."
+        }
+      ],
+      "guidance": [
+        {
+          "dimension": "directness",
+          "text": "State the ask and, if applicable, the deadline explicitly and early in the message — this works across every profile described in this document set and avoids relying on tone to carry information.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "urgency",
+          "text": "State the ask and, if applicable, the deadline explicitly and early in the message — this works across every profile described in this document set and avoids relying on tone to carry information.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "clarity",
+          "text": "State the ask and, if applicable, the deadline explicitly and early in the message — this works across every profile described in this document set and avoids relying on tone to carry information.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "directness",
+          "text": "When giving feedback to someone whose style you don't know yet, default to a moderately direct but warm tone: clear about the issue, clear that it's not personal.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "clarity",
+          "text": "When giving feedback to someone whose style you don't know yet, default to a moderately direct but warm tone: clear about the issue, clear that it's not personal.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "directness",
+          "text": "When in doubt about urgency, say the deadline explicitly rather than assuming tone will convey it.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "urgency",
+          "text": "When in doubt about urgency, say the deadline explicitly rather than assuming tone will convey it.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        },
+        {
+          "dimension": "clarity",
+          "text": "When in doubt about urgency, say the deadline explicitly rather than assuming tone will convey it.",
+          "label": null,
+          "hedged": false,
+          "source_document": "DOC-COMM-006",
+          "section": "International / Neutral Communication Guidance > Baseline Approach",
+          "chunk_ids": [
+            "DOC-COMM-006_v1.3_001"
+          ]
+        }
+      ],
+      "layer_note": "Culture and tone change phrasing only. If the reader's individual preference is known, it overrides the culture profile."
+    }
+  },
+  "employees_with_individual_preference": []
+}

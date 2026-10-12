@@ -2,7 +2,7 @@
   "summary": {
     "high": 3,
     "medium": 5,
-    "low": 24
+    "low": 30
   },
   "gaps": [
     {
@@ -184,6 +184,130 @@
             "PROC-IT-001_v2.3_000"
           ],
           "unresolved": []
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-4C866EAB",
+      "gap_type": "checklist_contact_not_local",
+      "description": "'Emergency Contacts' names only Office Manager (Munich); no Berlin-specific contact is documented.",
+      "related_entities": [
+        "location:LOC-BER"
+      ],
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "severity": "low",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "item_id": "GER-EMERGENCY-CONTACTS",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_012"
+          ]
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-9C8C379A",
+      "gap_type": "checklist_contact_not_local",
+      "description": "'Housing' names only Office Manager (Munich); no Berlin-specific contact is documented.",
+      "related_entities": [
+        "location:LOC-BER"
+      ],
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "severity": "low",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "item_id": "GER-HOUSING",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_001"
+          ]
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-5D46B73D",
+      "gap_type": "checklist_item_without_internal_guidance",
+      "description": "'Internet Setup' is on the checklist, but it names no Nexora contact, no Nexora document and no official source to check.",
+      "related_entities": [],
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "severity": "low",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "item_id": "GER-INTERNET-SETUP",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_010"
+          ]
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-6530CC74",
+      "gap_type": "checklist_item_without_internal_guidance",
+      "description": "'Mobile / SIM Card' is on the checklist, but it names no Nexora contact, no Nexora document and no official source to check.",
+      "related_entities": [],
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "severity": "low",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "item_id": "GER-MOBILE",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_006"
+          ]
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-C69EA779",
+      "gap_type": "checklist_item_without_internal_guidance",
+      "description": "'Recycling & Waste Rules' is on the checklist, but it names no Nexora contact, no Nexora document and no official source to check.",
+      "related_entities": [],
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "severity": "low",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "item_id": "GER-RECYCLING-WASTE-RULES",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_009"
+          ]
+        }
+      ],
+      "suggestion": null
+    },
+    {
+      "gap_id": "GAP-D1F3B03C",
+      "gap_type": "checklist_item_without_internal_guidance",
+      "description": "'Finding a General Practitioner (GP/Hausarzt)' is on the checklist, but it names no Nexora contact, no Nexora document and no official source to check.",
+      "related_entities": [],
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "severity": "low",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "item_id": "GER-FINDING-A-GENERAL-PRACTITIONER",
+          "chunk_ids": [
+            "DOC-CARE-002_v1.5_008"
+          ]
         }
       ],
       "suggestion": null
@@ -671,6 +795,11 @@
       "check": "terminology_ambiguity",
       "description": "Terms the glossary itself flags as ambiguous or overloaded",
       "gaps_found": 2
+    },
+    {
+      "check": "germany_checklist",
+      "description": "Germany checklist items have a Nexora contact (locally), a Nexora document or an official source",
+      "gaps_found": 6
     }
   ]
 }

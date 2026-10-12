@@ -1,6 +1,6 @@
 {
   "nodes": 354,
-  "edges": 1921,
+  "edges": 1948,
   "edges_by_relationship": {
     "about": 37,
     "approves": 12,
@@ -9,6 +9,7 @@
     "disambiguates": 4,
     "discusses": 232,
     "documented_by": 35,
+    "eligible_for": 27,
     "for_audience": 25,
     "governed_by": 11,
     "handles_escalations_for": 7,

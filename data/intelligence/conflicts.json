@@ -5,7 +5,7 @@
     "approver_subject_similarity": 0.4,
     "approximate_count_tolerance": 0.1
   },
-  "fact_statements_compared": 46,
+  "fact_statements_compared": 45,
   "conflicts": [
     {
       "conflict_id": "CONF-98434E88",

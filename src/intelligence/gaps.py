@@ -320,6 +320,16 @@ def _terminology(report: GapReport, index: EntityIndex) -> None:
     report.check("terminology_ambiguity", "Terms the glossary itself flags as ambiguous or overloaded", n)
 
 
+def add_gaps(report: GapReport, gaps: list[dict], check: str, description: str) -> None:
+    """Merge gaps produced by another module (e.g. germany.py), keeping the same shape."""
+    for g in gaps:
+        related = [f"location:{g['location_id']}"] if g.get("location_id") else []
+        report.add(Gap(gap_id(g["gap_type"], g.get("item_id", ""), g.get("location_id") or ""), g["gap_type"],
+                       g["description"], related, g.get("source_documents", []), g["severity"], CONF_PATTERN,
+                       [{"item_id": g.get("item_id"), "chunk_ids": g.get("chunk_ids", [])}]))
+    report.check(check, description, len(gaps))
+
+
 def detect_gaps(data: Phase2Data, index: EntityIndex, processes: list[ProcessRecord], roles: list[RoleRecord],
                 rules: list[Rule], duplicates: dict, org_chart: dict, relationships) -> GapReport:
     report = GapReport()

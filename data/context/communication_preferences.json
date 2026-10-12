@@ -1,0 +1,7 @@
+{
+  "_note": "INPUT for KORA. Individual communication preferences, set by the person themselves. They always override the location's cultural tone profile (DOC-COMM-001). Empty by default: KORA never infers a preference from location, name or nationality.",
+  "_example": {
+    "EMP-0085": {"preferred_tone": "direct", "notes": "Prefers short messages with a date.", "set_by": "self", "updated": "2025-04-20"}
+  },
+  "employees": {}
+}

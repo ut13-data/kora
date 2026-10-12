@@ -1,0 +1,1329 @@
+{
+  "as_of": "2025-04-22",
+  "progress_source": "loaded data\\context\\checklist_progress.json",
+  "program": {
+    "documents": [
+      "DOC-CARE-002",
+      "DOC-CARE-003",
+      "DOC-CARE-004"
+    ],
+    "overview_document": "DOC-CARE-001",
+    "philosophy": "\"KORA shouldn't only teach you your job. It should help you feel comfortable starting your new life here.\" This program exists alongside — not instead of — standard employee onboarding (PROC-HR-001). Standard onboarding gets you productive at work. This program helps international employees relocating to join Nexora's German offices (Munich, LOC-MUC, or Berlin, LOC-BER) get settled into everyday life.",
+    "not_advice": "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\"",
+    "example_interactions": [
+      "\"You've been in Germany for two weeks — have you completed the items on your settling-in checklist?\"",
+      "\"You mentioned yesterday that you haven't arranged internet yet — want me to show you the general steps?\"",
+      "\"You don't need to remember everything. Here are the three things people commonly forget during their first month.\""
+    ],
+    "tone": "Gentle, practical, never nagging. The goal is for a new joiner to feel looked after, not overwhelmed with a wall of bureaucracy on Day 1."
+  },
+  "stages": [
+    {
+      "stage": "pre_start",
+      "from_day": -1,
+      "to_day": 0
+    },
+    {
+      "stage": "week_1",
+      "from_day": 1,
+      "to_day": 7
+    },
+    {
+      "stage": "week_2",
+      "from_day": 8,
+      "to_day": 14
+    },
+    {
+      "stage": "month_1",
+      "from_day": 15,
+      "to_day": 30
+    },
+    {
+      "stage": "month_2",
+      "from_day": 31,
+      "to_day": 60
+    },
+    {
+      "stage": "month_3",
+      "from_day": 61,
+      "to_day": 90
+    },
+    {
+      "stage": "settled",
+      "from_day": 91,
+      "to_day": 9999
+    }
+  ],
+  "items": [
+    {
+      "item_id": "GER-HOUSING",
+      "title": "Housing",
+      "kind": "action",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Housing",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_001"
+      ],
+      "nexora_guidance": [
+        "Finding and registering a home is usually the first practical step, since many later steps (bank account, address registration) require a fixed address.",
+        "Nexora's Office Manager (Munich) can share a list of relocation-friendly agencies used by past new joiners, but does not manage housing directly."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [
+        {
+          "role_id": "ROLE-048",
+          "name": "Office Manager",
+          "location_qualifier": "Munich"
+        }
+      ],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 7,
+          "statement": "Confirm your housing situation and move-in date, if not already settled.",
+          "document_id": "DOC-CARE-003"
+        }
+      ],
+      "due_by_day": 7,
+      "depends_on": [],
+      "commonly_forgotten": null
+    },
+    {
+      "item_id": "GER-ADDRESS-REGISTRATION",
+      "title": "Address Registration (Anmeldung)",
+      "kind": "action",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Address Registration (Anmeldung)",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_002"
+      ],
+      "nexora_guidance": [
+        "."
+      ],
+      "external_requirements": [
+        "Registering your address with the local registration office is a required step for most residents in Germany and is generally expected within a short window after moving in."
+      ],
+      "official_guidance_note": "Check the current official guidance for your location and circumstances — exact deadlines and required documents can vary and change; do not rely solely on this checklist for the legal requirement itself.",
+      "nexora_contacts": [],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 7,
+          "statement": "Begin the address registration process as soon as you have a fixed address — check current official guidance for the exact steps and timing where it applies.",
+          "document_id": "DOC-CARE-003"
+        },
+        {
+          "due_by_day": 14,
+          "statement": "Address registration underway or complete",
+          "document_id": "DOC-CARE-004"
+        }
+      ],
+      "due_by_day": 7,
+      "depends_on": [
+        {
+          "item_id": "GER-HOUSING",
+          "quote": "(bank account, address registration) require"
+        }
+      ],
+      "commonly_forgotten": {
+        "rank": 1,
+        "quote": "Registering the address promptly, since it blocks several later steps.",
+        "note": "Three Things People Commonly Forget (informal HR observation, not a formal statistic)"
+      }
+    },
+    {
+      "item_id": "GER-MOBILE",
+      "title": "Mobile / SIM Card",
+      "kind": "action",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Mobile / SIM Card",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_006"
+      ],
+      "nexora_guidance": [
+        "A local SIM (prepaid or contract) is easy to set up once you have a German address; some providers require it for a contract plan, prepaid options generally do not."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 7,
+          "statement": "Get a local SIM card (a prepaid option is usually fastest).",
+          "document_id": "DOC-CARE-003"
+        }
+      ],
+      "due_by_day": 7,
+      "depends_on": [
+        {
+          "item_id": "GER-ADDRESS-REGISTRATION",
+          "quote": "once you have a German address"
+        }
+      ],
+      "commonly_forgotten": null
+    },
+    {
+      "item_id": "GER-PUBLIC-TRANSPORT",
+      "title": "Public Transport",
+      "kind": "action",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Public Transport",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_007"
+      ],
+      "nexora_guidance": [
+        "Munich and Berlin both have extensive public transport (U-Bahn, S-Bahn, tram, bus).",
+        "Monthly or annual passes are common; some employees are eligible for a subsidized transport benefit — check with HR Generalist for current eligibility."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [
+        {
+          "role_id": "ROLE-040",
+          "name": "HR Generalist",
+          "location_qualifier": null
+        }
+      ],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 7,
+          "statement": "Locate the nearest grocery store, pharmacy, and public transport stop to where you're staying.",
+          "document_id": "DOC-CARE-003"
+        },
+        {
+          "due_by_day": 60,
+          "statement": "Comfortable with the public transport routes you use regularly",
+          "document_id": "DOC-CARE-004"
+        }
+      ],
+      "due_by_day": 7,
+      "depends_on": [],
+      "commonly_forgotten": null
+    },
+    {
+      "item_id": "GER-SAY-HELLO-TO-YOUR-HR",
+      "title": "Say hello to your HR Generalist and ask any question, however small",
+      "kind": "action",
+      "source_document": "DOC-CARE-003",
+      "section": "First-Week Essentials — Germany",
+      "chunk_ids": [
+        "DOC-CARE-003_v1.1_000"
+      ],
+      "nexora_guidance": [
+        "Say hello to your HR Generalist and ask any question, however small — that's what this program is for."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [
+        {
+          "role_id": "ROLE-040",
+          "name": "HR Generalist",
+          "location_qualifier": null
+        }
+      ],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 7,
+          "statement": "Say hello to your HR Generalist and ask any question, however small — that's what this program is for.",
+          "document_id": "DOC-CARE-003"
+        }
+      ],
+      "due_by_day": 7,
+      "depends_on": [],
+      "commonly_forgotten": null
+    },
+    {
+      "item_id": "GER-BANK-ACCOUNT",
+      "title": "Bank Account",
+      "kind": "action",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Bank Account",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_003"
+      ],
+      "nexora_guidance": [
+        "Most new joiners open a German bank account within the first couple of weeks, as payroll is paid in EUR to a German (or SEPA-reachable) account.",
+        "Several major banks and app-based \"neobanks\" are commonly used by internationals; HR can share what past joiners have used, informally, on request."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [
+        {
+          "role_id": null,
+          "name": "HR (department)",
+          "location_qualifier": null
+        }
+      ],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 14,
+          "statement": "Bank account opened",
+          "document_id": "DOC-CARE-004"
+        }
+      ],
+      "due_by_day": 14,
+      "depends_on": [
+        {
+          "item_id": "GER-HOUSING",
+          "quote": "(bank account, address registration) require"
+        }
+      ],
+      "commonly_forgotten": null
+    },
+    {
+      "item_id": "GER-HEALTH-INSURANCE",
+      "title": "Health Insurance",
+      "kind": "action",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Health Insurance",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_004"
+      ],
+      "nexora_guidance": [
+        "Nexora's payroll/benefits setup interacts with statutory health insurance for most employees.",
+        "."
+      ],
+      "external_requirements": [
+        "Health insurance is mandatory in Germany."
+      ],
+      "official_guidance_note": "Check the current official guidance for your location and circumstances — the right insurance path can depend on salary level, employment history, and personal situation, and this checklist does not attempt to cover every case.",
+      "nexora_contacts": [],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 30,
+          "statement": "Health insurance confirmed",
+          "document_id": "DOC-CARE-004"
+        }
+      ],
+      "due_by_day": 30,
+      "depends_on": [],
+      "commonly_forgotten": null
+    },
+    {
+      "item_id": "GER-INTERNET-SETUP",
+      "title": "Internet Setup",
+      "kind": "action",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Internet Setup",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_010"
+      ],
+      "nexora_guidance": [
+        "Home internet installation can take a few weeks from signup to activation in some buildings — it's worth arranging this as early as possible after securing housing."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 30,
+          "statement": "Home internet ordered",
+          "document_id": "DOC-CARE-004"
+        }
+      ],
+      "due_by_day": 30,
+      "depends_on": [
+        {
+          "item_id": "GER-HOUSING",
+          "quote": "after securing housing"
+        }
+      ],
+      "commonly_forgotten": {
+        "rank": 2,
+        "quote": "Setting up home internet early, given installation lead times.",
+        "note": "Three Things People Commonly Forget (informal HR observation, not a formal statistic)"
+      }
+    },
+    {
+      "item_id": "GER-TAX-REGISTRATION",
+      "title": "Tax Registration",
+      "kind": "action",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Tax Registration",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_005"
+      ],
+      "nexora_guidance": [
+        "You'll generally receive a tax ID (Steuer-ID) automatically after address registration.",
+        "."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": "Check the current official guidance for your location and circumstances — Nexora HR is not able to provide personal tax advice.",
+      "nexora_contacts": [],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 30,
+          "statement": "Tax ID received (usually arrives automatically after address registration — check current official guidance if it hasn't arrived within a few weeks)",
+          "document_id": "DOC-CARE-004"
+        }
+      ],
+      "due_by_day": 30,
+      "depends_on": [
+        {
+          "item_id": "GER-ADDRESS-REGISTRATION",
+          "quote": "after address registration"
+        }
+      ],
+      "commonly_forgotten": null
+    },
+    {
+      "item_id": "GER-FINDING-A-GENERAL-PRACTITIONER",
+      "title": "Finding a General Practitioner (GP/Hausarzt)",
+      "kind": "action",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Finding a General Practitioner (GP/Hausarzt)",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_008"
+      ],
+      "nexora_guidance": [
+        "It's worth registering with a local GP even before you need one, as appointment availability can be limited, especially for new patients."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 60,
+          "statement": "Registered with a local GP",
+          "document_id": "DOC-CARE-004"
+        }
+      ],
+      "due_by_day": 60,
+      "depends_on": [],
+      "commonly_forgotten": {
+        "rank": 3,
+        "quote": "Registering with a GP before actually needing one.",
+        "note": "Three Things People Commonly Forget (informal HR observation, not a formal statistic)"
+      }
+    },
+    {
+      "item_id": "GER-RECYCLING-WASTE-RULES",
+      "title": "Recycling & Waste Rules",
+      "kind": "action",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Recycling & Waste Rules",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_009"
+      ],
+      "nexora_guidance": [
+        "German households typically separate waste into multiple categories (paper, packaging, organic, residual, glass).",
+        "Your building/landlord can usually explain the local system — it varies slightly by city and building."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 60,
+          "statement": "Aware of the building/local recycling and waste sorting system",
+          "document_id": "DOC-CARE-004"
+        }
+      ],
+      "due_by_day": 60,
+      "depends_on": [],
+      "commonly_forgotten": null
+    },
+    {
+      "item_id": "GER-COMMON-GERMAN-WORKPLACE-PRACTICES",
+      "title": "Common German Workplace Practices",
+      "kind": "action",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Common German Workplace Practices",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_011"
+      ],
+      "nexora_guidance": [
+        "Punctuality for meetings is generally valued.",
+        "Clear, direct written communication (e.g., in email/chat) is common and not intended as unfriendly — see communication_culture.md and germany_workplace_tone.md.",
+        "A relatively firm separation between work hours and personal time is common; being contacted about non-urgent work matters outside hours is less common than in some other cultures."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [],
+      "nexora_resources": [
+        "communication_culture.md",
+        "germany_workplace_tone.md"
+      ],
+      "pace": [
+        {
+          "due_by_day": 90,
+          "statement": "Have a sense of common German workplace communication norms (see germany_workplace_tone.md) and how they compare to what you're used to",
+          "document_id": "DOC-CARE-004"
+        }
+      ],
+      "due_by_day": 90,
+      "depends_on": [],
+      "commonly_forgotten": null
+    },
+    {
+      "item_id": "GER-SETTLED-ENOUGH-INTO-DAILY-LOGISTICS",
+      "title": "Settled enough into daily logistics that \"settling in\" tasks are no longer taking up significant weekly mental space",
+      "kind": "milestone",
+      "source_document": "DOC-CARE-004",
+      "section": "First-90-Days Practical Checklist — Germany",
+      "chunk_ids": [
+        "DOC-CARE-004_v1.2_000",
+        "DOC-CARE-004_v1.2_001"
+      ],
+      "nexora_guidance": [
+        "Settled enough into daily logistics that \"settling in\" tasks are no longer taking up significant weekly mental space"
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [],
+      "nexora_resources": [],
+      "pace": [
+        {
+          "due_by_day": 90,
+          "statement": "Settled enough into daily logistics that \"settling in\" tasks are no longer taking up significant weekly mental space",
+          "document_id": "DOC-CARE-004"
+        }
+      ],
+      "due_by_day": 90,
+      "depends_on": [],
+      "commonly_forgotten": null
+    },
+    {
+      "item_id": "GER-A-FEW-USEFUL-EVERYDAY-GERMAN-PHRASES",
+      "title": "A Few Useful Everyday German Phrases",
+      "kind": "reference",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > A Few Useful Everyday German Phrases",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_013"
+      ],
+      "nexora_guidance": [
+        "\"Guten Tag\" — Good day (formal greeting)",
+        "\"Danke\" / \"Vielen Dank\" — Thanks / Thank you very much",
+        "\"Entschuldigung\" — Excuse me / Sorry",
+        "\"Sprechen Sie Englisch?\" — Do you speak English?",
+        "These are offered as friendly, practical basics — not a language course."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [],
+      "nexora_resources": [],
+      "pace": [],
+      "due_by_day": null,
+      "depends_on": [],
+      "commonly_forgotten": null
+    },
+    {
+      "item_id": "GER-EMERGENCY-CONTACTS",
+      "title": "Emergency Contacts",
+      "kind": "reference",
+      "source_document": "DOC-CARE-002",
+      "section": "Germany Settling-In Checklist > Emergency Contacts",
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_012"
+      ],
+      "nexora_guidance": [
+        "General emergency number (police/fire/ambulance) is widely known and posted in the office kitchen at both German locations.",
+        "Nexora's Office Manager (Munich) maintains a local emergency contact sheet including the nearest hospital to the office."
+      ],
+      "external_requirements": [],
+      "official_guidance_note": null,
+      "nexora_contacts": [
+        {
+          "role_id": "ROLE-048",
+          "name": "Office Manager",
+          "location_qualifier": "Munich"
+        }
+      ],
+      "nexora_resources": [],
+      "pace": [],
+      "due_by_day": null,
+      "depends_on": [],
+      "commonly_forgotten": null
+    }
+  ],
+  "general_steps": [
+    {
+      "item_id": "GER-HOUSING",
+      "title": "Housing",
+      "due_by_day": 7,
+      "official_guidance_note": null
+    },
+    {
+      "item_id": "GER-ADDRESS-REGISTRATION",
+      "title": "Address Registration (Anmeldung)",
+      "due_by_day": 7,
+      "official_guidance_note": "Check the current official guidance for your location and circumstances — exact deadlines and required documents can vary and change; do not rely solely on this checklist for the legal requirement itself."
+    },
+    {
+      "item_id": "GER-MOBILE",
+      "title": "Mobile / SIM Card",
+      "due_by_day": 7,
+      "official_guidance_note": null
+    },
+    {
+      "item_id": "GER-PUBLIC-TRANSPORT",
+      "title": "Public Transport",
+      "due_by_day": 7,
+      "official_guidance_note": null
+    },
+    {
+      "item_id": "GER-SAY-HELLO-TO-YOUR-HR",
+      "title": "Say hello to your HR Generalist and ask any question, however small",
+      "due_by_day": 7,
+      "official_guidance_note": null
+    },
+    {
+      "item_id": "GER-BANK-ACCOUNT",
+      "title": "Bank Account",
+      "due_by_day": 14,
+      "official_guidance_note": null
+    },
+    {
+      "item_id": "GER-HEALTH-INSURANCE",
+      "title": "Health Insurance",
+      "due_by_day": 30,
+      "official_guidance_note": "Check the current official guidance for your location and circumstances — the right insurance path can depend on salary level, employment history, and personal situation, and this checklist does not attempt to cover every case."
+    },
+    {
+      "item_id": "GER-INTERNET-SETUP",
+      "title": "Internet Setup",
+      "due_by_day": 30,
+      "official_guidance_note": null
+    },
+    {
+      "item_id": "GER-TAX-REGISTRATION",
+      "title": "Tax Registration",
+      "due_by_day": 30,
+      "official_guidance_note": "Check the current official guidance for your location and circumstances — Nexora HR is not able to provide personal tax advice."
+    },
+    {
+      "item_id": "GER-FINDING-A-GENERAL-PRACTITIONER",
+      "title": "Finding a General Practitioner (GP/Hausarzt)",
+      "due_by_day": 60,
+      "official_guidance_note": null
+    },
+    {
+      "item_id": "GER-RECYCLING-WASTE-RULES",
+      "title": "Recycling & Waste Rules",
+      "due_by_day": 60,
+      "official_guidance_note": null
+    },
+    {
+      "item_id": "GER-COMMON-GERMAN-WORKPLACE-PRACTICES",
+      "title": "Common German Workplace Practices",
+      "due_by_day": 90,
+      "official_guidance_note": null
+    }
+  ],
+  "locations": [
+    {
+      "location_id": "LOC-BER",
+      "city": "Berlin",
+      "checklists": [
+        "DOC-CARE-002",
+        "DOC-CARE-003",
+        "DOC-CARE-004"
+      ]
+    },
+    {
+      "location_id": "LOC-MUC",
+      "city": "Munich",
+      "checklists": [
+        "DOC-CARE-002",
+        "DOC-CARE-003",
+        "DOC-CARE-004"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "gap_type": "checklist_contact_not_local",
+      "severity": "low",
+      "item_id": "GER-HOUSING",
+      "location_id": "LOC-BER",
+      "description": "'Housing' names only Office Manager (Munich); no Berlin-specific contact is documented.",
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_001"
+      ]
+    },
+    {
+      "gap_type": "checklist_contact_not_local",
+      "severity": "low",
+      "item_id": "GER-EMERGENCY-CONTACTS",
+      "location_id": "LOC-BER",
+      "description": "'Emergency Contacts' names only Office Manager (Munich); no Berlin-specific contact is documented.",
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_012"
+      ]
+    },
+    {
+      "gap_type": "checklist_item_without_internal_guidance",
+      "severity": "low",
+      "item_id": "GER-MOBILE",
+      "location_id": null,
+      "description": "'Mobile / SIM Card' is on the checklist, but it names no Nexora contact, no Nexora document and no official source to check.",
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_006"
+      ]
+    },
+    {
+      "gap_type": "checklist_item_without_internal_guidance",
+      "severity": "low",
+      "item_id": "GER-FINDING-A-GENERAL-PRACTITIONER",
+      "location_id": null,
+      "description": "'Finding a General Practitioner (GP/Hausarzt)' is on the checklist, but it names no Nexora contact, no Nexora document and no official source to check.",
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_008"
+      ]
+    },
+    {
+      "gap_type": "checklist_item_without_internal_guidance",
+      "severity": "low",
+      "item_id": "GER-RECYCLING-WASTE-RULES",
+      "location_id": null,
+      "description": "'Recycling & Waste Rules' is on the checklist, but it names no Nexora contact, no Nexora document and no official source to check.",
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_009"
+      ]
+    },
+    {
+      "gap_type": "checklist_item_without_internal_guidance",
+      "severity": "low",
+      "item_id": "GER-INTERNET-SETUP",
+      "location_id": null,
+      "description": "'Internet Setup' is on the checklist, but it names no Nexora contact, no Nexora document and no official source to check.",
+      "source_documents": [
+        "DOC-CARE-002"
+      ],
+      "chunk_ids": [
+        "DOC-CARE-002_v1.5_010"
+      ]
+    }
+  ],
+  "employees": [
+    {
+      "employee_id": "EMP-0023",
+      "eligibility": {
+        "status": "active",
+        "in_germany": true,
+        "relocating_to_germany": true,
+        "day": 45,
+        "stage": "month_2",
+        "evidence": [
+          "employees.csv: location_id=LOC-MUC, international_relocation_germany=Yes, join_date=2025-03-09"
+        ],
+        "audience_note": "The program is for international employees relocating to the German offices (DOC-CARE-001). Eligibility comes from employees.csv, never from a person's name or nationality."
+      },
+      "plan": {
+        "progress_reported": false,
+        "items": [
+          {
+            "item_id": "GER-HOUSING",
+            "title": "Housing",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 7,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [
+              {
+                "role_id": "ROLE-048",
+                "name": "Office Manager",
+                "location_qualifier": "Munich"
+              }
+            ],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-ADDRESS-REGISTRATION",
+            "title": "Address Registration (Anmeldung)",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 7,
+            "blocked_by": [
+              "GER-HOUSING"
+            ],
+            "commonly_forgotten": true,
+            "official_guidance_note": "Check the current official guidance for your location and circumstances — exact deadlines and required documents can vary and change; do not rely solely on this checklist for the legal requirement itself.",
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-MOBILE",
+            "title": "Mobile / SIM Card",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 7,
+            "blocked_by": [
+              "GER-ADDRESS-REGISTRATION"
+            ],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-PUBLIC-TRANSPORT",
+            "title": "Public Transport",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 7,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [
+              {
+                "role_id": "ROLE-040",
+                "name": "HR Generalist",
+                "location_qualifier": null
+              }
+            ],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-SAY-HELLO-TO-YOUR-HR",
+            "title": "Say hello to your HR Generalist and ask any question, however small",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 7,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [
+              {
+                "role_id": "ROLE-040",
+                "name": "HR Generalist",
+                "location_qualifier": null
+              }
+            ],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-BANK-ACCOUNT",
+            "title": "Bank Account",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 14,
+            "blocked_by": [
+              "GER-HOUSING"
+            ],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [
+              {
+                "role_id": null,
+                "name": "HR (department)",
+                "location_qualifier": null
+              }
+            ],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-HEALTH-INSURANCE",
+            "title": "Health Insurance",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 30,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": "Check the current official guidance for your location and circumstances — the right insurance path can depend on salary level, employment history, and personal situation, and this checklist does not attempt to cover every case.",
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-INTERNET-SETUP",
+            "title": "Internet Setup",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 30,
+            "blocked_by": [
+              "GER-HOUSING"
+            ],
+            "commonly_forgotten": true,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-TAX-REGISTRATION",
+            "title": "Tax Registration",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 30,
+            "blocked_by": [
+              "GER-ADDRESS-REGISTRATION"
+            ],
+            "commonly_forgotten": false,
+            "official_guidance_note": "Check the current official guidance for your location and circumstances — Nexora HR is not able to provide personal tax advice.",
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-FINDING-A-GENERAL-PRACTITIONER",
+            "title": "Finding a General Practitioner (GP/Hausarzt)",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "this_stage",
+            "due_by_day": 60,
+            "blocked_by": [],
+            "commonly_forgotten": true,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-RECYCLING-WASTE-RULES",
+            "title": "Recycling & Waste Rules",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "this_stage",
+            "due_by_day": 60,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-COMMON-GERMAN-WORKPLACE-PRACTICES",
+            "title": "Common German Workplace Practices",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "upcoming",
+            "due_by_day": 90,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-SETTLED-ENOUGH-INTO-DAILY-LOGISTICS",
+            "title": "Settled enough into daily logistics that \"settling in\" tasks are no longer taking up significant weekly mental space",
+            "kind": "milestone",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "upcoming",
+            "due_by_day": 90,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          }
+        ],
+        "next_steps": [
+          "GER-HOUSING",
+          "GER-PUBLIC-TRANSPORT",
+          "GER-SAY-HELLO-TO-YOUR-HR"
+        ],
+        "possibly_forgotten": [
+          "GER-ADDRESS-REGISTRATION",
+          "GER-INTERNET-SETUP",
+          "GER-FINDING-A-GENERAL-PRACTITIONER",
+          "GER-HOUSING",
+          "GER-MOBILE",
+          "GER-PUBLIC-TRANSPORT",
+          "GER-SAY-HELLO-TO-YOUR-HR",
+          "GER-BANK-ACCOUNT",
+          "GER-HEALTH-INSURANCE",
+          "GER-TAX-REGISTRATION"
+        ],
+        "reported_complete": [],
+        "tone": "Gentle, practical, never nagging. The goal is for a new joiner to feel looked after, not overwhelmed with a wall of bureaucracy on Day 1.",
+        "caveat": "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\""
+      }
+    },
+    {
+      "employee_id": "EMP-0031",
+      "eligibility": {
+        "status": "past_program_window",
+        "in_germany": true,
+        "relocating_to_germany": true,
+        "day": 210,
+        "stage": "settled",
+        "evidence": [
+          "employees.csv: location_id=LOC-MUC, international_relocation_germany=Yes, join_date=2024-09-25"
+        ],
+        "audience_note": "The program is for international employees relocating to the German offices (DOC-CARE-001). Eligibility comes from employees.csv, never from a person's name or nationality."
+      }
+    },
+    {
+      "employee_id": "EMP-0061",
+      "eligibility": {
+        "status": "past_program_window",
+        "in_germany": true,
+        "relocating_to_germany": true,
+        "day": 1229,
+        "stage": "settled",
+        "evidence": [
+          "employees.csv: location_id=LOC-BER, international_relocation_germany=Yes, join_date=2021-12-11"
+        ],
+        "audience_note": "The program is for international employees relocating to the German offices (DOC-CARE-001). Eligibility comes from employees.csv, never from a person's name or nationality."
+      }
+    },
+    {
+      "employee_id": "EMP-0062",
+      "eligibility": {
+        "status": "past_program_window",
+        "in_germany": true,
+        "relocating_to_germany": true,
+        "day": 827,
+        "stage": "settled",
+        "evidence": [
+          "employees.csv: location_id=LOC-BER, international_relocation_germany=Yes, join_date=2023-01-17"
+        ],
+        "audience_note": "The program is for international employees relocating to the German offices (DOC-CARE-001). Eligibility comes from employees.csv, never from a person's name or nationality."
+      }
+    },
+    {
+      "employee_id": "EMP-0064",
+      "eligibility": {
+        "status": "past_program_window",
+        "in_germany": true,
+        "relocating_to_germany": true,
+        "day": 185,
+        "stage": "settled",
+        "evidence": [
+          "employees.csv: location_id=LOC-BER, international_relocation_germany=Yes, join_date=2024-10-20"
+        ],
+        "audience_note": "The program is for international employees relocating to the German offices (DOC-CARE-001). Eligibility comes from employees.csv, never from a person's name or nationality."
+      }
+    },
+    {
+      "employee_id": "EMP-0077",
+      "eligibility": {
+        "status": "past_program_window",
+        "in_germany": true,
+        "relocating_to_germany": true,
+        "day": 531,
+        "stage": "settled",
+        "evidence": [
+          "employees.csv: location_id=LOC-MUC, international_relocation_germany=Yes, join_date=2023-11-09"
+        ],
+        "audience_note": "The program is for international employees relocating to the German offices (DOC-CARE-001). Eligibility comes from employees.csv, never from a person's name or nationality."
+      }
+    },
+    {
+      "employee_id": "EMP-0085",
+      "eligibility": {
+        "status": "active",
+        "in_germany": true,
+        "relocating_to_germany": true,
+        "day": 14,
+        "stage": "week_2",
+        "evidence": [
+          "employees.csv: location_id=LOC-MUC, international_relocation_germany=Yes, join_date=2025-04-09"
+        ],
+        "audience_note": "The program is for international employees relocating to the German offices (DOC-CARE-001). Eligibility comes from employees.csv, never from a person's name or nationality."
+      },
+      "plan": {
+        "progress_reported": false,
+        "items": [
+          {
+            "item_id": "GER-HOUSING",
+            "title": "Housing",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 7,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [
+              {
+                "role_id": "ROLE-048",
+                "name": "Office Manager",
+                "location_qualifier": "Munich"
+              }
+            ],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-ADDRESS-REGISTRATION",
+            "title": "Address Registration (Anmeldung)",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 7,
+            "blocked_by": [
+              "GER-HOUSING"
+            ],
+            "commonly_forgotten": true,
+            "official_guidance_note": "Check the current official guidance for your location and circumstances — exact deadlines and required documents can vary and change; do not rely solely on this checklist for the legal requirement itself.",
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-MOBILE",
+            "title": "Mobile / SIM Card",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 7,
+            "blocked_by": [
+              "GER-ADDRESS-REGISTRATION"
+            ],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-PUBLIC-TRANSPORT",
+            "title": "Public Transport",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 7,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [
+              {
+                "role_id": "ROLE-040",
+                "name": "HR Generalist",
+                "location_qualifier": null
+              }
+            ],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-SAY-HELLO-TO-YOUR-HR",
+            "title": "Say hello to your HR Generalist and ask any question, however small",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "past_suggested_pace",
+            "due_by_day": 7,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [
+              {
+                "role_id": "ROLE-040",
+                "name": "HR Generalist",
+                "location_qualifier": null
+              }
+            ],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-BANK-ACCOUNT",
+            "title": "Bank Account",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "this_stage",
+            "due_by_day": 14,
+            "blocked_by": [
+              "GER-HOUSING"
+            ],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [
+              {
+                "role_id": null,
+                "name": "HR (department)",
+                "location_qualifier": null
+              }
+            ],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-HEALTH-INSURANCE",
+            "title": "Health Insurance",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "upcoming",
+            "due_by_day": 30,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": "Check the current official guidance for your location and circumstances — the right insurance path can depend on salary level, employment history, and personal situation, and this checklist does not attempt to cover every case.",
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-INTERNET-SETUP",
+            "title": "Internet Setup",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "upcoming",
+            "due_by_day": 30,
+            "blocked_by": [
+              "GER-HOUSING"
+            ],
+            "commonly_forgotten": true,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-TAX-REGISTRATION",
+            "title": "Tax Registration",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "upcoming",
+            "due_by_day": 30,
+            "blocked_by": [
+              "GER-ADDRESS-REGISTRATION"
+            ],
+            "commonly_forgotten": false,
+            "official_guidance_note": "Check the current official guidance for your location and circumstances — Nexora HR is not able to provide personal tax advice.",
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-FINDING-A-GENERAL-PRACTITIONER",
+            "title": "Finding a General Practitioner (GP/Hausarzt)",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "upcoming",
+            "due_by_day": 60,
+            "blocked_by": [],
+            "commonly_forgotten": true,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-RECYCLING-WASTE-RULES",
+            "title": "Recycling & Waste Rules",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "upcoming",
+            "due_by_day": 60,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-COMMON-GERMAN-WORKPLACE-PRACTICES",
+            "title": "Common German Workplace Practices",
+            "kind": "action",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "upcoming",
+            "due_by_day": 90,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          },
+          {
+            "item_id": "GER-SETTLED-ENOUGH-INTO-DAILY-LOGISTICS",
+            "title": "Settled enough into daily logistics that \"settling in\" tasks are no longer taking up significant weekly mental space",
+            "kind": "milestone",
+            "status": "not_reported",
+            "reported_on": null,
+            "timing": "upcoming",
+            "due_by_day": 90,
+            "blocked_by": [],
+            "commonly_forgotten": false,
+            "official_guidance_note": null,
+            "contacts_here": [],
+            "contacts_elsewhere": []
+          }
+        ],
+        "next_steps": [
+          "GER-HOUSING",
+          "GER-PUBLIC-TRANSPORT",
+          "GER-SAY-HELLO-TO-YOUR-HR"
+        ],
+        "possibly_forgotten": [
+          "GER-ADDRESS-REGISTRATION",
+          "GER-HOUSING",
+          "GER-MOBILE",
+          "GER-PUBLIC-TRANSPORT",
+          "GER-SAY-HELLO-TO-YOUR-HR"
+        ],
+        "reported_complete": [],
+        "tone": "Gentle, practical, never nagging. The goal is for a new joiner to feel looked after, not overwhelmed with a wall of bureaucracy on Day 1.",
+        "caveat": "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\""
+      }
+    },
+    {
+      "employee_id": "EMP-0116",
+      "eligibility": {
+        "status": "past_program_window",
+        "in_germany": true,
+        "relocating_to_germany": true,
+        "day": 343,
+        "stage": "settled",
+        "evidence": [
+          "employees.csv: location_id=LOC-MUC, international_relocation_germany=Yes, join_date=2024-05-15"
+        ],
+        "audience_note": "The program is for international employees relocating to the German offices (DOC-CARE-001). Eligibility comes from employees.csv, never from a person's name or nationality."
+      }
+    },
+    {
+      "employee_id": "EMP-0134",
+      "eligibility": {
+        "status": "past_program_window",
+        "in_germany": true,
+        "relocating_to_germany": true,
+        "day": 1140,
+        "stage": "settled",
+        "evidence": [
+          "employees.csv: location_id=LOC-MUC, international_relocation_germany=Yes, join_date=2022-03-10"
+        ],
+        "audience_note": "The program is for international employees relocating to the German offices (DOC-CARE-001). Eligibility comes from employees.csv, never from a person's name or nationality."
+      }
+    }
+  ]
+}

@@ -16,7 +16,8 @@ from dataclasses import dataclass, field
 
 _NUMBERED = re.compile(r"^(\s*)(\d+)\.\s+(.*)$")
 _BULLET = re.compile(r"^(\s*)[-*]\s+(.*)$")
-_BOLD_TITLE = re.compile(r"^\*\*(.+?)\*\*\s*(?:—|–|--|-|:)\s*(.*)$")
+# '**Kickoff** — text'  or  '**Directness:** text' (colon inside the bold)
+_BOLD_TITLE = re.compile(r"^\*\*(.+?)\*\*\s*(?:—|–|--|-|:)\s*(.*)$|^\*\*([^*]+?):\*\*\s*(.*)$")
 
 
 @dataclass
@@ -35,7 +36,8 @@ def _finish(block: Block | None, out: list[Block]) -> None:
     block.text = " ".join(block.text.split())
     match = _BOLD_TITLE.match(block.text) if block.kind != "code" else None
     if match:
-        block.title, block.body = match.group(1).strip(), match.group(2).strip()
+        title, body = (match.group(1), match.group(2)) if match.group(1) else (match.group(3), match.group(4))
+        block.title, block.body = title.strip(), body.strip()
     else:
         block.body = block.text
     out.append(block)

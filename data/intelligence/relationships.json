@@ -1,5 +1,5 @@
 {
-  "count": 1921,
+  "count": 1948,
   "relationships": [
     {
       "relationship_id": "REL-6C35A42DC8",
@@ -9851,6 +9851,681 @@
           "source_file": "products.csv",
           "source_document": null,
           "detail": "doc_id",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-5CD0F18BFA",
+      "source_key": "employee:EMP-0023",
+      "source_id": "EMP-0023",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-002",
+      "target_id": "DOC-CARE-002",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-226A976497",
+      "source_key": "employee:EMP-0023",
+      "source_id": "EMP-0023",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-003",
+      "target_id": "DOC-CARE-003",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-12611500DC",
+      "source_key": "employee:EMP-0023",
+      "source_id": "EMP-0023",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-004",
+      "target_id": "DOC-CARE-004",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-5D1D431662",
+      "source_key": "employee:EMP-0031",
+      "source_id": "EMP-0031",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-002",
+      "target_id": "DOC-CARE-002",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-88C6E7E3F0",
+      "source_key": "employee:EMP-0031",
+      "source_id": "EMP-0031",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-003",
+      "target_id": "DOC-CARE-003",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-6F9820EB1B",
+      "source_key": "employee:EMP-0031",
+      "source_id": "EMP-0031",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-004",
+      "target_id": "DOC-CARE-004",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-A6E085C56E",
+      "source_key": "employee:EMP-0061",
+      "source_id": "EMP-0061",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-002",
+      "target_id": "DOC-CARE-002",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-AAEAE945E5",
+      "source_key": "employee:EMP-0061",
+      "source_id": "EMP-0061",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-003",
+      "target_id": "DOC-CARE-003",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-E71C86E72D",
+      "source_key": "employee:EMP-0061",
+      "source_id": "EMP-0061",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-004",
+      "target_id": "DOC-CARE-004",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-28CF033CF8",
+      "source_key": "employee:EMP-0062",
+      "source_id": "EMP-0062",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-002",
+      "target_id": "DOC-CARE-002",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-2BC0599CED",
+      "source_key": "employee:EMP-0062",
+      "source_id": "EMP-0062",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-003",
+      "target_id": "DOC-CARE-003",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-8FD5D33019",
+      "source_key": "employee:EMP-0062",
+      "source_id": "EMP-0062",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-004",
+      "target_id": "DOC-CARE-004",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-3C588CCD90",
+      "source_key": "employee:EMP-0064",
+      "source_id": "EMP-0064",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-002",
+      "target_id": "DOC-CARE-002",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-2461262630",
+      "source_key": "employee:EMP-0064",
+      "source_id": "EMP-0064",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-003",
+      "target_id": "DOC-CARE-003",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-BA68CC106A",
+      "source_key": "employee:EMP-0064",
+      "source_id": "EMP-0064",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-004",
+      "target_id": "DOC-CARE-004",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-D6CE203ED9",
+      "source_key": "employee:EMP-0077",
+      "source_id": "EMP-0077",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-002",
+      "target_id": "DOC-CARE-002",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-258E6065A7",
+      "source_key": "employee:EMP-0077",
+      "source_id": "EMP-0077",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-003",
+      "target_id": "DOC-CARE-003",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-7C8AB0E55A",
+      "source_key": "employee:EMP-0077",
+      "source_id": "EMP-0077",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-004",
+      "target_id": "DOC-CARE-004",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-C70AE428DD",
+      "source_key": "employee:EMP-0085",
+      "source_id": "EMP-0085",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-002",
+      "target_id": "DOC-CARE-002",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-4A69BC0A31",
+      "source_key": "employee:EMP-0085",
+      "source_id": "EMP-0085",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-003",
+      "target_id": "DOC-CARE-003",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-E31455185D",
+      "source_key": "employee:EMP-0085",
+      "source_id": "EMP-0085",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-004",
+      "target_id": "DOC-CARE-004",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-8813231846",
+      "source_key": "employee:EMP-0116",
+      "source_id": "EMP-0116",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-002",
+      "target_id": "DOC-CARE-002",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-AA588C72CD",
+      "source_key": "employee:EMP-0116",
+      "source_id": "EMP-0116",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-003",
+      "target_id": "DOC-CARE-003",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-20DF959F69",
+      "source_key": "employee:EMP-0116",
+      "source_id": "EMP-0116",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-004",
+      "target_id": "DOC-CARE-004",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-2D22733145",
+      "source_key": "employee:EMP-0134",
+      "source_id": "EMP-0134",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-002",
+      "target_id": "DOC-CARE-002",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-48859FE8E4",
+      "source_key": "employee:EMP-0134",
+      "source_id": "EMP-0134",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-003",
+      "target_id": "DOC-CARE-003",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
+          "method": "table",
+          "confidence": 1.0,
+          "chunk_ids": [],
+          "quote": null,
+          "historical": false
+        }
+      ]
+    },
+    {
+      "relationship_id": "REL-FF73CF048F",
+      "source_key": "employee:EMP-0134",
+      "source_id": "EMP-0134",
+      "source_type": "employee",
+      "relationship": "eligible_for",
+      "target_key": "checklist:DOC-CARE-004",
+      "target_id": "DOC-CARE-004",
+      "target_type": "checklist",
+      "source_document": null,
+      "confidence": 1.0,
+      "historical": false,
+      "evidence": [
+        {
+          "source_file": "employees.csv",
+          "source_document": null,
+          "detail": "columns location_id + international_relocation_germany",
           "method": "table",
           "confidence": 1.0,
           "chunk_ids": [],
