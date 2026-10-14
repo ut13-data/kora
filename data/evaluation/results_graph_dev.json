@@ -1,0 +1,1378 @@
+{
+  "dataset": "data/evaluation/graph_dev_questions.json",
+  "semantic": "off (not enabled in config)",
+  "top_k": 5,
+  "label_problems": [],
+  "resources": {
+    "load_seconds": 0.127,
+    "startup_steps_s": {
+      "read_files": 0.008,
+      "router": 0.018,
+      "word_indexes": 0.03,
+      "answer_layer": 0.014,
+      "graph": 0.029,
+      "total_s": 0.099
+    },
+    "peak_python_memory_mb": 12.4,
+    "index_build_seconds": {
+      "baseline_indexes": 0.0222,
+      "kora_router_extra": 0.0057
+    },
+    "chunks": 187
+  },
+  "summary": {
+    "all": {
+      "questions": 22,
+      "baseline": {
+        "hit@5": 0.929,
+        "recall@5": 0.893,
+        "mrr": 0.786
+      },
+      "kora": {
+        "hit@5": 0.929,
+        "recall@5": 0.893,
+        "mrr": 0.81,
+        "status_accuracy": 1.0,
+        "key_fact_found": 1.0,
+        "citation_precision": 1.0,
+        "faithfulness": 1.0,
+        "names_found": 1.0,
+        "no_leak": 1.0
+      }
+    },
+    "new_questions_only": {
+      "questions": 0,
+      "baseline": {
+        "hit@5": null,
+        "recall@5": null,
+        "mrr": null
+      },
+      "kora": {
+        "hit@5": null,
+        "recall@5": null,
+        "mrr": null,
+        "status_accuracy": null,
+        "key_fact_found": null,
+        "citation_precision": null,
+        "faithfulness": null,
+        "names_found": null,
+        "no_leak": null
+      }
+    },
+    "seen_in_development": {
+      "questions": 22,
+      "baseline": {
+        "hit@5": 0.929,
+        "recall@5": 0.893,
+        "mrr": 0.786
+      },
+      "kora": {
+        "hit@5": 0.929,
+        "recall@5": 0.893,
+        "mrr": 0.81,
+        "status_accuracy": 1.0,
+        "key_fact_found": 1.0,
+        "citation_precision": 1.0,
+        "faithfulness": 1.0,
+        "names_found": 1.0,
+        "no_leak": 1.0
+      }
+    },
+    "by_category": {
+      "graph": {
+        "questions": 22,
+        "baseline": {
+          "hit@5": 0.929,
+          "recall@5": 0.893,
+          "mrr": 0.786
+        },
+        "kora": {
+          "hit@5": 0.929,
+          "recall@5": 0.893,
+          "mrr": 0.81,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0,
+          "names_found": 1.0,
+          "no_leak": 1.0
+        }
+      }
+    },
+    "latency_ms": {
+      "baseline_retrieval_p50": 1.12,
+      "baseline_retrieval_p95": 1.22,
+      "kora_answer_p50": 5.73,
+      "kora_answer_p95": 8.82
+    }
+  },
+  "questions": [
+    {
+      "id": "G01",
+      "category": "graph",
+      "question": "Which teams are involved in customer onboarding?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "DOC-CORP-003",
+          "PROC-IMPL-001",
+          "DOC-PROD-NEXVIEW"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.41
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "DOC-CORP-003",
+          "DOC-PROD-NEXVIEW",
+          "DOC-DEPT-IMPL"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.199834000042756,
+        "answer_ms": 8.01,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-IMPL-001"
+        ],
+        "graph": "involved",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-CUSTOMER-ONBOARDING (matched 'customer onboarding', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Teams are the departments these roles belong to (roles.csv)."
+        ]
+      }
+    },
+    {
+      "id": "G02",
+      "category": "graph",
+      "question": "Who owns the procurement process?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-FIN-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-FIN-002",
+          "DOC-DEPT-FIN",
+          "DOC-DEPT-OPS",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-OPS"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.16
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-FIN-002",
+          "PROC-FIN-002",
+          "DOC-DEPT-FIN",
+          "DOC-DEPT-OPS",
+          "DOC-DEPT-HR"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.5321340000346026,
+        "answer_ms": 5.11,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [],
+        "graph": "owner",
+        "intents": [
+          "ownership"
+        ],
+        "reasons": [
+          "intent ownership: keyword in question",
+          "candidates +1 from topic TOPIC-PROCUREMENT-PROCESS (matched 'procurement process', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "G03",
+      "category": "graph",
+      "question": "Which process could be affected if the NexConnect integration procedure changes?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-PROD-NEXCONNECT",
+          "PROC-IMPL-001",
+          "PROC-SALES-002",
+          "DOC-SCEN-001",
+          "DOC-CORP-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.12
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-PROD-NEXCONNECT",
+          "PROC-IMPL-001",
+          "PROC-SALES-002",
+          "DOC-SCEN-001",
+          "DOC-CORP-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "retrieval_ms": 2.3748599999748876,
+        "answer_ms": 5.18,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-IMPL-001"
+        ],
+        "graph": "impact",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-NEXCONNECT (matched 'nexconnect', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "No document describes what would happen if this changed. These are the documented dependencies and cross-references, so the owners can check each one."
+        ]
+      }
+    },
+    {
+      "id": "G04",
+      "category": "graph",
+      "question": "Why is the customer onboarding process delayed?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "PROC-IMPL-001",
+          "DOC-CORP-003",
+          "DOC-PROD-NEXVIEW"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.18
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "DOC-CORP-003",
+          "DOC-PROD-NEXVIEW",
+          "DOC-DEPT-IMPL"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.3566169999753583,
+        "answer_ms": 3.62,
+        "status": "partial",
+        "status_correct": true,
+        "expected_status": [
+          "partial"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": null,
+        "leaks": [],
+        "cited": [
+          "PROC-SALES-002",
+          "PROC-IMPL-001"
+        ],
+        "graph": "delay",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-CUSTOMER-ONBOARDING (matched 'customer onboarding', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "KORA has no live status information, so it can't say why a particular case is delayed. Below is what the documents say about this process's dependencies and known problems."
+        ]
+      }
+    },
+    {
+      "id": "G05",
+      "category": "graph",
+      "question": "Who approves a customer implementation plan?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-IMPL-001",
+        "DOC-DEPT-IMPL"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-FAQ-001",
+          "DOC-DEPT-IMPL",
+          "DOC-PROD-NEXCONNECT",
+          "DOC-DEPT-PROD",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 0.5,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.07
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-IMPL",
+          "DOC-DEPT-IMPL",
+          "DOC-DEPT-IMPL",
+          "DOC-FAQ-001",
+          "DOC-PROD-NEXCONNECT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 0.5,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.507321999985379,
+        "answer_ms": 5.98,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "DOC-DEPT-IMPL",
+          "PROC-IT-001",
+          "DOC-FAQ-001"
+        ],
+        "graph": null,
+        "intents": [
+          "approval"
+        ],
+        "reasons": [
+          "intent approval: keyword in question",
+          "no specific topic, keywords or conflict matched; using broad department topic(s)",
+          "candidates +4 from topic TOPIC-IMPLEMENTATION-CONSULTING (matched 'implementation', weak)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "G06",
+      "category": "graph",
+      "question": "What happens after a support engineer confirms a product defect?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-SUP-001",
+        "PROC-ENG-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-ENG-002",
+          "PROC-SUP-001",
+          "DOC-DEPT-SUP",
+          "DOC-DEPT-SUP",
+          "PROC-ENG-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.21
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-SUP",
+          "DOC-DEPT-SUP",
+          "PROC-ENG-002",
+          "PROC-SUP-001",
+          "PROC-ENG-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "retrieval_ms": 2.707021999981407,
+        "answer_ms": 8.52,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-SUP-001"
+        ],
+        "graph": "next",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['support', 'support engineer', 'engineer'] of DOC-DEPT-SUP",
+          "broad department word(s) ['product'] ignored: something more specific matched",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "G07",
+      "category": "graph",
+      "question": "Which process starts when a deal is closed?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-SALES-002",
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-SALES",
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "PROC-SALES-002",
+          "DOC-DEPT-SALES"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.13
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-SALES",
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "PROC-SALES-002",
+          "DOC-DEPT-SALES"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "retrieval_ms": 1.6956270000036966,
+        "answer_ms": 5.55,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-SALES-002"
+        ],
+        "graph": "next",
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "G08",
+      "category": "graph",
+      "question": "Which policies govern the incident management process?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-SUP-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-CS-001",
+          "PROC-SUP-002",
+          "PROC-FIN-002",
+          "PROC-SUP-002",
+          "DOC-PROD-NEXCRM"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.12
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-SUP-002",
+          "PROC-SUP-002",
+          "PROC-SUP-002",
+          "PROC-CS-001",
+          "PROC-FIN-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.2657580000213784,
+        "answer_ms": 5.48,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-CS-001",
+          "PROC-SUP-002"
+        ],
+        "graph": "policies",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-INCIDENT-MANAGEMENT (matched 'incident management', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The documents list these policies as related; they don't spell out how each one applies."
+        ]
+      }
+    },
+    {
+      "id": "G09",
+      "category": "graph",
+      "question": "Which products does the Product department own?",
+      "seen_in_development": true,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-IT",
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-PROD",
+          "DOC-CORP-001"
+        ],
+        "metrics": null,
+        "ms": 1.12
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-IT",
+          "DOC-CORP-001"
+        ],
+        "metrics": null,
+        "retrieval_ms": 2.8327169999897706,
+        "answer_ms": 6.1,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [],
+        "graph": "department",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['product', 'product department', 'products'] of DOC-DEPT-PROD",
+          "broad department word(s) ['product'] ignored: something more specific matched",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "G10",
+      "category": "graph",
+      "question": "Who is the head of the Finance department?",
+      "seen_in_development": true,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-FIN",
+          "DOC-CORP-002",
+          "PROC-FIN-003",
+          "DOC-DEPT-OPS",
+          "DOC-DEPT-HR"
+        ],
+        "metrics": null,
+        "ms": 1.16
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-FIN",
+          "DOC-CORP-002",
+          "PROC-FIN-003",
+          "DOC-DEPT-OPS",
+          "DOC-DEPT-HR"
+        ],
+        "metrics": null,
+        "retrieval_ms": 2.492014000040399,
+        "answer_ms": 4.83,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [],
+        "graph": "department",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['finance', 'finance department'] of DOC-DEPT-FIN",
+          "broad department word(s) ['finance'] ignored: something more specific matched",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "G11",
+      "category": "graph",
+      "question": "Which department does the Implementation Manager belong to?",
+      "seen_in_development": true,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-CORP-002",
+          "PROC-IT-001",
+          "DOC-DEPT-CS",
+          "PROC-IMPL-001",
+          "DOC-FAQ-001"
+        ],
+        "metrics": null,
+        "ms": 1.07
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "DOC-DEPT-IMPL",
+          "DOC-DEPT-IMPL",
+          "DOC-CORP-002",
+          "PROC-IT-001"
+        ],
+        "metrics": null,
+        "retrieval_ms": 4.65452200000982,
+        "answer_ms": 8.82,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [],
+        "graph": "which_department",
+        "intents": [],
+        "reasons": [
+          "no specific topic, keywords or conflict matched; using broad department topic(s)",
+          "candidates +4 from topic TOPIC-IMPLEMENTATION-CONSULTING (matched 'implementation', weak)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "G12",
+      "category": "graph",
+      "question": "What does Lena Hoffmann do?",
+      "seen_in_development": true,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-CORP-001",
+          "DOC-DEPT-IMPL",
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-SUP",
+          "PROC-IT-002"
+        ],
+        "metrics": null,
+        "ms": 1.03
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CORP-001",
+          "DOC-DEPT-IMPL",
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-SUP",
+          "PROC-IT-002"
+        ],
+        "metrics": null,
+        "retrieval_ms": 1.8043160000047465,
+        "answer_ms": 5.87,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [],
+        "graph": "person",
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "G13",
+      "category": "graph",
+      "question": "Which processes does the CISO own?",
+      "seen_in_development": true,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "PROC-IT-002",
+          "PROC-SUP-002",
+          "PROC-IT-002",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-FIN"
+        ],
+        "metrics": null,
+        "ms": 1.22
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IT-002",
+          "PROC-SUP-002",
+          "PROC-IT-002",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-FIN"
+        ],
+        "metrics": null,
+        "retrieval_ms": 1.5712019999796212,
+        "answer_ms": 5.73,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [],
+        "graph": "role",
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "G14",
+      "category": "graph",
+      "question": "Which processes use NexCRM?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-SALES-001",
+        "PROC-SALES-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-PROD-NEXCRM",
+          "DOC-DEPT-FIN",
+          "DOC-CORP-003",
+          "DOC-DEPT-PROD",
+          "DOC-PROD-NEXAUTO"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "ms": 1.22
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-PROD-NEXCRM",
+          "DOC-PROD-NEXCRM",
+          "DOC-DEPT-FIN",
+          "DOC-CORP-003",
+          "DOC-DEPT-PROD"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "retrieval_ms": 2.2097960000451167,
+        "answer_ms": 4.46,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-SALES-001",
+          "PROC-SALES-002"
+        ],
+        "graph": "uses",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-NEXCRM (matched 'nexcrm', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "G15",
+      "category": "graph",
+      "question": "Who gave final approval for customer onboarding before 2025?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "PROC-IMPL-001",
+          "DOC-DEPT-IMPL",
+          "DOC-CORP-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.02
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "DOC-DEPT-IMPL"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.248628000018016,
+        "answer_ms": 5.9,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-IMPL-001"
+        ],
+        "graph": "approver",
+        "intents": [
+          "approval"
+        ],
+        "reasons": [
+          "intent approval: keyword in question",
+          "candidates +1 from topic TOPIC-CUSTOMER-ONBOARDING (matched 'customer onboarding', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Today: Implementation Manager approves Customer Onboarding.",
+          "Some of this comes from an archived (older) version; it is marked as history."
+        ]
+      }
+    },
+    {
+      "id": "G16",
+      "category": "graph",
+      "question": "Which roles take part in handling a P1 incident?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-SUP-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-SUP-002",
+          "PROC-CS-001",
+          "PROC-CS-001",
+          "PROC-IT-002",
+          "PROC-SUP-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.14
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-SUP-002",
+          "PROC-CS-001",
+          "PROC-CS-001",
+          "PROC-IT-002",
+          "PROC-SUP-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 1.8370059999597288,
+        "answer_ms": 6.87,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-SUP-002"
+        ],
+        "graph": "involved",
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Teams are the departments these roles belong to (roles.csv)."
+        ]
+      }
+    },
+    {
+      "id": "G17",
+      "category": "graph",
+      "question": "Who takes part in the invoice and payment process?",
+      "seen_in_development": true,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "PROC-FIN-003",
+          "PROC-FIN-003"
+        ],
+        "metrics": null,
+        "ms": 1.12
+      },
+      "kora": {
+        "retrieved": [],
+        "metrics": null,
+        "retrieval_ms": 1.4691910000124153,
+        "answer_ms": 6.21,
+        "status": "not_found",
+        "status_correct": true,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": null,
+        "leaks": [],
+        "cited": [],
+        "graph": null,
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-INVOICE-AND-PAYMENT-PROCESS (matched 'invoice and payment process', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "No sentence in the retrieved sources answers this question. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "G18",
+      "category": "graph",
+      "question": "Who takes part in the invoice and payment process?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-FIN-003"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-FIN-003",
+          "PROC-FIN-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.21
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-FIN-003",
+          "PROC-FIN-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.7962949999960074,
+        "answer_ms": 10.21,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-FIN-003",
+          "PROC-FIN-003"
+        ],
+        "graph": "involved",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-INVOICE-AND-PAYMENT-PROCESS (matched 'invoice and payment process', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Teams are the departments these roles belong to (roles.csv)."
+        ]
+      }
+    },
+    {
+      "id": "G19",
+      "category": "graph",
+      "question": "Is Julia Zimmermann relocating to Germany?",
+      "seen_in_development": true,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "PROC-HR-001",
+          "DOC-DEPT-HR",
+          "DOC-CORP-001",
+          "DOC-DEPT-HR"
+        ],
+        "metrics": null,
+        "ms": 1.18
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-001",
+          "PROC-HR-001",
+          "DOC-DEPT-HR",
+          "DOC-CORP-001"
+        ],
+        "metrics": null,
+        "retrieval_ms": 2.916938999987906,
+        "answer_ms": 5.2,
+        "status": "not_found",
+        "status_correct": true,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": null,
+        "leaks": [],
+        "cited": [],
+        "graph": null,
+        "intents": [
+          "relocation"
+        ],
+        "reasons": [
+          "intent relocation (Germany new-joiner care): keyword in question",
+          "candidates +4 from intent relocation -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The knowledge base never mentions julia, zimmermann. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "G20",
+      "category": "graph",
+      "question": "How many days of annual leave do Germany-based employees get?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-HR-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-FIN-003",
+          "PROC-HR-002",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.0
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-FIN-003",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.098953000005622,
+        "answer_ms": 5.44,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": null,
+        "leaks": [],
+        "cited": [
+          "PROC-HR-002"
+        ],
+        "graph": null,
+        "intents": [
+          "relocation"
+        ],
+        "reasons": [
+          "intent relocation (Germany new-joiner care): keyword in question",
+          "candidates +1 from keywords ['day', 'employee', 'days'] of PROC-HR-001",
+          "candidates +1 from keywords ['leave', 'employees', 'days'] of PROC-HR-002",
+          "candidates +4 from intent relocation -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "G21",
+      "category": "graph",
+      "question": "Who approves bringing a dog to the office?",
+      "seen_in_development": true,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "DOC-COMM-004",
+          "PROC-FIN-002",
+          "DOC-DEPT-HR"
+        ],
+        "metrics": null,
+        "ms": 0.97
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "DOC-COMM-004",
+          "PROC-FIN-002",
+          "DOC-DEPT-HR"
+        ],
+        "metrics": null,
+        "retrieval_ms": 1.667343000008259,
+        "answer_ms": 5.62,
+        "status": "not_found",
+        "status_correct": true,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": null,
+        "leaks": [],
+        "cited": [],
+        "graph": null,
+        "intents": [
+          "approval"
+        ],
+        "reasons": [
+          "intent approval: keyword in question",
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The knowledge base never mentions bringing. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "G22",
+      "category": "graph",
+      "question": "Which department owns the Bug Reporting and Escalation process?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-ENG-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-ENG-002",
+          "DOC-DEPT-SUP",
+          "DOC-DEPT-FIN",
+          "DOC-DEPT-OPS",
+          "DOC-FAQ-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.1
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-ENG-002",
+          "DOC-DEPT-SUP",
+          "DOC-DEPT-FIN",
+          "DOC-DEPT-OPS",
+          "DOC-FAQ-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.7738380000528196,
+        "answer_ms": 6.23,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [],
+        "graph": "which_department",
+        "intents": [
+          "escalation"
+        ],
+        "reasons": [
+          "intent escalation: keyword in question",
+          "candidates +1 from topic TOPIC-BUG-REPORTING-AND-ESCALATION (matched 'bug reporting and escalation', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    }
+  ]
+}

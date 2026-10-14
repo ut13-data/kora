@@ -140,6 +140,8 @@ def _where(c: dict) -> str:
 
 def claim_for(rel, tier: str, name, header_document: str | None = None) -> str:
     s, t, r = name(rel.source_key), name(rel.target_key), rel.relationship
+    if tier not in DOCUMENTED:                 # never more than "they appear together"
+        return f"{s} and {t} are mentioned together"
     if tier == "header" and header_document and r in ("governed_by", "related_to"):
         # A header line belongs to ONE document: it is that document listing the other one.
         # "Customer Escalation Policy lists Incident Management", never the reverse.
@@ -153,7 +155,9 @@ def claim_for(rel, tier: str, name, header_document: str | None = None) -> str:
     if r == "owns":
         return f"{s} is the recorded owner of {t}" if tier == "record" else f"{t} names {s} as its owner"
     if r == "performs":
-        return f"{s} has a step in {t}"
+        # Phase 3 links every role NAMED in a step; the step may be done by someone else
+        # ("Consultant reviews the AE's handoff record"), so say exactly that much.
+        return f"{s} is named in a step of {t}"
     if r == "participates_in":
         return f"{t} lists {s} as a related role" if tier == "header" else f"{s} takes part in {t}"
     if r == "handles_escalations_for":
@@ -184,12 +188,18 @@ def claim_for(rel, tier: str, name, header_document: str | None = None) -> str:
 
 
 class GraphQueries:
-    def __init__(self, view, tracer: Tracer, intelligence_dir: Path = Path("data/intelligence")):
+    def __init__(self, view, tracer: Tracer, intelligence_dir: Path | None = Path("data/intelligence"),
+                 processes: list[dict] | None = None, conflicts: list[dict] | None = None):
+        """PROCESSES / CONFLICTS: Phase 3 output lists; read from INTELLIGENCE_DIR when not given."""
         self.view = view
         self.tracer = tracer
         self.resolver = Resolver(view)
-        self.processes = {p["process_id"]: p for p in _read_list(intelligence_dir / "processes.json", "processes")}
-        self.conflicts = _read_list(intelligence_dir / "conflicts.json", "conflicts")
+        if processes is None:
+            processes = _read_list(intelligence_dir / "processes.json", "processes") if intelligence_dir else []
+        if conflicts is None:
+            conflicts = _read_list(intelligence_dir / "conflicts.json", "conflicts") if intelligence_dir else []
+        self.processes = {p["process_id"]: p for p in processes}
+        self.conflicts = conflicts
 
     # ---------------- building blocks ----------------
 

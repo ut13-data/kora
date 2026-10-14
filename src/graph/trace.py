@@ -238,7 +238,7 @@ class Tracer:
                                       {"kind": "record", "file": ev.source_file, "key_column": pk, "key": end_id,
                                        "column": col, "value": row.get(col),
                                        "text": f"{ev.source_file}, row {end_id}: {col} = {row.get(col)}"})
-            if columns:                                      # row + columns exist, link is computed from them
+            if len(columns) > 1:     # a link COMPUTED from several columns (location + relocation flag)
                 values = ", ".join(f"{c} = {row.get(c)}" for c in columns)
                 return Provenance(DERIVED, True, f"computed from {ev.source_file} row {end_id} ({values})", ev,
                                   {"kind": "derived", "detail": f"{ev.source_file}, row {end_id}: {values}"})

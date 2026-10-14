@@ -35,7 +35,8 @@ def test_decision_shows_the_scores_and_thresholds(kora):
 
 def test_timings_per_step_and_startup(kora):
     a = kora.answer("Who approves purchases above 10000 euros?")
-    assert set(a.timings) == {"route_ms", "search_ms", "compose_ms", "total_ms"}
+    graph = {"graph_ms"} if kora.graph is not None else set()      # Phase 5: graph step, when enabled
+    assert set(a.timings) == {"route_ms", "search_ms", "compose_ms", "total_ms"} | graph
     assert all(v >= 0 for v in a.timings.values())
     assert a.timings["total_ms"] >= a.timings["route_ms"] + a.timings["search_ms"] - 0.01
     assert {"router", "word_indexes", "answer_layer", "total_s"} <= set(a.startup)

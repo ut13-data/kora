@@ -1,0 +1,820 @@
+{
+  "dataset": "data/evaluation/graph_heldout_questions.json",
+  "semantic": "off (not enabled in config)",
+  "top_k": 5,
+  "label_problems": [],
+  "resources": {
+    "load_seconds": 0.195,
+    "startup_steps_s": {
+      "read_files": 0.013,
+      "router": 0.029,
+      "word_indexes": 0.048,
+      "answer_layer": 0.022,
+      "graph": 0.044,
+      "total_s": 0.156
+    },
+    "peak_python_memory_mb": 12.4,
+    "index_build_seconds": {
+      "baseline_indexes": 0.0339,
+      "kora_router_extra": 0.0085
+    },
+    "chunks": 187
+  },
+  "summary": {
+    "all": {
+      "questions": 12,
+      "baseline": {
+        "hit@5": 0.75,
+        "recall@5": 0.667,
+        "mrr": 0.625
+      },
+      "kora": {
+        "hit@5": 0.875,
+        "recall@5": 0.792,
+        "mrr": 0.812,
+        "status_accuracy": 1.0,
+        "key_fact_found": 1.0,
+        "citation_precision": 1.0,
+        "faithfulness": 1.0,
+        "names_found": 1.0,
+        "no_leak": 1.0
+      }
+    },
+    "new_questions_only": {
+      "questions": 9,
+      "baseline": {
+        "hit@5": 0.8,
+        "recall@5": 0.667,
+        "mrr": 0.7
+      },
+      "kora": {
+        "hit@5": 1.0,
+        "recall@5": 0.867,
+        "mrr": 1.0,
+        "status_accuracy": 1.0,
+        "key_fact_found": null,
+        "citation_precision": 1.0,
+        "faithfulness": 1.0,
+        "names_found": 1.0,
+        "no_leak": 1.0
+      }
+    },
+    "seen_in_development": {
+      "questions": 3,
+      "baseline": {
+        "hit@5": 0.667,
+        "recall@5": 0.667,
+        "mrr": 0.5
+      },
+      "kora": {
+        "hit@5": 0.667,
+        "recall@5": 0.667,
+        "mrr": 0.5,
+        "status_accuracy": 1.0,
+        "key_fact_found": 1.0,
+        "citation_precision": 1.0,
+        "faithfulness": 1.0,
+        "names_found": 1.0,
+        "no_leak": 1.0
+      }
+    },
+    "by_category": {
+      "graph": {
+        "questions": 12,
+        "baseline": {
+          "hit@5": 0.75,
+          "recall@5": 0.667,
+          "mrr": 0.625
+        },
+        "kora": {
+          "hit@5": 0.875,
+          "recall@5": 0.792,
+          "mrr": 0.812,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0,
+          "names_found": 1.0,
+          "no_leak": 1.0
+        }
+      }
+    },
+    "latency_ms": {
+      "baseline_retrieval_p50": 1.16,
+      "baseline_retrieval_p95": 1.3,
+      "kora_answer_p50": 6.43,
+      "kora_answer_p95": 7.92
+    }
+  },
+  "questions": [
+    {
+      "id": "H01",
+      "category": "graph",
+      "question": "Who is involved in the employee onboarding process?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-HR-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-001",
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "DOC-CORP-003",
+          "DOC-DEPT-HR"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 2.18
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-001",
+          "PROC-HR-001",
+          "PROC-IMPL-001",
+          "DOC-CORP-003",
+          "DOC-DEPT-HR"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 4.944026000032409,
+        "answer_ms": 12.86,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-HR-001",
+          "PROC-HR-001"
+        ],
+        "graph": "involved",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-EMPLOYEE-ONBOARDING (matched 'employee onboarding', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Teams are the departments these roles belong to (roles.csv)."
+        ]
+      }
+    },
+    {
+      "id": "H02",
+      "category": "graph",
+      "question": "If the Data Security Policy changes, which processes might be affected?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-IT-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IT-002",
+          "DOC-DEPT-IT",
+          "DOC-DEPT-IT",
+          "DOC-DEPT-IT",
+          "PROC-IT-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.3
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IT-002",
+          "PROC-IT-002",
+          "PROC-IT-002",
+          "DOC-DEPT-IT",
+          "DOC-DEPT-IT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.581272999975681,
+        "answer_ms": 6.43,
+        "status": "partial",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-HR-001",
+          "PROC-SUP-002",
+          "PROC-IT-001",
+          "PROC-IT-002"
+        ],
+        "graph": "impact",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-DATA-SECURITY-POLICY (matched 'data security policy', strong)",
+          "broad department word(s) ['security'] ignored: something more specific matched",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "No document describes what would happen if this changed. These are the documented dependencies and cross-references, so the owners can check each one."
+        ]
+      }
+    },
+    {
+      "id": "H03",
+      "category": "graph",
+      "question": "Who owns the incident management process?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-SUP-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-CS-001",
+          "PROC-SUP-002",
+          "PROC-SUP-002",
+          "DOC-PROD-NEXCRM",
+          "PROC-SUP-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.18
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-SUP-002",
+          "PROC-SUP-002",
+          "PROC-SUP-002",
+          "PROC-CS-001",
+          "DOC-PROD-NEXCRM"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.3724760000050082,
+        "answer_ms": 6.08,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [],
+        "graph": "owner",
+        "intents": [
+          "ownership"
+        ],
+        "reasons": [
+          "intent ownership: keyword in question",
+          "candidates +1 from topic TOPIC-INCIDENT-MANAGEMENT (matched 'incident management', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "H04",
+      "category": "graph",
+      "question": "Why are bug reports on an old NexFlow version handled inconsistently?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-ENG-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-FAQ-001",
+          "PROC-ENG-002",
+          "PROC-HR-001",
+          "DOC-PROD-NEXCRM",
+          "PROC-IMPL-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.11
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-FAQ-001",
+          "PROC-ENG-002",
+          "PROC-HR-001",
+          "DOC-PROD-NEXCRM",
+          "PROC-IMPL-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "retrieval_ms": 2.687844999968547,
+        "answer_ms": 7.2,
+        "status": "partial",
+        "status_correct": true,
+        "expected_status": [
+          "partial",
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": null,
+        "leaks": [],
+        "cited": [
+          "PROC-ENG-002"
+        ],
+        "graph": null,
+        "intents": [
+          "conflict"
+        ],
+        "reasons": [
+          "intent conflict: keyword in question",
+          "conflict question, but no detected conflict matches its words",
+          "candidates +1 from topic TOPIC-NEXFLOW (matched 'nexflow', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Known gap GAP-673F5A99 (high): Bug Reporting and Escalation: This process does not document what happens when a customer reports a bug on a deprecated product version that is no longer receiving active development (e.g., a legacy NexFlow configuration mode retired from new sales but still running for a small number of legacy customers). In practice, these reports are currently triaged case-by-case by the Engineering Manager with no documented standard, which has led to inconsistent customer communication in at least two known cases.",
+          "Not covered by the quoted sources: inconsistently. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "H05",
+      "category": "graph",
+      "question": "Which processes is the Account Executive part of?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-SALES-001",
+        "PROC-SALES-002",
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-SALES-001",
+          "DOC-PROD-NEXCRM",
+          "DOC-PROD-CUSTDEV",
+          "DOC-DEPT-SALES",
+          "DOC-DEPT-FIN"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 0.3333333333333333,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.13
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-SALES-001",
+          "DOC-PROD-NEXCRM",
+          "DOC-PROD-CUSTDEV",
+          "DOC-DEPT-SALES",
+          "DOC-DEPT-FIN"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 0.3333333333333333,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 1.9221069999844076,
+        "answer_ms": 6.0,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-IMPL-001",
+          "PROC-SALES-001",
+          "PROC-SALES-002"
+        ],
+        "graph": "role",
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "H06",
+      "category": "graph",
+      "question": "Which processes does the Sales department own?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-SALES",
+          "DOC-PROD-NEXCRM",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-SALES",
+          "DOC-FAQ-001"
+        ],
+        "metrics": null,
+        "ms": 1.11
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-SALES",
+          "DOC-DEPT-SALES",
+          "DOC-PROD-NEXCRM",
+          "DOC-DEPT-HR",
+          "DOC-FAQ-001"
+        ],
+        "metrics": null,
+        "retrieval_ms": 2.5745180000171786,
+        "answer_ms": 5.37,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [],
+        "graph": "department",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['sales', 'sales department', 'department'] of DOC-DEPT-SALES",
+          "broad department word(s) ['sales'] ignored: something more specific matched",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "H07",
+      "category": "graph",
+      "question": "What comes after lead qualification?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-SALES-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-SALES-001",
+          "DOC-DEPT-MKT",
+          "PROC-SALES-001",
+          "DOC-CORP-002",
+          "PROC-IMPL-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.09
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-SALES-001",
+          "PROC-SALES-001",
+          "DOC-DEPT-MKT",
+          "DOC-CORP-002",
+          "PROC-IMPL-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.2338449999779186,
+        "answer_ms": 7.92,
+        "status": "partial",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [
+          "PROC-SALES-001",
+          "PROC-SALES-001"
+        ],
+        "graph": "next",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-LEAD-QUALIFICATION (matched 'lead qualification', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "No document says which process starts after this one. The last step is shown, and processes the document lists as related (not stated as the next step)."
+        ]
+      }
+    },
+    {
+      "id": "H08",
+      "category": "graph",
+      "question": "Who heads the department that owns NexFlow?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-HR",
+          "DOC-DEPT-FIN",
+          "PROC-FIN-002",
+          "DOC-DEPT-ENG",
+          "DOC-DEPT-PROD"
+        ],
+        "metrics": null,
+        "ms": 1.17
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-PROD-NEXFLOW",
+          "DOC-PROD-NEXFLOW",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-FIN",
+          "PROC-FIN-002"
+        ],
+        "metrics": null,
+        "retrieval_ms": 2.1664129999976467,
+        "answer_ms": 5.44,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [],
+        "graph": "head_of_owner",
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-NEXFLOW (matched 'nexflow', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "H09",
+      "category": "graph",
+      "question": "Which department is responsible for customer escalations?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-CS-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-CS",
+          "DOC-DEPT-SALES",
+          "DOC-DEPT-MKT",
+          "DOC-DEPT-SALES"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "ms": 1.21
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-CS",
+          "DOC-DEPT-SALES",
+          "DOC-DEPT-MKT",
+          "DOC-DEPT-SALES"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "retrieval_ms": 2.188604999957988,
+        "answer_ms": 5.9,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": 1.0,
+        "leaks": [],
+        "cited": [],
+        "graph": "which_department",
+        "intents": [
+          "escalation",
+          "ownership"
+        ],
+        "reasons": [
+          "intent escalation: keyword in question",
+          "intent ownership: keyword in question",
+          "candidates +1 from topic TOPIC-CUSTOMER-ESCALATION-POLICY (matched 'customer escalation', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "H10",
+      "category": "graph",
+      "question": "Who is responsible for the invoice and payment process?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "PROC-FIN-003",
+          "DOC-DEPT-MKT",
+          "PROC-FIN-003"
+        ],
+        "metrics": null,
+        "ms": 0.93
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-MKT"
+        ],
+        "metrics": null,
+        "retrieval_ms": 1.4185680000196044,
+        "answer_ms": 7.46,
+        "status": "not_found",
+        "status_correct": true,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": null,
+        "leaks": [],
+        "cited": [],
+        "graph": null,
+        "intents": [
+          "ownership"
+        ],
+        "reasons": [
+          "intent ownership: keyword in question",
+          "candidates +1 from topic TOPIC-INVOICE-AND-PAYMENT-PROCESS (matched 'invoice and payment process', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "No sentence in the retrieved sources answers this question. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "H11",
+      "category": "graph",
+      "question": "What is the company policy on bringing pets to the office?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "PROC-HR-002",
+          "DOC-DEPT-IT",
+          "PROC-IT-001"
+        ],
+        "metrics": null,
+        "ms": 1.16
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "PROC-HR-002",
+          "DOC-DEPT-IT",
+          "PROC-IT-001"
+        ],
+        "metrics": null,
+        "retrieval_ms": 1.8180249999772968,
+        "answer_ms": 5.02,
+        "status": "not_found",
+        "status_correct": true,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "names_found": null,
+        "leaks": [],
+        "cited": [],
+        "graph": null,
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The knowledge base never mentions bringing, pets. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "H12",
+      "category": "graph",
+      "question": "What tone should I use when writing to colleagues in Germany?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-COMM-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-COMM-001",
+          "DOC-COMM-001",
+          "DOC-COMM-006",
+          "DOC-DEPT-FIN",
+          "DOC-COMM-006"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "ms": 1.01
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-COMM-002",
+          "DOC-COMM-002",
+          "DOC-COMM-002",
+          "DOC-COMM-001",
+          "DOC-COMM-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.6296420000212493,
+        "answer_ms": 7.11,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "names_found": null,
+        "leaks": [],
+        "cited": [
+          "DOC-COMM-002"
+        ],
+        "graph": null,
+        "intents": [
+          "communication"
+        ],
+        "reasons": [
+          "intent relocation (Germany new-joiner care): keyword in question",
+          "intent communication: tone/phrasing words",
+          "candidates +2 from communication question about germany: tone profile + overview",
+          "relocation documents not added: this is a communication question",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Tone profiles describe common workplace tendencies, not rules about any individual. A person's own stated preference always comes first, and company policy is separate from cultural guidance (see DOC-COMM-001)."
+        ]
+      }
+    }
+  ]
+}

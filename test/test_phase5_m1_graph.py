@@ -118,7 +118,7 @@ def test_changed_table_value_fails_the_check(built):
     tables["processes"] = [dict(r, owner_role="CFO") if r["process_id"] == "PROC-FIN-002" else r
                            for r in tables["processes"]]
     t = _tracer_with(built, tables=tables)
-    assert t.tier(rel) not in DOCUMENTED
+    assert t.tier(rel) is None          # unverified: not quietly downgraded to "derived from the row"
 
 
 def test_changed_header_line_fails_the_check(built, tmp_path):

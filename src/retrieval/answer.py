@@ -126,18 +126,25 @@ class Citation:
     excerpt: str
     id_source: str = ""
     title_source: str = ""
+    kind: str = "chunk"       # Phase 5: chunk | header | record | file (graph evidence that isn't a chunk)
 
     def label(self) -> str:
+        if self.kind == "record":
+            return f"[{self.number}] Company record: {self.source_filename} > {self.section}"
+        if self.kind == "file":
+            return f"[{self.number}] {self.title} > {self.section} -- file {self.source_filename}"
         status = self.status if self.status.lower() != "unknown" else "status not stated"
         version = f"v{self.version}" if self.version.lower() != "unknown" else "version not stated"
         date = self.effective_date if self.effective_date.lower() != "unknown" else "no effective date"
+        where = "document header" if self.kind == "header" else f"chunk {self.chunk_id}"
         return (f"[{self.number}] {self.title} ({self.document_id} {version}, {status}, {date}) "
-                f"> {self.section or '(top)'} -- chunk {self.chunk_id}, file {self.source_filename}")
+                f"> {self.section or '(top)'} -- {where}, file {self.source_filename}")
 
 
 @dataclass
 class AnswerLine:
     kind: str                 # quote | rule | conflict_side | checklist | change | document | gap
+                              # Phase 5: relation (a documented graph link) | possible (only cross-referenced)
     text: str
     chunk_id: str | None      # the source chunk; None only for a conflict side from Phase 3
                               # analysis with no chunk (e.g. employees.csv vs org chart)
@@ -174,8 +181,16 @@ class Answer:
                    else "Answer (documented in the sources):")
         prefixes = {"quote": "-", "rule": "- Rule:", "conflict_side": "- Says:", "checklist": "- To do:",
                     "change": "- Changed:", "document": "- Document:", "gap": "- Not documented:"}
+        shown_possible = False
         for line in self.lines:
             ref = f" [{line.citation}]" if line.citation else " [no chunk: Phase 3 analysis]"
+            if line.kind in ("relation", "possible"):          # Phase 5 graph: KORA's statement, then its evidence
+                if line.kind == "possible" and not shown_possible:
+                    out.append("  Possibly related (listed or mentioned together, not stated as a relationship):")
+                    shown_possible = True
+                out.append(f"  - {line.detail}{ref}")
+                out.append(f"      \"{line.text}\"")
+                continue
             out.append(f"  {prefixes[line.kind]} {line.text}{ref}")
             if line.detail:
                 out.append(f"      ({line.detail})")
@@ -215,6 +230,12 @@ class Answer:
 def explain_decision(d: dict) -> list[str]:
     """The status decision as short readable lines (CLI / UI)."""
     out = [f"decided by: {d.get('rule', '?')} -- {d.get('rule_text', '')}".rstrip(" -")]
+    g = d.get("graph")
+    if g:
+        out.append(f"knowledge graph: {g['kind']} about {', '.join(g['subjects']) or 'trigger sentences'}; "
+                   f"{g['facts']} documented link(s), {g['possible']} possibly related")
+        out.append(f"Phase 4 alone would have said: {d.get('phase4_status')} ({d.get('phase4_rule')})")
+        return out
     if "word_strength" in d:
         out.append(f"best word match {d['word_strength']:.2f} (strong from {d['word_strong_needed']:.2f})")
     if d.get("meaning_strength") is not None:
@@ -437,6 +458,7 @@ class KoraAnswerer:
         self._all_documents = {d for d, _ in retriever.documents} | {c.document_id for c in self._chunks.values()}
         self.load_timings: dict[str, float] = dict(retriever.load_timings)
         self.load_timings["answer_layer"] = round(time.perf_counter() - self._init_start, 3)
+        self.graph = None                      # Phase 5: GraphService, attached by load()/from_intelligence()
         self._precompute_sentences()
 
     @property
@@ -470,7 +492,13 @@ class KoraAnswerer:
         outputs = dict(result.outputs)
         if cfg.relocation and cfg.relocation.checklist_file:
             outputs["checklist"] = result.outputs.get(cfg.relocation.checklist_file, {})
-        return cls(KoraRetriever.from_intelligence(result, cfg), outputs)
+        obj = cls(KoraRetriever.from_intelligence(result, cfg), outputs)
+        if cfg.graph_enabled:
+            from src.graph.service import GraphService
+            t0 = time.perf_counter()
+            obj.graph = GraphService.from_intelligence(result, cfg)
+            obj.load_timings["graph"] = round(time.perf_counter() - t0, 3)
+        return obj
 
     @classmethod
     def load(cls, intelligence_dir: Path = Path("data/intelligence"), config: KoraConfig | None = None,
@@ -482,7 +510,14 @@ class KoraAnswerer:
                    for stem in ("entities", "roles", "conflicts", "knowledge_gaps", "outdated_knowledge", "topics")}
         if cfg.relocation and cfg.relocation.checklist_file:
             outputs["checklist"] = _read_json(intelligence_dir / f"{cfg.relocation.checklist_file}.json")
-        return cls(KoraRetriever.load(intelligence_dir=intelligence_dir, config=cfg, **dirs), outputs)
+        obj = cls(KoraRetriever.load(intelligence_dir=intelligence_dir, config=cfg, **dirs), outputs)
+        if cfg.graph_enabled and (intelligence_dir / "relationships.json").exists():
+            from src.graph.service import GraphService
+            t0 = time.perf_counter()
+            obj.graph = GraphService.from_files(cfg, intelligence_dir, **{k: v for k, v in dirs.items()
+                                                                          if k in ("processed_dir", "chunks_dir", "raw_dir")})
+            obj.load_timings["graph"] = round(time.perf_counter() - t0, 3)
+        return obj
 
     def _build_document_text(self) -> dict[tuple, str]:
         """(document_id, version) -> full text, for the coverage check."""
@@ -505,6 +540,13 @@ class KoraAnswerer:
         decision: dict = {}
         allowed = self.access.allowed(user, self._all_documents) if self.access.active else None
         answer = self._compose(question, top_k, decision, start, allowed)
+        graph_ms = 0.0
+        if self.graph is not None:                 # Phase 5: relationship questions from the graph
+            t0 = time.perf_counter()
+            graph_answer = self.graph.queries(user).answer(question)
+            if graph_answer is not None:
+                answer = self._from_graph(graph_answer, answer, decision)
+            graph_ms = (time.perf_counter() - t0) * 1000
         if allowed is not None:
             self._scrub_hidden(answer, allowed)
         answer.decision = decision
@@ -513,7 +555,8 @@ class KoraAnswerer:
         total = (time.perf_counter() - start) * 1000
         answer.timings = {"route_ms": round(r.route_ms, 2) if r else 0.0,
                           "search_ms": round(r.search_ms, 2) if r else 0.0,
-                          "compose_ms": round(total - (r.elapsed_ms if r else 0.0), 2),
+                          "compose_ms": round(total - (r.elapsed_ms if r else 0.0) - graph_ms, 2),
+                          **({"graph_ms": round(graph_ms, 2)} if self.graph is not None else {}),
                           "total_ms": round(total, 2)}
         answer.elapsed_ms = total
         answer.startup = self.startup_summary()
@@ -528,7 +571,8 @@ class KoraAnswerer:
         hidden_titles = {m.title for (d, _), m in self.retriever.documents.items()
                          if d in hidden and getattr(m, "title", "") and m.title.lower() != "unknown"}
         hidden_titles |= {c.document_title for c in self._chunks.values() if c.document_id in hidden}
-        keep = {c.number for c in answer.citations if c.document_id in allowed}
+        keep = {c.number for c in answer.citations if c.document_id in allowed
+                or (c.kind == "record" and not any(h in c.chunk_id for h in hidden))}
         answer.citations = [c for c in answer.citations if c.number in keep]
         answer.lines = [l for l in answer.lines if l.citation is None or l.citation in keep]
         answer.notes = [n for n in answer.notes
@@ -778,6 +822,9 @@ class KoraAnswerer:
         analysis and is the only line allowed without a source chunk."""
         if line.chunk_id is None:
             return line.kind == "conflict_side"
+        if line.chunk_id.startswith(("header:", "record:", "file:")):     # Phase 5 graph evidence
+            return self.graph is not None and line.kind in ("relation", "possible") and \
+                self.graph.verify(line.chunk_id, line.text)
         if line.chunk_id not in self._chunks:
             return False
         if line.kind == "document":
@@ -796,12 +843,68 @@ class KoraAnswerer:
         return kept, dropped
 
     def _citation(self, number: int, chunk_id: str) -> Citation:
+        if chunk_id.startswith(("header:", "record:", "file:")):
+            return self._graph_citation(number, chunk_id)
         c = self._chunks[chunk_id]
         meta = self.retriever.documents.get((c.document_id, c.version))
         return Citation(number, chunk_id, c.document_id, c.document_title, c.version, c.status,
                         getattr(meta, "effective_date", "unknown"), c.section,
                         getattr(meta, "source_filename", "unknown"), c.chunk_text[:200],
                         getattr(meta, "id_source", ""), getattr(meta, "title_source", ""))
+
+    def _graph_citation(self, number: int, chunk_id: str) -> Citation:
+        d = self.graph.describe(chunk_id)
+        if d["kind"] == "record":
+            return Citation(number, chunk_id, d["file"], f"Company record ({d['file']})", "n/a", "n/a", "n/a",
+                            d["section"], d["file"], "", kind="record")
+        meta = next((m for m in self.retriever.documents.values()
+                     if getattr(m, "source_filename", "").lower() == d["file"].lower()), None)
+        if meta is None:
+            return Citation(number, chunk_id, d["file"], d["file"], "unknown", "unknown", "unknown",
+                            d["section"], d["file"], "", kind=d["kind"])
+        return Citation(number, chunk_id, meta.document_id, meta.title, meta.version, meta.status,
+                        getattr(meta, "effective_date", "unknown"), d["section"], meta.source_filename, "",
+                        getattr(meta, "id_source", ""), getattr(meta, "title_source", ""), kind=d["kind"])
+
+    # ---------------- Phase 5: a graph answer as a KORA answer ----------------
+
+    def _from_graph(self, g, phase4: "Answer", decision: dict) -> "Answer":
+        """Turn a GraphAnswer into an Answer: same citations, same runtime check,
+        same notes. Phase 4's own answer is kept when it found a CONFLICT (KORA
+        never hides a conflict behind a graph fact); the graph facts are added."""
+        lines = []
+        for kind, facts in (("relation", g.facts), ("possible", g.possible)):
+            for f in facts:
+                gl = self.graph.line(f, kind)
+                if gl:
+                    lines.append(AnswerLine(kind, gl.text, gl.chunk_id, gl.claim))
+        kept, dropped = self._verify(lines)
+        decision.update({"phase4_status": phase4.status, "phase4_rule": decision.get("rule"),
+                         "graph": {"kind": g.kind, "subjects": g.subjects,
+                                   "facts": sum(l.kind == "relation" for l in kept),
+                                   "possible": sum(l.kind == "possible" for l in kept)}})
+        if not any(l.kind == "relation" for l in kept):          # nothing survived the check: Phase 4 stands
+            decision["graph"]["used"] = False
+            phase4.dropped_lines += dropped
+            return phase4
+        decision["graph"]["used"] = True
+        notes = list(g.notes)
+        if any(f.historical for f in g.facts):
+            notes.append("Some of this comes from an archived (older) version; it is marked as history.")
+        status = g.status
+        if phase4.status == "conflict":
+            kept = [l for l in phase4.lines if l.kind == "conflict_side"] + kept
+            notes = phase4.notes + notes
+            status = "conflict"
+        for l in kept:
+            l.citation = None
+        citations = self._number_citations(kept)
+        decision["rule"] = "graph_" + g.kind
+        decision["rule_text"] = {"answered": "documented links in the knowledge graph answer the question",
+                                 "partial": "the knowledge graph documents part of the answer (see notes)",
+                                 "conflict": "the sources conflict; graph links shown alongside"}[status]
+        return Answer(phase4.question, status, kept, list(citations.values()), notes, [], [],
+                      phase4.dropped_lines + dropped, phase4.retrieval, phase4.elapsed_ms)
 
     def _number_citations(self, lines: list[AnswerLine]) -> dict[str, Citation]:
         """Number sources in the order lines use them; fill {ref} in details."""

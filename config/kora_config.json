@@ -82,6 +82,10 @@
       "manager_id"
     ]
   },
+  "graph": {
+    "_comment": "Phase 5: answer relationship questions (who owns / approves / is involved, what depends on what, why delayed) from the knowledge graph. Only documented links are stated; everything else goes to the normal answer flow.",
+    "enabled": true
+  },
   "embeddings": {
     "enabled": false,
     "model": "all-MiniLM-L6-v2",

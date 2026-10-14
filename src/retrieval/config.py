@@ -111,6 +111,9 @@ class KoraConfig:
     # which employee fields colleagues may see. See src/graph/view.py.
     admins: list[str] = field(default_factory=list)
     colleague_fields: list[str] = field(default_factory=lambda: list(DEFAULT_COLLEAGUE_FIELDS))
+    # Phase 5 M3: answer relationship questions from the knowledge graph (src/graph/).
+    # Off without a config, like every other feature.
+    graph_enabled: bool = False
     source: str = "defaults"                   # file path, or "defaults"
     warnings: list[str] = field(default_factory=list)
 
@@ -168,7 +171,7 @@ def parse_config(raw: dict, source: str = "dict") -> KoraConfig:
     if not isinstance(raw, dict):
         raise ConfigError(f"{source}: top level must be a JSON object")
     known = {"company", "thresholds", "gap_severities", "intent_patterns", "relocation", "communication",
-             "embeddings", "synonyms", "access", "description", "admins", "person_visibility"}
+             "embeddings", "synonyms", "access", "description", "admins", "person_visibility", "graph"}
     for key in raw:
         if key not in known:
             problems.append(f"unknown key '{key}' (allowed: {', '.join(sorted(known))})")
@@ -261,6 +264,16 @@ def parse_config(raw: dict, source: str = "dict") -> KoraConfig:
                 if key != "colleague_fields" and not key.startswith("_"):
                     problems.append(f"person_visibility.{key}: unknown key (allowed: colleague_fields)")
             cfg.colleague_fields = list(dict.fromkeys(fields))
+
+    gr = raw.get("graph")
+    if gr is not None:
+        if not isinstance(gr, dict) or not isinstance(gr.get("enabled", False), bool):
+            problems.append("graph: must be an object with 'enabled': true or false")
+        else:
+            for key in gr:
+                if key != "enabled" and not key.startswith("_"):
+                    problems.append(f"graph.{key}: unknown key (allowed: enabled)")
+            cfg.graph_enabled = gr.get("enabled", False)
 
     reloc = raw.get("relocation")
     if reloc is not None:

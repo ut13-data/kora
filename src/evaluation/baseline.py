@@ -60,6 +60,7 @@ def snapshot(kora, sets: dict[str, Path], top_k: int = TOP_K) -> dict:
                                        "status_correct": r["kora"]["status_correct"],
                                        "cited": sorted(set(r["kora"]["cited"])),
                                        "faithful": r["kora"]["faithful"],
+                                       "graph": r["kora"].get("graph"),
                                        "names_found": r["kora"]["names_found"],
                                        "leaks": r["kora"]["leaks"]}
                              for r in rows},

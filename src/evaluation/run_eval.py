@@ -208,7 +208,10 @@ def evaluate_question(q: dict, kora: KoraAnswerer, top_k: int = TOP_K) -> dict:
     answer = kora.answer(q["question"], top_k=top_k, user=user)
     kora_docs = [r.chunk.document_id for r in answer.retrieval.results]
     base_docs = [r.chunk.document_id for r in base]
-    cited = [c.document_id for c in answer.citations] if answer.status != "not_found" else []
+    # Citation precision is about DOCUMENTS: a company-record citation (processes.csv, Phase 5
+    # graph) is not a document, so it is neither right nor wrong here.
+    cited = [c.document_id for c in answer.citations if getattr(c, "kind", "chunk") != "record"] \
+        if answer.status != "not_found" else []
 
     return {
         "id": q["id"], "category": q["category"], "question": q["question"],
@@ -230,6 +233,8 @@ def evaluate_question(q: dict, kora: KoraAnswerer, top_k: int = TOP_K) -> dict:
             "names_found": names_found(answer, q.get("expected_names")),
             "leaks": leaks(answer, q.get("forbidden_names")),
             "cited": cited,
+            "graph": (answer.decision.get("graph") or {}).get("kind")
+                     if (answer.decision.get("graph") or {}).get("used") else None,
             "intents": answer.retrieval.plan.intents,
             "reasons": answer.retrieval.plan.reasons,
             "notes": answer.notes,

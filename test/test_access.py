@@ -95,7 +95,11 @@ def test_hidden_documents_never_appear_anywhere(kora, question):
     assert not hidden & {r.chunk.document_id for r in a.retrieval.results}
     plan = a.retrieval.plan
     assert not hidden & set(plan.candidate_documents + plan.direct_documents + plan.tone_profiles)
-    assert not any(kora._chunks[l.chunk_id].document_id in hidden for l in a.lines if l.chunk_id)
+    for l in a.lines:
+        if l.chunk_id in kora._chunks:
+            assert kora._chunks[l.chunk_id].document_id not in hidden
+        elif l.chunk_id:                          # Phase 5 graph evidence: header / record / file IDs
+            assert not any(h in l.chunk_id or h in l.text or h in l.detail for h in hidden)
     assert not any(h in n for h in hidden for n in a.notes + plan.reasons)
     log = json.dumps(a.to_log()["retrieval"]["results"]) + json.dumps(a.to_log()["citations"])
     assert not any(h in log for h in hidden)

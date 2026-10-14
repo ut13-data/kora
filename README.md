@@ -11,7 +11,7 @@ The source data is **Nexora Systems**, a synthetic mid-sized B2B software compan
 | 2 | Ingestion: extract, clean, chunk, metadata, validate | complete |
 | 3 | Knowledge intelligence: entities, relationships, processes, topics, quality, people | complete |
 | 4 | Retrieval, reasoning, cited answers, validation, access control, evaluation | complete |
-| 5 | Knowledge graph reasoning, UI and dashboards | in progress (M0-M2 done) |
+| 5 | Knowledge graph reasoning, UI and dashboards | in progress (M0-M3 done) |
 
 KORA uses **no LLM, vector database or external AI service**: only Python, regular expressions and scikit-learn (TF-IDF). Meaning-based search with a small local embedding model exists as an option and is **off** by default (see Phase 4).
 
@@ -30,7 +30,7 @@ Knowledge files live in `data/raw/`. Then:
 ```
 python -m src.ingest                      # Phase 2: documents -> chunks + metadata
 python -m src.build_intelligence          # Phase 3: -> data/intelligence/*.json + knowledge_report.md
-python -m pytest test/ -q                 # 404 tests
+python -m pytest test/ -q                 # 420 tests
 
 python -m src.ask "Who approves purchases above 10000 euros?"     # Phase 4: ask, with sources
 python -m src.ask "How soon is a business trip paid back?" --why  # ... and why KORA chose its status
@@ -254,7 +254,7 @@ Findings for M2:
 - A relationship's *name* can say more than its evidence. 10 of 11 `governed_by` links come from a "Related Processes" header line: the document lists the policy as related, it doesn't say "governs". All 27 `eligible_for` links are computed (location + relocation flag). Answers must be phrased from the evidence, not from the link name.
 - `PROC-HR-003` (Internal Communication Guidelines) has no participating roles: it is addressed to all employees.
 
-### M2: relationship questions answered from the graph (done; not yet joined to `Kora.ask`)
+### M2: relationship questions answered from the graph (done)
 
 `src/graph/resolve.py` finds the entities a question names (visible ones only; stems, aliases, longest name first; ambiguous words like "onboarding" alone match nothing). `src/graph/query.py` recognises the intent and answers:
 
@@ -272,6 +272,18 @@ Findings for M2:
 Every statement comes from the link's verified evidence, its verb matches that evidence, and only documented links (quote / header / record) are facts. The graph returns **nothing** (Phase 4 answers as before) when it doesn't recognise the intent, can't find a visible entity, or has no documented fact. It deliberately leaves to Phase 4: approval questions (its rule engine knows amounts and tiers), "what does a <role> do" (Phase 4 quotes the role description), and anything with "after" that isn't about a next process.
 
 Development results (graph alone, 22 development questions): right status 17/22 (the other 5 are by design Phase 4 questions: access refusal, privacy, controls, a plain approval) and 29/30 expected names stated, against 12% names for Phase 4 alone. Of the 81 Phase 4 questions the graph takes exactly one (Q22, an old-version approval, answered correctly). About 0.6 ms per graph answer.
+
+### M3: graph answers in `Kora.ask` (done)
+
+Relationship questions now get graph answers through the normal flow (CLI `python -m src.ask`, and the UI later), with the same citations, runtime verification, access control, `--why`, timings and log. Phase 4 still runs for every question. Its answer is kept when the graph has nothing documented, and its conflict sides are kept first if it found a conflict. New citation kinds: **document header** and **company record**, both re-checked at answer time. Switch: `"graph": {"enabled": true}` in the config.
+
+| Set | Status before -> after | Expected names before -> after |
+|---|---|---|
+| Phase 4 development + held-out v1-v5 (91) | unchanged, every question | n/a |
+| Graph development (22) | 0.59 -> 1.00 | 0.12 -> 1.00 |
+| Graph held-out (12; 9 unseen: 9/9) | 0.75 -> 1.00 | 0.19 -> 1.00 |
+
+No leaks, faithfulness 1.00, latency unchanged (~6 ms p50). Full account, including what changed after the held-out run and the limits: `reports/phase5_m3_findings.md`.
 
 **Honesty note:** while building M2 I (Claude) looked at three held-out graph questions by mistake: H02 (ran it), H04 and H09 (copied into resolver tests). They are marked `seen_in_development` with a note and will be reported separately; 9 held-out questions remain unseen. Both graph sets were written by the builder, so they are not independent of the design either.
 
