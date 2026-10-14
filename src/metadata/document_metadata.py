@@ -13,6 +13,7 @@ data, not documents with this kind of header metadata.
 
 import re
 from dataclasses import dataclass, field
+from pathlib import Path
 
 from src.extraction.extractor import ExtractedDocument
 
@@ -32,6 +33,13 @@ class DocumentMetadata:
     status: str = UNKNOWN
     related_processes: list[str] = field(default_factory=list)
     related_roles: list[str] = field(default_factory=list)
+    # Where document_id / title came from (Phase 4 robustness, mixed real-world files):
+    #   "header"             read from the document's own header block
+    #   "derived_from_path"  no ID in the header: a stand-in built from the file path
+    #   "derived_from_text"  no title in the header: the first heading / first line
+    #   ""                   not recorded (output written before this field existed)
+    id_source: str = ""
+    title_source: str = ""
 
 
 # Maps each metadata field to the possible label variants a document might
@@ -53,6 +61,38 @@ _LIST_FIELD_PATTERNS: dict[str, list[str]] = {
     "related_processes": [r"Related Processes"],
     "related_roles": [r"Related Roles"],
 }
+
+
+# A header line: "**Label:** value" (Nexora) or plain "Label: value", label
+# short and without sentence punctuation. The header block is the run of such
+# lines at the very top of the document.
+_HEADER_LINE = re.compile(r"^\*{0,2}\s*[A-Za-z][A-Za-z0-9 /&()-]{0,40}?\s*:\s*\*{0,2}\s*\S")
+
+
+def header_block(text: str) -> str:
+    """Only the metadata block at the top of the document.
+
+    Metadata used to be searched in the WHOLE text, so a body line such as
+    "Status: Archived" (describing a ticket, say) could mark a real-world
+    document as archived and hide it. Nexora's own headers are always at the
+    top, so their values are unchanged."""
+    lines = text.splitlines()
+    out: list[str] = []
+    i = 0
+    while i < len(lines) and not lines[i].strip():
+        i += 1
+    while i < len(lines):
+        stripped = lines[i].strip()
+        if not stripped:
+            if out:            # one blank line may separate header groups
+                i += 1
+                continue
+            break
+        if not _HEADER_LINE.match(stripped):
+            break
+        out.append(stripped)
+        i += 1
+    return "\n".join(out)
 
 
 def _find_single_value(text: str, label_variants: list[str]) -> str:
@@ -84,7 +124,7 @@ def identify_document_metadata(document: ExtractedDocument) -> DocumentMetadata:
     Any field not found in the text is left as "unknown" (or an empty list
     for the list fields) — never inferred or invented.
     """
-    text = document.text
+    text = header_block(document.text)
 
     metadata = DocumentMetadata()
     metadata.source_filename = document.file_info.filename  ##return the document name 
@@ -97,4 +137,45 @@ def identify_document_metadata(document: ExtractedDocument) -> DocumentMetadata:
         values = _find_list_value(text, label_variants)
         setattr(metadata, field_name, values)
 
+    metadata.id_source = "header" if metadata.document_id != UNKNOWN else ""
+    metadata.title_source = "header" if metadata.title != UNKNOWN else ""
+    return metadata
+
+
+def derived_document_id(relative_path: str) -> str:
+    """Stable stand-in ID for a document without one in its header, from its
+    path inside the raw folder: 'hr/policy.md' -> 'FILE-HR-POLICY'. Two files
+    with the same name in different folders get different IDs."""
+    stem = str(Path(relative_path).with_suffix("")).replace("\\", "/")
+    slug = re.sub(r"[^A-Za-z0-9]+", "-", stem).strip("-").upper()
+    return f"FILE-{slug or 'UNNAMED'}"
+
+
+def derived_title(text: str) -> str | None:
+    """First Markdown heading, else the first non-empty line (<= 120 chars)."""
+    first_line = None
+    for line in text.splitlines():
+        stripped = line.strip().strip("*").strip()
+        if not stripped or _HEADER_LINE.match(line.strip()) or stripped == "---":
+            continue
+        if line.lstrip().startswith("#"):
+            return stripped.lstrip("#").strip()[:120] or None
+        if first_line is None:
+            first_line = stripped[:120]
+    return first_line
+
+
+def apply_fallback_identity(metadata: DocumentMetadata, document: ExtractedDocument,
+                            relative_path: str) -> DocumentMetadata:
+    """Fill in a missing ID / title with clearly LABELLED stand-ins. The
+    *_source fields say where each came from, so nothing derived is ever
+    presented as if the document stated it."""
+    if metadata.document_id == UNKNOWN:
+        metadata.document_id = derived_document_id(relative_path)
+        metadata.id_source = "derived_from_path"
+    if metadata.title == UNKNOWN:
+        title = derived_title(document.text)
+        if title:
+            metadata.title = title
+            metadata.title_source = "derived_from_text"
     return metadata

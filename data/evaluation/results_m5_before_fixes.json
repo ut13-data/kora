@@ -1,0 +1,2793 @@
+{
+  "top_k": 5,
+  "label_problems": [],
+  "resources": {
+    "load_seconds": 0.433,
+    "peak_python_memory_mb": 6.3,
+    "index_build_seconds": {
+      "baseline_indexes": 0.0369,
+      "kora_router_extra": 0.0075
+    },
+    "chunks": 187
+  },
+  "summary": {
+    "all": {
+      "questions": 41,
+      "baseline": {
+        "hit@5": 0.895,
+        "recall@5": 0.882,
+        "mrr": 0.704
+      },
+      "kora": {
+        "hit@5": 0.947,
+        "recall@5": 0.947,
+        "mrr": 0.831,
+        "status_accuracy": 0.659,
+        "key_fact_found": 0.759,
+        "citation_precision": 0.914,
+        "faithfulness": 0.976
+      }
+    },
+    "new_questions_only": {
+      "questions": 27,
+      "baseline": {
+        "hit@5": 0.92,
+        "recall@5": 0.92,
+        "mrr": 0.73
+      },
+      "kora": {
+        "hit@5": 0.96,
+        "recall@5": 0.96,
+        "mrr": 0.81,
+        "status_accuracy": 0.556,
+        "key_fact_found": 0.632,
+        "citation_precision": 0.87,
+        "faithfulness": 1.0
+      }
+    },
+    "seen_in_development": {
+      "questions": 14,
+      "baseline": {
+        "hit@5": 0.846,
+        "recall@5": 0.808,
+        "mrr": 0.654
+      },
+      "kora": {
+        "hit@5": 0.923,
+        "recall@5": 0.923,
+        "mrr": 0.872,
+        "status_accuracy": 0.857,
+        "key_fact_found": 1.0,
+        "citation_precision": 1.0,
+        "faithfulness": 0.929
+      }
+    },
+    "by_category": {
+      "communication": {
+        "questions": 3,
+        "baseline": {
+          "hit@5": 0.333,
+          "recall@5": 0.333,
+          "mrr": 0.083
+        },
+        "kora": {
+          "hit@5": 0.333,
+          "recall@5": 0.333,
+          "mrr": 0.083,
+          "status_accuracy": 0.333,
+          "key_fact_found": 0.667,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "conflict": {
+        "questions": 3,
+        "baseline": {
+          "hit@5": 0.667,
+          "recall@5": 0.5,
+          "mrr": 0.25
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "exact_fact": {
+        "questions": 6,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.875
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 0.667,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "germany": {
+        "questions": 4,
+        "baseline": {
+          "hit@5": 0.75,
+          "recall@5": 0.75,
+          "mrr": 0.75
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.833,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "missing_info": {
+        "questions": 3,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 0.333,
+          "citation_precision": 0.667,
+          "faithfulness": 1.0
+        }
+      },
+      "multi_document": {
+        "questions": 3,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.833
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.778,
+          "status_accuracy": 0.333,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "no_answer": {
+        "questions": 4,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 0.75,
+          "key_fact_found": null,
+          "citation_precision": 0.5,
+          "faithfulness": 1.0
+        }
+      },
+      "outdated": {
+        "questions": 2,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.75
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.75,
+          "status_accuracy": 0.5,
+          "key_fact_found": 0.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "role_process": {
+        "questions": 6,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.722
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.917,
+          "status_accuracy": 0.833,
+          "key_fact_found": 0.8,
+          "citation_precision": 0.933,
+          "faithfulness": 0.833
+        }
+      },
+      "synonym": {
+        "questions": 5,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.633
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.733,
+          "status_accuracy": 0.0,
+          "key_fact_found": 0.6,
+          "citation_precision": 0.833,
+          "faithfulness": 1.0
+        }
+      },
+      "version": {
+        "questions": 2,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      }
+    },
+    "latency_ms": {
+      "baseline_retrieval_p50": 1.62,
+      "baseline_retrieval_p95": 2.99,
+      "kora_answer_p50": 7.39,
+      "kora_answer_p95": 14.67
+    }
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "category": "exact_fact",
+      "question": "How many days of annual leave do Germany-based employees get?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-HR-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-FIN-003",
+          "PROC-HR-002",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 2.99
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-FIN-003",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 6.16218300001492,
+        "answer_ms": 8.99,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-HR-002",
+          "PROC-HR-002"
+        ],
+        "intents": [
+          "germany"
+        ],
+        "reasons": [
+          "intent germany: keyword in question",
+          "candidates +1 from keywords ['day', 'employee', 'days'] of PROC-HR-001",
+          "candidates +1 from keywords ['leave', 'employees', 'days'] of PROC-HR-002",
+          "candidates +4 from intent germany -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "Q02",
+      "category": "exact_fact",
+      "question": "Within how many hours must a suspected data exposure be reported to the CISO?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-IT-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IT-002",
+          "PROC-SUP-002",
+          "PROC-SUP-002",
+          "PROC-CS-001",
+          "DOC-DEPT-SUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.43
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IT-002",
+          "PROC-SUP-002",
+          "PROC-SUP-002",
+          "PROC-CS-001",
+          "DOC-DEPT-SUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.2967950000065684,
+        "answer_ms": 5.15,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-IT-002"
+        ],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Known gap GAP-7EAF46E4 (medium): Escalation statement without an identifiable role: \"Level 3 — Executive (CEO/CTO): Reserved for strategic accounts, contract-value accounts above €100,000 ARR, or reputational-risk situations (e.g., public complaint, data exposure incident).\""
+        ]
+      }
+    },
+    {
+      "id": "Q03",
+      "category": "exact_fact",
+      "question": "What are Nexora's standard payment terms for vendor invoices?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-FIN-003"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-FIN-003",
+          "PROC-FIN-002",
+          "PROC-FIN-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.46
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-FIN-003",
+          "PROC-FIN-003",
+          "PROC-FIN-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.3621389999893836,
+        "answer_ms": 5.91,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-FIN-003",
+          "PROC-FIN-003"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['payment', 'invoice', 'invoices'] of PROC-FIN-003",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "Q04",
+      "category": "exact_fact",
+      "question": "How long is customer data kept by default after a contract is terminated?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-IT-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IT-002",
+          "PROC-IT-001",
+          "PROC-IT-001",
+          "DOC-FAQ-001",
+          "PROC-IMPL-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.34
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IT-002",
+          "PROC-IT-002",
+          "PROC-IT-001",
+          "PROC-IT-001",
+          "DOC-FAQ-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.3737190000238115,
+        "answer_ms": 6.06,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-IT-002"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['data', 'customer data'] of PROC-IT-002",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: long, kept. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q05",
+      "category": "exact_fact",
+      "question": "How long do new hires have to complete security training?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-HR-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-COMM-001",
+          "PROC-HR-001-ADDENDUM",
+          "DOC-FAQ-001",
+          "PROC-HR-001",
+          "DOC-DEPT-IT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.25
+        },
+        "ms": 1.42
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-001",
+          "PROC-HR-001",
+          "DOC-COMM-001",
+          "DOC-FAQ-001",
+          "DOC-DEPT-IT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.6635600000067825,
+        "answer_ms": 7.09,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered",
+          "conflict"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-HR-001",
+          "PROC-HR-001"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['training', 'security', 'new', 'new hire'] of PROC-HR-001-ADDENDUM",
+          "candidates +1 from PROC-HR-001 replaced archived PROC-HR-001-ADDENDUM",
+          "broad department word(s) ['security'] ignored: something more specific matched",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "An older, archived version exists: PROC-HR-001-ADDENDUM v1.0 (effective 2022-08-01). Ask about the previous version to see it.",
+          "Not covered by the quoted sources: long. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q06",
+      "category": "exact_fact",
+      "question": "Who approves purchases above 10000 euros?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-FIN-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-FIN-002",
+          "DOC-DEPT-FIN",
+          "PROC-FIN-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.45
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-FIN-002",
+          "DOC-DEPT-FIN",
+          "PROC-FIN-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 1.7604029999915838,
+        "answer_ms": 4.92,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-DEPT-FIN",
+          "PROC-FIN-002"
+        ],
+        "intents": [
+          "approval"
+        ],
+        "reasons": [
+          "intent approval: keyword in question",
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "Q07",
+      "category": "synonym",
+      "question": "Who gives the final OK before a customer goes live?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "DOC-DEPT-IMPL",
+          "DOC-DEPT-CS",
+          "PROC-IMPL-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.18
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "DOC-DEPT-IMPL",
+          "DOC-DEPT-CS",
+          "PROC-IMPL-001",
+          "DOC-DEPT-CS"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 1.8838170000208265,
+        "answer_ms": 4.74,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "DOC-DEPT-IMPL"
+        ],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "An older, archived version exists: PROC-IMPL-001-V1 v1.0 (effective 2023-06-01). Ask about the previous version to see it.",
+          "Not covered by the quoted sources: gives, goes. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q08",
+      "category": "synonym",
+      "question": "How quickly do I get my money back after paying for a business trip myself?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-FIN-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-SALES-001",
+          "PROC-SUP-002",
+          "PROC-FIN-001",
+          "DOC-PROD-IMPLSUP",
+          "DOC-CORP-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "ms": 1.27
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-SALES-001",
+          "PROC-SUP-002",
+          "PROC-FIN-001",
+          "DOC-PROD-IMPLSUP",
+          "DOC-CORP-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "retrieval_ms": 2.1353299999873343,
+        "answer_ms": 4.58,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The closest sources don't mention most of what you asked (not covered: quickly, money, paying, trip). It may not be documented at Nexora."
+        ]
+      }
+    },
+    {
+      "id": "Q09",
+      "category": "synonym",
+      "question": "Can I look at customer production data from my own personal laptop?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-IT-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IT-001",
+          "PROC-IT-002",
+          "PROC-IT-001",
+          "DOC-DEPT-IT",
+          "DOC-DEPT-DATA"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.23
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IT-002",
+          "PROC-IT-002",
+          "PROC-IT-001",
+          "PROC-IT-001",
+          "DOC-DEPT-IT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.226530000006278,
+        "answer_ms": 5.73,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-IT-002"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['data', 'customer production', 'production data'] of PROC-IT-002",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: look. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q10",
+      "category": "synonym",
+      "question": "On which day are new features usually pushed live?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-ENG-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-001",
+          "DOC-DEPT-IMPL",
+          "PROC-ENG-001",
+          "DOC-CARE-001",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "ms": 1.25
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-001",
+          "DOC-DEPT-IMPL",
+          "PROC-ENG-001",
+          "DOC-CARE-001",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "retrieval_ms": 1.786889999948471,
+        "answer_ms": 4.68,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": false,
+        "citation_precision": 0.3333333333333333,
+        "faithful": true,
+        "cited": [
+          "PROC-ENG-001",
+          "DOC-DEPT-IMPL",
+          "DOC-CARE-001"
+        ],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\"",
+          "Not covered by the quoted sources: usually, pushed. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q11",
+      "category": "synonym",
+      "question": "How much time does an SDR have to follow up on a new marketing lead?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-SALES-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-SALES-001",
+          "DOC-DEPT-MKT",
+          "DOC-DEPT-MKT",
+          "DOC-DEPT-MKT",
+          "PROC-SALES-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.22
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-SALES-001",
+          "PROC-SALES-001",
+          "PROC-SALES-001",
+          "DOC-DEPT-MKT",
+          "DOC-DEPT-MKT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.2591309999929763,
+        "answer_ms": 5.82,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-SALES-001",
+          "PROC-SALES-001"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['sdr', 'lead'] of PROC-SALES-001",
+          "broad department word(s) ['marketing'] ignored: something more specific matched",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: does, follow. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q12",
+      "category": "multi_document",
+      "question": "What happens from the moment a support engineer confirms a customer bug until the fix is verified?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-ENG-002",
+        "PROC-SUP-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-SUP",
+          "PROC-ENG-002",
+          "DOC-DEPT-SUP",
+          "DOC-PROD-IMPLSUP",
+          "PROC-SUP-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.27
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-SUP",
+          "DOC-DEPT-SUP",
+          "PROC-ENG-002",
+          "DOC-PROD-IMPLSUP",
+          "PROC-SUP-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "retrieval_ms": 3.655520999984674,
+        "answer_ms": 6.13,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-DEPT-SUP",
+          "DOC-DEPT-SUP"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['support', 'support engineer', 'engineer'] of DOC-DEPT-SUP",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: moment, verified. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q13",
+      "category": "multi_document",
+      "question": "Does a P1 incident automatically become a customer escalation?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-CS-001",
+        "PROC-SUP-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-CS-001",
+          "PROC-SUP-002",
+          "PROC-CS-001",
+          "PROC-CS-001",
+          "PROC-SUP-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.21
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-CS-001",
+          "PROC-CS-001",
+          "PROC-CS-001",
+          "PROC-SUP-002",
+          "PROC-SUP-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.673638000032952,
+        "answer_ms": 5.64,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-CS-001",
+          "PROC-CS-001"
+        ],
+        "intents": [
+          "escalation"
+        ],
+        "reasons": [
+          "intent escalation: keyword in question",
+          "candidates +1 from topic TOPIC-CUSTOMER-ESCALATION-POLICY (matched 'customer escalation', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Known gap GAP-7EAF46E4 (medium): Escalation statement without an identifiable role: \"Level 3 — Executive (CEO/CTO): Reserved for strategic accounts, contract-value accounts above €100,000 ARR, or reputational-risk situations (e.g., public complaint, data exposure incident).\""
+        ]
+      }
+    },
+    {
+      "id": "Q14",
+      "category": "multi_document",
+      "question": "Which documents describe the customer onboarding process?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "PROC-IMPL-001",
+          "DOC-CORP-003",
+          "DOC-COMM-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.17
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "DOC-CORP-003",
+          "DOC-COMM-001",
+          "DOC-PROD-NEXVIEW"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.4565389999793297,
+        "answer_ms": 2.96,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-CUSTOMER-ONBOARDING (matched 'customer onboarding', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "No sentence in the retrieved sources answers this question. It may not be documented at Nexora."
+        ]
+      }
+    },
+    {
+      "id": "Q15",
+      "category": "role_process",
+      "question": "Who approves a customer implementation plan?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "DOC-DEPT-IMPL"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-FAQ-001",
+          "DOC-DEPT-IMPL",
+          "DOC-PROD-NEXCONNECT",
+          "DOC-DEPT-PROD",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.11
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-IMPL",
+          "DOC-DEPT-IMPL",
+          "DOC-DEPT-IMPL",
+          "DOC-FAQ-001",
+          "DOC-PROD-NEXCONNECT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.013592999991488,
+        "answer_ms": 7.39,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-DEPT-IMPL",
+          "PROC-IT-001"
+        ],
+        "intents": [
+          "approval"
+        ],
+        "reasons": [
+          "intent approval: keyword in question",
+          "no specific topic, keywords or conflict matched; using broad department topic(s)",
+          "candidates +4 from topic TOPIC-IMPLEMENTATION-CONSULTING (matched 'implementation', weak)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "Q16",
+      "category": "role_process",
+      "question": "Who approves access to the production analytics data warehouse?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-IT-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IT-001",
+          "DOC-DEPT-DATA",
+          "DOC-DEPT-DATA",
+          "PROC-IT-001",
+          "DOC-FAQ-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.71
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IT-001",
+          "DOC-DEPT-DATA",
+          "DOC-DEPT-DATA",
+          "PROC-IT-001",
+          "DOC-FAQ-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.542031999984374,
+        "answer_ms": 6.78,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": false,
+        "cited": [
+          "DOC-DEPT-DATA",
+          "PROC-IT-001",
+          "PROC-IT-001"
+        ],
+        "intents": [
+          "approval"
+        ],
+        "reasons": [
+          "intent approval: keyword in question",
+          "candidates +1 from keywords ['data', 'analytics', 'access'] of DOC-FAQ-001",
+          "candidates +1 from keywords ['analytics', 'data'] of DOC-DEPT-DATA",
+          "candidates +1 from keywords ['analytics', 'data'] of DOC-PROD-NEXVIEW",
+          "candidates +1 from keywords ['access', 'data'] of PROC-IT-001",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "Q17",
+      "category": "role_process",
+      "question": "Who approves a discount of 20% on a proposal?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-SALES-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-SALES-002",
+          "DOC-FAQ-001",
+          "PROC-SALES-002",
+          "PROC-SALES-002",
+          "DOC-DEPT-SALES"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.21
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-SALES-002",
+          "PROC-SALES-002",
+          "PROC-SALES-002",
+          "DOC-FAQ-001",
+          "DOC-DEPT-SALES"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.1563879999794153,
+        "answer_ms": 6.49,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-SALES-002",
+          "PROC-SALES-002"
+        ],
+        "intents": [
+          "approval"
+        ],
+        "reasons": [
+          "intent approval: keyword in question",
+          "candidates +1 from keywords ['proposal', 'discount'] of PROC-SALES-002",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Known gap GAP-632E5429 (high): Proposal and Quotation: This process does not currently specify what happens if a customer requests mid-negotiation changes to committed go-live dates after a proposal has already been approved at a given discount tier. In practice this is resolved ad hoc between the AE and Sales Manager; no formal escalation path exists."
+        ]
+      }
+    },
+    {
+      "id": "Q18",
+      "category": "role_process",
+      "question": "Who owns customer communication about the status of a defect?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-ENG-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-ENG-002",
+          "DOC-DEPT-SUP",
+          "PROC-SUP-002",
+          "PROC-ENG-002",
+          "PROC-ENG-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.37
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-ENG-002",
+          "PROC-ENG-002",
+          "PROC-ENG-002",
+          "DOC-DEPT-SUP",
+          "PROC-SUP-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.8123400000245056,
+        "answer_ms": 7.8,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [
+          "communication",
+          "ownership"
+        ],
+        "reasons": [
+          "intent communication: keyword in question",
+          "intent ownership: keyword in question",
+          "candidates +1 from keywords ['customer communication', 'defect'] of PROC-ENG-002",
+          "candidates +7 from intent communication -> TOPIC-COMMUNICATION-CULTURE-TONE-GUIDELINES",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The closest sources don't mention most of what you asked (not covered: owns, customer, status, defect). It may not be documented at Nexora."
+        ]
+      }
+    },
+    {
+      "id": "Q19",
+      "category": "role_process",
+      "question": "What does a Customer Success Manager do?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-DEPT-CS"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-IMPL",
+          "DOC-PROD-NEXCRM",
+          "DOC-DEPT-CS",
+          "PROC-FIN-003",
+          "DOC-DEPT-CS"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "ms": 1.62
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-CS",
+          "DOC-DEPT-CS",
+          "PROC-CS-001",
+          "DOC-DEPT-IMPL",
+          "DOC-PROD-NEXCRM"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.5969839999788746,
+        "answer_ms": 5.54,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-DEPT-CS",
+          "PROC-CS-001",
+          "DOC-DEPT-CS"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +2 from topic TOPIC-CUSTOMER-SUCCESS (matched 'customer success', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Known gap GAP-7EAF46E4 (medium): Escalation statement without an identifiable role: \"Level 3 — Executive (CEO/CTO): Reserved for strategic accounts, contract-value accounts above €100,000 ARR, or reputational-risk situations (e.g., public complaint, data exposure incident).\""
+        ]
+      }
+    },
+    {
+      "id": "Q20",
+      "category": "role_process",
+      "question": "Who deploys code to production?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-ENG-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IT-001",
+          "PROC-ENG-001",
+          "DOC-DEPT-SUP",
+          "PROC-IMPL-001",
+          "PROC-IMPL-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.26
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IT-001",
+          "PROC-ENG-001",
+          "DOC-DEPT-SUP",
+          "PROC-IMPL-001",
+          "PROC-ENG-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "retrieval_ms": 1.872039999966546,
+        "answer_ms": 4.54,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 0.6666666666666666,
+        "faithful": true,
+        "cited": [
+          "DOC-DEPT-SUP",
+          "PROC-ENG-001",
+          "PROC-IT-001"
+        ],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "Q21",
+      "category": "version",
+      "question": "How did the customer onboarding process change from the previous version?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "PROC-IMPL-001",
+          "DOC-CORP-003",
+          "PROC-HR-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.29
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "DOC-CORP-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.70135300002039,
+        "answer_ms": 5.37,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001"
+        ],
+        "intents": [
+          "version"
+        ],
+        "reasons": [
+          "intent version: keyword in question",
+          "candidates +1 from topic TOPIC-CUSTOMER-ONBOARDING (matched 'customer onboarding', strong)",
+          "archived documents included: question is about version"
+        ],
+        "notes": [
+          "What changed from PROC-IMPL-001-V1 v1.0 (effective 2023-06-01, archived) to PROC-IMPL-001 v2.0 (effective 2025-03-01, current), step by step, as compared by Phase 3.",
+          "Some quoted sources are ARCHIVED ([1] PROC-IMPL-001 v1.0): they describe a past rule, not the current one."
+        ]
+      }
+    },
+    {
+      "id": "Q22",
+      "category": "version",
+      "question": "In the old version of customer onboarding, who gave the go-live sign-off?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "DOC-DEPT-IMPL",
+          "DOC-CORP-003",
+          "PROC-IMPL-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.34
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "DOC-DEPT-IMPL"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 7.058746000041083,
+        "answer_ms": 15.64,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001"
+        ],
+        "intents": [
+          "version",
+          "approval"
+        ],
+        "reasons": [
+          "intent version: keyword in question",
+          "intent approval: keyword in question",
+          "candidates +1 from topic TOPIC-CUSTOMER-ONBOARDING (matched 'customer onboarding', strong)",
+          "archived documents included: question is about version"
+        ],
+        "notes": [
+          "What changed from PROC-IMPL-001-V1 v1.0 (effective 2023-06-01, archived) to PROC-IMPL-001 v2.0 (effective 2025-03-01, current), step by step, as compared by Phase 3.",
+          "Some quoted sources are ARCHIVED ([1] PROC-IMPL-001 v1.0): they describe a past rule, not the current one.",
+          "Not covered by the quoted sources: gave. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q23",
+      "category": "outdated",
+      "question": "Is the 30-day deadline for new hire security training still valid?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-HR-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-001-ADDENDUM",
+          "PROC-HR-001",
+          "PROC-HR-001",
+          "DOC-COMM-001",
+          "PROC-HR-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 3.06
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-001",
+          "PROC-HR-001",
+          "PROC-HR-001",
+          "DOC-COMM-001",
+          "PROC-IT-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 8.449494999979379,
+        "answer_ms": 14.67,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered",
+          "conflict"
+        ],
+        "contains_fact": false,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-HR-001",
+          "PROC-HR-001",
+          "PROC-HR-001"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['training', 'security', 'new', 'new hire'] of PROC-HR-001-ADDENDUM",
+          "candidates +1 from PROC-HR-001 replaced archived PROC-HR-001-ADDENDUM",
+          "candidates +1 from keywords ['security', 'deadline'] of PROC-IT-002",
+          "broad department word(s) ['security'] ignored: something more specific matched",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "An older, archived version exists: PROC-HR-001-ADDENDUM v1.0 (effective 2022-08-01). Ask about the previous version to see it.",
+          "Not covered by the quoted sources: deadline, valid. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q24",
+      "category": "outdated",
+      "question": "Does the archived onboarding document still apply to new customers?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "PROC-HR-001-ADDENDUM",
+          "PROC-HR-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 2.99
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-HR",
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "PROC-HR-001",
+          "PROC-HR-001-ADDENDUM"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "retrieval_ms": 6.808871000032468,
+        "answer_ms": 13.15,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001"
+        ],
+        "intents": [
+          "version"
+        ],
+        "reasons": [
+          "intent version: keyword in question",
+          "candidates +1 from keywords ['onboarding', 'new'] of DOC-DEPT-HR",
+          "archived documents included: question is about version"
+        ],
+        "notes": [
+          "What changed from PROC-IMPL-001-V1 v1.0 (effective 2023-06-01, archived) to PROC-IMPL-001 v2.0 (effective 2025-03-01, current), step by step, as compared by Phase 3.",
+          "Some quoted sources are ARCHIVED ([1] PROC-IMPL-001 v1.0): they describe a past rule, not the current one.",
+          "Not covered by the quoted sources: apply. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q25",
+      "category": "conflict",
+      "question": "Are there conflicting instructions about security training?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-HR-001",
+        "PROC-HR-001-ADDENDUM"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-COMM-001",
+          "DOC-DEPT-IT",
+          "DOC-DEPT-IT",
+          "PROC-HR-001-ADDENDUM",
+          "PROC-IT-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 0.5,
+          "reciprocal_rank": 0.25
+        },
+        "ms": 2.08
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-001",
+          "PROC-HR-001-ADDENDUM",
+          "PROC-HR-001",
+          "DOC-COMM-001",
+          "DOC-DEPT-IT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 8.975148999979865,
+        "answer_ms": 15.13,
+        "status": "conflict",
+        "status_correct": true,
+        "expected_status": [
+          "conflict"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-HR-001",
+          "PROC-HR-001-ADDENDUM",
+          "PROC-HR-001"
+        ],
+        "intents": [
+          "conflict"
+        ],
+        "reasons": [
+          "intent conflict: keyword in question",
+          "conflict CONF-98434E88 matched on ['security', 'training'] (Phase 3 topic: 'training, security, awareness, new', status superseded_per_source)",
+          "candidates +2 from conflict(s) CONF-98434E88",
+          "broad department word(s) ['security'] ignored: something more specific matched",
+          "archived documents included: question is about conflict"
+        ],
+        "notes": [
+          "Conflict CONF-98434E88 (numeric_fact): sources disagree on 'training, security, awareness, new'. Status: superseded_per_source, i.e. the sources themselves say the newer document replaced the older one. KORA shows every side and does not pick one.",
+          "CONF-98434E88: Similar statements (TF-IDF cosine 0.88) state different duration values."
+        ]
+      }
+    },
+    {
+      "id": "Q26",
+      "category": "conflict",
+      "question": "Do the documents disagree about the number of office locations Nexora has?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-CORP-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-DEPT-HR",
+          "PROC-HR-003",
+          "DOC-DEPT-OPS",
+          "DOC-COMM-001"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "ms": 2.27
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CORP-001",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "PROC-HR-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 5.86441199999399,
+        "answer_ms": 10.55,
+        "status": "conflict",
+        "status_correct": true,
+        "expected_status": [
+          "conflict"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-CORP-001",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-OPS"
+        ],
+        "intents": [
+          "conflict"
+        ],
+        "reasons": [
+          "intent conflict: keyword in question",
+          "conflict CONF-91EBA1C7 matched on ['location', 'number'] (Phase 3 topic: 'number of locations', status open)",
+          "candidates +3 from conflict(s) CONF-91EBA1C7",
+          "archived documents included: question is about conflict"
+        ],
+        "notes": [
+          "Conflict CONF-91EBA1C7 (count_claim): sources disagree on 'number of locations'. Status: open, i.e. no source says which statement is correct. KORA shows every side and does not pick one.",
+          "CONF-91EBA1C7: 3 statement(s) give a different number of locations than locations.csv rows (5).",
+          "Not covered by the quoted sources: disagree, number. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q27",
+      "category": "conflict",
+      "question": "Is there a conflict about who the Implementation Manager reports to?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "DOC-CORP-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IT-001",
+          "DOC-CORP-002",
+          "DOC-DEPT-CS",
+          "PROC-IMPL-001",
+          "DOC-CORP-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 2.21
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CORP-002",
+          "DOC-CORP-002",
+          "DOC-CORP-002",
+          "PROC-IT-001",
+          "DOC-DEPT-CS"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 5.7536410000125215,
+        "answer_ms": 11.26,
+        "status": "conflict",
+        "status_correct": true,
+        "expected_status": [
+          "conflict"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-CORP-002",
+          "DOC-CORP-002",
+          "DOC-CORP-002"
+        ],
+        "intents": [
+          "conflict"
+        ],
+        "reasons": [
+          "intent conflict: keyword in question",
+          "conflict CONF-816ACA6F matched on ['implementation', 'manager'] (Phase 3 topic: 'reporting line of Implementation Manager (head of DEPT-IMPL)', status open)",
+          "conflict CONF-4DC4E6B1 matched on ['implementation', 'manager'] (Phase 3 topic: 'reporting line of Implementation Manager', status open)",
+          "candidates +1 from conflict(s) CONF-816ACA6F, CONF-4DC4E6B1",
+          "broad department word(s) ['implementation'] ignored: something more specific matched",
+          "archived documents included: question is about conflict"
+        ],
+        "notes": [
+          "Conflict CONF-816ACA6F (org_statement): sources disagree on 'reporting line of Implementation Manager (head of DEPT-IMPL)'. Status: open, i.e. no source says which statement is correct. KORA shows every side and does not pick one.",
+          "CONF-816ACA6F: The text says department heads report to CEO or CTO; the org chart places Implementation Manager under VP Customer Success.",
+          "Conflict CONF-4DC4E6B1 (org_vs_employees): sources disagree on 'reporting line of Implementation Manager'. Status: open, i.e. no source says which statement is correct. KORA shows every side and does not pick one.",
+          "CONF-4DC4E6B1: employees.csv reporting differs from the org chart. The chart is labelled 'simplified', so this may be skip-level or local practice rather than an error."
+        ]
+      }
+    },
+    {
+      "id": "Q28",
+      "category": "missing_info",
+      "question": "What should the Implementation Consultant do if the AE's handoff record is missing the go-live date?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "DOC-DEPT-SALES",
+          "PROC-IMPL-001",
+          "DOC-SCEN-001",
+          "DOC-PROD-NEXCONNECT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.42
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001",
+          "DOC-SCEN-001",
+          "DOC-DEPT-SALES",
+          "DOC-PROD-NEXCONNECT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 4.416506999973535,
+        "answer_ms": 11.42,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001"
+        ],
+        "intents": [
+          "gap"
+        ],
+        "reasons": [
+          "intent gap: keyword in question",
+          "candidates +1 from keywords ['handoff', 'consultant', 'record', 'handoff record', 'implementation'] of PROC-IMPL-001",
+          "candidates +1 from keywords ['implementation', 'go live'] of DOC-DEPT-IMPL",
+          "candidates +1 from keywords ['implementation consultant', 'consultant'] of DOC-SCEN-001",
+          "broad department word(s) ['implementation'] ignored: something more specific matched",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Known gap GAP-BDD5A0AD (high): Customer Onboarding: This process assumes the AE's \"Deal Closed\" handoff record is complete. It does not specify what the Implementation Consultant should do if the handoff record is missing required fields (e.g., agreed go-live date not documented). In practice this causes kickoff delays; there is no formal fallback procedure. ---",
+          "An older, archived version exists: PROC-IMPL-001-V1 v1.0 (effective 2023-06-01). Ask about the previous version to see it."
+        ]
+      }
+    },
+    {
+      "id": "Q29",
+      "category": "missing_info",
+      "question": "What is the process when a customer reports a bug on a deprecated product version?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-ENG-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-ENG-002",
+          "DOC-FAQ-001",
+          "PROC-IMPL-001",
+          "DOC-TG-001",
+          "PROC-ENG-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.85
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-ENG-002",
+          "PROC-ENG-002",
+          "DOC-FAQ-001",
+          "PROC-IMPL-001",
+          "DOC-TG-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 5.514035999965472,
+        "answer_ms": 10.06,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": false,
+        "citation_precision": 0.0,
+        "faithful": true,
+        "cited": [
+          "PROC-IMPL-001",
+          "PROC-IMPL-001"
+        ],
+        "intents": [
+          "version"
+        ],
+        "reasons": [
+          "intent version: keyword in question",
+          "candidates +1 from keywords ['bug', 'process'] of PROC-ENG-002",
+          "broad department word(s) ['product'] ignored: something more specific matched",
+          "archived documents included: question is about version"
+        ],
+        "notes": [
+          "What changed from PROC-IMPL-001-V1 v1.0 (effective 2023-06-01, archived) to PROC-IMPL-001 v2.0 (effective 2025-03-01, current), step by step, as compared by Phase 3.",
+          "Known gap GAP-673F5A99 (high): Bug Reporting and Escalation: This process does not document what happens when a customer reports a bug on a deprecated product version that is no longer receiving active development (e.g., a legacy NexFlow configuration mode retired from new sales but still running for a small number of legacy customers). In practice, these reports are currently triaged case-by-case by the Engineering Manager with no documented standard, which has led to inconsistent customer communication in at least two known cases.",
+          "Some quoted sources are ARCHIVED ([1] PROC-IMPL-001 v1.0): they describe a past rule, not the current one.",
+          "Not covered by the quoted sources: reports, deprecated. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q30",
+      "category": "missing_info",
+      "question": "What happens if a customer wants to change the go-live date after the proposal discount was approved?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-SALES-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-SALES-002",
+          "DOC-SCEN-001",
+          "PROC-SALES-002",
+          "PROC-ENG-002",
+          "DOC-CORP-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 2.08
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-SALES-002",
+          "PROC-SALES-002",
+          "PROC-SALES-002",
+          "DOC-SCEN-001",
+          "PROC-ENG-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 5.981794999968315,
+        "answer_ms": 10.86,
+        "status": "partial",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": false,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-SALES-002"
+        ],
+        "intents": [
+          "version",
+          "approval"
+        ],
+        "reasons": [
+          "intent version: keyword in question",
+          "intent approval: keyword in question",
+          "candidates +1 from keywords ['proposal', 'discount'] of PROC-SALES-002",
+          "archived documents included: question is about version"
+        ],
+        "notes": [
+          "Known gap GAP-632E5429 (high): Proposal and Quotation: This process does not currently specify what happens if a customer requests mid-negotiation changes to committed go-live dates after a proposal has already been approved at a given discount tier. In practice this is resolved ad hoc between the AE and Sales Manager; no formal escalation path exists.",
+          "Known gap GAP-673F5A99 (high): Bug Reporting and Escalation: This process does not document what happens when a customer reports a bug on a deprecated product version that is no longer receiving active development (e.g., a legacy NexFlow configuration mode retired from new sales but still running for a small number of legacy customers). In practice, these reports are currently triaged case-by-case by the Engineering Manager with no documented standard, which has led to inconsistent customer communication in at least two known cases.",
+          "Not covered by the quoted sources: wants. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q31",
+      "category": "germany",
+      "question": "What should a new employee moving to Germany prepare during their first week?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "DOC-CARE-003"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-TG-001",
+          "DOC-CARE-002",
+          "DOC-DEPT-ENG",
+          "PROC-HR-001",
+          "PROC-HR-001"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "ms": 1.88
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-DEPT-HR",
+          "DOC-CARE-003",
+          "DOC-TG-001",
+          "DOC-DEPT-ENG"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "retrieval_ms": 5.459792999999991,
+        "answer_ms": 9.74,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-CARE-003"
+        ],
+        "intents": [
+          "germany"
+        ],
+        "reasons": [
+          "intent germany: keyword in question",
+          "candidates +1 from keywords ['employee', 'new'] of DOC-DEPT-HR",
+          "candidates +4 from intent germany -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Germany checklist items due within the first 7 days (Phase 3 checklist, from DOC-CARE-003/004). Nothing is marked done: progress only counts when you report it.",
+          "Address Registration (Anmeldung): Check the current official guidance for your location and circumstances — exact deadlines and required documents can vary and change; do not rely solely on this checklist for the legal requirement itself.",
+          "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\""
+        ]
+      }
+    },
+    {
+      "id": "Q32",
+      "category": "germany",
+      "question": "When should I open a bank account after relocating to Germany?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-CARE-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-001",
+          "DOC-CARE-002",
+          "DOC-CARE-002",
+          "DOC-DEPT-CS"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.81
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-001",
+          "DOC-CARE-002",
+          "DOC-CARE-002",
+          "DOC-DEPT-CS"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 5.090467000002263,
+        "answer_ms": 8.69,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-CARE-002",
+          "DOC-CARE-002",
+          "DOC-CARE-001"
+        ],
+        "intents": [
+          "germany"
+        ],
+        "reasons": [
+          "intent germany: keyword in question",
+          "candidates +4 from intent germany -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\""
+        ]
+      }
+    },
+    {
+      "id": "Q33",
+      "category": "germany",
+      "question": "Who at Nexora can help me find housing in Munich?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-CARE-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-002",
+          "DOC-CARE-001",
+          "DOC-CORP-001",
+          "DOC-COMM-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.87
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-002",
+          "DOC-CARE-001",
+          "DOC-CORP-001",
+          "DOC-COMM-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 4.979644000002281,
+        "answer_ms": 8.78,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-CARE-002",
+          "DOC-CARE-002",
+          "DOC-CARE-001"
+        ],
+        "intents": [
+          "germany"
+        ],
+        "reasons": [
+          "intent germany: location Munich is in Germany",
+          "candidates +4 from intent germany -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\""
+        ]
+      }
+    },
+    {
+      "id": "Q34",
+      "category": "germany",
+      "question": "Do I need to register my address in Germany, and by when?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-CARE-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-003",
+          "DOC-CARE-002",
+          "DOC-CARE-001",
+          "DOC-CARE-004"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.77
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-003",
+          "DOC-CARE-002",
+          "DOC-CARE-001",
+          "DOC-CARE-004"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 5.021865000003345,
+        "answer_ms": 8.99,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-CARE-003",
+          "DOC-CARE-002"
+        ],
+        "intents": [
+          "germany"
+        ],
+        "reasons": [
+          "intent germany: keyword in question",
+          "candidates +1 from keywords ['germany', 'address'] of DOC-CARE-002",
+          "candidates +3 from intent germany -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\""
+        ]
+      }
+    },
+    {
+      "id": "Q35",
+      "category": "communication",
+      "question": "What tone should I use when writing to colleagues in Germany?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "DOC-COMM-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-COMM-001",
+          "DOC-COMM-001",
+          "DOC-COMM-006",
+          "DOC-DEPT-FIN",
+          "DOC-COMM-006"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "ms": 1.75
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-COMM-001",
+          "DOC-COMM-001",
+          "DOC-COMM-001",
+          "DOC-COMM-006",
+          "DOC-DEPT-FIN"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "retrieval_ms": 5.363941999974031,
+        "answer_ms": 9.45,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-COMM-002"
+        ],
+        "intents": [
+          "germany",
+          "communication"
+        ],
+        "reasons": [
+          "intent germany: keyword in question",
+          "intent communication: keyword in question",
+          "candidates +1 from keywords ['colleague', 'tone'] of DOC-COMM-002",
+          "candidates +1 from communication question about germany: tone profile + overview",
+          "Germany relocation documents not added: this is a communication question",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Tone profiles describe common workplace tendencies, not rules about any individual. A person's own stated preference always comes first, and company policy is separate from cultural guidance (see DOC-COMM-001)."
+        ]
+      }
+    },
+    {
+      "id": "Q36",
+      "category": "communication",
+      "question": "How do colleagues in the US usually communicate urgency?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-COMM-004"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-COMM-003",
+          "DOC-COMM-001"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "ms": 1.79
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-COMM-001",
+          "DOC-COMM-003"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "retrieval_ms": 4.910684999970272,
+        "answer_ms": 8.5,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-COMM-004"
+        ],
+        "intents": [
+          "communication"
+        ],
+        "reasons": [
+          "intent communication: keyword in question",
+          "candidates +2 from communication question about united states: tone profile + overview",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Tone profiles describe common workplace tendencies, not rules about any individual. A person's own stated preference always comes first, and company policy is separate from cultural guidance (see DOC-COMM-001).",
+          "Not covered by the quoted sources: colleagues. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q37",
+      "category": "communication",
+      "question": "Which channel should I use for a quick question to a colleague?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-HR-003"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-COMM-002",
+          "DOC-COMM-003",
+          "DOC-DEPT-FIN",
+          "PROC-HR-003",
+          "DOC-CORP-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.25
+        },
+        "ms": 1.83
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-COMM-002",
+          "DOC-COMM-003",
+          "DOC-DEPT-FIN",
+          "PROC-HR-003",
+          "DOC-CORP-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.25
+        },
+        "retrieval_ms": 3.2138990000021295,
+        "answer_ms": 6.5,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The closest sources don't mention most of what you asked (not covered: channel, quick, question). It may not be documented at Nexora."
+        ]
+      }
+    },
+    {
+      "id": "Q38",
+      "category": "no_answer",
+      "question": "What is the company policy on bringing pets to the office?",
+      "seen_in_development": true,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "PROC-HR-002",
+          "DOC-DEPT-IT",
+          "PROC-IT-001"
+        ],
+        "metrics": null,
+        "ms": 1.84
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "PROC-HR-002",
+          "DOC-DEPT-IT",
+          "PROC-IT-001"
+        ],
+        "metrics": null,
+        "retrieval_ms": 3.1076949999828685,
+        "answer_ms": 7.52,
+        "status": "not_found",
+        "status_correct": true,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The closest sources don't mention most of what you asked (not covered: bringing, pets). It may not be documented at Nexora."
+        ]
+      }
+    },
+    {
+      "id": "Q39",
+      "category": "no_answer",
+      "question": "What is Nexora's current stock price?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-PROD-NEXFLOW",
+          "DOC-PROD-NEXFLOW",
+          "DOC-PROD-NEXAUTO",
+          "DOC-CARE-004",
+          "DOC-CARE-002"
+        ],
+        "metrics": null,
+        "ms": 1.8
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-PROD-NEXFLOW",
+          "DOC-PROD-NEXFLOW",
+          "DOC-PROD-NEXAUTO",
+          "DOC-CARE-004",
+          "DOC-CARE-002"
+        ],
+        "metrics": null,
+        "retrieval_ms": 2.706961000001229,
+        "answer_ms": 6.18,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": 0.0,
+        "faithful": true,
+        "cited": [
+          "DOC-PROD-NEXFLOW",
+          "DOC-PROD-NEXAUTO",
+          "DOC-PROD-NEXFLOW"
+        ],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: price. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    },
+    {
+      "id": "Q40",
+      "category": "no_answer",
+      "question": "How many vacation days do employees in the Paris office get?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-002",
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "PROC-HR-001-ADDENDUM",
+          "PROC-IT-002"
+        ],
+        "metrics": null,
+        "ms": 1.79
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-HR-001",
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002"
+        ],
+        "metrics": null,
+        "retrieval_ms": 5.276557000001958,
+        "answer_ms": 9.06,
+        "status": "not_found",
+        "status_correct": true,
+        "expected_status": [
+          "not_found",
+          "partial"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['day', 'employee', 'days'] of PROC-HR-001",
+          "candidates +1 from keywords ['employees', 'days'] of PROC-HR-002",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The closest sources don't mention most of what you asked (not covered: vacation, paris, office). It may not be documented at Nexora."
+        ]
+      }
+    },
+    {
+      "id": "Q41",
+      "category": "no_answer",
+      "question": "What is the parental leave policy for contractors in Austin?",
+      "seen_in_development": true,
+      "gold_documents": [
+        "PROC-HR-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-IT-002",
+          "DOC-DEPT-HR",
+          "PROC-HR-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.79
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-IT-002",
+          "DOC-DEPT-HR",
+          "PROC-HR-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.989545999957045,
+        "answer_ms": 7.62,
+        "status": "partial",
+        "status_correct": true,
+        "expected_status": [
+          "partial"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-HR-002"
+        ],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: contractors, austin. The answer above may not apply to that part of your question; it isn't documented there."
+        ]
+      }
+    }
+  ]
+}

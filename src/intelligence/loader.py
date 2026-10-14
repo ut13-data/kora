@@ -212,9 +212,13 @@ def load_phase2(
     tables: dict[str, list[dict]] = {}
     extracted: list[ExtractedTable] = []
     tables_dir = processed_dir / "tables"
+    table_notes: list[str] = []
     if not tables_dir.exists():
-        raise Phase2OutputMissing(f"{tables_dir} not found. Run Phase 2 first:  python -m src.ingest")
-    for path in sorted(tables_dir.glob("*.json")):
+        # A company with documents only (no CSV registries) is valid input:
+        # there is simply no structured data. documents.json missing would
+        # still mean Phase 2 never ran, and raises above.
+        table_notes.append(f"{tables_dir} not found: no CSV tables, structured data (employees, roles...) is empty")
+    for path in sorted(tables_dir.glob("*.json")) if tables_dir.exists() else []:
         data = _read_json(path)
         fi = data["file_info"]
         info = FileInfo(filename=fi["filename"], file_type=FileType(fi["file_type"]),
@@ -242,5 +246,5 @@ def load_phase2(
         unresolved_references=report.get("unresolved_references", []),
         phase2_issues=report.get("issues", []),
         source_texts=source_texts,
-        load_notes=notes,
+        load_notes=table_notes + notes,
     )

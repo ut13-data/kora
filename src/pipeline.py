@@ -14,7 +14,9 @@ from pathlib import Path
 from src.ingestion.file_intake import identify_file, UnsupportedFileTypeError
 from src.extraction.extractor import extract_file, ExtractedDocument, ExtractedTable, ExtractionError
 from src.cleaning.cleaner import clean_extracted
-from src.metadata.document_metadata import identify_document_metadata, DocumentMetadata
+from src.metadata.document_metadata import (
+    identify_document_metadata, apply_fallback_identity, DocumentMetadata,
+)
 from src.chunking.chunker import chunk_document, Chunk
 from src.metadata.relationships import derive_document_relationships, Relationship
 from src.validation.validator import run_all_validations, ValidationIssue
@@ -60,6 +62,7 @@ def process_file(
     file_path: Path,
     chunk_size: int = DEFAULT_CHUNK_SIZE,
     overlap: int = DEFAULT_OVERLAP,
+    root: Path | None = None,
 ) -> ProcessedDocument | ProcessedTable:
     """Run Stages 1-6 on a single file.
 
@@ -76,6 +79,10 @@ def process_file(
 
     # isinstance(cleaned, ExtractedDocument)
     metadata = identify_document_metadata(cleaned)
+    # Documents without a header ID/title (real-world PDFs, DOCX...) get
+    # labelled stand-ins, so two such files never share one identity.
+    relative = file_path.relative_to(root) if root and file_path.is_relative_to(root) else Path(file_path.name)
+    metadata = apply_fallback_identity(metadata, cleaned, relative.as_posix())
     chunks = chunk_document(cleaned, metadata, chunk_size=chunk_size, overlap=overlap)
     #relationships = derive_document_relationships(metadata)
 
@@ -101,7 +108,7 @@ def process_folder(
         if not file_path.is_file():
             continue
         try:
-            result = process_file(file_path, chunk_size, overlap)
+            result = process_file(file_path, chunk_size, overlap, root=folder)
         except (UnsupportedFileTypeError, ExtractionError) as e:
             skipped.append(f"{file_path.name}: {e}")
             continue

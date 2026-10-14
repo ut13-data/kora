@@ -3,3 +3,5 @@ pypdf
 langchain-text-splitters
 pytest
 scikit-learn
+# Optional, OFF by default (config: embeddings.enabled). Only needed to try meaning-based search:
+# sentence-transformers

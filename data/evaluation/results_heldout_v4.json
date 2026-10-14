@@ -1,0 +1,711 @@
+{
+  "dataset": "data\\evaluation\\heldout_v4_questions.json",
+  "semantic": "off (not enabled in config)",
+  "top_k": 5,
+  "label_problems": [],
+  "resources": {
+    "load_seconds": 0.163,
+    "startup_steps_s": {
+      "read_files": 0.027,
+      "router": 0.069,
+      "word_indexes": 0.039,
+      "answer_layer": 0.019,
+      "total_s": 0.154
+    },
+    "peak_python_memory_mb": 6.4,
+    "index_build_seconds": {
+      "baseline_indexes": 0.0293,
+      "kora_router_extra": 0.0087
+    },
+    "chunks": 187
+  },
+  "summary": {
+    "all": {
+      "questions": 10,
+      "baseline": {
+        "hit@5": 0.571,
+        "recall@5": 0.571,
+        "mrr": 0.405
+      },
+      "kora": {
+        "hit@5": 0.571,
+        "recall@5": 0.571,
+        "mrr": 0.405,
+        "status_accuracy": 0.3,
+        "key_fact_found": 0.143,
+        "citation_precision": 0.5,
+        "faithfulness": 1.0
+      }
+    },
+    "new_questions_only": {
+      "questions": 10,
+      "baseline": {
+        "hit@5": 0.571,
+        "recall@5": 0.571,
+        "mrr": 0.405
+      },
+      "kora": {
+        "hit@5": 0.571,
+        "recall@5": 0.571,
+        "mrr": 0.405,
+        "status_accuracy": 0.3,
+        "key_fact_found": 0.143,
+        "citation_precision": 0.5,
+        "faithfulness": 1.0
+      }
+    },
+    "seen_in_development": {
+      "questions": 0,
+      "baseline": {
+        "hit@5": null,
+        "recall@5": null,
+        "mrr": null
+      },
+      "kora": {
+        "hit@5": null,
+        "recall@5": null,
+        "mrr": null,
+        "status_accuracy": null,
+        "key_fact_found": null,
+        "citation_precision": null,
+        "faithfulness": null
+      }
+    },
+    "by_category": {
+      "missing_info": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 0.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "no_answer": {
+        "questions": 3,
+        "baseline": {
+          "hit@5": null,
+          "recall@5": null,
+          "mrr": null
+        },
+        "kora": {
+          "hit@5": null,
+          "recall@5": null,
+          "mrr": null,
+          "status_accuracy": 0.333,
+          "key_fact_found": null,
+          "citation_precision": 0.0,
+          "faithfulness": 1.0
+        }
+      },
+      "role_process": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0
+        },
+        "kora": {
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "status_accuracy": 0.0,
+          "key_fact_found": 0.0,
+          "citation_precision": null,
+          "faithfulness": 1.0
+        }
+      },
+      "synonym": {
+        "questions": 5,
+        "baseline": {
+          "hit@5": 0.6,
+          "recall@5": 0.6,
+          "mrr": 0.367
+        },
+        "kora": {
+          "hit@5": 0.6,
+          "recall@5": 0.6,
+          "mrr": 0.367,
+          "status_accuracy": 0.2,
+          "key_fact_found": 0.2,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      }
+    },
+    "latency_ms": {
+      "baseline_retrieval_p50": 1.28,
+      "baseline_retrieval_p95": 2.02,
+      "kora_answer_p50": 6.55,
+      "kora_answer_p95": 8.58
+    }
+  },
+  "questions": [
+    {
+      "id": "X01",
+      "category": "synonym",
+      "question": "How often should customers hear from support while a P1 outage is still going on?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-SUP-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-CORP-003",
+          "PROC-SUP-002",
+          "DOC-PROD-IMPLSUP",
+          "DOC-DEPT-SUP",
+          "DOC-PROD-IMPLSUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 2.02
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CORP-003",
+          "PROC-SUP-002",
+          "DOC-PROD-IMPLSUP",
+          "DOC-DEPT-SUP",
+          "DOC-PROD-IMPLSUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "retrieval_ms": 3.906599711626768,
+        "answer_ms": 8.58,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The knowledge base never mentions hear, outage. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "X02",
+      "category": "synonym",
+      "question": "Who double-checks someone's code before it gets merged?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-ENG-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-DATA",
+          "DOC-CARE-001",
+          "DOC-DEPT-SUP",
+          "DOC-PROD-NEXAUTO"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "ms": 1.25
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-DATA",
+          "DOC-CARE-001",
+          "DOC-DEPT-SUP",
+          "DOC-PROD-NEXAUTO"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "retrieval_ms": 3.5749003291130066,
+        "answer_ms": 7.15,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "no specific topic, keywords or conflict matched; using broad department topic(s)",
+          "candidates +4 from topic TOPIC-IT-SECURITY (matched 'it', weak)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The knowledge base never mentions double. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "X03",
+      "category": "synonym",
+      "question": "For how long does the team keep an eye on errors after a release goes out?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-ENG-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-ENG-001",
+          "PROC-ENG-001",
+          "DOC-COMM-002",
+          "DOC-COMM-003",
+          "DOC-DEPT-IMPL"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.26
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-ENG-001",
+          "PROC-ENG-001",
+          "DOC-COMM-002",
+          "DOC-COMM-003",
+          "DOC-DEPT-IMPL"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.592099830508232,
+        "answer_ms": 6.55,
+        "status": "partial",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-ENG-001",
+          "PROC-ENG-001"
+        ],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: eye. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "X04",
+      "category": "synonym",
+      "question": "Does my boss have to OK a week of holiday?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-HR-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-ENG",
+          "DOC-CARE-003",
+          "DOC-CARE-001",
+          "DOC-CARE-004",
+          "DOC-DEPT-IMPL"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "ms": 1.28
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-ENG",
+          "DOC-CARE-003",
+          "DOC-CARE-001",
+          "DOC-CARE-004",
+          "DOC-DEPT-IMPL"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "retrieval_ms": 2.1111001260578632,
+        "answer_ms": 5.73,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "No sentence in the retrieved sources answers this question. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "X05",
+      "category": "synonym",
+      "question": "How soon after a major outage must the lessons-learned review happen?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-SUP-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IT-002",
+          "DOC-CARE-002",
+          "PROC-SUP-002",
+          "DOC-CARE-003",
+          "PROC-IT-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "ms": 1.26
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IT-002",
+          "DOC-CARE-002",
+          "PROC-SUP-002",
+          "DOC-CARE-003",
+          "PROC-IT-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "retrieval_ms": 2.405500039458275,
+        "answer_ms": 6.71,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The knowledge base never mentions outage, lessons, learned. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "X06",
+      "category": "role_process",
+      "question": "Who checks whether a new supplier is legit before we buy from them?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-FIN-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-DATA",
+          "PROC-HR-001",
+          "PROC-HR-001",
+          "DOC-DEPT-HR",
+          "PROC-HR-001-ADDENDUM"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "ms": 1.28
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-DATA",
+          "PROC-HR-001",
+          "PROC-HR-001",
+          "DOC-DEPT-HR",
+          "DOC-CARE-001"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "retrieval_ms": 2.438100054860115,
+        "answer_ms": 6.55,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The knowledge base never mentions supplier, legit, buy. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "X07",
+      "category": "no_answer",
+      "question": "How many leave days do employees in the Madrid office get?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "DOC-DEPT-OPS",
+          "PROC-HR-002",
+          "DOC-CARE-002"
+        ],
+        "metrics": null,
+        "ms": 1.31
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002"
+        ],
+        "metrics": null,
+        "retrieval_ms": 3.62219987437129,
+        "answer_ms": 6.39,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": 0.0,
+        "faithful": true,
+        "cited": [
+          "PROC-HR-002",
+          "PROC-HR-002"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['day', 'employee', 'days'] of PROC-HR-001",
+          "candidates +1 from keywords ['leave', 'employees', 'days'] of PROC-HR-002",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: madrid, office. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "X08",
+      "category": "no_answer",
+      "question": "Does Nexora pay for a gym membership?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-DEPT-IMPL",
+          "DOC-CARE-002",
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-SUP"
+        ],
+        "metrics": null,
+        "ms": 1.28
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-DEPT-IMPL",
+          "DOC-CARE-002",
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-SUP"
+        ],
+        "metrics": null,
+        "retrieval_ms": 2.004999667406082,
+        "answer_ms": 5.44,
+        "status": "not_found",
+        "status_correct": true,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The knowledge base never mentions gym, membership. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "X09",
+      "category": "no_answer",
+      "question": "How do I book a meeting room in Bengaluru?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-003",
+          "DOC-DEPT-CS"
+        ],
+        "metrics": null,
+        "ms": 1.28
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-COMM-003",
+          "DOC-COMM-003",
+          "DOC-COMM-003",
+          "PROC-HR-003",
+          "DOC-DEPT-CS"
+        ],
+        "metrics": null,
+        "retrieval_ms": 4.660599865019321,
+        "answer_ms": 8.58,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": 0.0,
+        "faithful": true,
+        "cited": [
+          "DOC-COMM-003",
+          "DOC-COMM-003"
+        ],
+        "intents": [
+          "communication"
+        ],
+        "reasons": [
+          "intent communication: communication words + country india",
+          "candidates +2 from communication question about india: tone profile + overview",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Tone profiles describe common workplace tendencies, not rules about any individual. A person's own stated preference always comes first, and company policy is separate from cultural guidance (see DOC-COMM-001).",
+          "Not covered by the quoted sources: book, room. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "X10",
+      "category": "missing_info",
+      "question": "How many days of annual leave do part-time employees in London get?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-HR-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-FIN-003",
+          "PROC-HR-002",
+          "PROC-IT-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.26
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-FIN-003",
+          "PROC-IT-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.6248997785151005,
+        "answer_ms": 6.25,
+        "status": "partial",
+        "status_correct": true,
+        "expected_status": [
+          "partial"
+        ],
+        "contains_fact": false,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-HR-002"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['day', 'employee', 'days'] of PROC-HR-001",
+          "candidates +1 from keywords ['leave', 'employees', 'days'] of PROC-HR-002",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: london. The answer above may not apply to that part of your question."
+        ]
+      }
+    }
+  ]
+}

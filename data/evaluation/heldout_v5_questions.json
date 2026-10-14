@@ -1,0 +1,137 @@
+{
+ "description": "Held-out set v5: 10 questions written by UT (not the builder) on 2026-10-14, in his own words, without looking at the documents. Labels by Claude against the documents: 8 are not documented (salary, promotion, overtime, notice period...), so the right answer is a refusal.",
+ "questions": [
+  {
+   "id": "U01",
+   "category": "no_answer",
+   "question": "What is my salary structure?",
+   "gold_documents": [],
+   "acceptable_documents": [],
+   "expected_status": [
+    "not_found"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  },
+  {
+   "id": "U02",
+   "category": "no_answer",
+   "question": "Who do I report to in absence of my manager?",
+   "gold_documents": [],
+   "acceptable_documents": [],
+   "expected_status": [
+    "not_found"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  },
+  {
+   "id": "U03",
+   "category": "no_answer",
+   "question": "How do I get the promotion?",
+   "gold_documents": [],
+   "acceptable_documents": [],
+   "expected_status": [
+    "not_found"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  },
+  {
+   "id": "U04",
+   "category": "no_answer",
+   "question": "What is the procedure to change the team?",
+   "gold_documents": [],
+   "acceptable_documents": [],
+   "expected_status": [
+    "not_found"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  },
+  {
+   "id": "U05",
+   "category": "no_answer",
+   "question": "How can I apply for certifications if any?",
+   "gold_documents": [],
+   "acceptable_documents": [],
+   "expected_status": [
+    "not_found"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  },
+  {
+   "id": "U06",
+   "category": "role_process",
+   "question": "Who do I contact for reimbursement?",
+   "gold_documents": [
+    "PROC-FIN-001"
+   ],
+   "acceptable_documents": [],
+   "expected_status": [
+    "answered",
+    "partial"
+   ],
+   "expected_contains": "expense portal",
+   "seen_in_development": false
+  },
+  {
+   "id": "U07",
+   "category": "no_answer",
+   "question": "If I do overtime do I get paid extra?",
+   "gold_documents": [],
+   "acceptable_documents": [],
+   "expected_status": [
+    "not_found"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  },
+  {
+   "id": "U08",
+   "category": "no_answer",
+   "question": "I don't want to serve the notice period, what should I do?",
+   "gold_documents": [],
+   "acceptable_documents": [],
+   "expected_status": [
+    "not_found"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  },
+  {
+   "id": "U09",
+   "category": "communication",
+   "question": "Can you teach me how to talk to the CEO?",
+   "gold_documents": [
+    "DOC-COMM-001"
+   ],
+   "acceptable_documents": [
+    "DOC-COMM-002",
+    "DOC-COMM-003",
+    "DOC-COMM-004",
+    "DOC-COMM-005",
+    "PROC-HR-003"
+   ],
+   "expected_status": [
+    "answered",
+    "partial"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  },
+  {
+   "id": "U10",
+   "category": "no_answer",
+   "question": "If I come late to the office will my salary be cut?",
+   "gold_documents": [],
+   "acceptable_documents": [],
+   "expected_status": [
+    "not_found"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  }
+ ]
+}

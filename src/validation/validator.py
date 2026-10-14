@@ -45,10 +45,18 @@ def validate_metadata_batch(all_metadata: list[DocumentMetadata]) -> list[Valida
         if metadata.document_id == UNKNOWN:
             issues.append(ValidationIssue(Severity.ERROR,
                 "Document is missing a Document ID", metadata.source_filename))
+        elif metadata.id_source == "derived_from_path":
+            issues.append(ValidationIssue(Severity.WARNING,
+                f"Document has no Document ID in its header; using derived ID {metadata.document_id}",
+                metadata.source_filename))
 
         if metadata.title == UNKNOWN:
             issues.append(ValidationIssue(Severity.WARNING,
                 "Document is missing a title", metadata.source_filename))
+        elif metadata.title_source == "derived_from_text":
+            issues.append(ValidationIssue(Severity.WARNING,
+                f"Document has no title in its header; using its first heading/line: '{metadata.title}'",
+                metadata.source_filename))
 
         # A missing version is "unknown", not "invalid", so only check found ones.
         if metadata.version != UNKNOWN and not _looks_like_valid_version(metadata.version):

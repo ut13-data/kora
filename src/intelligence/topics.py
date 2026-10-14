@@ -82,16 +82,28 @@ class _Unit:
 class _Topics:
     def __init__(self, data: Phase2Data, index: EntityIndex):
         self.data, self.index = data, index
-        self.units: list[_Unit] = []
+        self.notes: list[str] = []
+        all_units: list[_Unit] = []
         for doc in sorted(index.of_type(DOCUMENT), key=lambda d: d.entity_id):
             a = doc.attributes
             for s in data.sections(a["header_document_id"], a["version"]):
                 text = plain(s.text)
-                if len(text.split()) >= MIN_SECTION_WORDS:
-                    self.units.append(_Unit(doc.entity_id, s.name, s.chunk_ids, f"{s.name} {text}"))
+                if text.strip():
+                    all_units.append(_Unit(doc.entity_id, s.name, s.chunk_ids, f"{s.name} {text}"))
+        self.units = [u for u in all_units if len(u.text.split()) - len(u.section.split()) >= MIN_SECTION_WORDS]
+        if not self.units and all_units:
+            # Very short documents only (possible with real-world files): use
+            # every section rather than none.
+            self.units = all_units
+            self.notes.append(f"no section has {MIN_SECTION_WORDS}+ words: topic scoring uses all sections")
         self.vectorizer = TfidfVectorizer(**_VECTORIZER_ARGS)
-        self.X = self.vectorizer.fit_transform([u.text for u in self.units])
-        self.terms = np.array(self.vectorizer.get_feature_names_out())
+        self.empty = False
+        try:
+            self.X = self.vectorizer.fit_transform([u.text for u in self.units])
+            self.terms = np.array(self.vectorizer.get_feature_names_out())
+        except ValueError:          # no sections, or nothing but stop words
+            self.empty, self.X, self.terms = True, None, np.array([])
+            self.notes.append("no usable text for topic scoring: keywords, similarity and themes are empty")
 
     # ---------- anchors ----------
 
@@ -137,6 +149,8 @@ class _Topics:
     # ---------- scoring ----------
 
     def _profile(self, topic: Topic) -> np.ndarray | None:
+        if self.empty:
+            return None
         rows = [i for i, u in enumerate(self.units) if u.document_id in topic.home_documents]
         if not rows:
             return None
@@ -202,6 +216,9 @@ class _Topics:
     # ---------- emergent themes ----------
 
     def emergent(self, anchored: list[Topic]) -> dict:
+        if self.empty or len(self.units) < 3:
+            return {"k": None, "silhouette": None, "themes": [],
+                    "note": "too little text for clustering"}
         dense = self.X.toarray()
         best_k, best_score, best_labels = None, -1.0, None
         for k in CLUSTER_RANGE:
@@ -236,6 +253,8 @@ class _Topics:
                 "themes": themes}
 
     def document_keywords(self) -> dict[str, list[str]]:
+        if self.empty:
+            return {}
         by_doc: dict[str, list[int]] = defaultdict(list)
         for i, u in enumerate(self.units):
             by_doc[u.document_id].append(i)

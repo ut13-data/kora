@@ -5,3 +5,8 @@ __pycache__/
 data/processed/
 data/chunks/
 data/intelligence/
+# Phase 4 runtime files (rebuilt / written by src.index)
+data/logs/
+data/index_manifest.json
+data/.index_build/
+data/retrieval/

@@ -1,0 +1,731 @@
+{
+  "dataset": "data\\evaluation\\heldout_v3_questions.json",
+  "semantic": "on: all-MiniLM-L6-v2 (187 chunks, 0 newly encoded)",
+  "top_k": 5,
+  "label_problems": [],
+  "resources": {
+    "load_seconds": 51.117,
+    "peak_python_memory_mb": 294.8,
+    "index_build_seconds": {
+      "baseline_indexes": 0.0493,
+      "kora_router_extra": 0.0396
+    },
+    "chunks": 187
+  },
+  "summary": {
+    "all": {
+      "questions": 10,
+      "baseline": {
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.792
+      },
+      "kora": {
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "status_accuracy": 0.7,
+        "key_fact_found": 0.625,
+        "citation_precision": 0.917,
+        "faithfulness": 1.0
+      }
+    },
+    "new_questions_only": {
+      "questions": 10,
+      "baseline": {
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.792
+      },
+      "kora": {
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.75,
+        "status_accuracy": 0.7,
+        "key_fact_found": 0.625,
+        "citation_precision": 0.917,
+        "faithfulness": 1.0
+      }
+    },
+    "seen_in_development": {
+      "questions": 0,
+      "baseline": {
+        "hit@5": null,
+        "recall@5": null,
+        "mrr": null
+      },
+      "kora": {
+        "hit@5": null,
+        "recall@5": null,
+        "mrr": null,
+        "status_accuracy": null,
+        "key_fact_found": null,
+        "citation_precision": null,
+        "faithfulness": null
+      }
+    },
+    "by_category": {
+      "exact_fact": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.5
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "germany": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "no_answer": {
+        "questions": 2,
+        "baseline": {
+          "hit@5": null,
+          "recall@5": null,
+          "mrr": null
+        },
+        "kora": {
+          "hit@5": null,
+          "recall@5": null,
+          "mrr": null,
+          "status_accuracy": 1.0,
+          "key_fact_found": null,
+          "citation_precision": null,
+          "faithfulness": 1.0
+        }
+      },
+      "role_process": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.5
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.25,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "synonym": {
+        "questions": 5,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.867
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.75,
+          "status_accuracy": 0.4,
+          "key_fact_found": 0.4,
+          "citation_precision": 0.833,
+          "faithfulness": 1.0
+        }
+      }
+    },
+    "latency_ms": {
+      "baseline_retrieval_p50": 2.5,
+      "baseline_retrieval_p95": 2.91,
+      "kora_answer_p50": 28.64,
+      "kora_answer_p95": 59.93
+    }
+  },
+  "questions": [
+    {
+      "id": "W01",
+      "category": "synonym",
+      "question": "How soon after a trip are my expenses paid back?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-FIN-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-FIN-001",
+          "PROC-FIN-001",
+          "DOC-PROD-IMPLSUP",
+          "DOC-CARE-003",
+          "DOC-PROD-CUSTDEV"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 2.33
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-FIN-001",
+          "PROC-FIN-001",
+          "PROC-FIN-001",
+          "DOC-PROD-IMPLSUP",
+          "DOC-CARE-003"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 26.668500155210495,
+        "answer_ms": 59.93,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-EXPENSE-POLICY (matched 'expense', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The knowledge base never mentions trip. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "W02",
+      "category": "synonym",
+      "question": "Who checks that a bug fix actually works for the customer before the ticket is closed?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-ENG-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-SUP-001",
+          "DOC-DEPT-SUP",
+          "PROC-ENG-002",
+          "PROC-SUP-002",
+          "PROC-ENG-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "ms": 2.36
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-SUP-001",
+          "PROC-SUP-001",
+          "PROC-SUP-001",
+          "PROC-ENG-002",
+          "DOC-DEPT-SUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.25
+        },
+        "retrieval_ms": 23.485700134187937,
+        "answer_ms": 29.12,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": false,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-SUP-001"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['bug', 'ticket'] of PROC-SUP-001",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: checks, fix. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "W03",
+      "category": "synonym",
+      "question": "What happens to system access that nobody has used for three months?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-IT-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IT-001",
+          "DOC-DEPT-DATA",
+          "PROC-SALES-002",
+          "DOC-CARE-002",
+          "PROC-IT-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 2.5
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IT-001",
+          "PROC-IT-001",
+          "DOC-DEPT-IT",
+          "DOC-DEPT-DATA",
+          "PROC-IT-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 23.594200145453215,
+        "answer_ms": 28.5,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 0.5,
+        "faithful": true,
+        "cited": [
+          "PROC-IT-001",
+          "DOC-DEPT-IT"
+        ],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "W04",
+      "category": "synonym",
+      "question": "Who can tell me how many sick days I get at my location?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-HR-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-HR-001-ADDENDUM",
+          "DOC-COMM-006"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 2.18
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-001",
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "PROC-HR-002",
+          "DOC-COMM-006"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "retrieval_ms": 23.875099606812,
+        "answer_ms": 28.55,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-HR-002"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['day', 'days'] of PROC-HR-001",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "W05",
+      "category": "role_process",
+      "question": "Who looks after the office building in Munich?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-DEPT-OPS"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-OPS"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 2.69
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-002",
+          "DOC-CARE-002",
+          "DOC-DEPT-OPS",
+          "DOC-DEPT-HR"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.25
+        },
+        "retrieval_ms": 23.319799918681383,
+        "answer_ms": 29.39,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "DOC-CARE-002"
+        ],
+        "intents": [
+          "relocation"
+        ],
+        "reasons": [
+          "intent relocation (Germany new-joiner care): country germany named",
+          "candidates +4 from intent relocation -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\""
+        ]
+      }
+    },
+    {
+      "id": "W06",
+      "category": "exact_fact",
+      "question": "What score does a lead need before it is handed to an SDR?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-SALES-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-MKT",
+          "PROC-SALES-001",
+          "DOC-DEPT-SALES",
+          "PROC-SALES-001",
+          "DOC-DEPT-MKT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 2.6
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-SALES-001",
+          "PROC-SALES-001",
+          "PROC-SALES-001",
+          "DOC-DEPT-MKT",
+          "DOC-DEPT-SALES"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 22.38979982212186,
+        "answer_ms": 28.64,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-SALES-001",
+          "DOC-DEPT-MKT"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['sdr', 'lead'] of PROC-SALES-001",
+          "broad department word(s) ['it'] ignored: something more specific matched",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "W07",
+      "category": "synonym",
+      "question": "Am I allowed to fly business class?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-FIN-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-FIN-001",
+          "PROC-SALES-001",
+          "PROC-SUP-002",
+          "PROC-FIN-001",
+          "DOC-PROD-IMPLSUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 2.43
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-FIN-001",
+          "PROC-SALES-001",
+          "PROC-SUP-002",
+          "PROC-FIN-001",
+          "DOC-PROD-IMPLSUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 20.068499725311995,
+        "answer_ms": 24.17,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The knowledge base never mentions fly. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "W08",
+      "category": "germany",
+      "question": "Where can I find the nearest hospital when I arrive in Munich?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-CARE-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 2.64
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-003",
+          "DOC-CARE-002",
+          "DOC-DEPT-HR",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 23.87040015310049,
+        "answer_ms": 30.17,
+        "status": "partial",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-CARE-002"
+        ],
+        "intents": [
+          "relocation"
+        ],
+        "reasons": [
+          "intent relocation (Germany new-joiner care): country germany named",
+          "candidates +4 from intent relocation -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\"",
+          "Not covered by the quoted sources: arrive. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "W09",
+      "category": "no_answer",
+      "question": "What is the company car policy?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-IT",
+          "PROC-IT-001",
+          "PROC-IT-002",
+          "PROC-CS-001",
+          "PROC-IT-002"
+        ],
+        "metrics": null,
+        "ms": 2.91
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-IT-001",
+          "PROC-IT-002",
+          "PROC-IT-001",
+          "DOC-DEPT-IT",
+          "DOC-DEPT-PROD"
+        ],
+        "metrics": null,
+        "retrieval_ms": 20.571100059896708,
+        "answer_ms": 25.45,
+        "status": "not_found",
+        "status_correct": true,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "No sentence in the retrieved sources answers this question. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "W10",
+      "category": "no_answer",
+      "question": "How big is the annual bonus for engineers?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-CORP-002",
+          "PROC-IT-002",
+          "PROC-ENG-001",
+          "PROC-FIN-003",
+          "PROC-FIN-002"
+        ],
+        "metrics": null,
+        "ms": 2.64
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-ENG-001",
+          "DOC-DEPT-ENG",
+          "DOC-CORP-002",
+          "PROC-IT-002",
+          "PROC-FIN-003"
+        ],
+        "metrics": null,
+        "retrieval_ms": 23.27079977840185,
+        "answer_ms": 29.7,
+        "status": "not_found",
+        "status_correct": true,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['engineers', 'engineer'] of PROC-ENG-001",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "The knowledge base never mentions big, bonus. It may not be documented."
+        ]
+      }
+    }
+  ]
+}

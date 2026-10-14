@@ -1,0 +1,148 @@
+{
+ "description": "Held-out set v4, written on 2026-10-13 AFTER the v3 run and BEFORE any change to the semantic gates (the 'why' tool was built first and run only on development questions). Focus: everyday paraphrases, unknown names, unknown subjects next to real topics, and one partial. Run once, after the gate change; never used for tuning.",
+ "questions": [
+  {
+   "id": "X01",
+   "category": "synonym",
+   "question": "How often should customers hear from support while a P1 outage is still going on?",
+   "gold_documents": [
+    "PROC-SUP-002"
+   ],
+   "acceptable_documents": [],
+   "expected_status": [
+    "answered",
+    "partial"
+   ],
+   "expected_contains": "every 2 hours",
+   "seen_in_development": false
+  },
+  {
+   "id": "X02",
+   "category": "synonym",
+   "question": "Who double-checks someone's code before it gets merged?",
+   "gold_documents": [
+    "PROC-ENG-001"
+   ],
+   "acceptable_documents": [
+    "DOC-DEPT-ENG"
+   ],
+   "expected_status": [
+    "answered"
+   ],
+   "expected_contains": "code review",
+   "seen_in_development": false
+  },
+  {
+   "id": "X03",
+   "category": "synonym",
+   "question": "For how long does the team keep an eye on errors after a release goes out?",
+   "gold_documents": [
+    "PROC-ENG-001"
+   ],
+   "acceptable_documents": [],
+   "expected_status": [
+    "answered",
+    "partial"
+   ],
+   "expected_contains": "48 hours",
+   "seen_in_development": false
+  },
+  {
+   "id": "X04",
+   "category": "synonym",
+   "question": "Does my boss have to OK a week of holiday?",
+   "gold_documents": [
+    "PROC-HR-002"
+   ],
+   "acceptable_documents": [],
+   "expected_status": [
+    "answered",
+    "partial"
+   ],
+   "expected_contains": "5 consecutive working days",
+   "seen_in_development": false
+  },
+  {
+   "id": "X05",
+   "category": "synonym",
+   "question": "How soon after a major outage must the lessons-learned review happen?",
+   "gold_documents": [
+    "PROC-SUP-002"
+   ],
+   "acceptable_documents": [],
+   "expected_status": [
+    "answered",
+    "partial"
+   ],
+   "expected_contains": "5 business days",
+   "seen_in_development": false
+  },
+  {
+   "id": "X06",
+   "category": "role_process",
+   "question": "Who checks whether a new supplier is legit before we buy from them?",
+   "gold_documents": [
+    "PROC-FIN-002"
+   ],
+   "acceptable_documents": [
+    "DOC-DEPT-OPS"
+   ],
+   "expected_status": [
+    "answered",
+    "partial"
+   ],
+   "expected_contains": "Operations Analyst",
+   "seen_in_development": false
+  },
+  {
+   "id": "X07",
+   "category": "no_answer",
+   "question": "How many leave days do employees in the Madrid office get?",
+   "gold_documents": [],
+   "acceptable_documents": [],
+   "expected_status": [
+    "not_found"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  },
+  {
+   "id": "X08",
+   "category": "no_answer",
+   "question": "Does Nexora pay for a gym membership?",
+   "gold_documents": [],
+   "acceptable_documents": [],
+   "expected_status": [
+    "not_found"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  },
+  {
+   "id": "X09",
+   "category": "no_answer",
+   "question": "How do I book a meeting room in Bengaluru?",
+   "gold_documents": [],
+   "acceptable_documents": [],
+   "expected_status": [
+    "not_found"
+   ],
+   "expected_contains": null,
+   "seen_in_development": false
+  },
+  {
+   "id": "X10",
+   "category": "missing_info",
+   "question": "How many days of annual leave do part-time employees in London get?",
+   "gold_documents": [
+    "PROC-HR-002"
+   ],
+   "acceptable_documents": [],
+   "expected_status": [
+    "partial"
+   ],
+   "expected_contains": "25 days/year",
+   "seen_in_development": false
+  }
+ ]
+}

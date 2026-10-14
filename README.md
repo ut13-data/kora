@@ -1,6 +1,6 @@
 # KORA: Knowledge Object Retrieval Agent
 
-KORA turns a company's internal knowledge (policies, processes, product docs, org data) into a clean, structured dataset, and then into an **understanding of the organization** behind it: who does what, who approves what, what conflicts, what is missing, and what matters to a specific employee. All of it is built so that later retrieval and an AI assistant can answer questions with sources.
+KORA turns a company's internal knowledge (policies, processes, product docs, org data) into a clean, structured dataset, then into an **understanding of the organization** behind it (who does what, who approves what, what conflicts, what is missing), and then **answers questions from it with sources**: every answer line is quoted word-for-word from a cited document, and when the documents don't say something, KORA says so instead of guessing.
 
 The source data is **Nexora Systems**, a synthetic mid-sized B2B software company (53 Markdown documents, 7 CSV tables).
 
@@ -10,9 +10,10 @@ The source data is **Nexora Systems**, a synthetic mid-sized B2B software compan
 |---|---|---|
 | 2 | Ingestion: extract, clean, chunk, metadata, validate | complete |
 | 3 | Knowledge intelligence: entities, relationships, processes, topics, quality, people | complete |
-| next | Retrieval and reasoning on top of the intelligence layer | planned |
+| 4 | Retrieval, reasoning, cited answers, validation, access control, evaluation | complete |
+| 5 | UI and dashboards | next |
 
-Phase 3 deliberately uses **no RAG, embeddings, vector database, LLM or external AI service**: only Python, regular expressions, and scikit-learn (TF-IDF) where it genuinely helps.
+KORA uses **no LLM, vector database or external AI service**: only Python, regular expressions and scikit-learn (TF-IDF). Meaning-based search with a small local embedding model exists as an option and is **off** by default (see Phase 4).
 
 ## Quick start
 
@@ -29,7 +30,14 @@ Knowledge files live in `data/raw/`. Then:
 ```
 python -m src.ingest                      # Phase 2: documents -> chunks + metadata
 python -m src.build_intelligence          # Phase 3: -> data/intelligence/*.json + knowledge_report.md
-python -m pytest test/ -v                 # 136 tests
+python -m pytest test/ -q                 # 329 tests
+
+python -m src.ask "Who approves purchases above 10000 euros?"     # Phase 4: ask, with sources
+python -m src.ask "How soon is a business trip paid back?" --why  # ... and why KORA chose its status
+python -m src.ask "What are the payment terms for vendor invoices?" --as EMP-0113   # as an employee
+python -m src.ask                                                 # interactive (loads once)
+python -m src.index --status                                      # is the index current?
+python -m src.evaluation.run_eval                                 # evaluation vs a plain TF-IDF baseline
 
 python -m src.explain EMP-0077 PROD-NEXFLOW          # how two things connect, with evidence
 python -m src.explain process:PROC-IMPL-001 --rel approves
@@ -144,6 +152,67 @@ Joining stages are computed relative to `as_of` (default **2025-04-22**, so that
 - **Corroborations:** FAQ answers match the processes; stated headcounts match `employees.csv`; "Project Lead" (v1.0) and "Implementation Manager" (v2.0) resolve to the same approver.
 - **Germany care:** 15 items; address registration, health insurance and tax keep the "check the current official guidance" caveat; Berlin has no local contact for housing and emergency information.
 
+---
+
+## Phase 4: Retrieval, reasoning and cited answers
+
+```
+Question -> Route (catalogue) -> Retrieve -> Reason -> Answer -> Cite -> Validate
+```
+
+| Step | What it does | Code |
+|---|---|---|
+| Index check | Before every question: has `data/raw` changed (size/mtime, then SHA-256)? If so, Phase 2 + 3 are rebuilt into a temporary folder and swapped in only on success, so a new file is answerable on the next question and a failed rebuild keeps the old index. | `src/index.py` |
+| Route | ASRS-style navigation over Phase 3's catalogue: topics, roles, locations, documents named by ID, intents (approval, escalation, conflict, gap, version, document listing), Germany relocation and communication programs, archived handling. Gives candidate documents, conflicts to show, and a reason for every choice. | `src/retrieval/router.py` |
+| Retrieve | Tiered search: conflict sides, named documents, routed candidates (capped at 3 of 5 slots), then 2 slots always reserved for a whole-corpus TF-IDF search so a routing mistake can't hide the answer, then documents that only mention a named ID. | `src/retrieval/search.py`, `retrieve.py` |
+| Reason | Phase 3 rules (approval / escalation), conflict sides (never a winner), version changes, Germany checklist items for the asked time window, the right country tone profile, declared gaps. | `src/retrieval/answer.py` |
+| Answer | Short: 2-3 quoted lines. Status: **answered**, **partial** (with the uncovered words named), **conflict**, or **not_found**. | `answer.py` |
+| Cite | Every line carries a numbered source: document ID, version, status, effective date, section, chunk, file. | `answer.py` |
+| Validate | At runtime every line is checked word-for-word against its cited chunk; a line that fails is removed and recorded. Notes flag archived sources, unknown metadata, known gaps, older versions and relocation disclaimers. | `answer.py` |
+
+### Precision first: when KORA refuses
+
+KORA prefers "not found" to a wrong answer. It refuses when:
+- the question uses a word **no document ever uses** ("pets", "Madrid", "overtime"); the "why" view names the word;
+- the evidence is weak **and** the question's main words are not together in one quoted line (stops answers stitched from unrelated sentences, e.g. "salary structure");
+- none of the main words appear in the closest sources.
+
+A word the documents use elsewhere but not in the quoted source ("contractors") makes the answer **partial**, with the word named.
+
+### Configuration (`config/kora_config.json`)
+
+Company-specific behaviour lives here, validated on load (every problem listed at once); Phase 5's UI will edit it.
+
+| Section | Purpose |
+|---|---|
+| `thresholds` | Every tunable number, each with an allowed range |
+| `synonyms` | **Company word list**: everyday phrase -> the words the documents use (`"trip": ["travel"]`). Used for search and coverage, shown in the answer when used. This is how everyday wording is taught to KORA. |
+| `access` | **Access control** (M7): document ID pattern -> groups allowed to read it (`all`, `manager`, `dept:<id>`, `loc:<id>`, `role:<id>`, `emp:<id>`, from the employees table). Documents without a rule are open. A hidden document is never searched, quoted, cited or named; the user gets the same "not found" as for undocumented things. The two Nexora rules are an example. |
+| `relocation`, `communication` | Germany new-joiner program and country tone profiles |
+| `embeddings` | Optional meaning-based search (`sentence-transformers`, all-MiniLM-L6-v2). **Off**: it improved ranking but not answers on unseen questions, and added PyTorch and a ~8 s start-up. |
+| `gap_severities`, `intent_patterns` | Which known gaps to show; extra intent patterns |
+
+### Every answer also carries
+
+- `decision`: the "why" (which rule decided, scores and thresholds, unknown words, word-list matches) -- `--why` in the CLI;
+- `timings`: per step for this answer (index check, route, search, compose) and KORA's start-up per step;
+- `user`: who asked. Every answer is appended to `data/logs/answers.jsonl` (for Phase 5 dashboards).
+
+### Evaluation (`src/evaluation/`, `reports/`)
+
+Questions with document-level gold labels; KORA vs a plain TF-IDF baseline (no router, no answer layer). The development set was used while building; held-out sets were written before the code they test and run once.
+
+| Set | n | Baseline: right doc in top 5 | KORA: right doc in top 5 | KORA correct status | Faithful |
+|---|---|---|---|---|---|
+| Development | 41 | 0.90 | 1.00 | 0.98 | 1.00 |
+| Held-out v1 / v2 / v3 (builder-written) | 30 | 0.96 avg | 0.96 avg | 0.70 / 0.80 / 0.70 | 1.00 |
+| Held-out v4 (everyday wording, builder) | 10 | 0.57 | 0.57 | 0.30 | 1.00 |
+| Held-out v5 (written by UT, independent) | 10 | 0.50 | 0.50 | 0.80 | 1.00 |
+
+Faithfulness is 1.00 everywhere (enforced at runtime). Answers take ~7 ms (p95 ~10 ms); start-up ~0.4 s. The numbers above are after all fixes; the first, untouched run of each held-out set and every fix made after it are recorded honestly in `reports/phase4_m5_findings.md`.
+
+**Known limits.** KORA understands the documents' own words plus the company word list: everyday wording it hasn't been taught is refused (safe, but not helpful; v4). Homonyms can slip through as *partial*: "notice period" (HR) matched an engineering "notice period"; "stock" (shares vs inventory). Thresholds were tuned on one synthetic company. Answers are quotes, not prose.
+
 ## Project structure
 
 ```
@@ -153,15 +222,23 @@ KORA/
 │   ├── processed/        # Phase 2 JSON output
 │   ├── chunks/           # chunks.jsonl
 │   ├── context/          # Phase 3 INPUTS: checklist progress, communication preferences
-│   └── intelligence/     # Phase 3 output + knowledge_report.md
+│   ├── intelligence/     # Phase 3 output + knowledge_report.md
+│   ├── evaluation/       # Phase 4 question sets (dev, held-out v1-v5) and results
+│   └── logs/             # answers.jsonl (every answer, for dashboards)
+├── config/kora_config.json     # company configuration (thresholds, word list, access, programs)
+├── reports/                    # evaluation reports + phase4_m5_findings.md
 ├── src/
 │   ├── ingest.py               # Phase 2 entry point
 │   ├── build_intelligence.py   # Phase 3 entry point
 │   ├── explain.py              # explore the graph from the terminal
 │   ├── employee.py             # one employee's context from the terminal
+│   ├── ask.py                  # Phase 4: ask KORA (--why, --as, interactive)
+│   ├── index.py                # Phase 4: index check / rebuild, answer logging
+│   ├── retrieval/              # Phase 4: config, router, search, answer, access, embeddings (optional)
+│   ├── evaluation/             # Phase 4: run_eval, calibrate_semantic
 │   ├── pipeline.py, ingestion/, extraction/, cleaning/, chunking/, metadata/, validation/, storage/
 │   └── intelligence/           # Phase 3 modules (one file per concern)
-├── test/                       # pytest: Phase 2 + Phase 3 (136 tests)
+├── test/                       # pytest: Phase 2-4 (329 tests)
 ├── requirements.txt
 └── README.md
 ```
@@ -177,4 +254,4 @@ These are issues in the Nexora source data, not in KORA:
 
 ## Next phase
 
-Retrieval and reasoning on top of this layer: retrieve chunks, then use entities, relationships, rules, conflicts and employee context to answer with sources, the right version, and the right tone.
+Phase 5: a UI and dashboards on top of `Kora.ask(question, user=...)`: ask with login (access control), show sources, the "why" and timings, edit the configuration (word list, access rules), and chart `data/logs/answers.jsonl` (refusals and their unknown words, latency, statuses). Later: a service layer / API, and an optional language-model step to rephrase questions and answers.

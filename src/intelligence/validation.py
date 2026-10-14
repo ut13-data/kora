@@ -23,6 +23,9 @@ from src.intelligence.models import (
 
 PASS, WARN, FAIL = "pass", "warn", "fail"
 
+# Stand-in ID Phase 2 gives a document without an ID in its header.
+DERIVED_DOCUMENT_ID = r"FILE-[A-Z0-9]+(?:-[A-Z0-9]+)*"
+
 # What a valid ID looks like for each entity type (Nexora's own formats, plus KORA-made prefixes).
 ID_FORMATS = {
     EMPLOYEE: r"EMP-\d{4}", ROLE: r"ROLE-\d{3}", DEPARTMENT: r"DEPT-[A-Z]+", LOCATION: r"LOC-[A-Z]{3}",
@@ -57,14 +60,24 @@ class _Validator:
     # ---------- entities ----------
 
     def entities_valid(self) -> None:
-        bad = []
+        """FAIL only for what is a KORA bug (no ID, unknown type). An ID in
+        another naming scheme is a source-data difference: another company's
+        documents won't use Nexora's DOC-/PROC- prefixes. KORA's own stand-in
+        IDs for documents without a header ID (FILE-...) are always valid."""
+        bad, other_scheme = [], []
         for e in self.entities.values():
             pattern = ID_FORMATS.get(e["entity_type"])
             if e["entity_type"] not in ENTITY_TYPES:
                 bad.append(f"{e['key']}: unknown entity type")
-            elif not e["entity_id"] or (pattern and not re.fullmatch(pattern, e["entity_id"])):
-                bad.append(f"{e['key']}: ID does not match {pattern}")
-        self.add("entity_ids_valid", "Every entity has an ID in the expected format for its type", bad)
+            elif not e["entity_id"]:
+                bad.append(f"{e['key']}: empty ID")
+            elif e["entity_type"] in (DOCUMENT, POLICY) and re.fullmatch(DERIVED_DOCUMENT_ID, e["entity_id"]):
+                continue
+            elif pattern and not re.fullmatch(pattern, e["entity_id"]):
+                other_scheme.append(f"{e['key']}: ID does not match {pattern}")
+        self.add("entity_ids_valid", "Every entity has an ID and a known entity type", bad)
+        self.add("entity_ids_expected_format", "Entity IDs follow the expected naming scheme "
+                 "(other schemes are reported, not errors)", other_scheme, WARN)
 
         dupes = self.o["entities"].get("collisions", [])
         self.add("no_duplicate_ids", "No entity key (type:ID) is used twice", dupes)

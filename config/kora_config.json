@@ -1,0 +1,139 @@
+{
+  "description": "KORA company configuration. Company-specific features live here, not in code. Remove a section to switch that feature off. Validated on load (src/retrieval/config.py); Phase 5's UI will edit this file.",
+  "company": "Nexora Systems",
+  "thresholds": {
+    "top_k": 5,
+    "global_reserved_slots": 2,
+    "routed_min_score": 0.05,
+    "max_lines": 3,
+    "max_lines_per_chunk": 2,
+    "sentence_min_score": 0.1,
+    "strong_evidence_score": 0.25,
+    "rule_min_score": 0.15,
+    "max_rules": 2,
+    "min_quote_words": 5,
+    "unrouted_quote_ratio": 0.5,
+    "conflict_overlap_with_intent": 2,
+    "conflict_overlap_without_intent": 3,
+    "conflict_confidence_without_intent": 0.8,
+    "keyword_min_overlap": 2,
+    "keyword_max_documents": 4,
+    "document_list_min_confidence": 0.9,
+    "quote_relative_floor": 0.5,
+    "semantic_top_n": 20,
+    "semantic_min_score": 0.3,
+    "semantic_quote_min": 0.58,
+    "semantic_strong_evidence": 0.59,
+    "semantic_word_min": 0.54
+  },
+  "gap_severities": [
+    "high",
+    "medium"
+  ],
+  "synonyms": {
+    "_comment": "Company word list: everyday phrase -> the words your documents use. Matched as whole words (plural allowed); KORA searches with both and says so in the answer. Keep it short and add your own.",
+    "trip": [
+      "travel"
+    ],
+    "money back": [
+      "reimbursed",
+      "reimbursement"
+    ],
+    "refund": [
+      "reimbursed",
+      "reimbursement"
+    ],
+    "pushed live": [
+      "deploys",
+      "release"
+    ],
+    "push live": [
+      "deploys",
+      "release"
+    ]
+  },
+  "access": {
+    "_comment": "Who may read which document. A document without a rule is open to everyone. Groups: all, manager, dept:<id>, loc:<id>, role:<id>, emp:<id> (from the employees table). Several matching rules: the user must pass all. These two rules are an EXAMPLE for Nexora; edit freely.",
+    "rules": {
+      "PROC-FIN-003": [
+        "dept:DEPT-FIN",
+        "dept:DEPT-OPS"
+      ],
+      "DOC-DEPT-FIN": [
+        "dept:DEPT-FIN",
+        "manager"
+      ]
+    }
+  },
+  "embeddings": {
+    "enabled": false,
+    "model": "all-MiniLM-L6-v2",
+    "cache_file": "data/retrieval/embeddings_cache.npz"
+  },
+  "relocation": {
+    "name": "Germany new-joiner care",
+    "intent_patterns": [
+      "\\bgerman",
+      "\\brelocat",
+      "\\bsettling in\\b",
+      "\\banmeldung\\b"
+    ],
+    "countries": [
+      "germany"
+    ],
+    "topic_id": "TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+    "checklist_file": "germany_checklists",
+    "disclaimer": true
+  },
+  "communication": {
+    "intent_patterns": [
+      "\\btone\\b",
+      "\\bphras(?:e|es|ed|ing)\\b",
+      "\\bwording\\b",
+      "\\bpolite",
+      "\\bcommunicat\\w* (?:style|norms?|culture|preferences?)\\b",
+      "\\bhow (?:do|should|can) i (?:say|write|tell|phrase|address|word)\\b"
+    ],
+    "weak_intent_patterns": [
+      "\\bcommunicat",
+      "\\bfeedback\\b",
+      "\\bdisagree",
+      "\\bmeetings?\\b",
+      "\\bemails?\\b",
+      "\\bwrit(?:e|ing)\\b",
+      "\\burgency\\b",
+      "\\bdirect(?:ness)?\\b"
+    ],
+    "topic_id": "TOPIC-COMMUNICATION-CULTURE-TONE-GUIDELINES",
+    "overview_document": "DOC-COMM-001",
+    "profiles": {
+      "germany": "DOC-COMM-002",
+      "india": "DOC-COMM-003",
+      "united states": "DOC-COMM-004",
+      "united kingdom": "DOC-COMM-005"
+    },
+    "country_words": {
+      "germany": "germany",
+      "german": "germany",
+      "munich": "germany",
+      "berlin": "germany",
+      "india": "india",
+      "indian": "india",
+      "bengaluru": "india",
+      "bangalore": "india",
+      "united kingdom": "united kingdom",
+      "britain": "united kingdom",
+      "british": "united kingdom",
+      "england": "united kingdom",
+      "london": "united kingdom",
+      "UK": "united kingdom",
+      "united states": "united states",
+      "america": "united states",
+      "american": "united states",
+      "austin": "united states",
+      "USA": "united states",
+      "US": "united states"
+    },
+    "note": "Tone profiles describe common workplace tendencies, not rules about any individual. A person's own stated preference always comes first, and company policy is separate from cultural guidance (see DOC-COMM-001)."
+  }
+}

@@ -1,0 +1,821 @@
+{
+  "dataset": "data/evaluation/heldout_questions.json",
+  "top_k": 5,
+  "label_problems": [],
+  "resources": {
+    "load_seconds": 0.436,
+    "peak_python_memory_mb": 6.6,
+    "index_build_seconds": {
+      "baseline_indexes": 0.0373,
+      "kora_router_extra": 0.0071
+    },
+    "chunks": 187
+  },
+  "summary": {
+    "all": {
+      "questions": 10,
+      "baseline": {
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.856
+      },
+      "kora": {
+        "hit@5": 0.889,
+        "recall@5": 0.889,
+        "mrr": 0.778,
+        "status_accuracy": 0.7,
+        "key_fact_found": 0.5,
+        "citation_precision": 0.833,
+        "faithfulness": 1.0
+      }
+    },
+    "new_questions_only": {
+      "questions": 10,
+      "baseline": {
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.856
+      },
+      "kora": {
+        "hit@5": 0.889,
+        "recall@5": 0.889,
+        "mrr": 0.778,
+        "status_accuracy": 0.7,
+        "key_fact_found": 0.5,
+        "citation_precision": 0.833,
+        "faithfulness": 1.0
+      }
+    },
+    "seen_in_development": {
+      "questions": 0,
+      "baseline": {
+        "hit@5": null,
+        "recall@5": null,
+        "mrr": null
+      },
+      "kora": {
+        "hit@5": null,
+        "recall@5": null,
+        "mrr": null,
+        "status_accuracy": null,
+        "key_fact_found": null,
+        "citation_precision": null,
+        "faithfulness": null
+      }
+    },
+    "by_category": {
+      "communication": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 0.0,
+          "key_fact_found": 0.0,
+          "citation_precision": 0.5,
+          "faithfulness": 1.0
+        }
+      },
+      "conflict": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.2
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": null,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "exact_fact": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 0.0,
+          "key_fact_found": 0.0,
+          "citation_precision": null,
+          "faithfulness": 1.0
+        }
+      },
+      "germany": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.5
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.5,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "missing_info": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.5,
+          "status_accuracy": 0.0,
+          "key_fact_found": 0.0,
+          "citation_precision": null,
+          "faithfulness": 1.0
+        }
+      },
+      "no_answer": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": null,
+          "recall@5": null,
+          "mrr": null
+        },
+        "kora": {
+          "hit@5": null,
+          "recall@5": null,
+          "mrr": null,
+          "status_accuracy": 1.0,
+          "key_fact_found": null,
+          "citation_precision": null,
+          "faithfulness": 1.0
+        }
+      },
+      "outdated": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 0.0,
+          "citation_precision": 0.333,
+          "faithfulness": 1.0
+        }
+      },
+      "role_process": {
+        "questions": 2,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "synonym": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      }
+    },
+    "latency_ms": {
+      "baseline_retrieval_p50": 1.17,
+      "baseline_retrieval_p95": 1.9,
+      "kora_answer_p50": 5.33,
+      "kora_answer_p95": 6.48
+    }
+  },
+  "questions": [
+    {
+      "id": "H01",
+      "category": "exact_fact",
+      "question": "What is the P1 response time on the Standard support tier?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-PROD-IMPLSUP"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-PROD-IMPLSUP",
+          "DOC-PROD-NEXVIEW",
+          "PROC-SUP-001",
+          "PROC-SUP-002",
+          "DOC-DEPT-SUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.9
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-PROD-IMPLSUP",
+          "DOC-PROD-NEXVIEW",
+          "PROC-SUP-001",
+          "PROC-SUP-002",
+          "DOC-DEPT-SUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.3869149997372006,
+        "answer_ms": 4.01,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "No sentence in the retrieved sources answers this question. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "H02",
+      "category": "synonym",
+      "question": "Who has to build a custom connector to a customer's ERP system?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-PROD-NEXCONNECT"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-PROD-NEXCONNECT",
+          "DOC-PROD-NEXCONNECT",
+          "DOC-PROD-NEXAUTO",
+          "DOC-PROD-CUSTDEV",
+          "DOC-TG-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.37
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-PROD-NEXCONNECT",
+          "DOC-PROD-NEXCONNECT",
+          "DOC-PROD-NEXCONNECT",
+          "DOC-PROD-NEXAUTO",
+          "DOC-PROD-CUSTDEV"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.738538999641605,
+        "answer_ms": 6.48,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-PROD-NEXCONNECT",
+          "DOC-PROD-NEXCONNECT"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['connector', 'custom connector', 'erp'] of DOC-PROD-NEXCONNECT",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "H03",
+      "category": "role_process",
+      "question": "Who owns the lead-scoring model?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-DEPT-MKT"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-MKT",
+          "PROC-SALES-001",
+          "DOC-PROD-NEXCRM",
+          "DOC-CORP-002",
+          "DOC-DEPT-CS"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.44
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-MKT",
+          "PROC-SALES-001",
+          "DOC-PROD-NEXCRM",
+          "DOC-CORP-002",
+          "DOC-DEPT-CS"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 1.9791080003415118,
+        "answer_ms": 4.49,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-DEPT-MKT",
+          "PROC-SALES-001"
+        ],
+        "intents": [
+          "ownership"
+        ],
+        "reasons": [
+          "intent ownership: keyword in question",
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "H04",
+      "category": "role_process",
+      "question": "Can a department head approve a 150 euro per month software subscription without the full procurement process?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-FIN-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-FIN-002",
+          "PROC-FIN-002",
+          "DOC-CORP-002",
+          "DOC-DEPT-FIN",
+          "DOC-PROD-IMPLSUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.22
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-FIN-002",
+          "PROC-FIN-002",
+          "DOC-CORP-002",
+          "DOC-DEPT-FIN",
+          "DOC-PROD-IMPLSUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.9592610003419395,
+        "answer_ms": 5.8,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "PROC-FIN-002"
+        ],
+        "intents": [
+          "approval"
+        ],
+        "reasons": [
+          "intent approval: keyword in question",
+          "candidates +1 from topic TOPIC-PROCUREMENT-PROCESS (matched 'procurement process', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "H05",
+      "category": "germany",
+      "question": "By when should I be registered with a doctor after moving to Germany?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-CARE-004"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-004",
+          "DOC-CORP-001",
+          "DOC-DEPT-HR",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.15
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-004",
+          "DOC-CARE-002",
+          "DOC-CORP-001",
+          "DOC-DEPT-HR"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "retrieval_ms": 3.4149279999837745,
+        "answer_ms": 6.09,
+        "status": "partial",
+        "status_correct": true,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-CARE-004"
+        ],
+        "intents": [
+          "relocation"
+        ],
+        "reasons": [
+          "intent relocation (Germany new-joiner care): keyword in question",
+          "candidates +4 from intent relocation -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\"",
+          "Not covered by the quoted sources: doctor. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "H06",
+      "category": "communication",
+      "question": "How should I write to a mixed international group when I don't know their communication style?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-COMM-006"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-COMM-006",
+          "DOC-COMM-004",
+          "DOC-COMM-006",
+          "DOC-DEPT-SUP",
+          "DOC-COMM-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.16
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-COMM-006",
+          "DOC-COMM-004",
+          "DOC-COMM-006",
+          "DOC-DEPT-SUP",
+          "DOC-COMM-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.6846309999418736,
+        "answer_ms": 6.19,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": false,
+        "citation_precision": 0.5,
+        "faithful": true,
+        "cited": [
+          "DOC-COMM-006",
+          "DOC-COMM-004"
+        ],
+        "intents": [
+          "communication"
+        ],
+        "reasons": [
+          "intent communication: tone/phrasing words",
+          "candidates +7 from intent communication -> TOPIC-COMMUNICATION-CULTURE-TONE-GUIDELINES",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Tone profiles describe common workplace tendencies, not rules about any individual. A person's own stated preference always comes first, and company policy is separate from cultural guidance (see DOC-COMM-001).",
+          "Not covered by the quoted sources: write. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "H07",
+      "category": "missing_info",
+      "question": "How are bug reports on a legacy NexFlow configuration handled?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-ENG-002"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-ENG-002",
+          "DOC-FAQ-001",
+          "DOC-PROD-NEXCRM",
+          "DOC-PROD-NEXFLOW",
+          "DOC-PROD-CUSTDEV"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.17
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-PROD-NEXFLOW",
+          "PROC-ENG-002",
+          "DOC-FAQ-001",
+          "DOC-PROD-NEXCRM",
+          "DOC-PROD-CUSTDEV"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "retrieval_ms": 2.777856000193424,
+        "answer_ms": 4.69,
+        "status": "not_found",
+        "status_correct": false,
+        "expected_status": [
+          "answered",
+          "partial"
+        ],
+        "contains_fact": false,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-NEXFLOW (matched 'nexflow', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "No sentence in the retrieved sources answers this question. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "H08",
+      "category": "conflict",
+      "question": "How many office locations does Nexora have?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-CORP-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-HR",
+          "PROC-HR-003",
+          "DOC-CARE-002",
+          "DOC-DEPT-OPS",
+          "DOC-CORP-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.2
+        },
+        "ms": 1.06
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CORP-001",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-OPS",
+          "PROC-HR-003",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.9657239997504803,
+        "answer_ms": 5.46,
+        "status": "conflict",
+        "status_correct": true,
+        "expected_status": [
+          "conflict"
+        ],
+        "contains_fact": null,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-CORP-001",
+          "DOC-DEPT-HR",
+          "DOC-DEPT-OPS"
+        ],
+        "intents": [],
+        "reasons": [
+          "conflict CONF-91EBA1C7 matched on ['location', 'office'] (Phase 3 topic: 'number of locations', status open, found without the word conflict)",
+          "candidates +3 from conflict(s) CONF-91EBA1C7",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Conflict CONF-91EBA1C7 (count_claim): sources disagree on 'number of locations'. Status: open, i.e. no source says which statement is correct. KORA shows every side and does not pick one.",
+          "CONF-91EBA1C7: 3 statement(s) give a different number of locations than locations.csv rows (5)."
+        ]
+      }
+    },
+    {
+      "id": "H09",
+      "category": "no_answer",
+      "question": "What is the dress code at the London office?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "DOC-COMM-005",
+          "DOC-CORP-001",
+          "DOC-COMM-005"
+        ],
+        "metrics": null,
+        "ms": 1.14
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-COMM-005",
+          "DOC-COMM-005",
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "DOC-CORP-001"
+        ],
+        "metrics": null,
+        "retrieval_ms": 3.094323999903281,
+        "answer_ms": 5.33,
+        "status": "not_found",
+        "status_correct": true,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": null,
+        "faithful": true,
+        "cited": [],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from keywords ['london', 'london office'] of DOC-COMM-005",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "No sentence in the retrieved sources answers this question. It may not be documented."
+        ]
+      }
+    },
+    {
+      "id": "H10",
+      "category": "outdated",
+      "question": "Does Account Management still take over customers after go-live?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "PROC-IMPL-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "PROC-IMPL-001",
+          "DOC-PROD-NEXCRM",
+          "DOC-PROD-NEXFLOW",
+          "DOC-CORP-001",
+          "DOC-DEPT-CS"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.41
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-PROD-NEXCRM",
+          "DOC-PROD-NEXFLOW",
+          "DOC-CORP-001",
+          "DOC-DEPT-CS",
+          "DOC-CORP-001"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "retrieval_ms": 2.3353090000455268,
+        "answer_ms": 5.12,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": false,
+        "citation_precision": 0.3333333333333333,
+        "faithful": true,
+        "cited": [
+          "DOC-PROD-NEXCRM",
+          "DOC-DEPT-CS",
+          "DOC-CORP-001"
+        ],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,783 @@
+{
+  "dataset": "data/evaluation/heldout_v2_questions.json",
+  "top_k": 5,
+  "label_problems": [],
+  "resources": {
+    "load_seconds": 0.486,
+    "peak_python_memory_mb": 6.6,
+    "index_build_seconds": {
+      "baseline_indexes": 0.0304,
+      "kora_router_extra": 0.0067
+    },
+    "chunks": 187
+  },
+  "summary": {
+    "all": {
+      "questions": 10,
+      "baseline": {
+        "hit@5": 0.875,
+        "recall@5": 0.875,
+        "mrr": 0.812
+      },
+      "kora": {
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.854,
+        "status_accuracy": 0.5,
+        "key_fact_found": 0.875,
+        "citation_precision": 0.7,
+        "faithfulness": 1.0
+      }
+    },
+    "new_questions_only": {
+      "questions": 10,
+      "baseline": {
+        "hit@5": 0.875,
+        "recall@5": 0.875,
+        "mrr": 0.812
+      },
+      "kora": {
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "mrr": 0.854,
+        "status_accuracy": 0.5,
+        "key_fact_found": 0.875,
+        "citation_precision": 0.7,
+        "faithfulness": 1.0
+      }
+    },
+    "seen_in_development": {
+      "questions": 0,
+      "baseline": {
+        "hit@5": null,
+        "recall@5": null,
+        "mrr": null
+      },
+      "kora": {
+        "hit@5": null,
+        "recall@5": null,
+        "mrr": null,
+        "status_accuracy": null,
+        "key_fact_found": null,
+        "citation_precision": null,
+        "faithfulness": null
+      }
+    },
+    "by_category": {
+      "communication": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "exact_fact": {
+        "questions": 2,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "germany": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 1.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "multi_document": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.5
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.333,
+          "status_accuracy": 0.0,
+          "key_fact_found": 0.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      },
+      "no_answer": {
+        "questions": 2,
+        "baseline": {
+          "hit@5": null,
+          "recall@5": null,
+          "mrr": null
+        },
+        "kora": {
+          "hit@5": null,
+          "recall@5": null,
+          "mrr": null,
+          "status_accuracy": 0.0,
+          "key_fact_found": null,
+          "citation_precision": 0.0,
+          "faithfulness": 1.0
+        }
+      },
+      "role_process": {
+        "questions": 2,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.75,
+          "status_accuracy": 0.5,
+          "key_fact_found": 1.0,
+          "citation_precision": 0.5,
+          "faithfulness": 1.0
+        }
+      },
+      "synonym": {
+        "questions": 1,
+        "baseline": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0
+        },
+        "kora": {
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "status_accuracy": 0.0,
+          "key_fact_found": 1.0,
+          "citation_precision": 1.0,
+          "faithfulness": 1.0
+        }
+      }
+    },
+    "latency_ms": {
+      "baseline_retrieval_p50": 1.35,
+      "baseline_retrieval_p95": 1.88,
+      "kora_answer_p50": 6.37,
+      "kora_answer_p95": 10.3
+    }
+  },
+  "questions": [
+    {
+      "id": "V01",
+      "category": "exact_fact",
+      "question": "During which hours do Product and Engineering overlap?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-DEPT-PROD"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-PROD",
+          "DOC-CORP-001",
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-SUP",
+          "DOC-DEPT-PROD"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.88
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-PROD",
+          "DOC-DEPT-PROD",
+          "DOC-CORP-001",
+          "DOC-DEPT-SUP"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 4.541060000065045,
+        "answer_ms": 7.18,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-DEPT-PROD"
+        ],
+        "intents": [],
+        "reasons": [
+          "no specific topic, keywords or conflict matched; using broad department topic(s)",
+          "candidates +7 from topic TOPIC-PRODUCT (matched 'product', weak)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "V02",
+      "category": "role_process",
+      "question": "Who is responsible for month-end close?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-DEPT-FIN"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-FIN",
+          "DOC-CARE-004",
+          "DOC-DEPT-SALES",
+          "DOC-DEPT-MKT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.35
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-004",
+          "DOC-DEPT-FIN",
+          "DOC-DEPT-SALES",
+          "DOC-DEPT-MKT"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "retrieval_ms": 3.3886000001075445,
+        "answer_ms": 6.11,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 0.5,
+        "faithful": true,
+        "cited": [
+          "DOC-DEPT-FIN",
+          "DOC-CARE-004"
+        ],
+        "intents": [
+          "ownership"
+        ],
+        "reasons": [
+          "intent ownership: keyword in question",
+          "candidates +1 from keywords ['end', 'month'] of DOC-CARE-004",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\"",
+          "Not covered by the quoted sources: responsible. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "V03",
+      "category": "role_process",
+      "question": "Who approves exceptions to HR policies?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-DEPT-HR"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-HR",
+          "PROC-FIN-001",
+          "PROC-HR-002",
+          "DOC-DEPT-HR"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.17
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-DEPT-HR",
+          "PROC-HR-002",
+          "DOC-DEPT-HR",
+          "PROC-FIN-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 3.238556999804132,
+        "answer_ms": 6.37,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 0.5,
+        "faithful": true,
+        "cited": [
+          "DOC-DEPT-HR",
+          "PROC-FIN-001"
+        ],
+        "intents": [
+          "approval"
+        ],
+        "reasons": [
+          "intent approval: keyword in question",
+          "no specific topic, keywords or conflict matched; using broad department topic(s)",
+          "candidates +15 from topic TOPIC-HR (matched 'hr', weak)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "V04",
+      "category": "synonym",
+      "question": "How deep can conditional logic be nested in NexAuto automations?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-PROD-NEXAUTO"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-PROD-NEXAUTO",
+          "DOC-PROD-NEXAUTO",
+          "DOC-PROD-CUSTDEV",
+          "DOC-DEPT-DATA"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.19
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-PROD-NEXAUTO",
+          "DOC-PROD-NEXAUTO",
+          "DOC-PROD-CUSTDEV",
+          "DOC-DEPT-DATA"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.669478000370873,
+        "answer_ms": 4.93,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-PROD-NEXAUTO"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-NEXAUTO (matched 'nexauto', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: deep, logic. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "V05",
+      "category": "exact_fact",
+      "question": "Who scopes a custom development engagement before it is quoted?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-PROD-CUSTDEV"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-PROD-CUSTDEV",
+          "DOC-PROD-CUSTDEV",
+          "DOC-PROD-CUSTDEV",
+          "DOC-CORP-001",
+          "PROC-SALES-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.14
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-PROD-CUSTDEV",
+          "DOC-PROD-CUSTDEV",
+          "DOC-PROD-CUSTDEV",
+          "DOC-CORP-001",
+          "PROC-SALES-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 2.7178589998584357,
+        "answer_ms": 5.11,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-PROD-CUSTDEV",
+          "DOC-PROD-CUSTDEV"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-CUSTOM-DEVELOPMENT-SERVICES (matched 'custom development', strong)",
+          "broad department word(s) ['it'] ignored: something more specific matched",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": []
+      }
+    },
+    {
+      "id": "V06",
+      "category": "multi_document",
+      "question": "A customer's NexView dashboard only refreshes hourly - is that a bug?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-TG-001"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-PROD-NEXVIEW",
+          "DOC-TG-001",
+          "DOC-PROD-NEXVIEW",
+          "DOC-PROD-NEXCRM",
+          "PROC-ENG-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.5
+        },
+        "ms": 1.1
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-PROD-NEXVIEW",
+          "DOC-PROD-NEXVIEW",
+          "DOC-TG-001",
+          "DOC-PROD-NEXCRM",
+          "PROC-ENG-002"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333
+        },
+        "retrieval_ms": 2.8076819999114377,
+        "answer_ms": 5.86,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": false,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-PROD-NEXVIEW"
+        ],
+        "intents": [],
+        "reasons": [
+          "candidates +1 from topic TOPIC-NEXVIEW-ANALYTICS (matched 'nexview', strong)",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: bug. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "V07",
+      "category": "communication",
+      "question": "How do colleagues in the UK usually give feedback?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-COMM-005"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-COMM-001",
+          "DOC-DEPT-IMPL",
+          "PROC-HR-002",
+          "DOC-COMM-003",
+          "DOC-CARE-002"
+        ],
+        "metrics": {
+          "hit": false,
+          "recall": 0.0,
+          "reciprocal_rank": 0.0
+        },
+        "ms": 1.76
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-COMM-005",
+          "DOC-COMM-005",
+          "DOC-COMM-005",
+          "DOC-COMM-001",
+          "DOC-DEPT-IMPL"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 6.293074000041088,
+        "answer_ms": 10.3,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-COMM-005"
+        ],
+        "intents": [
+          "communication"
+        ],
+        "reasons": [
+          "intent communication: communication words + country united kingdom",
+          "candidates +2 from communication question about united kingdom: tone profile + overview",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Tone profiles describe common workplace tendencies, not rules about any individual. A person's own stated preference always comes first, and company policy is separate from cultural guidance (see DOC-COMM-001)."
+        ]
+      }
+    },
+    {
+      "id": "V08",
+      "category": "germany",
+      "question": "What should I have done by the end of my first two weeks in Germany?",
+      "seen_in_development": false,
+      "gold_documents": [
+        "DOC-CARE-004"
+      ],
+      "baseline": {
+        "retrieved": [
+          "DOC-CARE-004",
+          "PROC-HR-001",
+          "DOC-CARE-001",
+          "DOC-CARE-002",
+          "DOC-CARE-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "ms": 1.72
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-004",
+          "DOC-CARE-001",
+          "DOC-CARE-002",
+          "PROC-HR-001",
+          "DOC-CARE-001"
+        ],
+        "metrics": {
+          "hit": true,
+          "recall": 1.0,
+          "reciprocal_rank": 1.0
+        },
+        "retrieval_ms": 5.229052999766282,
+        "answer_ms": 9.78,
+        "status": "answered",
+        "status_correct": true,
+        "expected_status": [
+          "answered"
+        ],
+        "contains_fact": true,
+        "citation_precision": 1.0,
+        "faithful": true,
+        "cited": [
+          "DOC-CARE-003",
+          "DOC-CARE-004"
+        ],
+        "intents": [
+          "relocation"
+        ],
+        "reasons": [
+          "intent relocation (Germany new-joiner care): keyword in question",
+          "candidates +1 from keywords ['end', 'week'] of DOC-CARE-004",
+          "candidates +3 from intent relocation -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Checklist items due within the first 14 days (Germany new-joiner care). Nothing is marked done: progress only counts when you report it.",
+          "Address Registration (Anmeldung): Check the current official guidance for your location and circumstances — exact deadlines and required documents can vary and change; do not rely solely on this checklist for the legal requirement itself.",
+          "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\""
+        ]
+      }
+    },
+    {
+      "id": "V09",
+      "category": "no_answer",
+      "question": "What is the company's policy on stock options for employees?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-IT-002",
+          "DOC-PROD-NEXFLOW",
+          "PROC-IT-001",
+          "DOC-DEPT-IT"
+        ],
+        "metrics": null,
+        "ms": 1.82
+      },
+      "kora": {
+        "retrieved": [
+          "PROC-HR-002",
+          "PROC-IT-002",
+          "DOC-PROD-NEXFLOW",
+          "PROC-IT-001",
+          "DOC-DEPT-IT"
+        ],
+        "metrics": null,
+        "retrieval_ms": 3.704248000303778,
+        "answer_ms": 7.43,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": 0.0,
+        "faithful": true,
+        "cited": [
+          "DOC-PROD-NEXFLOW"
+        ],
+        "intents": [],
+        "reasons": [
+          "nothing recognised: search the whole knowledge base",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "Not covered by the quoted sources: options. The answer above may not apply to that part of your question."
+        ]
+      }
+    },
+    {
+      "id": "V10",
+      "category": "no_answer",
+      "question": "Who founded the Berlin office canteen?",
+      "seen_in_development": false,
+      "gold_documents": [],
+      "baseline": {
+        "retrieved": [
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "DOC-CORP-001",
+          "DOC-CARE-002",
+          "DOC-COMM-002"
+        ],
+        "metrics": null,
+        "ms": 1.71
+      },
+      "kora": {
+        "retrieved": [
+          "DOC-CARE-002",
+          "DOC-CARE-002",
+          "DOC-CARE-002",
+          "DOC-DEPT-OPS",
+          "DOC-CORP-001"
+        ],
+        "metrics": null,
+        "retrieval_ms": 4.159302000061871,
+        "answer_ms": 8.31,
+        "status": "partial",
+        "status_correct": false,
+        "expected_status": [
+          "not_found"
+        ],
+        "contains_fact": null,
+        "citation_precision": 0.0,
+        "faithful": true,
+        "cited": [
+          "DOC-DEPT-OPS",
+          "DOC-CARE-002",
+          "DOC-CARE-002"
+        ],
+        "intents": [
+          "relocation"
+        ],
+        "reasons": [
+          "intent relocation (Germany new-joiner care): country germany named",
+          "candidates +4 from intent relocation -> TOPIC-NEW-JOINER-LIFE-SETTLING-IN",
+          "archived documents excluded (current knowledge only); older versions will be noted"
+        ],
+        "notes": [
+          "This is not legal, immigration, tax, or government advice, and Nexora HR is not a government authority. Requirements can vary by city, nationality, visa type, and personal circumstance. Wherever something depends on individual circumstances, this program will say plainly: > \"Check the current official guidance for your location and circumstances.\"",
+          "Not covered by the quoted sources: founded, canteen. The answer above may not apply to that part of your question."
+        ]
+      }
+    }
+  ]
+}
