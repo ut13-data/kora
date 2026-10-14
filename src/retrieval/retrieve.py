@@ -90,6 +90,7 @@ class KoraRetriever:
         # Who can ask (M7): employee ID -> User with groups, from Phase 2 tables.
         from src.retrieval.access import users_from_tables
         self.users = users_from_tables(tables or {})
+        self.tables = tables or {}                 # Phase 5: locations for the answer layer
         self.semantic_status = "off (not enabled in config)"
         # Start-up time per step, in seconds (shown with every answer, so a
         # slow start can be traced to its cause).

@@ -273,6 +273,39 @@ def format_timings(timings: dict, startup: dict | None = None) -> str:
 
 # ---------------- text helpers ----------------
 
+# Other ways people and documents name a country (generic, not company data).
+COUNTRY_ALIASES = {
+    "usa": ["US", "U.S.", "United States", "America", "American"],
+    "united states": ["US", "U.S.", "USA", "America", "American"],
+    "united kingdom": ["UK", "U.K.", "Britain", "British", "England"],
+    "germany": ["German"],
+    "india": ["Indian"],
+}
+
+
+def location_patterns(rows: list[dict]) -> dict[str, list[re.Pattern]]:
+    """location_id -> patterns that name it: its ID, city, country and country
+    aliases. Short all-capital names ("US", "UK") only match in capitals, so the
+    word "us" in "tell us" is not the United States."""
+    out = {}
+    for r in rows:
+        loc = r.get("location_id")
+        if not loc:
+            continue
+        names = {loc, r.get("city") or "", r.get("country") or ""}
+        names |= set(COUNTRY_ALIASES.get((r.get("country") or "").lower(), []))
+        pats = []
+        for n in sorted(n for n in names if n):
+            flags = 0 if (n.isupper() and len(n.replace(".", "")) <= 3) or n == loc else re.IGNORECASE
+            pats.append(re.compile(r"(?<![A-Za-z0-9])" + re.escape(n) + r"(?![A-Za-z0-9])", flags))
+        out[loc] = pats
+    return out
+
+
+def places_in(text: str, locations: dict[str, list[re.Pattern]]) -> set[str]:
+    """The location IDs a text names ("Germany-based" -> both German offices)."""
+    return {loc for loc, pats in locations.items() if any(p.search(text) for p in pats)}
+
 _UNIT_START = re.compile(r"^(#+\s|[-*]\s|\d+\.\s|\*\*Q:|\*\*Scenario|>|\|)")
 _SENTENCE_SPLIT = re.compile(r"(?<=[.!?])\s+(?=[A-Z\"*(])")
 
@@ -459,6 +492,7 @@ class KoraAnswerer:
         self.load_timings: dict[str, float] = dict(retriever.load_timings)
         self.load_timings["answer_layer"] = round(time.perf_counter() - self._init_start, 3)
         self.graph = None                      # Phase 5: GraphService, attached by load()/from_intelligence()
+        self._locations = location_patterns(getattr(retriever, "tables", {}).get("locations") or [])
         self._precompute_sentences()
 
     @property
@@ -1220,8 +1254,15 @@ class KoraAnswerer:
         seen_text = {normalise(x) for x in already_used}
         per_chunk: dict[str, int] = {}
         out = []
+        asked_places = places_in(question, self._locations)
         for i in order:
             chunk_id, sentence = candidates[i]
+            if asked_places:
+                # Phase 5 M4: a line about ANOTHER office is noise ("US-based employees: 20 days"
+                # in an answer about Germany). Lines naming no office, or the asked one, stay.
+                named = places_in(sentence, self._locations)
+                if named and not named & asked_places:
+                    continue
             key = normalise(sentence)
             repeat = any(key == s or (len(s) > 30 and s in key) or (len(key) > 30 and key in s) for s in seen_text)
             if repeat or per_chunk.get(chunk_id, 0) >= t("max_lines_per_chunk"):

@@ -244,27 +244,37 @@ class Kora:
     def status(self) -> IndexStatus:
         return check(self.paths)
 
+    def refresh(self) -> IndexStatus:
+        """Make sure the index is current (rebuild if data/raw changed). Phase 5:
+        the API calls this before showing documents or the graph, not only before
+        a question."""
+        return self._ensure_current()
+
     def user(self, employee_id: str):
         """The User for an employee ID (groups from the employees table), or None."""
         self._ensure_current()
         return self.answerer.retriever.users.get(employee_id)
 
-    def ask(self, question: str, top_k: int | None = None, user=None):
+    def ask(self, question: str, top_k: int | None = None, user=None, channel: str | None = None):
         """Answer from the CURRENT files (rebuilds first if data/raw changed).
+        CHANNEL (Phase 5): where this question came from, for the log; default:
+        the channel KORA was opened with.
         answer.timings gains index_check_ms; if this question triggered a
         rebuild, answer.startup gains its seconds (and they count in total_s)."""
+        if channel is not None and channel not in CHANNELS:
+            raise ValueError(f"channel must be one of {CHANNELS}, not {channel!r}")
         t0 = time.perf_counter()
         rebuilt_before = self.last_build
         try:
             self._ensure_current()
         except Exception as e:                     # logged as an error, then raised as before
-            self._log_error("index", e, question, user)
+            self._log_error("index", e, question, user, channel)
             raise
         check_ms = (time.perf_counter() - t0) * 1000
         try:
             answer = self.answerer.answer(question, top_k=top_k, user=user)
         except Exception as e:
-            self._log_error("answer", e, question, user)
+            self._log_error("answer", e, question, user, channel)
             raise
         answer.timings = {"index_check_ms": round(check_ms, 2), **answer.timings,
                           "total_ms": round(answer.timings.get("total_ms", 0.0) + check_ms, 2)}
@@ -273,24 +283,24 @@ class Kora:
             rebuild_s = round(sum(secs.values()), 3)
             answer.startup = {"rebuild": rebuild_s, **answer.startup,
                               "total_s": round(answer.startup.get("total_s", 0.0) + rebuild_s, 3)}
-        self._log(answer)
+        self._log(answer, channel)
         return answer
 
-    def _log(self, answer) -> None:
-        self._write_log({"kind": "answer", **answer.to_log()})
+    def _log(self, answer, channel: str | None = None) -> None:
+        self._write_log({"kind": "answer", **answer.to_log()}, channel)
 
-    def _log_error(self, stage: str, error: Exception, question: str, user) -> None:
+    def _log_error(self, stage: str, error: Exception, question: str, user, channel: str | None = None) -> None:
         self._write_log({"kind": "error", "stage": stage, "error_type": type(error).__name__,
                          "message": str(error)[:300], "question": question,
-                         "user": user.user_id if user else None})
+                         "user": user.user_id if user else None}, channel)
 
-    def _write_log(self, body: dict) -> None:
+    def _write_log(self, body: dict, channel: str | None = None) -> None:
         if self.paths.log_dir is None:
             return
         try:
             self.paths.log_dir.mkdir(parents=True, exist_ok=True)
             record = {"schema": LOG_SCHEMA, "at": datetime.now(timezone.utc).isoformat(),
-                      "channel": self.channel, **body}
+                      "channel": channel or self.channel, **body}
             with open(self.paths.log_dir / "answers.jsonl", "a", encoding="utf-8") as f:
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
         except OSError as e:                       # logging must never break answering

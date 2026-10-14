@@ -5,3 +5,12 @@ pytest
 scikit-learn
 # Optional, OFF by default (config: embeddings.enabled). Only needed to try meaning-based search:
 # sentence-transformers
+
+# Phase 5: web API and UI. Checked: all have ready-made Windows wheels for Python 3.14.
+fastapi>=0.115
+pydantic>=2.12
+uvicorn>=0.30
+itsdangerous>=2.1
+python-multipart>=0.0.9
+jinja2>=3.1
+httpx>=0.27

@@ -11,7 +11,7 @@ The source data is **Nexora Systems**, a synthetic mid-sized B2B software compan
 | 2 | Ingestion: extract, clean, chunk, metadata, validate | complete |
 | 3 | Knowledge intelligence: entities, relationships, processes, topics, quality, people | complete |
 | 4 | Retrieval, reasoning, cited answers, validation, access control, evaluation | complete |
-| 5 | Knowledge graph reasoning, UI and dashboards | in progress (M0-M3 done) |
+| 5 | Knowledge graph reasoning, UI and dashboards | in progress (M0-M4 done) |
 
 KORA uses **no LLM, vector database or external AI service**: only Python, regular expressions and scikit-learn (TF-IDF). Meaning-based search with a small local embedding model exists as an option and is **off** by default (see Phase 4).
 
@@ -30,7 +30,7 @@ Knowledge files live in `data/raw/`. Then:
 ```
 python -m src.ingest                      # Phase 2: documents -> chunks + metadata
 python -m src.build_intelligence          # Phase 3: -> data/intelligence/*.json + knowledge_report.md
-python -m pytest test/ -q                 # 420 tests
+python -m pytest test/ -q                 # 458 tests
 
 python -m src.ask "Who approves purchases above 10000 euros?"     # Phase 4: ask, with sources
 python -m src.ask "How soon is a business trip paid back?" --why  # ... and why KORA chose its status
@@ -46,6 +46,7 @@ python -m src.explain process:PROC-FIN-002 --as EMP-0040   # as one employee may
 python -m src.graph.quality                          # graph health -> reports/graph_quality.md
 python -m src.graph.ask "Which teams are involved in customer onboarding?"   # graph-only answer (M2)
 python -m src.graph.ask --dev                        # the graph on its development questions
+python -m src.web                                    # web API on http://127.0.0.1:8000 (docs: /docs)
 python -m src.employee EMP-0085                      # what is relevant to one employee
 python -m src.employee --hypothetical                # "a new Data Analyst in Munich, week 2"
 ```
@@ -284,6 +285,22 @@ Relationship questions now get graph answers through the normal flow (CLI `pytho
 | Graph held-out (12; 9 unseen: 9/9) | 0.75 -> 1.00 | 0.19 -> 1.00 |
 
 No leaks, faithfulness 1.00, latency unchanged (~6 ms p50). Full account, including what changed after the held-out run and the limits: `reports/phase5_m3_findings.md`.
+
+### M4: web API and a quieter answer (done)
+
+**Answer noise fixed.** "How many days of annual leave do Germany-based employees get?" also quoted the US line from the same passage. Now a quoted line that names a *different* office, and none of the asked ones, is dropped. A country covers its offices ("Germany" = Munich + Berlin); "US"/"UK" only match in capitals, so "tell us" isn't the US. Lines that name no office, and relevant second lines, stay. Across the Phase 4 and graph development questions this changed exactly one answer (that one), and no status.
+
+**Web API** (`src/web/`, FastAPI): `python -m src.web` serves on this computer only (127.0.0.1:8000); interactive docs at `/docs`.
+
+| Endpoint | What |
+|---|---|
+| `POST /api/login`, `/api/logout`, `GET /api/me` | **Development login**: choose an employee + shared passcode (`KORA_DEV_PASSCODE`, default `kora-dev`). Signed session cookie holds only the employee ID; groups and admin rights are looked up on the server. **Not production identity**: anyone with the passcode can be anyone. |
+| `POST /api/ask` | `Kora.ask(question, user)`: answer, lines, citations, notes, the "why", timings. Logged with channel `api`. |
+| `GET /api/chunks/{id}`, `/api/documents/{id}`, `/api/citations?id=` | Open a cited passage, a whole document, or a header-line / company-record citation. A colleague's record shows directory fields only. |
+| `GET /api/graph/search`, `/api/graph/entity/{key}` | Find an entity; see its links, each with KORA's statement, provenance tier and evidence. |
+| `GET /api/admin/config`, `/api/admin/graph-quality` | Admins only (config `admins`). Admins get no extra document access. |
+
+Every knowledge endpoint requires a login and applies that user's access rules and privacy. A hidden document, chunk, process or record answers exactly like a missing one (same 404 text), so the API can't be used to find out what exists. Internal errors return a generic message and are logged as `kind: error`. Requests are served one at a time (KORA rebuilds and caches in place).
 
 **Honesty note:** while building M2 I (Claude) looked at three held-out graph questions by mistake: H02 (ran it), H04 and H09 (copied into resolver tests). They are marked `seen_in_development` with a note and will be reported separately; 9 held-out questions remain unseen. Both graph sets were written by the builder, so they are not independent of the design either.
 
