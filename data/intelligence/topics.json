@@ -62,8 +62,8 @@
             ],
             "shared_terms": [
               "csm",
-              "success",
               "customer success",
+              "success",
               "incident",
               "level"
             ]
@@ -85,8 +85,8 @@
         "data",
         "internal",
         "reporting",
-        "prioritization",
         "internal reporting",
+        "prioritization",
         "backlog",
         "nexview analytics",
         "analytics department"
@@ -261,8 +261,8 @@
         "checklist",
         "guidance",
         "communication",
-        "settling-in checklist",
         "settling-in",
+        "settling-in checklist",
         "germany settling-in",
         "german",
         "individual"
@@ -380,8 +380,8 @@
         "customer onboarding",
         "consulting department",
         "onboarding",
-        "implementation consulting",
-        "consulting"
+        "consulting",
+        "implementation consulting"
       ],
       "documents": [
         {
@@ -443,8 +443,8 @@
               "implementation",
               "handoff",
               "go-live",
-              "success",
-              "customer success"
+              "customer success",
+              "success"
             ]
           }
         },
@@ -486,8 +486,8 @@
         "access",
         "security",
         "data",
-        "control",
         "access control",
+        "control",
         "policy",
         "production data",
         "production",
@@ -557,8 +557,8 @@
         "crm",
         "content",
         "content marketing",
-        "positioning",
         "marketing manager",
+        "positioning",
         "department",
         "sales"
       ],
@@ -590,7 +590,7 @@
         "recurring",
         "office",
         "procurement process",
-        "operations department"
+        "internal process"
       ],
       "documents": [
         {
@@ -871,12 +871,12 @@
       ],
       "keywords": [
         "support",
+        "add-on",
         "paid add-on",
         "support tiers",
-        "add-on",
-        "tiers",
-        "support services",
         "implementation support",
+        "support services",
+        "tiers",
         "sla",
         "paid",
         "services"
@@ -908,13 +908,13 @@
         "nexauto",
         "automation",
         "support",
-        "logging",
-        "draft",
         "builder",
-        "knowledge base",
-        "knowledge",
+        "draft",
+        "logging",
+        "backlog",
+        "base",
         "included",
-        "base"
+        "knowledge"
       ],
       "documents": [
         {
@@ -1077,8 +1077,8 @@
         "email",
         "size",
         "verticals",
-        "sale",
-        "customer customer"
+        "customer customer",
+        "existing nexflow"
       ],
       "documents": [
         {
@@ -1158,10 +1158,10 @@
         "lot",
         "batch",
         "currently",
-        "stock",
         "reorder",
+        "stock",
         "enabled",
-        "distributors"
+        "analytics operations"
       ],
       "documents": [
         {
@@ -1350,8 +1350,8 @@
         "customer escalation",
         "level",
         "escalation",
-        "level customer",
         "escalation policy",
+        "level customer",
         "judgment",
         "csm",
         "relationship",
@@ -1395,14 +1395,14 @@
       "keywords": [
         "release",
         "squad",
-        "sprint",
         "engineers",
+        "sprint",
         "engineer",
         "development",
-        "planning",
-        "test",
-        "two-week sprint",
-        "two-week"
+        "breaks",
+        "code review",
+        "delivers",
+        "lifecycle"
       ],
       "documents": [
         {
@@ -1562,9 +1562,9 @@
         "purchase",
         "regardless",
         "required",
-        "practical",
+        "finance manager",
         "manager approval",
-        "finance manager"
+        "practical"
       ],
       "documents": [
         {
@@ -1616,9 +1616,9 @@
         "software",
         "operations",
         "vendor",
+        "flow",
         "going",
         "log",
-        "flow",
         "approval"
       ],
       "documents": [
@@ -1665,8 +1665,8 @@
       "keywords": [
         "payment",
         "invoice",
-        "payment process",
         "invoice payment",
+        "payment process",
         "invoices",
         "contract",
         "billing",
@@ -1725,7 +1725,7 @@
         "days",
         "history note",
         "version history",
-        "training"
+        "security"
       ],
       "documents": [
         {
@@ -1777,8 +1777,8 @@
             ],
             "shared_terms": [
               "days",
-              "training",
               "security",
+              "training",
               "version",
               "requirement"
             ]
@@ -1804,8 +1804,8 @@
             "shared_terms": [
               "version",
               "version effective",
-              "version history",
               "history note",
+              "version history",
               "effective"
             ]
           }
@@ -1835,13 +1835,13 @@
       "keywords": [
         "leave",
         "statutory",
-        "policies",
         "leave policies",
+        "policies",
         "plus",
         "employees",
         "days",
         "public",
-        "provide",
+        "apply",
         "country"
       ],
       "documents": [
@@ -1868,16 +1868,16 @@
         "PROC-HR-003"
       ],
       "keywords": [
-        "internal communication",
         "communication guidelines",
+        "internal communication",
         "guidelines",
         "internal",
         "communication",
         "default",
         "meetings",
-        "reasonably",
-        "office locations",
-        "expectations"
+        "baseline",
+        "expectations",
+        "office locations"
       ],
       "documents": [
         {
@@ -2001,7 +2001,7 @@
               "handoff record",
               "record",
               "deal",
-              "deal closed"
+              "closed handoff"
             ]
           }
         },
@@ -2113,8 +2113,8 @@
       "keywords": [
         "access",
         "control policy",
-        "control",
         "access control",
+        "control",
         "policy",
         "data",
         "granted",
@@ -2326,8 +2326,8 @@
         "proposal",
         "discount",
         "quotation process",
-        "quotation",
         "proposal quotation",
+        "quotation",
         "sales manager",
         "quote",
         "process",
@@ -2403,8 +2403,8 @@
         "proc-eng-",
         "defect",
         "bug",
-        "procedures",
         "customer support",
+        "procedures",
         "support procedures",
         "uses",
         "ticket",
@@ -2764,20 +2764,20 @@
   },
   "document_keywords": {
     "DOC-CARE-001": [
-      "new joiner",
       "joiner",
+      "new joiner",
       "life",
       "new",
-      "life settling",
       "joiner life",
+      "life settling",
       "settling",
       "feel"
     ],
     "DOC-CARE-002": [
       "germany settling-in",
       "checklist",
-      "settling-in checklist",
       "settling-in",
+      "settling-in checklist",
       "germany",
       "german",
       "address",
@@ -2787,10 +2787,10 @@
       "short",
       "list",
       "address",
-      "local sim",
-      "remember",
       "don need",
-      "question",
+      "fixed address",
+      "local sim",
+      "nearest",
       "need remember"
     ],
     "DOC-CARE-004": [
@@ -2798,17 +2798,17 @@
       "month",
       "tax",
       "week",
-      "registration",
       "address registration",
+      "registration",
       "local",
-      "official"
+      "address"
     ],
     "DOC-COMM-001": [
       "tone",
-      "tone guidelines",
       "communication culture",
       "culture",
       "culture tone",
+      "tone guidelines",
       "guidelines",
       "contexts",
       "common"
@@ -2817,47 +2817,47 @@
       "munich berlin",
       "berlin",
       "offices",
-      "profile germany",
-      "germany munich",
       "berlin offices",
+      "germany munich",
+      "profile germany",
       "colleague",
       "tone"
     ],
     "DOC-COMM-003": [
       "india",
       "bengaluru",
-      "profile india",
       "bengaluru office",
       "india bengaluru",
+      "profile india",
       "profile",
       "communication",
       "tenure"
     ],
     "DOC-COMM-004": [
       "positive",
-      "states",
       "austin office",
-      "united states",
       "positive framing",
+      "states",
       "states austin",
+      "united states",
       "framing",
       "land"
     ],
     "DOC-COMM-005": [
       "london",
-      "london office",
       "kingdom london",
-      "united kingdom",
+      "london office",
       "kingdom",
+      "united kingdom",
       "profile united",
       "united",
       "profile"
     ],
     "DOC-COMM-006": [
-      "neutral communication",
       "international neutral",
-      "neutral",
+      "neutral communication",
       "communication guidance",
+      "neutral",
       "international",
       "guidance",
       "communicating",
@@ -2874,8 +2874,8 @@
       "distribution"
     ],
     "DOC-CORP-002": [
-      "structure",
       "organization structure",
+      "structure",
       "loc-muc",
       "organization",
       "implementation",
@@ -2909,15 +2909,15 @@
       "data",
       "internal",
       "reporting",
-      "prioritization",
       "internal reporting",
+      "prioritization",
       "backlog"
     ],
     "DOC-DEPT-ENG": [
       "squad",
       "engineering",
-      "squads",
       "engineering department",
+      "squads",
       "software",
       "software engineering",
       "platform",
@@ -2929,15 +2929,15 @@
       "financial",
       "record",
       "proc-fin-",
+      "billable",
       "department note",
-      "refers billable",
-      "use account"
+      "note account"
     ],
     "DOC-DEPT-HR": [
       "employee",
       "owns",
-      "new joiner",
       "joiner",
+      "new joiner",
       "onboarding",
       "department",
       "new",
@@ -2946,8 +2946,8 @@
     "DOC-DEPT-IMPL": [
       "implementation",
       "consulting department",
-      "implementation consulting",
       "consulting",
+      "implementation consulting",
       "go-live",
       "day-to-day",
       "support",
@@ -2955,12 +2955,12 @@
     ],
     "DOC-DEPT-IT": [
       "security",
-      "owns internal",
       "access security",
+      "owns internal",
       "security department",
       "systems",
-      "security policy",
       "internal systems",
+      "security policy",
       "access"
     ],
     "DOC-DEPT-MKT": [
@@ -2970,16 +2970,16 @@
       "crm",
       "content",
       "content marketing",
-      "positioning",
-      "marketing manager"
+      "marketing manager",
+      "positioning"
     ],
     "DOC-DEPT-OPS": [
       "operations",
       "facilities",
       "office",
-      "operations department",
       "internal process",
       "office facilities",
+      "operations department",
       "vendor",
       "office manager"
     ],
@@ -3017,8 +3017,8 @@
       "data",
       "data analytics",
       "analytics",
-      "current",
       "access",
+      "current",
       "days",
       "approval",
       "new"
@@ -3035,23 +3035,23 @@
     ],
     "DOC-PROD-IMPLSUP": [
       "support",
+      "add-on",
       "paid add-on",
       "support tiers",
-      "add-on",
-      "tiers",
-      "support services",
       "implementation support",
+      "support services",
+      "tiers",
       "sla"
     ],
     "DOC-PROD-NEXAUTO": [
       "nexauto",
       "automation",
       "support",
-      "logging",
-      "draft",
       "builder",
-      "knowledge base",
-      "knowledge"
+      "draft",
+      "logging",
+      "backlog",
+      "base"
     ],
     "DOC-PROD-NEXCONNECT": [
       "nexconnect",
@@ -3080,8 +3080,8 @@
       "lot",
       "batch",
       "currently",
-      "stock",
-      "reorder"
+      "reorder",
+      "stock"
     ],
     "DOC-PROD-NEXVIEW": [
       "nexview",
@@ -3098,40 +3098,40 @@
       "csm",
       "automatic",
       "access",
-      "implementation consultant",
-      "relationship",
+      "consultant",
       "gap",
-      "consultant"
+      "implementation consultant",
+      "relationship"
     ],
     "DOC-TG-001": [
       "tg-",
       "reorder",
       "tier",
-      "reorder point",
+      "alerts",
       "customer reports",
       "refresh",
-      "sync",
-      "alerts"
+      "reorder point",
+      "sync"
     ],
     "PROC-CS-001": [
       "incident",
       "customer escalation",
       "level",
       "escalation",
-      "level customer",
       "escalation policy",
+      "level customer",
       "judgment",
       "csm"
     ],
     "PROC-ENG-001": [
       "release",
       "squad",
-      "sprint",
       "engineers",
+      "sprint",
       "engineer",
       "development",
-      "planning",
-      "test"
+      "breaks",
+      "code review"
     ],
     "PROC-ENG-002": [
       "customer communication",
@@ -3151,7 +3151,7 @@
       "purchase",
       "regardless",
       "required",
-      "practical"
+      "finance manager"
     ],
     "PROC-FIN-002": [
       "procurement",
@@ -3160,14 +3160,14 @@
       "software",
       "operations",
       "vendor",
-      "going",
-      "log"
+      "flow",
+      "going"
     ],
     "PROC-FIN-003": [
       "payment",
       "invoice",
-      "payment process",
       "invoice payment",
+      "payment process",
       "invoices",
       "contract",
       "billing",
@@ -3185,33 +3185,33 @@
     ],
     "PROC-HR-001-ADDENDUM": [
       "requirement",
-      "training",
       "security",
+      "training",
       "days",
       "new",
-      "retained historical",
-      "new hire",
-      "module"
+      "complete mandatory",
+      "historical",
+      "historical reference"
     ],
     "PROC-HR-002": [
       "leave",
       "statutory",
-      "policies",
       "leave policies",
+      "policies",
       "plus",
       "employees",
       "days",
       "public"
     ],
     "PROC-HR-003": [
-      "internal communication",
       "communication guidelines",
+      "internal communication",
       "guidelines",
       "internal",
       "communication",
       "default",
       "meetings",
-      "reasonably"
+      "baseline"
     ],
     "PROC-IMPL-001": [
       "handoff",
@@ -3226,18 +3226,18 @@
     "PROC-IMPL-001-V1": [
       "management",
       "version",
-      "provides",
-      "note account",
-      "steps kickoff",
+      "follow",
+      "function",
       "historical",
       "historical reference",
-      "kickoff scheduled"
+      "kickoff scheduled",
+      "note account"
     ],
     "PROC-IT-001": [
       "access",
       "control policy",
-      "control",
       "access control",
+      "control",
       "policy",
       "data",
       "granted",
@@ -3267,8 +3267,8 @@
       "proposal",
       "discount",
       "quotation process",
-      "quotation",
       "proposal quotation",
+      "quotation",
       "sales manager",
       "quote",
       "process"
@@ -3277,8 +3277,8 @@
       "proc-eng-",
       "defect",
       "bug",
-      "procedures",
       "customer support",
+      "procedures",
       "support procedures",
       "uses",
       "ticket"
@@ -3304,8 +3304,8 @@
         "top_terms": [
           "profile",
           "tone",
-          "tone profile",
           "communication tone",
+          "tone profile",
           "communication",
           "individual",
           "land",
@@ -3381,7 +3381,7 @@
           "distribution",
           "nexconnect",
           "data",
-          "typical customer",
+          "customer profile",
           "typical"
         ],
         "sections": [
@@ -3508,10 +3508,10 @@
         "theme_id": "THEME-04",
         "top_terms": [
           "check",
-          "official",
-          "current official",
-          "official guidance",
           "check current",
+          "current official",
+          "official",
+          "official guidance",
           "current",
           "guidance",
           "circumstances"
@@ -3743,8 +3743,8 @@
         "theme_id": "THEME-08",
         "top_terms": [
           "germany settling-in",
-          "settling-in checklist",
           "settling-in",
+          "settling-in checklist",
           "checklist",
           "germany",
           "german",
@@ -3927,8 +3927,8 @@
           "new joiner",
           "new",
           "life",
-          "life settling",
           "joiner life",
+          "life settling",
           "settling",
           "feel"
         ],
@@ -4050,8 +4050,8 @@
           "incident",
           "csm",
           "escalation",
-          "success",
           "customer success",
+          "success",
           "customer escalation",
           "level",
           "accounts"
@@ -4131,7 +4131,7 @@
           "requirement",
           "days",
           "security",
-          "version history"
+          "history note"
         ],
         "sections": [
           {
@@ -4165,12 +4165,12 @@
         "top_terms": [
           "support",
           "sla",
-          "support tiers",
-          "paid add-on",
           "add-on",
+          "paid add-on",
+          "support tiers",
           "priority",
           "standard",
-          "tiers"
+          "implementation support"
         ],
         "sections": [
           {
@@ -4197,8 +4197,8 @@
       {
         "theme_id": "THEME-19",
         "top_terms": [
-          "core capabilities",
           "capabilities",
+          "core capabilities",
           "automation",
           "core",
           "nexauto",
@@ -4272,9 +4272,9 @@
           "refresh",
           "nexview",
           "real-time",
-          "real-time sub-",
-          "sub- minute",
-          "sub-"
+          "hourly",
+          "minute refresh",
+          "nexview pro"
         ],
         "sections": [
           {
@@ -4297,13 +4297,13 @@
       {
         "theme_id": "THEME-22",
         "top_terms": [
-          "strictly",
           "prefer",
+          "strictly",
           "written updates",
           "isn",
+          "clearly",
           "message",
           "updates",
-          "clearly",
           "written"
         ],
         "sections": [
@@ -4330,9 +4330,9 @@
           "nexora systems",
           "far",
           "systems",
-          "explain",
-          "clarity",
           "breaks",
+          "clarity",
+          "explain",
           "company",
           "nexora"
         ],
@@ -4392,8 +4392,8 @@
           "nexcrm",
           "customer success",
           "success",
-          "nexflow nexview",
-          "sale"
+          "customer customer",
+          "existing nexflow"
         ],
         "sections": [
           {
@@ -4419,8 +4419,8 @@
           "platform",
           "squad",
           "platform squad",
-          "squads",
           "engineering department",
+          "squads",
           "software engineering",
           "engineering",
           "software"
@@ -4445,9 +4445,9 @@
       {
         "theme_id": "THEME-27",
         "top_terms": [
-          "process does",
           "happens",
           "happens customer",
+          "process does",
           "practice",
           "process",
           "process known",
@@ -4478,11 +4478,11 @@
           "recurring",
           "procurement",
           "software",
+          "flow",
+          "going",
           "log",
           "procurement process",
-          "going",
-          "flow",
-          "heads"
+          "department heads"
         ],
         "sections": [
           {
@@ -4501,13 +4501,13 @@
         "theme_id": "THEME-29",
         "top_terms": [
           "enabled",
+          "enabled tenant",
+          "lot tracking",
           "nexflow configuration",
           "tracking enabled",
-          "lot tracking",
-          "enabled tenant",
-          "lot",
-          "implementation consultants",
-          "confirm"
+          "batch lot",
+          "confirm",
+          "implementation consultants"
         ],
         "sections": [
           {
@@ -4527,12 +4527,12 @@
         "top_terms": [
           "default",
           "internal",
-          "limited",
-          "discussions",
-          "channels",
           "calls",
-          "overlap",
-          "tool"
+          "channels",
+          "discussions",
+          "limited",
+          "communication guidelines",
+          "coordination"
         ],
         "sections": [
           {

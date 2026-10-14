@@ -252,3 +252,20 @@ def id_refs(text: str) -> list[str]:
 
 def gap_codes(text: str) -> list[str]:
     return sorted(set(_GAP_CODE.findall(text)))
+
+
+# ---------------- stable ranking ----------------
+
+def top_terms(terms, scores, n: int, positive_only: bool = False) -> list[str]:
+    """The n highest-scoring terms, highest first; equal scores in A-Z order.
+
+    numpy's argsort() puts equal scores in an arbitrary order that can differ
+    between machines (Windows vs Linux, numpy versions), so the same files
+    gave slightly different JSON on each rebuild. Scores are rounded to 9
+    decimals first so that float noise (0.30000000001 vs 0.3) also counts as
+    a tie. Same input -> same output, everywhere."""
+    ranked = sorted(((round(float(s), 9), str(t)) for t, s in zip(terms, scores)),
+                    key=lambda st: (-st[0], st[1]))
+    if positive_only:
+        ranked = [st for st in ranked if st[0] > 0]
+    return [t for _, t in ranked[:n]]

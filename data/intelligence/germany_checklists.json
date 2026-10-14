@@ -1,6 +1,6 @@
 {
   "as_of": "2025-04-22",
-  "progress_source": "loaded data\\context\\checklist_progress.json",
+  "progress_source": "loaded data/context/checklist_progress.json",
   "program": {
     "documents": [
       "DOC-CARE-002",

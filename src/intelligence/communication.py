@@ -266,9 +266,9 @@ class _Comms:
 
 def load_preferences(path: Path) -> tuple[dict, str]:
     if not path.exists():
-        return {}, f"{path} not found: no individual preferences known"
+        return {}, f"{Path(path).as_posix()} not found: no individual preferences known"
     with open(path, encoding="utf-8") as f:
-        return json.load(f).get("employees", {}), f"loaded {path}"
+        return json.load(f).get("employees", {}), f"loaded {Path(path).as_posix()}"
 
 
 @dataclass

@@ -60,6 +60,13 @@ THRESHOLDS = {
 }
 GAP_SEVERITIES = {"high", "medium", "low"}
 
+# Phase 5 M1: employee fields every colleague may see (a directory). Everything
+# else about a person (relocation, onboarding stage, join date...) is visible
+# only to that person and to admins. PROVISIONAL default: UT will decide the
+# final rule once test employees can be tried in the UI.
+DEFAULT_COLLEAGUE_FIELDS = ["role_id", "role_title", "dept_id", "location_id", "manager_id"]
+_EMPLOYEE_ID = re.compile(r"^[A-Za-z0-9_.-]+$")
+
 
 @dataclass
 class RelocationProgram:
@@ -100,8 +107,15 @@ class KoraConfig:
     embeddings_enabled: bool = False           # off without config (no download surprises)
     embeddings_model: str = "all-MiniLM-L6-v2"
     embeddings_cache: str = "data/retrieval/embeddings_cache.npz"
+    # Phase 5 M1: admins (dashboards, settings, private person fields) and
+    # which employee fields colleagues may see. See src/graph/view.py.
+    admins: list[str] = field(default_factory=list)
+    colleague_fields: list[str] = field(default_factory=lambda: list(DEFAULT_COLLEAGUE_FIELDS))
     source: str = "defaults"                   # file path, or "defaults"
     warnings: list[str] = field(default_factory=list)
+
+    def is_admin(self, user) -> bool:
+        return user is not None and user.user_id in self.admins
 
     def t(self, name: str):
         """A threshold value."""
@@ -154,7 +168,7 @@ def parse_config(raw: dict, source: str = "dict") -> KoraConfig:
     if not isinstance(raw, dict):
         raise ConfigError(f"{source}: top level must be a JSON object")
     known = {"company", "thresholds", "gap_severities", "intent_patterns", "relocation", "communication",
-             "embeddings", "synonyms", "access", "description"}
+             "embeddings", "synonyms", "access", "description", "admins", "person_visibility"}
     for key in raw:
         if key not in known:
             problems.append(f"unknown key '{key}' (allowed: {', '.join(sorted(known))})")
@@ -225,6 +239,28 @@ def parse_config(raw: dict, source: str = "dict") -> KoraConfig:
                                         f"(use all, manager, dept:<id>, loc:<id>, role:<id>, emp:<id>)")
                     else:
                         cfg.access_rules[pattern] = list(groups)
+
+    adm = raw.get("admins")
+    if adm is not None:
+        ids = adm.get("employees") if isinstance(adm, dict) else None
+        if not isinstance(ids, list) or not all(isinstance(i, str) and _EMPLOYEE_ID.match(i) for i in ids):
+            problems.append("admins: must be an object with 'employees': [employee IDs]")
+        else:
+            for key in adm:
+                if key != "employees" and not key.startswith("_"):
+                    problems.append(f"admins.{key}: unknown key (allowed: employees)")
+            cfg.admins = list(dict.fromkeys(ids))
+
+    vis = raw.get("person_visibility")
+    if vis is not None:
+        fields = vis.get("colleague_fields") if isinstance(vis, dict) else None
+        if not isinstance(fields, list) or not all(isinstance(f, str) and f.strip() for f in fields):
+            problems.append("person_visibility: must be an object with 'colleague_fields': [employee columns]")
+        else:
+            for key in vis:
+                if key != "colleague_fields" and not key.startswith("_"):
+                    problems.append(f"person_visibility.{key}: unknown key (allowed: colleague_fields)")
+            cfg.colleague_fields = list(dict.fromkeys(fields))
 
     reloc = raw.get("relocation")
     if reloc is not None:

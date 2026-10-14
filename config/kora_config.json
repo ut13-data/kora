@@ -65,6 +65,23 @@
       ]
     }
   },
+  "admins": {
+    "_comment": "Phase 5: employees who may open the dashboards, edit settings and see colleagues' private details. Admins do NOT get extra document access: the access rules above still apply to them. Development login only; not production identity.",
+    "employees": [
+      "EMP-0120",
+      "EMP-0126"
+    ]
+  },
+  "person_visibility": {
+    "_comment": "PROVISIONAL (decide after testing employees of every level in the UI). Employee columns every colleague may see; all other columns (relocation, onboarding stage, join date, employment type) are visible only to the person and admins. Graph links follow the same rule: role_id -> has_role, dept_id -> works_in, location_id -> located_in, manager_id -> reports_to, international_relocation_germany -> eligible_for.",
+    "colleague_fields": [
+      "role_id",
+      "role_title",
+      "dept_id",
+      "location_id",
+      "manager_id"
+    ]
+  },
   "embeddings": {
     "enabled": false,
     "model": "all-MiniLM-L6-v2",

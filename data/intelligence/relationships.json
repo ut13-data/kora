@@ -4204,7 +4204,7 @@
           "chunk_ids": [
             "DOC-DEPT-CS_v1.9_002"
           ],
-          "quote": "similarity 0.322; shared terms: implementation, handoff, go-live, success, customer success",
+          "quote": "similarity 0.322; shared terms: implementation, handoff, go-live, customer success, success",
           "historical": false
         }
       ]
@@ -5189,7 +5189,7 @@
           "chunk_ids": [
             "DOC-DEPT-SALES_v2.0_002"
           ],
-          "quote": "similarity 0.362; shared terms: handoff, handoff record, record, deal, deal closed",
+          "quote": "similarity 0.362; shared terms: handoff, handoff record, record, deal, closed handoff",
           "historical": false
         }
       ]
@@ -6607,7 +6607,7 @@
             "DOC-SCEN-001_v1.2_000",
             "DOC-SCEN-001_v1.2_001"
           ],
-          "quote": "similarity 0.34; shared terms: csm, success, customer success, incident, level",
+          "quote": "similarity 0.34; shared terms: csm, customer success, success, incident, level",
           "historical": false
         }
       ]
@@ -7796,7 +7796,7 @@
           "chunk_ids": [
             "PROC-HR-001-ADDENDUM_v1.0_000"
           ],
-          "quote": "similarity 0.497; shared terms: days, training, security, version, requirement",
+          "quote": "similarity 0.497; shared terms: days, security, training, version, requirement",
           "historical": true
         }
       ]
@@ -8048,7 +8048,7 @@
           "chunk_ids": [
             "PROC-IMPL-001_v2.0_004"
           ],
-          "quote": "similarity 0.357; shared terms: version, version effective, version history, history note, effective",
+          "quote": "similarity 0.357; shared terms: version, version effective, history note, version history, effective",
           "historical": false
         }
       ]

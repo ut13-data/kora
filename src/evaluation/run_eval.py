@@ -99,6 +99,36 @@ def contains_fact(answer, fact: str | None) -> bool | None:
     return normalise(fact) in text
 
 
+def _answer_text(answer) -> str:
+    return " ".join(f"{l.text} {l.detail}" for l in answer.lines).lower()
+
+
+def names_found(answer, names: list[str] | None) -> float | None:
+    """Phase 5: share of expected names (roles, departments, processes) the
+    answer states. Case-insensitive substring; None if the question lists none."""
+    if not names:
+        return None
+    text = _answer_text(answer)
+    return sum(n.lower() in text for n in names) / len(names)
+
+
+def leaks(answer, forbidden: list[str] | None) -> list[str]:
+    """Phase 5: forbidden names that appear ANYWHERE the user could see them:
+    answer lines, notes, citation titles, document IDs and excerpts.
+
+    One exception: a name the user typed in the question may be echoed back in
+    a note ("the knowledge base never mentions zimmermann") -- that repeats the
+    user's own words and reveals nothing. It still counts in lines and citations."""
+    if not forbidden:
+        return []
+    found_data = " ".join([_answer_text(answer)] +
+                          [f"{c.title} {c.document_id} {c.excerpt}" for c in answer.citations]).lower()
+    notes = " ".join(answer.notes).lower()
+    asked = answer.question.lower()
+    return [f for f in forbidden
+            if f.lower() in found_data or (f.lower() in notes and f.lower() not in asked)]
+
+
 def faithful(answer, kora: KoraAnswerer) -> bool:
     """Every answer line passes KORA's own runtime verifier (one definition of
     'faithful', so the evaluation and the product can never disagree), and
@@ -170,7 +200,12 @@ def evaluate_question(q: dict, kora: KoraAnswerer, top_k: int = TOP_K) -> dict:
     base = chunks.search(q["question"], top_k=top_k, use_semantic=False)   # plain TF-IDF, words only
     base_ms = (time.perf_counter() - t0) * 1000
 
-    answer = kora.answer(q["question"], top_k=top_k)
+    user = None
+    if q.get("as_user"):                          # Phase 5: ask as an employee (access control)
+        user = kora.retriever.users.get(q["as_user"])
+        if user is None:
+            raise ValueError(f"{q['id']}: unknown as_user {q['as_user']}")
+    answer = kora.answer(q["question"], top_k=top_k, user=user)
     kora_docs = [r.chunk.document_id for r in answer.retrieval.results]
     base_docs = [r.chunk.document_id for r in base]
     cited = [c.document_id for c in answer.citations] if answer.status != "not_found" else []
@@ -192,6 +227,8 @@ def evaluate_question(q: dict, kora: KoraAnswerer, top_k: int = TOP_K) -> dict:
             "contains_fact": contains_fact(answer, q.get("expected_contains")),
             "citation_precision": citation_precision(cited, q["gold_documents"], q["acceptable_documents"]),
             "faithful": faithful(answer, kora),
+            "names_found": names_found(answer, q.get("expected_names")),
+            "leaks": leaks(answer, q.get("forbidden_names")),
             "cited": cited,
             "intents": answer.retrieval.plan.intents,
             "reasons": answer.retrieval.plan.reasons,
@@ -213,7 +250,9 @@ def summarise(rows: list[dict]) -> dict:
                      "status_accuracy": _mean([r["kora"]["status_correct"] for r in subset]),
                      "key_fact_found": _mean([r["kora"]["contains_fact"] for r in subset]),
                      "citation_precision": _mean([r["kora"]["citation_precision"] for r in subset]),
-                     "faithfulness": _mean([r["kora"]["faithful"] for r in subset])},
+                     "faithfulness": _mean([r["kora"]["faithful"] for r in subset]),
+                     "names_found": _mean([r["kora"].get("names_found") for r in subset]),
+                     "no_leak": _mean([not r["kora"].get("leaks") for r in subset])},
         }
 
     categories = sorted({r["category"] for r in rows})

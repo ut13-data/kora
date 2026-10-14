@@ -36,7 +36,7 @@ def main() -> None:
 
     t0 = time.perf_counter()
     print("Loading KORA...", flush=True)
-    kora = Kora.open()
+    kora = Kora.open(channel="cli")
     print(f"Ready in {time.perf_counter() - t0:.1f} s.", flush=True)
     for event in kora.events:
         print(f"  ! {event}")

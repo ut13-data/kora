@@ -10,7 +10,7 @@
     {
       "conflict_id": "CONF-98434E88",
       "conflict_type": "numeric_fact",
-      "topic": "training, security, awareness, new",
+      "topic": "training, security, awareness, complete",
       "sides": [
         {
           "document_id": "PROC-HR-001",
@@ -1134,7 +1134,7 @@
     },
     {
       "type": "approver",
-      "topic": "warehouse, data, analytics, production",
+      "topic": "data, warehouse, analytics, production",
       "similarity": 0.46,
       "documents": [
         "DOC-DEPT-DATA",

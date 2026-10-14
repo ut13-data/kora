@@ -24,6 +24,19 @@ How "new files work immediately" is guaranteed:
     half-built index.
   * The company config (config/kora_config.json) is re-read on every rebuild
     and every open; it doesn't need a rebuild of its own.
+
+The answer log (data/logs/answers.jsonl), one JSON object per line:
+  * schema 2 (Phase 5 M0) adds three fields to every record:
+      "schema": 2
+      "kind":    "answer" (KORA replied) | "error" (KORA crashed: no reply)
+      "channel": where the question came from: "cli", "ui", "api", "python"
+                 (direct library use). Tests and the evaluation never log.
+    An "error" record holds: stage ("index" | "answer"), error_type, a short
+    message, the question and the user ID. The error is still raised.
+  * Records written before schema 2 have none of these fields. Read them as
+    kind "answer" and channel "unknown" -- never guess where they came from.
+  Why: a dashboard must separate a crash from an honest "not found", and
+  real use from developer testing.
 """
 
 import argparse
@@ -36,6 +49,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 MANIFEST_VERSION = 1
+LOG_SCHEMA = 2
+CHANNELS = ("cli", "ui", "api", "python")
 
 
 class IndexBuildError(RuntimeError):
@@ -188,17 +203,20 @@ class Kora:
     """KORA that checks its index before every question and rebuilds when
     data/raw changed. Every answer is appended to data/logs/answers.jsonl."""
 
-    def __init__(self, paths: Paths, auto_rebuild: bool = True):
+    def __init__(self, paths: Paths, auto_rebuild: bool = True, channel: str = "python"):
+        if channel not in CHANNELS:
+            raise ValueError(f"channel must be one of {CHANNELS}, not {channel!r}")
         self.paths = paths
         self.auto_rebuild = auto_rebuild
+        self.channel = channel
         self.answerer = None
         self.last_build: dict | None = None
         self.events: list[str] = []
         self._ensure_current()
 
     @classmethod
-    def open(cls, paths: Paths | None = None, auto_rebuild: bool = True) -> "Kora":
-        return cls(paths or Paths(), auto_rebuild)
+    def open(cls, paths: Paths | None = None, auto_rebuild: bool = True, channel: str = "python") -> "Kora":
+        return cls(paths or Paths(), auto_rebuild, channel)
 
     def _load(self) -> None:
         from src.retrieval.answer import KoraAnswerer
@@ -237,9 +255,17 @@ class Kora:
         rebuild, answer.startup gains its seconds (and they count in total_s)."""
         t0 = time.perf_counter()
         rebuilt_before = self.last_build
-        self._ensure_current()
+        try:
+            self._ensure_current()
+        except Exception as e:                     # logged as an error, then raised as before
+            self._log_error("index", e, question, user)
+            raise
         check_ms = (time.perf_counter() - t0) * 1000
-        answer = self.answerer.answer(question, top_k=top_k, user=user)
+        try:
+            answer = self.answerer.answer(question, top_k=top_k, user=user)
+        except Exception as e:
+            self._log_error("answer", e, question, user)
+            raise
         answer.timings = {"index_check_ms": round(check_ms, 2), **answer.timings,
                           "total_ms": round(answer.timings.get("total_ms", 0.0) + check_ms, 2)}
         if self.last_build is not rebuilt_before and self.last_build:
@@ -251,11 +277,20 @@ class Kora:
         return answer
 
     def _log(self, answer) -> None:
+        self._write_log({"kind": "answer", **answer.to_log()})
+
+    def _log_error(self, stage: str, error: Exception, question: str, user) -> None:
+        self._write_log({"kind": "error", "stage": stage, "error_type": type(error).__name__,
+                         "message": str(error)[:300], "question": question,
+                         "user": user.user_id if user else None})
+
+    def _write_log(self, body: dict) -> None:
         if self.paths.log_dir is None:
             return
         try:
             self.paths.log_dir.mkdir(parents=True, exist_ok=True)
-            record = {"at": datetime.now(timezone.utc).isoformat(), **answer.to_log()}
+            record = {"schema": LOG_SCHEMA, "at": datetime.now(timezone.utc).isoformat(),
+                      "channel": self.channel, **body}
             with open(self.paths.log_dir / "answers.jsonl", "a", encoding="utf-8") as f:
                 f.write(json.dumps(record, ensure_ascii=False) + "\n")
         except OSError as e:                       # logging must never break answering

@@ -45,7 +45,7 @@ from src.intelligence.models import (
     DEPARTMENT, DOCUMENT, PROCESS, PRODUCT, TOPIC, Entity,
 )
 from src.intelligence.normalize import slug
-from src.intelligence.text import plain
+from src.intelligence.text import plain, top_terms
 
 SIMILARITY_THRESHOLD = 0.30   # section-to-topic cosine; chosen by inspecting real output (see README)
 MIN_SECTION_WORDS = 25        # shorter sections are mostly headings or one-liners
@@ -180,7 +180,7 @@ class _Topics:
     def score(self, topic: Topic) -> None:
         profile = self._profile(topic)
         if profile is not None:
-            topic.keywords = self.terms[profile.argsort()[::-1][:10]].tolist()
+            topic.keywords = top_terms(self.terms, profile, 10)
         links = self._structural_links(topic)
 
         best: dict[str, dict] = {}
@@ -194,7 +194,7 @@ class _Topics:
                     row = self.X[i].toarray().ravel() * profile
                     best[u.document_id] = {
                         "similarity": round(s, 3), "section": u.section, "chunk_ids": u.chunk_ids,
-                        "shared_terms": [t for t in self.terms[row.argsort()[::-1][:5]] if row[self.vectorizer.vocabulary_[t]] > 0]}
+                        "shared_terms": top_terms(self.terms, row, 5, positive_only=True)}
 
         for doc_id in topic.home_documents:
             topic.documents.append({"document_id": doc_id, "method": "home_document",
@@ -240,7 +240,7 @@ class _Topics:
                           default=(0.0, None))
             themes.append({
                 "theme_id": f"THEME-{len(themes) + 1:02d}",
-                "top_terms": self.terms[centroid.argsort()[::-1][:8]].tolist(),
+                "top_terms": top_terms(self.terms, centroid, 8),
                 "sections": [{"document_id": self.units[i].document_id, "section": self.units[i].section} for i in rows],
                 "documents": docs,
                 "closest_anchored_topic": overlap[1],
@@ -261,7 +261,7 @@ class _Topics:
         out = {}
         for doc_id, rows in sorted(by_doc.items()):
             v = np.asarray(self.X[rows].mean(axis=0)).ravel()
-            out[doc_id] = self.terms[v.argsort()[::-1][:8]].tolist()
+            out[doc_id] = top_terms(self.terms, v, 8)
         return out
 
 

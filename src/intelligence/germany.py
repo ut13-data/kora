@@ -268,10 +268,10 @@ def _order(items: dict[str, ChecklistItem]) -> list[str]:
 def load_progress(path: Path) -> tuple[dict, str]:
     """data/context/checklist_progress.json -- the ONLY source of completion."""
     if not path.exists():
-        return {}, f"{path} not found: nothing is marked complete"
+        return {}, f"{Path(path).as_posix()} not found: nothing is marked complete"
     with open(path, encoding="utf-8") as f:
         raw = json.load(f)
-    return raw.get("employees", {}), f"loaded {path}"
+    return raw.get("employees", {}), f"loaded {Path(path).as_posix()}"
 
 
 @dataclass

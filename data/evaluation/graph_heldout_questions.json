@@ -1,0 +1,272 @@
+{
+  "description": "Phase 5 graph HELD-OUT set, written on 2026-10-14 in M0, BEFORE any graph-answer code existed. Not used while building: run against the graph-integrated KORA exactly once, after M3 is finished, and reported as-is (first run kept, fixes recorded separately). Its Phase 4 baseline is frozen in M0 with summary numbers only; per-question baseline results are not inspected before M3 closes. Same schema as graph_dev_questions.json. Labels by Claude against data/raw. UT may add his own questions in a separate file (graph_heldout_ut_questions.json) any time before M3 closes. H02, H04 and H09 were seen during M2 development by mistake (see their notes) and are reported separately; the other 9 remain unseen.",
+  "questions": [
+    {
+      "id": "H01",
+      "category": "graph",
+      "graph_kind": "involved",
+      "question": "Who is involved in the employee onboarding process?",
+      "gold_documents": [
+        "PROC-HR-001"
+      ],
+      "acceptable_documents": [
+        "DOC-DEPT-HR",
+        "DOC-CARE-001",
+        "PROC-IT-001"
+      ],
+      "expected_status": [
+        "answered"
+      ],
+      "expected_contains": null,
+      "expected_names": [
+        "HR Generalist",
+        "IT Support Specialist",
+        "Hiring Manager"
+      ],
+      "forbidden_names": [],
+      "seen_in_development": false
+    },
+    {
+      "id": "H02",
+      "category": "graph",
+      "graph_kind": "impact",
+      "question": "If the Data Security Policy changes, which processes might be affected?",
+      "gold_documents": [
+        "PROC-IT-002"
+      ],
+      "acceptable_documents": [
+        "PROC-SUP-002",
+        "PROC-HR-001",
+        "PROC-IT-001",
+        "DOC-DEPT-IT"
+      ],
+      "expected_status": [
+        "answered",
+        "partial"
+      ],
+      "expected_contains": null,
+      "expected_names": [
+        "Incident Management",
+        "Employee Onboarding"
+      ],
+      "forbidden_names": [],
+      "seen_in_development": true,
+      "note": "SEEN during M2 development (2026-10-14): Claude ran this question by mistake while checking impact answers. It revealed duplicate 'possibly related' lines (fixed generally). Report H02 separately; it no longer counts as an unseen question."
+    },
+    {
+      "id": "H03",
+      "category": "graph",
+      "graph_kind": "owner",
+      "question": "Who owns the incident management process?",
+      "gold_documents": [
+        "PROC-SUP-002"
+      ],
+      "acceptable_documents": [
+        "DOC-DEPT-SUP",
+        "DOC-DEPT-IT"
+      ],
+      "expected_status": [
+        "answered"
+      ],
+      "expected_contains": null,
+      "expected_names": [
+        "IT Manager",
+        "Support Team Lead"
+      ],
+      "forbidden_names": [],
+      "seen_in_development": false
+    },
+    {
+      "id": "H04",
+      "category": "graph",
+      "graph_kind": "delay",
+      "question": "Why are bug reports on an old NexFlow version handled inconsistently?",
+      "gold_documents": [
+        "PROC-ENG-002"
+      ],
+      "acceptable_documents": [
+        "DOC-PROD-NEXFLOW",
+        "PROC-SUP-001"
+      ],
+      "expected_status": [
+        "partial",
+        "answered"
+      ],
+      "expected_contains": "case-by-case",
+      "expected_names": [],
+      "forbidden_names": [],
+      "seen_in_development": true,
+      "note": "SEEN during M2 development (2026-10-14): Claude put a near-copy of this question into a resolver unit test by mistake and saw that 'bug reports' does not resolve to the Bug Reporting process. Not tuned for; the test case was removed. Report H04 separately. Original note: KG-02 states the documented reason (no standard; triaged case-by-case)."
+    },
+    {
+      "id": "H05",
+      "category": "graph",
+      "graph_kind": "role",
+      "question": "Which processes is the Account Executive part of?",
+      "gold_documents": [
+        "PROC-SALES-001",
+        "PROC-SALES-002",
+        "PROC-IMPL-001"
+      ],
+      "acceptable_documents": [
+        "DOC-DEPT-SALES"
+      ],
+      "expected_status": [
+        "answered"
+      ],
+      "expected_contains": null,
+      "expected_names": [
+        "Lead Qualification",
+        "Proposal and Quotation",
+        "Customer Onboarding"
+      ],
+      "forbidden_names": [],
+      "seen_in_development": false
+    },
+    {
+      "id": "H06",
+      "category": "graph",
+      "graph_kind": "department",
+      "question": "Which processes does the Sales department own?",
+      "gold_documents": [],
+      "acceptable_documents": [
+        "PROC-SALES-001",
+        "PROC-SALES-002",
+        "DOC-DEPT-SALES"
+      ],
+      "expected_status": [
+        "answered"
+      ],
+      "expected_contains": null,
+      "expected_names": [
+        "Lead Qualification",
+        "Proposal and Quotation"
+      ],
+      "forbidden_names": [],
+      "seen_in_development": false
+    },
+    {
+      "id": "H07",
+      "category": "graph",
+      "graph_kind": "dependency",
+      "question": "What comes after lead qualification?",
+      "gold_documents": [
+        "PROC-SALES-001"
+      ],
+      "acceptable_documents": [
+        "PROC-SALES-002",
+        "DOC-DEPT-SALES"
+      ],
+      "expected_status": [
+        "answered",
+        "partial"
+      ],
+      "expected_contains": null,
+      "expected_names": [
+        "Account Executive"
+      ],
+      "forbidden_names": [],
+      "seen_in_development": false,
+      "note": "Documented: SQLs are handed to an AE (step 6). Proposal and Quotation is only listed as a related process, not stated as the next one: it may appear as 'possibly related', never as a verified next step."
+    },
+    {
+      "id": "H08",
+      "category": "graph",
+      "graph_kind": "multi_hop",
+      "question": "Who heads the department that owns NexFlow?",
+      "gold_documents": [],
+      "acceptable_documents": [
+        "DOC-DEPT-PROD",
+        "DOC-PROD-NEXFLOW",
+        "DOC-CORP-002"
+      ],
+      "expected_status": [
+        "answered"
+      ],
+      "expected_contains": null,
+      "expected_names": [
+        "VP Product"
+      ],
+      "forbidden_names": [],
+      "seen_in_development": false
+    },
+    {
+      "id": "H09",
+      "category": "graph",
+      "graph_kind": "owner",
+      "question": "Which department is responsible for customer escalations?",
+      "gold_documents": [
+        "PROC-CS-001"
+      ],
+      "acceptable_documents": [
+        "DOC-DEPT-CS",
+        "DOC-FAQ-001"
+      ],
+      "expected_status": [
+        "answered"
+      ],
+      "expected_contains": null,
+      "expected_names": [
+        "Customer Success"
+      ],
+      "forbidden_names": [],
+      "seen_in_development": true,
+      "note": "SEEN during M2 development (2026-10-14): Claude put this question into a resolver unit test by mistake and saw it resolve to the Customer Escalation Policy. The test case was removed. Report H09 separately."
+    },
+    {
+      "id": "H10",
+      "category": "graph",
+      "graph_kind": "access",
+      "question": "Who is responsible for the invoice and payment process?",
+      "as_user": "EMP-0040",
+      "gold_documents": [],
+      "acceptable_documents": [],
+      "expected_status": [
+        "not_found"
+      ],
+      "expected_contains": null,
+      "expected_names": [],
+      "forbidden_names": [
+        "PROC-FIN-003",
+        "Invoice and Payment",
+        "AP/AR Specialist"
+      ],
+      "seen_in_development": false
+    },
+    {
+      "id": "H11",
+      "category": "graph",
+      "graph_kind": "control",
+      "question": "What is the company policy on bringing pets to the office?",
+      "gold_documents": [],
+      "acceptable_documents": [],
+      "expected_status": [
+        "not_found"
+      ],
+      "expected_contains": null,
+      "expected_names": [],
+      "forbidden_names": [],
+      "seen_in_development": false
+    },
+    {
+      "id": "H12",
+      "category": "graph",
+      "graph_kind": "control",
+      "question": "What tone should I use when writing to colleagues in Germany?",
+      "gold_documents": [
+        "DOC-COMM-002"
+      ],
+      "acceptable_documents": [
+        "DOC-COMM-001",
+        "DOC-COMM-006"
+      ],
+      "expected_status": [
+        "answered"
+      ],
+      "expected_contains": null,
+      "expected_names": [],
+      "forbidden_names": [],
+      "seen_in_development": false
+    }
+  ]
+}

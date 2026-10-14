@@ -41,7 +41,7 @@ from src.intelligence.models import (
 )
 from src.intelligence.roles import RoleRecord
 from src.intelligence.rules import Rule
-from src.intelligence.text import amounts, blocks, durations, percents, plain, sentences
+from src.intelligence.text import amounts, blocks, durations, percents, plain, sentences, top_terms
 
 FACT_SIMILARITY = 0.60   # tuned on Nexora: real conflict scored 0.88; different tiers of one rule 0.47-0.54
 APPROACH_NOTE = "KORA reports both sides and the signals; it does not decide which statement is correct."
@@ -224,9 +224,8 @@ def _facts(data: Phase2Data, index: EntityIndex) -> list[_Fact]:
 
 
 def _shared_terms(vec, row_a, row_b, n=4) -> list[str]:
-    terms = vec.get_feature_names_out()
     prod = row_a.multiply(row_b).toarray().ravel()
-    return [terms[i] for i in prod.argsort()[::-1][:n] if prod[i] > 0]
+    return top_terms(vec.get_feature_names_out(), prod, n, positive_only=True)
 
 
 def _numeric_conflicts(facts: list[_Fact], docs: _Docs) -> tuple[list[Conflict], list[dict]]:

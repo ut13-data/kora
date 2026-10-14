@@ -8491,8 +8491,8 @@
         "keywords": [
           "access",
           "control policy",
-          "control",
           "access control",
+          "control",
           "policy",
           "data",
           "granted",
@@ -8619,8 +8619,8 @@
           "customer escalation",
           "level",
           "escalation",
-          "level customer",
           "escalation policy",
+          "level customer",
           "judgment",
           "csm",
           "relationship",
@@ -8709,8 +8709,8 @@
           "proc-eng-",
           "defect",
           "bug",
-          "procedures",
           "customer support",
+          "procedures",
           "support procedures",
           "uses",
           "ticket",
@@ -8741,8 +8741,8 @@
           "data",
           "internal",
           "reporting",
-          "prioritization",
           "internal reporting",
+          "prioritization",
           "backlog",
           "nexview analytics",
           "analytics department"
@@ -8805,7 +8805,7 @@
           "days",
           "history note",
           "version history",
-          "training"
+          "security"
         ]
       }
     },
@@ -8833,9 +8833,9 @@
           "purchase",
           "regardless",
           "required",
-          "practical",
+          "finance manager",
           "manager approval",
-          "finance manager"
+          "practical"
         ]
       }
     },
@@ -8908,8 +8908,8 @@
           "checklist",
           "guidance",
           "communication",
-          "settling-in checklist",
           "settling-in",
+          "settling-in checklist",
           "germany settling-in",
           "german",
           "individual"
@@ -8944,8 +8944,8 @@
           "customer onboarding",
           "consulting department",
           "onboarding",
-          "implementation consulting",
-          "consulting"
+          "consulting",
+          "implementation consulting"
         ]
       }
     },
@@ -8967,12 +8967,12 @@
         "anchor": "product:PROD-IMPLSUP",
         "keywords": [
           "support",
+          "add-on",
           "paid add-on",
           "support tiers",
-          "add-on",
-          "tiers",
-          "support services",
           "implementation support",
+          "support services",
+          "tiers",
           "sla",
           "paid",
           "services"
@@ -9026,16 +9026,16 @@
         "level": "process",
         "anchor": "process:PROC-HR-003",
         "keywords": [
-          "internal communication",
           "communication guidelines",
+          "internal communication",
           "guidelines",
           "internal",
           "communication",
           "default",
           "meetings",
-          "reasonably",
-          "office locations",
-          "expectations"
+          "baseline",
+          "expectations",
+          "office locations"
         ]
       }
     },
@@ -9058,8 +9058,8 @@
         "keywords": [
           "payment",
           "invoice",
-          "payment process",
           "invoice payment",
+          "payment process",
           "invoices",
           "contract",
           "billing",
@@ -9092,8 +9092,8 @@
           "access",
           "security",
           "data",
-          "control",
           "access control",
+          "control",
           "policy",
           "production data",
           "production",
@@ -9151,13 +9151,13 @@
         "keywords": [
           "leave",
           "statutory",
-          "policies",
           "leave policies",
+          "policies",
           "plus",
           "employees",
           "days",
           "public",
-          "provide",
+          "apply",
           "country"
         ]
       }
@@ -9185,8 +9185,8 @@
           "crm",
           "content",
           "content marketing",
-          "positioning",
           "marketing manager",
+          "positioning",
           "department",
           "sales"
         ]
@@ -9245,13 +9245,13 @@
           "nexauto",
           "automation",
           "support",
-          "logging",
-          "draft",
           "builder",
-          "knowledge base",
-          "knowledge",
+          "draft",
+          "logging",
+          "backlog",
+          "base",
           "included",
-          "base"
+          "knowledge"
         ]
       }
     },
@@ -9310,8 +9310,8 @@
           "email",
           "size",
           "verticals",
-          "sale",
-          "customer customer"
+          "customer customer",
+          "existing nexflow"
         ]
       }
     },
@@ -9338,10 +9338,10 @@
           "lot",
           "batch",
           "currently",
-          "stock",
           "reorder",
+          "stock",
           "enabled",
-          "distributors"
+          "analytics operations"
         ]
       }
     },
@@ -9402,7 +9402,7 @@
           "recurring",
           "office",
           "procurement process",
-          "operations department"
+          "internal process"
         ]
       }
     },
@@ -9429,9 +9429,9 @@
           "software",
           "operations",
           "vendor",
+          "flow",
           "going",
           "log",
-          "flow",
           "approval"
         ]
       }
@@ -9492,8 +9492,8 @@
           "proposal",
           "discount",
           "quotation process",
-          "quotation",
           "proposal quotation",
+          "quotation",
           "sales manager",
           "quote",
           "process",
@@ -9553,14 +9553,14 @@
         "keywords": [
           "release",
           "squad",
-          "sprint",
           "engineers",
+          "sprint",
           "engineer",
           "development",
-          "planning",
-          "test",
-          "two-week sprint",
-          "two-week"
+          "breaks",
+          "code review",
+          "delivers",
+          "lifecycle"
         ]
       }
     },

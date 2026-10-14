@@ -11,7 +11,7 @@ The source data is **Nexora Systems**, a synthetic mid-sized B2B software compan
 | 2 | Ingestion: extract, clean, chunk, metadata, validate | complete |
 | 3 | Knowledge intelligence: entities, relationships, processes, topics, quality, people | complete |
 | 4 | Retrieval, reasoning, cited answers, validation, access control, evaluation | complete |
-| 5 | UI and dashboards | next |
+| 5 | Knowledge graph reasoning, UI and dashboards | in progress (M0-M2 done) |
 
 KORA uses **no LLM, vector database or external AI service**: only Python, regular expressions and scikit-learn (TF-IDF). Meaning-based search with a small local embedding model exists as an option and is **off** by default (see Phase 4).
 
@@ -30,7 +30,7 @@ Knowledge files live in `data/raw/`. Then:
 ```
 python -m src.ingest                      # Phase 2: documents -> chunks + metadata
 python -m src.build_intelligence          # Phase 3: -> data/intelligence/*.json + knowledge_report.md
-python -m pytest test/ -q                 # 329 tests
+python -m pytest test/ -q                 # 404 tests
 
 python -m src.ask "Who approves purchases above 10000 euros?"     # Phase 4: ask, with sources
 python -m src.ask "How soon is a business trip paid back?" --why  # ... and why KORA chose its status
@@ -38,9 +38,14 @@ python -m src.ask "What are the payment terms for vendor invoices?" --as EMP-011
 python -m src.ask                                                 # interactive (loads once)
 python -m src.index --status                                      # is the index current?
 python -m src.evaluation.run_eval                                 # evaluation vs a plain TF-IDF baseline
+python -m src.evaluation.baseline                                 # every question set vs the frozen Phase 4 results
 
 python -m src.explain EMP-0077 PROD-NEXFLOW          # how two things connect, with evidence
 python -m src.explain process:PROC-IMPL-001 --rel approves
+python -m src.explain process:PROC-FIN-002 --as EMP-0040   # as one employee may see it
+python -m src.graph.quality                          # graph health -> reports/graph_quality.md
+python -m src.graph.ask "Which teams are involved in customer onboarding?"   # graph-only answer (M2)
+python -m src.graph.ask --dev                        # the graph on its development questions
 python -m src.employee EMP-0085                      # what is relevant to one employee
 python -m src.employee --hypothetical                # "a new Data Analyst in Munich, week 2"
 ```
@@ -212,6 +217,65 @@ Questions with document-level gold labels; KORA vs a plain TF-IDF baseline (no r
 Faithfulness is 1.00 everywhere (enforced at runtime). Answers take ~7 ms (p95 ~10 ms); start-up ~0.4 s. The numbers above are after all fixes; the first, untouched run of each held-out set and every fix made after it are recorded honestly in `reports/phase4_m5_findings.md`.
 
 **Known limits.** KORA understands the documents' own words plus the company word list: everyday wording it hasn't been taught is refused (safe, but not helpful; v4). Homonyms can slip through as *partial*: "notice period" (HR) matched an engineering "notice period"; "stock" (shares vs inventory). Thresholds were tuned on one synthetic company. Answers are quotes, not prose.
+
+## Phase 5: Knowledge graph reasoning, UI and dashboards (in progress)
+
+Plan and decisions: `claude/phase5_plan.md` in the KORA project. Stack: FastAPI + plain HTML (no Node). Relationships that come from a CSV row are cited as **Record** citations. Admins are an explicit list in the config.
+
+### M0: honest before/after numbers (done)
+
+| What | Why |
+|---|---|
+| **Frozen baseline** `data/evaluation/baseline_phase4.json`; `python -m src.evaluation.baseline` compares today's KORA with it on every question set and lists FIXED / BROKEN / CHANGED questions (exit code 1 if anything broke) | Every Phase 5 change is measured against the real Phase 4 results, not memory |
+| **Relationship question sets** `graph_dev_questions.json` (22, used while building) and `graph_heldout_questions.json` (12, run once after M3), written before any graph-answer code | Proves whether the graph helps, without tuning to the test |
+| **New scores**: `names_found` (does the answer name the expected roles / processes?), `no_leak` (forbidden names never visible), and `as_user` questions | "Answered" alone overstates: Phase 4 answers 6 graph questions with the right status but names none of the expected owners or teams |
+| **Answer log schema 2**: every record has `schema`, `kind` (`answer` / `error`) and `channel` (`cli` / `ui` / `api` / `python`); crashes are logged as `error` and still raised. Old records read as kind `answer`, channel `unknown` | Dashboards can separate a crash from an honest "not found", and real use from testing |
+| **Stable rebuilds**: equal TF-IDF scores are ranked A-Z; context paths use `/` | The same files gave slightly different `data/intelligence` JSON on Windows and Linux |
+
+Phase 4 behaviour is unchanged: every question in every set gives the same status and citations as before M0.
+
+### M1: a graph KORA can trust, per user (done)
+
+New package `src/graph/` reads the saved Phase 3 graph (no rebuild) and adds:
+
+| Module | What it does |
+|---|---|
+| `load.py` | `entities.json` + `relationships.json` -> Phase 3's `KnowledgeGraph` (all traversals work as before) |
+| `schema.py` | The 49 valid link shapes (`role -approves-> process`, ...). A new or misspelled shape is reported, not used |
+| `trace.py` | Re-checks every piece of evidence against its source and gives each link a **provenance tier**: **quote** (sentence found in its chunk; a table rule is cited as the verbatim row), **header** (header line in the file names it), **record** (CSV row + column holds it), **mention** (named in the same text), **derived** (KORA's own analysis). Only quote / header / record are *documented*: the only links an answer may state as fact |
+| `view.py` | `GraphView.for_user(graph, user, config)`: the graph as one employee may see it. Restricted documents disappear together with the processes and topics they describe, every link to them, the evidence they provide and the counts. Colleagues see only directory fields; the person and admins see the rest |
+| `quality.py` | `python -m src.graph.quality [--as EMP-x]`: tiers per relationship, unverified evidence, unknown shapes, dangling links, processes without owner or participants, open conflicts, superseded documents, gaps. Every number has a written definition (for the dashboards) |
+
+New config sections: `admins.employees` (dashboards, settings, colleagues' private details; **no** extra document access) and `person_visibility.colleague_fields` (**provisional**: to be decided after testing employees of every level in the UI).
+
+Nexora results: all 1,974 evidence items verify (tests prove the checks fail when a quote, header line or table value changes). 63% of links are documented: quote 114, header 428, record 688; mention 547, derived 171. An Engineering employee sees 350 of 354 entities and 1,852 of 1,948 links.
+
+Findings for M2:
+- A relationship's *name* can say more than its evidence. 10 of 11 `governed_by` links come from a "Related Processes" header line: the document lists the policy as related, it doesn't say "governs". All 27 `eligible_for` links are computed (location + relocation flag). Answers must be phrased from the evidence, not from the link name.
+- `PROC-HR-003` (Internal Communication Guidelines) has no participating roles: it is addressed to all employees.
+
+### M2: relationship questions answered from the graph (done; not yet joined to `Kora.ask`)
+
+`src/graph/resolve.py` finds the entities a question names (visible ones only; stems, aliases, longest name first; ambiguous words like "onboarding" alone match nothing). `src/graph/query.py` recognises the intent and answers:
+
+| Kind | Example | Built from |
+|---|---|---|
+| involved | Which teams are involved in customer onboarding? | roles with a step (quote), owners, approvers, header roles; grouped by the role's department |
+| owner | Who owns the procurement process? | `owns` (company record / header), owning department |
+| policies | Which policies govern incident management? | header cross-references, phrased "X lists Y as related" (never "governs") |
+| impact | What could be affected if NexConnect changes? | `uses` / `triggers` (quotes) as dependencies; header cross-references only as "possibly related"; always notes that no document describes the effect of a change |
+| delay | Why is customer onboarding delayed? | owner, what feeds it, declared known gaps, open conflicts. **Always partial**: KORA has no live status, so it never names the cause of one case |
+| next | Which process starts when a deal is closed? | `triggers` links, matched on their quoted sentence when no process is named |
+| department / role / person / uses / which department / head of the owning department | | records and headers |
+| approver (old versions only) | Who gave final approval before 2025? | the archived version's quote, flagged as history, with the old role name |
+
+Every statement comes from the link's verified evidence, its verb matches that evidence, and only documented links (quote / header / record) are facts. The graph returns **nothing** (Phase 4 answers as before) when it doesn't recognise the intent, can't find a visible entity, or has no documented fact. It deliberately leaves to Phase 4: approval questions (its rule engine knows amounts and tiers), "what does a <role> do" (Phase 4 quotes the role description), and anything with "after" that isn't about a next process.
+
+Development results (graph alone, 22 development questions): right status 17/22 (the other 5 are by design Phase 4 questions: access refusal, privacy, controls, a plain approval) and 29/30 expected names stated, against 12% names for Phase 4 alone. Of the 81 Phase 4 questions the graph takes exactly one (Q22, an old-version approval, answered correctly). About 0.6 ms per graph answer.
+
+**Honesty note:** while building M2 I (Claude) looked at three held-out graph questions by mistake: H02 (ran it), H04 and H09 (copied into resolver tests). They are marked `seen_in_development` with a note and will be reported separately; 9 held-out questions remain unseen. Both graph sets were written by the builder, so they are not independent of the design either.
+
+Phase 4 baseline on the relationship sets (development / held-out): correct status 0.59 / 0.75, expected names stated 0.12 / 0.19, no leaks, faithfulness 1.00.
 
 ## Project structure
 
