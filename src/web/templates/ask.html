@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="column">
+  <section class="ask-intro" id="intro">
+    <h1>Hi {{ first_name }}, what would you like to know?</h1>
+    <p>Ask about policies, processes, who does what at Nexora, or settling in. KORA answers only from Nexora's documents and records, and shows you exactly where each line comes from.</p>
+    <ul class="suggestions" id="suggestions" aria-label="Questions you could ask"></ul>
+    <p class="privacy-line">No question is too small. Questions are logged so KORA can be improved; the dashboards show totals, not who asked.</p>
+  </section>
+  <div class="thread" id="thread" aria-live="polite"></div>
+</div>
+<div class="ask-bar">
+  <form class="ask-form" id="ask-form">
+    <label for="question" class="skip">Your question</label>
+    <textarea id="question" rows="1" maxlength="500" placeholder="Ask a question" required></textarea>
+    <button class="button" type="submit" id="ask-button">Ask</button>
+  </form>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/ask.js"></script>{% endblock %}

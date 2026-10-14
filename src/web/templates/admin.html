@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="column" style="max-width:56rem">
+  <h1>Settings</h1>
+  <p class="muted" style="margin-top:.4rem;max-width:42rem">Changes are checked before they are saved, the previous version is kept, and KORA reloads straight away. Only admins see this page.</p>
+  <div class="tabs" role="tablist" aria-label="Settings sections">
+    <button role="tab" type="button" data-tab="words" aria-selected="true">Company words</button>
+    <button role="tab" type="button" data-tab="thresholds" aria-selected="false">Answer thresholds</button>
+    <button role="tab" type="button" data-tab="access" aria-selected="false">Who can read what</button>
+    <button role="tab" type="button" data-tab="people" aria-selected="false">Admins and privacy</button>
+    <button role="tab" type="button" data-tab="json" aria-selected="false">Programmes and all settings</button>
+    <button role="tab" type="button" data-tab="history" aria-selected="false">Earlier versions</button>
+  </div>
+  <div class="panel" id="panel" role="tabpanel"></div>
+  <div class="save-bar" id="save-bar">
+    <button class="button secondary" type="button" id="check">Check settings</button>
+    <button class="button" type="button" id="save">Save settings</button>
+  </div>
+  <div id="message" role="status" aria-live="polite"></div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/admin.js"></script>{% endblock %}

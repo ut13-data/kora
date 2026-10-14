@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="column" id="doc" data-document="{{ document_id }}" aria-live="polite">
+  <p class="muted">Opening the document...</p>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/document.js"></script>{% endblock %}

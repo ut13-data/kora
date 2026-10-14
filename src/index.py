@@ -244,6 +244,11 @@ class Kora:
     def status(self) -> IndexStatus:
         return check(self.paths)
 
+    def reload(self) -> None:
+        """Re-read the config and indexes now (Phase 5: after an admin saves settings)."""
+        self.answerer = None
+        self._ensure_current()
+
     def refresh(self) -> IndexStatus:
         """Make sure the index is current (rebuild if data/raw changed). Phase 5:
         the API calls this before showing documents or the graph, not only before

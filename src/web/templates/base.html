@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} - KORA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/kora.css">
+</head>
+<body class="page-{{ request.url.path.strip('/').split('/')[0] or 'home' }}">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="frame">
+    <nav class="rail" aria-label="Main">
+      <a class="brand" href="/ask"><span class="brand-mark" aria-hidden="true"></span>KORA</a>
+      <ul class="nav">
+        <li><a href="/ask" {% if title == 'Ask' %}aria-current="page"{% endif %}>Ask</a></li>
+        <li><a href="/explore" {% if title == 'Explore' %}aria-current="page"{% endif %}>Explore</a></li>
+        <li><a href="/me" {% if title == 'My week' %}aria-current="page"{% endif %}>My week</a></li>
+        {% if admin %}<li><a href="/admin" {% if title == 'Settings' %}aria-current="page"{% endif %}>Settings</a></li>{% endif %}
+      </ul>
+      <div class="who">
+        <p class="who-name">{{ user.name.split(',')[0] }}</p>
+        <p class="who-role">{{ user.name.split(',', 1)[1] if ',' in user.name else '' }}</p>
+        <button class="link-button" id="sign-out" type="button">Sign out</button>
+        <p class="dev-note">Development sign-in, not production identity.</p>
+      </div>
+    </nav>
+    <main id="main" class="main" tabindex="-1">
+      {% block main %}{% endblock %}
+    </main>
+    <aside class="source-panel" id="source-panel" aria-label="Source" hidden>
+      <div class="source-head">
+        <h2 class="source-title" id="source-title">Source</h2>
+        <button class="icon-button" id="source-close" type="button" aria-label="Close source">&times;</button>
+      </div>
+      <div class="source-body" id="source-body"></div>
+    </aside>
+  </div>
+  <script src="/static/kora.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

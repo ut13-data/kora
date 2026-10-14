@@ -31,8 +31,16 @@ Endpoints (all JSON; interactive docs at /docs):
   GET  /api/citations?id=...       a header-line or company-record citation
   GET  /api/graph/search?q=...     find entities by name
   GET  /api/graph/entity/{key}     one entity and its links, each with evidence
+  GET  /api/me/context             "My week": your own role, processes, approvals, Germany plan, tone
   GET  /api/admin/config           the company config (admins only)
+  GET  /api/admin/config/schema    threshold ranges and group syntax, for the settings forms
+  POST /api/admin/config/validate  check settings without saving
+  PUT  /api/admin/config           validate, keep a backup, save, reload KORA
+  GET  /api/admin/config/backups   earlier versions;  POST /api/admin/config/restore {name}
   GET  /api/admin/graph-quality    graph health as this admin may see it (admins only)
+
+Pages (M5, plain HTML + small scripts on top of these endpoints, no build step):
+  /login  /ask  /explore  /me  /admin  /documents/{id}
 
 A hidden document answers exactly like a missing one (404 "not found"), so the
 API can't be used to discover what exists.
@@ -44,8 +52,12 @@ import secrets
 import threading
 from pathlib import Path
 
-from fastapi import Depends, FastAPI, HTTPException, Request
-from fastapi.responses import JSONResponse
+from typing import Literal
+
+from fastapi import Body, Depends, FastAPI, HTTPException, Request
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, Field
 from starlette.middleware.sessions import SessionMiddleware
 
@@ -65,6 +77,14 @@ class LoginRequest(BaseModel):
 
 class AskRequest(BaseModel):
     question: str = Field(min_length=1, max_length=MAX_QUESTION)
+    channel: Literal["ui", "api"] = "api"            # the KORA screens send "ui" (for the dashboards)
+
+
+class RestoreRequest(BaseModel):
+    name: str = Field(min_length=1, max_length=80)
+
+
+WEB_DIR = Path(__file__).parent
 
 
 # ---------------- serialising answers ----------------
@@ -148,9 +168,13 @@ def create_app(paths: Paths | None = None, secret: str | None = None, dev_passco
         """The development picker: name, role, department, location -- the directory, nothing private."""
         with lock:
             core().refresh()
-            rows = core().answerer.retriever.tables.get("employees") or []
+            tables = core().answerer.retriever.tables
+        rows = tables.get("employees") or []
+        depts = {d.get("dept_id"): d.get("name") for d in tables.get("departments") or []}
+        cities = {l.get("location_id"): l.get("city") for l in tables.get("locations") or []}
         return [{"employee_id": r.get("employee_id"), "name": f"{r.get('first_name', '')} {r.get('last_name', '')}".strip(),
-                 "role": r.get("role_title"), "department": r.get("dept_id"), "location": r.get("location_id")}
+                 "role": r.get("role_title"), "department": depts.get(r.get("dept_id")) or r.get("dept_id"),
+                 "location": cities.get(r.get("location_id")) or r.get("location_id")}
                 for r in rows if r.get("employee_id")]
 
     @app.post("/api/login")
@@ -183,7 +207,7 @@ def create_app(paths: Paths | None = None, secret: str | None = None, dev_passco
         if not question:
             raise HTTPException(422, "Please type a question.")
         with lock:
-            answer = core().ask(question, user=user, channel="api")
+            answer = core().ask(question, user=user, channel=body.channel)
         return answer_json(answer)
 
     # ---- sources ----
@@ -313,6 +337,123 @@ def create_app(paths: Paths | None = None, secret: str | None = None, dev_passco
             report = quality_report(q.view, q.tracer, core().paths.intelligence_dir,
                                     can_read=lambda d: can_read(user, d))
         return report
+
+    # ---- my week ----
+
+    def hidden_names(user) -> set[str]:
+        """IDs and names of documents, processes and topics this user may not see."""
+        graph = core().answerer.graph
+        if graph is None:
+            return {d for d in core().answerer._all_documents if not can_read(user, d)}
+        view = graph.queries(user).view
+        return {x for k, e in graph.graph.index.entities.items()
+                if e.entity_type in ("document", "process", "policy", "topic") and not view.visible(k)
+                for x in (e.entity_id, e.name)}
+
+    @app.get("/api/me/context")
+    def me_context(user=Depends(current_user)):
+        from src.web.context import load_context, my_context
+        with lock:
+            core().refresh()
+            data = load_context(core().paths.intelligence_dir)
+            ctx = my_context(data, user.user_id, lambda d: can_read(user, d), hidden_names(user))
+        if ctx is None:
+            raise HTTPException(404, NOT_FOUND)
+        return ctx
+
+    # ---- settings (admins) ----
+
+    def employee_ids() -> set[str]:
+        return set(core().answerer.retriever.users)
+
+    @app.get("/api/admin/config/schema")
+    def admin_schema(user=Depends(admin_user)):
+        from src.web.settings import schema
+        rows = core().answerer.retriever.tables.get("employees") or [{}]
+        return schema(list(rows[0].keys()))
+
+    @app.post("/api/admin/config/validate")
+    def admin_validate(raw: dict = Body(...), user=Depends(admin_user)):
+        from src.web.settings import check
+        with lock:
+            problems = check(raw, employee_ids(), user.user_id)
+        return {"valid": not problems, "problems": problems}
+
+    @app.put("/api/admin/config")
+    def admin_save(raw: dict = Body(...), user=Depends(admin_user)):
+        from src.web.settings import check, save
+        with lock:
+            problems = check(raw, employee_ids(), user.user_id)
+            if problems:
+                return JSONResponse({"saved": False, "problems": problems}, status_code=422)
+            backup = save(core().paths.config, raw)
+            core().reload()
+        return {"saved": True, "backup": backup, "warnings": core().answerer.config.warnings}
+
+    @app.get("/api/admin/config/backups")
+    def admin_backups(user=Depends(admin_user)):
+        from src.web.settings import backups
+        return backups(core().paths.config)
+
+    @app.post("/api/admin/config/restore")
+    def admin_restore(body: RestoreRequest, user=Depends(admin_user)):
+        from src.web.settings import check, read_backup, save
+        with lock:
+            try:
+                raw = read_backup(core().paths.config, body.name)
+            except FileNotFoundError:
+                raise HTTPException(404, NOT_FOUND)
+            problems = check(raw, employee_ids(), user.user_id)
+            if problems:
+                return JSONResponse({"saved": False, "problems": problems}, status_code=422)
+            backup = save(core().paths.config, raw)
+            core().reload()
+        return {"saved": True, "restored": body.name, "backup": backup}
+
+    # ---- pages ----
+
+    templates = Jinja2Templates(directory=str(WEB_DIR / "templates"))
+    app.mount("/static", StaticFiles(directory=str(WEB_DIR / "static")), name="static")
+
+    def page(request: Request, name: str, title: str, **extra):
+        emp = request.session.get("employee_id")
+        with lock:
+            user = core().user(emp) if emp else None
+        if user is None:
+            return RedirectResponse("/login", status_code=303)
+        admin = core().answerer.config.is_admin(user)
+        if name == "admin.html" and not admin:
+            return RedirectResponse("/ask", status_code=303)
+        return templates.TemplateResponse(request, name, {"title": title, "user": user, "admin": admin,
+                                                          "first_name": user.name.split(" ")[0], **extra})
+
+    @app.get("/", include_in_schema=False)
+    def home(request: Request):
+        return RedirectResponse("/ask" if request.session.get("employee_id") else "/login", status_code=303)
+
+    @app.get("/login", response_class=HTMLResponse, include_in_schema=False)
+    def login_page(request: Request):
+        return templates.TemplateResponse(request, "login.html", {"title": "Sign in"})
+
+    @app.get("/ask", response_class=HTMLResponse, include_in_schema=False)
+    def ask_page(request: Request):
+        return page(request, "ask.html", "Ask")
+
+    @app.get("/explore", response_class=HTMLResponse, include_in_schema=False)
+    def explore_page(request: Request):
+        return page(request, "explore.html", "Explore")
+
+    @app.get("/me", response_class=HTMLResponse, include_in_schema=False)
+    def me_page(request: Request):
+        return page(request, "me.html", "My week")
+
+    @app.get("/admin", response_class=HTMLResponse, include_in_schema=False)
+    def admin_page(request: Request):
+        return page(request, "admin.html", "Settings")
+
+    @app.get("/documents/{document_id}", response_class=HTMLResponse, include_in_schema=False)
+    def document_page(request: Request, document_id: str):
+        return page(request, "document.html", "Document", document_id=document_id)
 
     @app.exception_handler(Exception)
     def unexpected(request: Request, exc: Exception):    # details are in the log, not in the browser

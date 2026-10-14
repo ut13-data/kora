@@ -10,3 +10,6 @@ data/logs/
 data/index_manifest.json
 data/.index_build/
 data/retrieval/
+
+# Phase 5: earlier versions of the config, kept by the Settings screen
+config/backups/

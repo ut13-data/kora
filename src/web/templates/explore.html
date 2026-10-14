@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="column">
+  <h1>Explore how Nexora fits together</h1>
+  <p class="muted" style="margin-top:.4rem">Pick a person, role, team, process or product to see what it connects to, and the evidence for each link.</p>
+  <form class="search-row" id="search-form" role="search">
+    <label for="search" class="skip">Search</label>
+    <input class="input" id="search" type="search" placeholder="For example: customer onboarding, CISO, NexFlow" autocomplete="off">
+    <button class="button secondary" type="submit">Find</button>
+  </form>
+  <ul class="results" id="results" aria-label="Matches"></ul>
+  <div id="start"></div>
+  <article id="entity" aria-live="polite"></article>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/explore.js"></script>{% endblock %}

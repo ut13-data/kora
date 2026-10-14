@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in - KORA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/kora.css">
+</head>
+<body>
+  <main class="login">
+    <form class="login-box" id="login-form" novalidate>
+      <a class="brand" href="/login"><span class="brand-mark" aria-hidden="true"></span>KORA</a>
+      <h1>Ask Nexora anything</h1>
+      <p class="lead">Policies, processes, who does what, and what to sort out in your first weeks. Every answer shows where it comes from.</p>
+      <div class="field">
+        <label for="employee-filter">Who are you?</label>
+        <input class="input" id="employee-filter" type="search" placeholder="Type a name, role or department" autocomplete="off">
+        <select class="select" id="employee" size="7" aria-label="Employee" required></select>
+      </div>
+      <div class="field">
+        <label for="passcode">Development passcode</label>
+        <input class="input" id="passcode" type="password" autocomplete="current-password" required>
+      </div>
+      <button class="button" type="submit" id="sign-in">Sign in</button>
+      <p class="error" id="login-error" role="alert" hidden></p>
+      <p class="dev-banner">Development sign-in: you can sign in as any employee to test what they see. Anyone with the passcode can do the same, so this is not production identity.</p>
+    </form>
+  </main>
+  <script src="/static/kora.js"></script>
+  <script src="/static/login.js"></script>
+</body>
+</html>

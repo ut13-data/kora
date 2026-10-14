@@ -11,7 +11,7 @@ The source data is **Nexora Systems**, a synthetic mid-sized B2B software compan
 | 2 | Ingestion: extract, clean, chunk, metadata, validate | complete |
 | 3 | Knowledge intelligence: entities, relationships, processes, topics, quality, people | complete |
 | 4 | Retrieval, reasoning, cited answers, validation, access control, evaluation | complete |
-| 5 | Knowledge graph reasoning, UI and dashboards | in progress (M0-M4 done) |
+| 5 | Knowledge graph reasoning, UI and dashboards | in progress (M0-M5 done) |
 
 KORA uses **no LLM, vector database or external AI service**: only Python, regular expressions and scikit-learn (TF-IDF). Meaning-based search with a small local embedding model exists as an option and is **off** by default (see Phase 4).
 
@@ -30,7 +30,7 @@ Knowledge files live in `data/raw/`. Then:
 ```
 python -m src.ingest                      # Phase 2: documents -> chunks + metadata
 python -m src.build_intelligence          # Phase 3: -> data/intelligence/*.json + knowledge_report.md
-python -m pytest test/ -q                 # 458 tests
+python -m pytest test/ -q                 # 481 tests
 
 python -m src.ask "Who approves purchases above 10000 euros?"     # Phase 4: ask, with sources
 python -m src.ask "How soon is a business trip paid back?" --why  # ... and why KORA chose its status
@@ -46,7 +46,7 @@ python -m src.explain process:PROC-FIN-002 --as EMP-0040   # as one employee may
 python -m src.graph.quality                          # graph health -> reports/graph_quality.md
 python -m src.graph.ask "Which teams are involved in customer onboarding?"   # graph-only answer (M2)
 python -m src.graph.ask --dev                        # the graph on its development questions
-python -m src.web                                    # web API on http://127.0.0.1:8000 (docs: /docs)
+python -m src.web                                    # KORA in the browser: http://127.0.0.1:8000 (API docs: /docs)
 python -m src.employee EMP-0085                      # what is relevant to one employee
 python -m src.employee --hypothetical                # "a new Data Analyst in Munich, week 2"
 ```
@@ -301,6 +301,23 @@ No leaks, faithfulness 1.00, latency unchanged (~6 ms p50). Full account, includ
 | `GET /api/admin/config`, `/api/admin/graph-quality` | Admins only (config `admins`). Admins get no extra document access. |
 
 Every knowledge endpoint requires a login and applies that user's access rules and privacy. A hidden document, chunk, process or record answers exactly like a missing one (same 404 text), so the API can't be used to find out what exists. Internal errors return a generic message and are logged as `kind: error`. Requests are served one at a time (KORA rebuilds and caches in place).
+
+### M5: the screens (done)
+
+`python -m src.web`, then open http://127.0.0.1:8000. Plain HTML pages with small scripts on top of the M4 API (`src/web/templates`, `src/web/static`); no Node, no build step.
+
+| Screen | What it does |
+|---|---|
+| **Sign in** | Choose any employee (search by name, role or department) + the development passcode. Labelled as development sign-in. |
+| **Ask** | Questions and answers as notes, not chat bubbles. Status in plain words (Documented / Partly documented / Sources disagree / Not in the knowledge base). Each line: KORA's statement, then the quoted evidence in a serif face with a highlighter stroke. A citation number opens the **source panel**: the passage with the quote highlighted, the document header line, or the company record row with the cited column highlighted. "Why this answer" shows the decision and timings. Suggested questions fit the person (e.g. the Germany first-week question for a relocating new joiner). |
+| **Explore** | Search for a person, role, department, process or product. A small map of its direct links (solid = documented, dashed = only mentioned together), then the links under plain headings ("Owners", "Roles named in its steps", "What starts it"...), each with its evidence. Mentions are folded away and long lists shortened. |
+| **My week** | Your role, department, office and manager; the Germany settling-in checklist when it applies (by suggested day, contacts, the official-guidance notes and the programme's "not legal advice" caveat; nothing ticked unless reported); tone guidance with its "not about this person" reminder; your processes, approvals and reading list. Anything naming a document you can't read is removed, by ID **and** by name. |
+| **Document** | A whole document, passage by passage, with the cited passage marked; older versions noted. |
+| **Settings** (admins) | Company words, answer thresholds (with allowed ranges), who can read what, admins and colleague visibility, and the full JSON for programmes. **Check** runs the same validator KORA uses; **Save** refuses anything invalid, keeps the previous file in `config/backups/`, and reloads KORA at once; **Earlier versions** restores one (itself a save, so it can be undone). An admin can't remove their own admin rights or leave no admin. |
+
+Design: Atkinson Hyperlegible for what KORA says, Literata for words quoted from documents, a highlighter yellow used only on quoted text; calm sage-grey and pine; light and dark mode; keyboard focus visible; works on a phone. All server text is inserted as text, never as HTML (checked in a browser: a question containing HTML shows as text and nothing runs). Fonts load from Google Fonts; offline, the system fonts are used.
+
+Not in M5 (by design): marking checklist items done (KORA only reads `checklist_progress.json`), dashboards (M6).
 
 **Honesty note:** while building M2 I (Claude) looked at three held-out graph questions by mistake: H02 (ran it), H04 and H09 (copied into resolver tests). They are marked `seen_in_development` with a note and will be reported separately; 9 held-out questions remain unseen. Both graph sets were written by the builder, so they are not independent of the design either.
 
