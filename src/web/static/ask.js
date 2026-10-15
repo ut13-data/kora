@@ -82,7 +82,7 @@
       node.append(K.el("p", { class: "small muted", style: "margin-top:.9rem", text: heading }),
         K.el("ul", { class: "sources-list" }, answer.citations.map((c) => K.el("li", {},
           K.el("button", { type: "button", text: `[${c.number}] ${c.title}`, onclick: (e) => K.source.open(c, null, e.currentTarget) }),
-          " ", c.kind === "record" ? "(company record)" : c.kind === "header" ? "(document header)" :
+          " ", c.kind === "record" ? c.section : c.kind === "header" ? "(document header)" :
             [c.version !== "unknown" && "v" + c.version, c.status, c.effective_date !== "unknown" && c.effective_date].filter(Boolean).join(", ")))));
     }
     node.append(K.el("details", { class: "why" }, K.el("summary", { text: "Why this answer" }),

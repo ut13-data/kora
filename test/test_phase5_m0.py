@@ -214,6 +214,15 @@ def test_a_new_leak_is_broken_even_if_the_status_got_fixed():
     assert len(report["broken"]) == 1 and not report["fixed"]
 
 
+def test_markdown_report_states_the_verdict_and_keeps_the_table():
+    from src.evaluation.baseline import compare, render, report_markdown
+    good = compare(_snap("not_found", False), _snap("answered", True))
+    page = report_markdown(render(good), good)
+    assert "No question got worse." in page and "FIXED: 1" in page and render(good) in page
+    bad = compare(_snap("answered", True), _snap("not_found", False))
+    assert "1 question(s) got worse" in report_markdown(render(bad), bad)
+
+
 def test_graph_question_sets_are_well_formed():
     from pathlib import Path
     from src.evaluation.run_eval import load_dataset

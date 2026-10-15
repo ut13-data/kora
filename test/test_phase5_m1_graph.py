@@ -9,7 +9,7 @@ from dataclasses import replace
 
 import pytest
 
-from src.graph.schema import DERIVED, DOCUMENTED, HEADER, MENTION, QUOTE, RECORD, VALID_SHAPES
+from src.graph.schema import DERIVED, HEADER, MENTION, QUOTE, RECORD, VALID_SHAPES
 from src.intelligence.graph import BOTH, IN
 from src.retrieval.access import User
 

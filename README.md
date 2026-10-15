@@ -11,7 +11,8 @@ The source data is **Nexora Systems**, a synthetic mid-sized B2B software compan
 | 2 | Ingestion: extract, clean, chunk, metadata, validate | complete |
 | 3 | Knowledge intelligence: entities, relationships, processes, topics, quality, people | complete |
 | 4 | Retrieval, reasoning, cited answers, validation, access control, evaluation | complete |
-| 5 | Knowledge graph reasoning, UI and dashboards | in progress (M0-M6 done) |
+| 5 | Knowledge graph reasoning, UI and dashboards | complete |
+| 6 | Agentic layer: language model for wording, memory, proactive help | next (see `reports/phase5_handoff.md`) |
 
 KORA uses **no LLM, vector database or external AI service**: only Python, regular expressions and scikit-learn (TF-IDF). Meaning-based search with a small local embedding model exists as an option and is **off** by default (see Phase 4).
 
@@ -30,7 +31,7 @@ Knowledge files live in `data/raw/`. Then:
 ```
 python -m src.ingest                      # Phase 2: documents -> chunks + metadata
 python -m src.build_intelligence          # Phase 3: -> data/intelligence/*.json + knowledge_report.md
-python -m pytest test/ -q                 # 497 tests
+python -m pytest test/ -q                 # 498 tests
 
 python -m src.ask "Who approves purchases above 10000 euros?"     # Phase 4: ask, with sources
 python -m src.ask "How soon is a business trip paid back?" --why  # ... and why KORA chose its status
@@ -39,6 +40,7 @@ python -m src.ask                                                 # interactive 
 python -m src.index --status                                      # is the index current?
 python -m src.evaluation.run_eval                                 # evaluation vs a plain TF-IDF baseline
 python -m src.evaluation.baseline                                 # every question set vs the frozen Phase 4 results
+python -m src.evaluation.baseline --report reports/phase5_final_evaluation.md   # ... and save it as a page
 
 python -m src.explain EMP-0077 PROD-NEXFLOW          # how two things connect, with evidence
 python -m src.explain process:PROC-IMPL-001 --rel approves
@@ -47,6 +49,7 @@ python -m src.graph.quality                          # graph health -> reports/g
 python -m src.graph.ask "Which teams are involved in customer onboarding?"   # graph-only answer (M2)
 python -m src.graph.ask --dev                        # the graph on its development questions
 python -m src.web                                    # KORA in the browser: http://127.0.0.1:8000 (API docs: /docs)
+                                                     # sign in: pick an employee, passcode kora-dev (development only)
 python -m src.employee EMP-0085                      # what is relevant to one employee
 python -m src.employee --hypothetical                # "a new Data Analyst in Munich, week 2"
 ```
@@ -219,7 +222,7 @@ Faithfulness is 1.00 everywhere (enforced at runtime). Answers take ~7 ms (p95 ~
 
 **Known limits.** KORA understands the documents' own words plus the company word list: everyday wording it hasn't been taught is refused (safe, but not helpful; v4). Homonyms can slip through as *partial*: "notice period" (HR) matched an engineering "notice period"; "stock" (shares vs inventory). Thresholds were tuned on one synthetic company. Answers are quotes, not prose.
 
-## Phase 5: Knowledge graph reasoning, UI and dashboards (in progress)
+## Phase 5: Knowledge graph reasoning, UI and dashboards
 
 Plan and decisions: `claude/phase5_plan.md` in the KORA project. Stack: FastAPI + plain HTML (no Node). Relationships that come from a CSV row are cited as **Record** citations. Admins are an explicit list in the config.
 
@@ -337,6 +340,29 @@ Every number carries its definition on screen. Robustness: unreadable log lines 
 
 Phase 4 baseline on the relationship sets (development / held-out): correct status 0.59 / 0.75, expected names stated 0.12 / 0.19, no leaks, faithfulness 1.00.
 
+### M7: regression and handoff (done)
+
+Everything re-run together: 498 tests pass (2 skipped: optional embedding model), and every question set compared with the frozen Phase 4 results (`reports/phase5_final_evaluation.md`). The four answer kinds were checked in a real browser in light and dark mode and at phone width.
+
+| Set (questions) | Correct status, Phase 4 -> 5 | Expected names stated | Leaks | Faithful |
+|---|---|---|---|---|
+| Phase 4 sets (91) | unchanged, **0 questions worse** | n/a | 0 | 1.00 |
+| Graph development (22) | 0.59 -> **1.00** | 0.12 -> **1.00** | 0 | 1.00 |
+| Graph held-out (12; 9 unseen) | 0.75 -> **1.00** | 0.19 -> **1.00** | 0 | 1.00 |
+
+Graph health: 63% of links are documented (quote, header line or company record); all 1,974 evidence items still check out against the source files. Answers take about 6 ms (median) on the demo data.
+
+**Phase 5 known limits** (carried into the Phase 6 handoff):
+
+1. **Everyday wording**: "bug reports" doesn't find "Bug Reporting and Escalation"; the word list in Settings is the fix today.
+2. **Question sets written by the builder**, and three held-out graph questions were seen while building. The numbers are honest about this, but they are not an independent test; UT's own questions in the Ask screen are.
+3. **Stray lines from Phase 4 ranking**: for example the security-training conflict also shows an example sentence from the communication guide. The graph doesn't touch these answers.
+4. **Record citations show IDs** (`row PROC-FIN-002, column owner_role`), not friendly names.
+5. **Development login** (pick an employee + shared passcode) is not production identity.
+6. **What colleagues see about each other** is a provisional setting, to be decided after testing employees of every level.
+7. **My week** is read-only (the checklist can't be ticked from the UI) and uses the demo date 2025-04-22.
+8. No language model: answers read as quotes plus short connecting sentences.
+
 ## Project structure
 
 ```
@@ -347,10 +373,11 @@ KORA/
 │   ├── chunks/           # chunks.jsonl
 │   ├── context/          # Phase 3 INPUTS: checklist progress, communication preferences
 │   ├── intelligence/     # Phase 3 output + knowledge_report.md
-│   ├── evaluation/       # Phase 4 question sets (dev, held-out v1-v5) and results
+│   ├── evaluation/       # question sets (Phase 4 dev + held-out v1-v5, Phase 5 graph sets), results, frozen Phase 4 baseline
 │   └── logs/             # answers.jsonl (every answer, for dashboards)
-├── config/kora_config.json     # company configuration (thresholds, word list, access, programs)
-├── reports/                    # evaluation reports + phase4_m5_findings.md
+├── config/kora_config.json     # company configuration (thresholds, word list, access, admins, graph, dashboards, programs)
+├── config/backups/             # earlier settings, one per save from the UI (not in git)
+├── reports/                    # evaluation reports, graph_quality.md, phase5_final_evaluation.md, phase5_handoff.md
 ├── src/
 │   ├── ingest.py               # Phase 2 entry point
 │   ├── build_intelligence.py   # Phase 3 entry point
@@ -359,10 +386,14 @@ KORA/
 │   ├── ask.py                  # Phase 4: ask KORA (--why, --as, interactive)
 │   ├── index.py                # Phase 4: index check / rebuild, answer logging
 │   ├── retrieval/              # Phase 4: config, router, search, answer, access, embeddings (optional)
-│   ├── evaluation/             # Phase 4: run_eval, calibrate_semantic
+│   ├── evaluation/             # run_eval, calibrate_semantic, baseline (Phase 4 vs now)
+│   ├── graph/                  # Phase 5: load, trace (evidence tiers), view (per user), resolve, query, service, quality
+│   ├── web/                    # Phase 5: FastAPI app, settings, my-week context, templates/, static/ (python -m src.web)
+│   ├── analytics/              # Phase 5: answer-log dashboards
+
 │   ├── pipeline.py, ingestion/, extraction/, cleaning/, chunking/, metadata/, validation/, storage/
 │   └── intelligence/           # Phase 3 modules (one file per concern)
-├── test/                       # pytest: Phase 2-4 (329 tests)
+├── test/                       # pytest: Phase 2-5 (498 tests)
 ├── requirements.txt
 └── README.md
 ```
@@ -378,4 +409,4 @@ These are issues in the Nexora source data, not in KORA:
 
 ## Next phase
 
-Phase 5: a UI and dashboards on top of `Kora.ask(question, user=...)`: ask with login (access control), show sources, the "why" and timings, edit the configuration (word list, access rules), and chart `data/logs/answers.jsonl` (refusals and their unknown words, latency, statuses). Later: a service layer / API, and an optional language-model step to rephrase questions and answers.
+Phase 6: the agentic layer, built on top of what Phase 5 proved. Start with `reports/phase5_handoff.md`. In short: a language model that **phrases** answers and keeps a conversation going, while every factual line still has to pass KORA's quote check; memory of the employee's progress; planning and proactive check-ins for the relocation buddy; and the Website Intelligence Agent.

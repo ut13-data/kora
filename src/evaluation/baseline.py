@@ -125,11 +125,30 @@ def render(report: dict) -> str:
     return "\n".join(lines)
 
 
+def report_markdown(text: str, report: dict) -> str:
+    """The comparison as a Markdown page: a short reading guide, then the exact table."""
+    verdict = "No question got worse." if not report["broken"] else \
+        f"{len(report['broken'])} question(s) got worse. See BROKEN below."
+    return "\n".join([
+        "# Phase 5 compared with Phase 4", "",
+        "Made by `python -m src.evaluation.baseline --report reports/phase5_final_evaluation.md`.", "",
+        f"**{verdict}** FIXED: {len(report['fixed'])}. CHANGED with the same correctness: {len(report['changed'])}.", "",
+        "How to read it:", "",
+        "* *before* is the Phase 4 result frozen at the start of Phase 5 (`data/evaluation/baseline_phase4.json`).",
+        "* *names* checks that the people, roles or teams the question is about appear in the answer.",
+        "* *no leak* checks that no hidden document is quoted, cited or named for that employee. A new leak always counts as BROKEN.",
+        "* *cite prec* leaves out company-record citations (CSV rows), which have no document chunk.",
+        "* `cited [...] -> []` means the answer now cites a document header or a company record instead of a passage.",
+        "* The graph sets were written during Phase 5 by the builder; held-out H02, H04 and H09 were seen during building.", "",
+        "```", text, "```", ""])
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Freeze or compare against the Phase 4 baseline.")
     parser.add_argument("--freeze", action="store_true", help="write the baseline (once)")
     parser.add_argument("--force", action="store_true", help="overwrite an existing baseline")
     parser.add_argument("--baseline", type=Path, default=BASELINE)
+    parser.add_argument("--report", type=Path, help="also save the comparison as a Markdown file")
     args = parser.parse_args()
 
     sets = available_sets()
@@ -155,7 +174,12 @@ def main() -> int:
         return 1
     before = json.loads(args.baseline.read_text(encoding="utf-8"))["sets"]
     report = compare(before, now)
-    print(render(report))
+    text = render(report)
+    print(text)
+    if args.report:
+        args.report.parent.mkdir(parents=True, exist_ok=True)
+        args.report.write_text(report_markdown(text, report), encoding="utf-8")
+        print(f"\nWrote {args.report}")
     return 1 if report["broken"] else 0
 
 
