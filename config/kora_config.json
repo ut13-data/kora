@@ -86,6 +86,10 @@
     "_comment": "Phase 5: answer relationship questions (who owns / approves / is involved, what depends on what, why delayed) from the knowledge graph. Only documented links are stated; everything else goes to the normal answer flow.",
     "enabled": true
   },
+  "dashboards": {
+    "_comment": "Phase 5: the admin dashboards show a question's text only when at least this many different people asked it; other questions are counted, not shown. Set 1 while testing on your own.",
+    "min_askers_for_question_text": 2
+  },
   "embeddings": {
     "enabled": false,
     "model": "all-MiniLM-L6-v2",

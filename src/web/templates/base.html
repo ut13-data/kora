@@ -18,7 +18,8 @@
         <li><a href="/ask" {% if title == 'Ask' %}aria-current="page"{% endif %}>Ask</a></li>
         <li><a href="/explore" {% if title == 'Explore' %}aria-current="page"{% endif %}>Explore</a></li>
         <li><a href="/me" {% if title == 'My week' %}aria-current="page"{% endif %}>My week</a></li>
-        {% if admin %}<li><a href="/admin" {% if title == 'Settings' %}aria-current="page"{% endif %}>Settings</a></li>{% endif %}
+        {% if admin %}<li><a href="/dashboard" {% if title == 'Dashboards' %}aria-current="page"{% endif %}>Dashboards</a></li>
+        <li><a href="/admin" {% if title == 'Settings' %}aria-current="page"{% endif %}>Settings</a></li>{% endif %}
       </ul>
       <div class="who">
         <p class="who-name">{{ user.name.split(',')[0] }}</p>

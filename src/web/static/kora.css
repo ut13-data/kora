@@ -268,3 +268,55 @@ details.link-group > summary { cursor: pointer; font-weight: 700; color: var(--m
   .source-panel { animation: slide-in .18s ease-out; }
   @keyframes slide-in { from { transform: translateX(12px); opacity: .4; } to { transform: none; opacity: 1; } }
 }
+
+/* ---------- dashboards ----------
+   Status colours for CHARTS (validated with the dataviz validator, adjacent order
+   answered, partial, not found, conflict): light passes with a CVD warning, so every
+   chart also has 2px gaps, a legend and a table view; dark passes all checks. */
+:root { --st-answered: #008300; --st-partial: #C98500; --st-not_found: #2A78D6; --st-conflict: #E34948;
+  --bar: var(--pine); --grid: var(--line); }
+@media (prefers-color-scheme: dark) {
+  :root { --st-answered: #1BAF7A; --st-partial: #C98500; --st-not_found: #3987E5; --st-conflict: #E66767; }
+}
+.dash { max-width: 62rem; }
+.dash-lead { margin: .4rem 0 0; max-width: 46rem; }
+.filters { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.25rem 0 .5rem; }
+.filters .field { min-width: 14rem; }
+.log-line { margin-bottom: 1rem; max-width: 52rem; }
+.dash-section { margin-top: 2.25rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.dash-section > h2 { margin-bottom: .3rem; }
+.dash-section h3 { margin: 1.5rem 0 .25rem; }
+.definition { color: var(--muted); font-size: .875rem; max-width: 46rem; margin-bottom: .6rem; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr)); gap: .75rem; margin: .75rem 0 1rem; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-s); padding: .75rem .9rem; }
+.tile-value { font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
+.tile-label { font-size: .875rem; }
+.tile-note { font-size: .78rem; color: var(--muted); }
+.chart { width: 100%; max-width: 48rem; height: auto; display: block; margin: .5rem 0; overflow: visible; }
+.chart .grid { stroke: var(--grid); stroke-width: 1; }
+.chart .axis-label, .chart .value-label { font: 12px var(--sans); fill: var(--muted); }
+.chart .value-label { fill: var(--ink); }
+.chart .bar { fill: var(--bar); }
+.chart .seg.st-answered { fill: var(--st-answered); } .chart .seg.st-partial { fill: var(--st-partial); }
+.chart .seg.st-not_found { fill: var(--st-not_found); } .chart .seg.st-conflict { fill: var(--st-conflict); }
+.chart .line { fill: none; stroke: var(--pine); stroke-width: 2; }
+.chart .line.p95 { stroke-dasharray: 6 4; }
+.chart .dot { fill: var(--pine); stroke: var(--surface); stroke-width: 2; }
+.chart .dot.p95 { fill: var(--surface); stroke: var(--pine); }
+.chart [tabindex]:focus-visible { outline: none; stroke: var(--focus); stroke-width: 3; }
+.chart .bar:hover, .chart .seg:hover { opacity: .85; }
+.legend { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; padding: 0; margin: .5rem 0 0; font-size: .875rem; }
+.legend li { display: flex; align-items: center; gap: .4rem; }
+.swatch { width: .85rem; height: .85rem; border-radius: 3px; display: inline-block; }
+.swatch.st-answered { background: var(--st-answered); } .swatch.st-partial { background: var(--st-partial); }
+.swatch.st-not_found { background: var(--st-not_found); } .swatch.st-conflict { background: var(--st-conflict); }
+.swatch.ln-p50 { height: 2px; background: var(--pine); } .swatch.ln-p95 { height: 0; border-top: 2px dashed var(--pine); }
+.dash-table { border-collapse: collapse; width: 100%; max-width: 52rem; font-size: .9rem; margin: .5rem 0; }
+.dash-table th { text-align: left; color: var(--muted); font-weight: 700; padding: .35rem .5rem; border-bottom: 1px solid var(--line); }
+.dash-table td { padding: .35rem .5rem; border-bottom: 1px solid var(--line); vertical-align: top; white-space: nowrap; }
+.dash-table td.wrap { white-space: normal; }
+.table-view { margin: .25rem 0 .75rem; font-size: .875rem; }
+.table-view summary { cursor: pointer; color: var(--pine); }
+.empty { color: var(--muted); font-style: italic; margin: .5rem 0; }
+.tooltip { position: fixed; z-index: 40; background: var(--ink); color: var(--paper); font-size: .85rem; padding: .35rem .55rem;
+  border-radius: var(--radius-s); pointer-events: none; max-width: 22rem; }

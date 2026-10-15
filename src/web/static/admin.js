@@ -95,12 +95,18 @@
           raw.person_visibility.colleague_fields = schema.employee_columns.filter((c) => chosen.has(c)); });
         return K.el("label", { for: "col-" + col, style: "display:flex;gap:.5rem;align-items:center" }, cb, col.replace(/_/g, " "));
       }));
+      raw.dashboards = raw.dashboards || { min_askers_for_question_text: 2 };
+      const askers = K.el("input", { class: "input", type: "number", min: 1, max: 50, step: 1, id: "min-askers", style: "max-width:8rem",
+        value: raw.dashboards.min_askers_for_question_text ?? 2 });
+      askers.addEventListener("change", () => { raw.dashboards.min_askers_for_question_text = parseInt(askers.value, 10); });
       return [
         K.el("div", { class: "field" }, K.el("label", { text: "Admins (employee IDs, comma-separated)" }), admins,
           K.el("p", { class: "small muted", text: "Admins open this page and the dashboards. You can't remove yourself; ask another admin." })),
         K.el("div", { class: "field", style: "margin-top:1.5rem" }, K.el("label", { text: "What colleagues can see about each other" }),
           comment(raw.person_visibility),
           K.el("p", { class: "small muted", text: "Unticked details are visible only to the person and to admins." }), boxes),
+        K.el("div", { class: "field", style: "margin-top:1.5rem" }, K.el("label", { for: "min-askers", text: "Dashboards: show a question's text once this many different people asked it" }),
+          askers, K.el("p", { class: "small muted", text: "Below that, questions are counted but not shown. Questions naming a person are never shown. Use 1 only while testing on your own." })),
       ];
     },
 

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="dash">
+  <h1>How KORA is doing</h1>
+  <p class="muted dash-lead">From KORA's answer log and its knowledge graph. Totals only: nothing here is broken down by person, and a question's text appears only when enough different people asked it.</p>
+  <form class="filters" id="filters" aria-label="Filters">
+    <div class="field">
+      <label for="f-channel">Where the questions came from</label>
+      <select class="select" id="f-channel">
+        <option value="">Everywhere</option>
+        <option value="ui">KORA screens</option>
+        <option value="api">API</option>
+        <option value="cli">Command line</option>
+        <option value="python">Python</option>
+        <option value="unknown">Older log lines (no channel)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="f-days">Period</label>
+      <select class="select" id="f-days">
+        <option value="7">Last 7 days</option>
+        <option value="30" selected>Last 30 days</option>
+        <option value="90">Last 90 days</option>
+        <option value="">All time</option>
+      </select>
+    </div>
+  </form>
+  <p class="log-line small muted" id="log-line"></p>
+  <div id="dash" aria-live="polite"><p class="muted">Reading the log...</p></div>
+</div>
+<div class="tooltip" id="tooltip" role="status" hidden></div>
+{% endblock %}
+{% block scripts %}<script src="/static/dashboard.js"></script>{% endblock %}

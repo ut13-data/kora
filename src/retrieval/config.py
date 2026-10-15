@@ -114,6 +114,9 @@ class KoraConfig:
     # Phase 5 M3: answer relationship questions from the knowledge graph (src/graph/).
     # Off without a config, like every other feature.
     graph_enabled: bool = False
+    # Phase 5 M6: dashboards show a question's text only when at least this many
+    # DIFFERENT people asked it (questions can be personal). 1 = show everything.
+    dashboard_min_askers: int = 2
     source: str = "defaults"                   # file path, or "defaults"
     warnings: list[str] = field(default_factory=list)
 
@@ -171,7 +174,7 @@ def parse_config(raw: dict, source: str = "dict") -> KoraConfig:
     if not isinstance(raw, dict):
         raise ConfigError(f"{source}: top level must be a JSON object")
     known = {"company", "thresholds", "gap_severities", "intent_patterns", "relocation", "communication",
-             "embeddings", "synonyms", "access", "description", "admins", "person_visibility", "graph"}
+             "embeddings", "synonyms", "access", "description", "admins", "person_visibility", "graph", "dashboards"}
     for key in raw:
         if key not in known:
             problems.append(f"unknown key '{key}' (allowed: {', '.join(sorted(known))})")
@@ -274,6 +277,17 @@ def parse_config(raw: dict, source: str = "dict") -> KoraConfig:
                 if key != "enabled" and not key.startswith("_"):
                     problems.append(f"graph.{key}: unknown key (allowed: enabled)")
             cfg.graph_enabled = gr.get("enabled", False)
+
+    dash = raw.get("dashboards")
+    if dash is not None:
+        value = dash.get("min_askers_for_question_text", 2) if isinstance(dash, dict) else None
+        if not isinstance(dash, dict) or isinstance(value, bool) or not isinstance(value, int) or not 1 <= value <= 50:
+            problems.append("dashboards: must be an object with 'min_askers_for_question_text': a whole number 1..50")
+        else:
+            for key in dash:
+                if key != "min_askers_for_question_text" and not key.startswith("_"):
+                    problems.append(f"dashboards.{key}: unknown key (allowed: min_askers_for_question_text)")
+            cfg.dashboard_min_askers = value
 
     reloc = raw.get("relocation")
     if reloc is not None:

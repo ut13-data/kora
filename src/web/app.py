@@ -38,9 +38,10 @@ Endpoints (all JSON; interactive docs at /docs):
   PUT  /api/admin/config           validate, keep a backup, save, reload KORA
   GET  /api/admin/config/backups   earlier versions;  POST /api/admin/config/restore {name}
   GET  /api/admin/graph-quality    graph health as this admin may see it (admins only)
+  GET  /api/admin/dashboard?channel=&days=   answer quality, gaps, speed, knowledge quality, usage
 
 Pages (M5, plain HTML + small scripts on top of these endpoints, no build step):
-  /login  /ask  /explore  /me  /admin  /documents/{id}
+  /login  /ask  /explore  /me  /admin  /dashboard  /documents/{id}
 
 A hidden document answers exactly like a missing one (404 "not found"), so the
 API can't be used to discover what exists.
@@ -410,6 +411,44 @@ def create_app(paths: Paths | None = None, secret: str | None = None, dev_passco
             core().reload()
         return {"saved": True, "restored": body.name, "backup": backup}
 
+    # ---- dashboards (admins) ----
+
+    @app.get("/api/admin/dashboard")
+    def admin_dashboard(channel: str | None = None, days: int | None = None, user=Depends(admin_user)):
+        from src.analytics.answers_log import CHANNELS, read_log, summarise
+        if channel and channel not in CHANNELS:
+            raise HTTPException(422, f"channel must be one of {CHANNELS}")
+        if days is not None and not 1 <= days <= 3650:
+            raise HTTPException(422, "days must be 1..3650")
+        log_dir = core().paths.log_dir
+        with lock:
+            log = read_log(Path(log_dir) / "answers.jsonl") if log_dir else read_log(Path("/nonexistent"))
+            cfg = core().answerer.config
+            report = summarise(log, channel=channel, days=days, min_askers=cfg.dashboard_min_askers,
+                               can_read=lambda d: can_read(user, d))
+            report["knowledge"] = knowledge(user)
+        return report
+
+    def knowledge(user) -> dict:
+        """Knowledge and relationship quality, as this admin may see it (no extra document access)."""
+        from collections import Counter
+
+        from src.graph.quality import quality_report
+        graph = core().answerer.graph
+        if graph is None:
+            return {"graph": False}
+        q = graph.queries(user)
+        report = quality_report(q.view, q.tracer, core().paths.intelligence_dir,
+                                can_read=lambda d: can_read(user, d))
+        docs = q.view.entities("document")
+        report["documents_by_department"] = dict(Counter(
+            (d.attributes.get("department") or "Not stated") for d in docs).most_common())
+        report["documents_by_status"] = dict(Counter((d.attributes.get("status") or "Not stated") for d in docs))
+        report["graph"] = True
+        for key in ("links_by_relationship_and_tier", "isolated"):
+            report.pop(key, None)                    # too detailed for the dashboard; in reports/graph_quality.md
+        return report
+
     # ---- pages ----
 
     templates = Jinja2Templates(directory=str(WEB_DIR / "templates"))
@@ -422,7 +461,7 @@ def create_app(paths: Paths | None = None, secret: str | None = None, dev_passco
         if user is None:
             return RedirectResponse("/login", status_code=303)
         admin = core().answerer.config.is_admin(user)
-        if name == "admin.html" and not admin:
+        if name in ("admin.html", "dashboard.html") and not admin:
             return RedirectResponse("/ask", status_code=303)
         return templates.TemplateResponse(request, name, {"title": title, "user": user, "admin": admin,
                                                           "first_name": user.name.split(" ")[0], **extra})
@@ -450,6 +489,10 @@ def create_app(paths: Paths | None = None, secret: str | None = None, dev_passco
     @app.get("/admin", response_class=HTMLResponse, include_in_schema=False)
     def admin_page(request: Request):
         return page(request, "admin.html", "Settings")
+
+    @app.get("/dashboard", response_class=HTMLResponse, include_in_schema=False)
+    def dashboard_page(request: Request):
+        return page(request, "dashboard.html", "Dashboards")
 
     @app.get("/documents/{document_id}", response_class=HTMLResponse, include_in_schema=False)
     def document_page(request: Request, document_id: str):

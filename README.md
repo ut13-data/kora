@@ -11,7 +11,7 @@ The source data is **Nexora Systems**, a synthetic mid-sized B2B software compan
 | 2 | Ingestion: extract, clean, chunk, metadata, validate | complete |
 | 3 | Knowledge intelligence: entities, relationships, processes, topics, quality, people | complete |
 | 4 | Retrieval, reasoning, cited answers, validation, access control, evaluation | complete |
-| 5 | Knowledge graph reasoning, UI and dashboards | in progress (M0-M5 done) |
+| 5 | Knowledge graph reasoning, UI and dashboards | in progress (M0-M6 done) |
 
 KORA uses **no LLM, vector database or external AI service**: only Python, regular expressions and scikit-learn (TF-IDF). Meaning-based search with a small local embedding model exists as an option and is **off** by default (see Phase 4).
 
@@ -30,7 +30,7 @@ Knowledge files live in `data/raw/`. Then:
 ```
 python -m src.ingest                      # Phase 2: documents -> chunks + metadata
 python -m src.build_intelligence          # Phase 3: -> data/intelligence/*.json + knowledge_report.md
-python -m pytest test/ -q                 # 481 tests
+python -m pytest test/ -q                 # 497 tests
 
 python -m src.ask "Who approves purchases above 10000 euros?"     # Phase 4: ask, with sources
 python -m src.ask "How soon is a business trip paid back?" --why  # ... and why KORA chose its status
@@ -317,7 +317,21 @@ Every knowledge endpoint requires a login and applies that user's access rules a
 
 Design: Atkinson Hyperlegible for what KORA says, Literata for words quoted from documents, a highlighter yellow used only on quoted text; calm sage-grey and pine; light and dark mode; keyboard focus visible; works on a phone. All server text is inserted as text, never as HTML (checked in a browser: a question containing HTML shows as text and nothing runs). Fonts load from Google Fonts; offline, the system fonts are used.
 
-Not in M5 (by design): marking checklist items done (KORA only reads `checklist_progress.json`), dashboards (M6).
+Not in M5 (by design): marking checklist items done (KORA only reads `checklist_progress.json`).
+
+### M6: dashboards (done)
+
+**Dashboards** (admins, in the menu) answer: where is KORA useful, where does it struggle, what should we improve next. Computed by `src/analytics/answers_log.py` from the real `data/logs/answers.jsonl` and the knowledge graph; nothing is sampled or invented. Filters: where questions came from (KORA screens / API / command line / Python / older lines) and period.
+
+| Section | Shows |
+|---|---|
+| How KORA answered | Share documented / partly / not found / sources disagree; answers per day by status; **errors separately** (a crash is never a "not found") |
+| What KORA couldn't answer | Words no document uses (**to review**: synonym, typo or out of scope; with a link to Company words); refused and partial questions; topics with the weakest evidence (with the warning that access rules cause refusals too) |
+| Speed | Median / 95th percentile / slowest, per day; time per step (incl. graph); start-up; answers that waited for a rebuild; slowest answers |
+| Knowledge and relationships | Documented share of links, evidence that no longer checks out, open conflicts, superseded documents, processes without owner or participants, roles without department, gaps by severity, documents by department, links by evidence tier |
+| Usage | Kinds of question, channels, most cited documents, company-record citations |
+
+Every number carries its definition on screen. Robustness: unreadable log lines are skipped **and counted** with the reason, exact repeats count once, old lines without a channel show as "older log lines", an empty or missing log shows empty sections. **Privacy:** nothing is broken down by person; a question's text appears only when at least `dashboards.min_askers_for_question_text` (default 2) different people asked it, and **never** when it names a person; names in "unknown words" are counted, not listed; the knowledge section follows the admin's own document access. Charts are plain SVG with hover/keyboard tooltips, legends and a table view; status colours were checked with a colour-blindness validator (light mode passes with a warning, so segments also have gaps, labels and a table).
 
 **Honesty note:** while building M2 I (Claude) looked at three held-out graph questions by mistake: H02 (ran it), H04 and H09 (copied into resolver tests). They are marked `seen_in_development` with a note and will be reported separately; 9 held-out questions remain unseen. Both graph sets were written by the builder, so they are not independent of the design either.
 
