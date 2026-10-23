@@ -1,5 +1,5 @@
 """
-Run the Stage 2 agent in the terminal and watch every step of the loop.
+Run the KORA agent in the terminal and watch every step of the loop.
 
     python -m src.agent EMP-0085 "help me get settled"
     python -m src.agent EMP-0040 "help me with my Germany checklist"
@@ -8,6 +8,8 @@ Run the Stage 2 agent in the terminal and watch every step of the loop.
     python -m src.agent EMP-0085 "help me get settled" --json    # the whole notebook
     python -m src.agent EMP-0085 "help me get settled" --chat    # Stage 3: talk to it; it can record
                                                                  # what you confirm (type "stop" to end)
+    python -m src.agent EMP-0085 --chat                          # Stage 4: the goal can be left out
+    python -m src.agent EMP-0085 --memory                        # Stage 4: what KORA remembers about you
 """
 
 import argparse
@@ -42,14 +44,21 @@ def chat(employee_id: str, goal: str, show_steps: bool) -> int:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="KORA Stage 2 agent (read-only).")
+    parser = argparse.ArgumentParser(description="KORA agent (Phase 6).")
     parser.add_argument("employee_id", help="who is asking, e.g. EMP-0085")
-    parser.add_argument("goal", help="what they want help with")
+    parser.add_argument("goal", nargs="?", default="help me get settled", help="what they want help with")
     parser.add_argument("--max-steps", type=int, default=MAX_STEPS)
     parser.add_argument("--json", action="store_true", help="print the whole task as JSON")
     parser.add_argument("--chat", action="store_true", help="Stage 3: answer KORA's questions in the terminal")
     parser.add_argument("--steps", action="store_true", help="with --chat: print the notebook at the end")
+    parser.add_argument("--memory", action="store_true", help="Stage 4: show what KORA remembers about you")
     args = parser.parse_args()
+    if args.memory:
+        from src.agent.memory import describe
+        from src.agent.tools import ToolContext, call_tool
+        result = call_tool("read_my_memory", ToolContext(), actor=args.employee_id, employee_id=args.employee_id)
+        print(describe(result.data) if result.ok else f"Can't read memory: {result.error}")
+        return 0
     if args.chat:
         return chat(args.employee_id, args.goal, args.steps)
 

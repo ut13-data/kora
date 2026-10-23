@@ -38,6 +38,28 @@ class ToolContext:
     history_path: Path = Path("data/context/progress_history.jsonl")
     today: date | None = None   # None: the checklist's as_of date (the demo date, 2025-04-22)
 
+    # Stage 4: everything else KORA stores about a person lives next to the progress file,
+    # so a test that points progress_path at a temporary folder moves ALL of it there.
+    @property
+    def context_dir(self) -> Path:
+        return self.progress_path.parent
+
+    @property
+    def memory_dir(self) -> Path:           # personal memory, one JSON file per employee
+        return self.context_dir / "memory"
+
+    @property
+    def memory_history_path(self) -> Path:  # what changed in memory (never the content itself)
+        return self.context_dir / "memory_history.jsonl"
+
+    @property
+    def prefs_path(self) -> Path:           # Phase 3's own input: preferred tone lives here
+        return self.context_dir / "communication_preferences.json"
+
+    @property
+    def tasks_dir(self) -> Path:            # saved conversations, one folder per employee
+        return self.context_dir / "tasks"
+
     def current_date(self) -> date:
         if self.today:
             return self.today
@@ -200,6 +222,20 @@ def _atomic_write(path: Path, text: str) -> None:
             os.remove(tmp)
 
 
+def read_my_memory(ctx: ToolContext, actor: str, employee_id: str) -> dict:
+    """What the employee has told KORA about themselves (Stage 4). Own record only."""
+    from src.agent.memory import read_memory          # imported here to avoid a circular import
+    _check_self(actor, employee_id)
+    return read_memory(ctx, employee_id)
+
+
+def update_my_memory(ctx: ToolContext, actor: str, employee_id: str, action: str, value: str | None = None) -> dict:
+    """Add a note, set name or tone, or forget something. Own record only; checks live in memory.py."""
+    from src.agent.memory import update_memory
+    _check_self(actor, employee_id)
+    return update_memory(ctx, employee_id, action, value)
+
+
 # ---------------------------------------------------------------- registry
 
 # name -> (function, permission level). Levels, lowest first:
@@ -212,6 +248,8 @@ TOOLS = {
     "read_settling_in_plan": (read_settling_in_plan, "read"),
     "read_my_progress": (read_my_progress, "read"),
     "record_checklist_progress": (record_checklist_progress, "write_self"),
+    "read_my_memory": (read_my_memory, "read"),
+    "update_my_memory": (update_my_memory, "write_self"),
 }
 
 

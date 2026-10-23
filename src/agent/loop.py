@@ -25,7 +25,7 @@ from src.agent.tools import ToolContext, call_tool
 # (The relocation patterns from kora_config.json, plus everyday "settle" / "checklist".)
 GOAL_PATTERNS = [r"\bgerman", r"\brelocat", r"\bsettl", r"\banmeldung\b", r"\bchecklist\b", r"\bnew joiner\b"]
 
-MAX_STEPS = 10      # the normal path uses 8; the spare 2 are headroom, not a target
+MAX_STEPS = 12      # the normal path uses 9; the spare 3 are headroom, not a target
 
 
 def _goal_supported(goal: str) -> bool:
@@ -121,6 +121,17 @@ def _tool(task: AgentTask, ctx: ToolContext, name: str, **args):
     return None
 
 
+def _optional_memory(task: AgentTask, ctx: ToolContext) -> dict | None:
+    """Stage 4: personal memory is NICE to have, not essential. If it can't be read, carry on without it."""
+    result = call_tool("read_my_memory", ctx, allowed_level="read", actor=task.actor, employee_id=task.actor)
+    if result.ok:
+        task.log("state", "Read with read_my_memory: ok", tool="read_my_memory")
+        return result.data
+    task.log("state", f"read_my_memory failed ({result.error}); continuing without personal memory",
+             tool="read_my_memory")
+    return None
+
+
 def _loop(task: AgentTask, ctx: ToolContext):
     # GOAL: is this something this agent is built for?
     if not _goal_supported(task.goal):
@@ -134,6 +145,9 @@ def _loop(task: AgentTask, ctx: ToolContext):
     record = _tool(task, ctx, "read_employee_record", actor=task.actor, employee_id=task.actor)
     if record is None:
         return None, None
+    record = {**record, "real_first_name": record["first_name"], "memory": _optional_memory(task, ctx)}
+    if record["memory"] and record["memory"]["preferred_name"]:
+        record["first_name"] = record["memory"]["preferred_name"]["value"]   # the name they asked for
     care = _tool(task, ctx, "read_settling_in_plan", actor=task.actor, employee_id=task.actor)
     if care is None:
         return None, None

@@ -13,3 +13,8 @@ data/retrieval/
 
 # Phase 5: earlier versions of the config, kept by the Settings screen
 config/backups/
+
+# Phase 6: what KORA stores about people while it runs (personal data: never commit)
+data/context/memory/
+data/context/tasks/
+data/context/*.jsonl

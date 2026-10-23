@@ -40,7 +40,7 @@ def test_relocating_employee_gets_one_question_about_housing(ctx):
     assert task.status == "waiting_for_user"
     assert "Have you sorted out Housing yet?" in task.question
     assert task.question.count("?") == 1                       # ONE question per run
-    assert [s.stage for s in task.steps] == ["goal", "state", "state", "plan", "plan", "act", "verify", "stop"]
+    assert [s.stage for s in task.steps] == ["goal", "state", "state", "state", "plan", "plan", "act", "verify", "stop"]
 
 
 def test_pace_is_a_company_suggestion_with_its_source_never_a_legal_deadline(ctx):
@@ -55,14 +55,14 @@ def test_reported_progress_changes_the_next_question(ctx):
     _report(ctx, "EMP-0085", {"GER-HOUSING": "2025-04-12", "GER-ADDRESS-REGISTRATION": "2025-04-14"})
     task = run("help me get settled", "EMP-0085", ctx)
     assert "Housing yet" not in task.question and "Address Registration (Anmeldung) yet" not in task.question
-    assert task.steps[3].data["reported_complete"] == ["GER-HOUSING", "GER-ADDRESS-REGISTRATION"]
+    assert task.steps[4].data["reported_complete"] == ["GER-HOUSING", "GER-ADDRESS-REGISTRATION"]
 
 
 def test_dependency_never_completes_an_item_by_itself(ctx):
     # Bank Account reported, Housing NOT reported: KORA must still ask about Housing.
     _report(ctx, "EMP-0085", {"GER-BANK-ACCOUNT": "2025-04-15"})
     task = run("help me get settled", "EMP-0085", ctx)
-    assert task.steps[3].data["reported_complete"] == ["GER-BANK-ACCOUNT"]
+    assert task.steps[4].data["reported_complete"] == ["GER-BANK-ACCOUNT"]
     assert "Have you sorted out Housing yet?" in task.question
 
 
@@ -169,3 +169,4 @@ def test_the_loop_itself_only_reads():
     from src.agent import loop as loop_module
     assert 'allowed_level="read"' in inspect.getsource(loop_module._tool)
     assert "write_self" not in inspect.getsource(loop_module)
+    assert "confirmed=True" not in inspect.getsource(loop_module)

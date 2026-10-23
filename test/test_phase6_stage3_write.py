@@ -137,9 +137,11 @@ def test_not_applicable_and_undo(ctx):
     assert [h["action"] for h in _history(ctx)] == ["not_applicable", "undo"]
 
 
-def test_only_one_write_tool_and_nothing_external():
+def test_write_tools_are_only_self_level():
     levels = [level for _, level in tools.TOOLS.values()]
-    assert levels.count("write_self") == 1 and "external" not in levels
+    assert "external" not in levels                                 # nothing outside KORA, yet
+    writers = {name for name, (_, level) in tools.TOOLS.items() if level == "write_self"}
+    assert writers == {"record_checklist_progress", "update_my_memory"}
 
 
 # ---------------------------------------------------------------- conversations
@@ -209,7 +211,7 @@ def test_undo_last_change(ctx):
 
 def test_stop_any_time(ctx):
     s, out = _talk(ctx, "yes", "stop")
-    assert s.finished and s.task.status == "done" and _stored(ctx) == {}
+    assert s.finished and s.task.status == "paused" and _stored(ctx) == {}    # Stage 4: stop = pause
 
 
 def test_at_most_three_items_per_conversation(ctx):

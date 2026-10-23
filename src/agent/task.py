@@ -10,13 +10,15 @@ Status of a task:
     done               nothing left to do
     stopped            stopped on purpose (not eligible, goal not supported,
                        a tool failed, or the step limit was reached)
+    paused             the employee said "stop" (or replies were unclear) with a
+                       question still open: it can be continued later (Stage 4)
 """
 
 import uuid
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 
-STATUSES = ("running", "waiting_for_user", "done", "stopped")
+STATUSES = ("running", "waiting_for_user", "done", "stopped", "paused")
 
 
 @dataclass
@@ -60,6 +62,13 @@ class AgentTask:
 
     def to_dict(self) -> dict:
         return asdict(self)
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "AgentTask":
+        """Rebuild a saved task (Stage 4), notebook included."""
+        task = cls(**{k: v for k, v in data.items() if k != "steps"})
+        task.steps = [Step(**s) for s in data.get("steps", [])]
+        return task
 
 
 class StepLimit(Exception):
