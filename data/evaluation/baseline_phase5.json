@@ -1,0 +1,1572 @@
+{
+  "description": "Phase 4 closing results, frozen at the start of Phase 5 (M0). Every Phase 5 change is compared with this file.",
+  "semantic": "off (not enabled in config)",
+  "top_k": 5,
+  "sets": {
+    "development": {
+      "file": "eval_questions.json",
+      "questions": 41,
+      "summary": {
+        "status_accuracy": 0.976,
+        "key_fact_found": 1.0,
+        "names_found": null,
+        "no_leak": 1.0,
+        "citation_precision": 0.932,
+        "faithfulness": 1.0,
+        "hit@5": 1.0
+      },
+      "per_question": {
+        "Q01": {
+          "question": "How many days of annual leave do Germany-based employees get?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-HR-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q02": {
+          "question": "Within how many hours must a suspected data exposure be reported to the CISO?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IT-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q03": {
+          "question": "What are Nexora's standard payment terms for vendor invoices?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-FIN-003"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q04": {
+          "question": "How long is customer data kept by default after a contract is terminated?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IT-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q05": {
+          "question": "How long do new hires have to complete security training?",
+          "status": "conflict",
+          "status_correct": true,
+          "cited": [
+            "DOC-COMM-001",
+            "PROC-HR-001",
+            "PROC-HR-001-ADDENDUM"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q06": {
+          "question": "Who approves purchases above 10000 euros?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-FIN",
+            "PROC-FIN-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q07": {
+          "question": "Who gives the final OK before a customer goes live?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-CS",
+            "DOC-DEPT-IMPL",
+            "PROC-IMPL-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q08": {
+          "question": "How quickly do I get my money back after paying for a business trip myself?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-FIN-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q09": {
+          "question": "Can I look at customer production data from my own personal laptop?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IT-001",
+            "PROC-IT-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q10": {
+          "question": "On which day are new features usually pushed live?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-ENG-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q11": {
+          "question": "How much time does an SDR have to follow up on a new marketing lead?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-SALES-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q12": {
+          "question": "What happens from the moment a support engineer confirms a customer bug until the fix is verified?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q13": {
+          "question": "Does a P1 incident automatically become a customer escalation?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-CS-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q14": {
+          "question": "Which documents describe the customer onboarding process?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IMPL-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q15": {
+          "question": "Who approves a customer implementation plan?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-IMPL",
+            "DOC-FAQ-001",
+            "PROC-IT-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q16": {
+          "question": "Who approves access to the production analytics data warehouse?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-DATA",
+            "PROC-IT-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q17": {
+          "question": "Who approves a discount of 20% on a proposal?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-SALES-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q18": {
+          "question": "Who owns customer communication about the status of a defect?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-ENG-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q19": {
+          "question": "What does a Customer Success Manager do?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-CS",
+            "DOC-DEPT-IMPL",
+            "DOC-PROD-NEXCRM"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q20": {
+          "question": "Who deploys code to production?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-SUP",
+            "PROC-ENG-001",
+            "PROC-IT-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q21": {
+          "question": "How did the customer onboarding process change from the previous version?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IMPL-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q22": {
+          "question": "In the old version of customer onboarding, who gave the go-live sign-off?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IMPL-001"
+          ],
+          "faithful": true,
+          "graph": "approver",
+          "names_found": null,
+          "leaks": []
+        },
+        "Q23": {
+          "question": "Is the 30-day deadline for new hire security training still valid?",
+          "status": "conflict",
+          "status_correct": true,
+          "cited": [
+            "PROC-HR-001",
+            "PROC-HR-001-ADDENDUM"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q24": {
+          "question": "Does the archived onboarding document still apply to new customers?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IMPL-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q25": {
+          "question": "Are there conflicting instructions about security training?",
+          "status": "conflict",
+          "status_correct": true,
+          "cited": [
+            "DOC-COMM-001",
+            "PROC-HR-001",
+            "PROC-HR-001-ADDENDUM"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q26": {
+          "question": "Do the documents disagree about the number of office locations Nexora has?",
+          "status": "conflict",
+          "status_correct": true,
+          "cited": [
+            "DOC-CORP-001",
+            "DOC-DEPT-HR",
+            "DOC-DEPT-OPS"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q27": {
+          "question": "Is there a conflict about who the Implementation Manager reports to?",
+          "status": "conflict",
+          "status_correct": true,
+          "cited": [
+            "DOC-CORP-002",
+            "PROC-IT-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q28": {
+          "question": "What should the Implementation Consultant do if the AE's handoff record is missing the go-live date?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IMPL-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q29": {
+          "question": "What is the process when a customer reports a bug on a deprecated product version?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-ENG-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q30": {
+          "question": "What happens if a customer wants to change the go-live date after the proposal discount was approved?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-SALES-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q31": {
+          "question": "What should a new employee moving to Germany prepare during their first week?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-CARE-003"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q32": {
+          "question": "When should I open a bank account after relocating to Germany?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-CARE-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q33": {
+          "question": "Who at Nexora can help me find housing in Munich?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-CARE-001",
+            "DOC-CARE-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q34": {
+          "question": "Do I need to register my address in Germany, and by when?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-CARE-002",
+            "DOC-CARE-003"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q35": {
+          "question": "What tone should I use when writing to colleagues in Germany?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-COMM-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q36": {
+          "question": "How do colleagues in the US usually communicate urgency?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-COMM-004"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q37": {
+          "question": "Which channel should I use for a quick question to a colleague?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-HR-003"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q38": {
+          "question": "What is the company policy on bringing pets to the office?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q39": {
+          "question": "What is Nexora's current stock price?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q40": {
+          "question": "How many vacation days do employees in the Paris office get?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "Q41": {
+          "question": "What is the parental leave policy for contractors in Austin?",
+          "status": "partial",
+          "status_correct": true,
+          "cited": [
+            "PROC-HR-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        }
+      }
+    },
+    "heldout_v1": {
+      "file": "heldout_questions.json",
+      "questions": 10,
+      "summary": {
+        "status_accuracy": 0.7,
+        "key_fact_found": 0.625,
+        "names_found": null,
+        "no_leak": 1.0,
+        "citation_precision": 0.929,
+        "faithfulness": 1.0,
+        "hit@5": 0.889
+      },
+      "per_question": {
+        "H01": {
+          "question": "What is the P1 response time on the Standard support tier?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-PROD-IMPLSUP"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H02": {
+          "question": "Who has to build a custom connector to a customer's ERP system?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-PROD-NEXCONNECT"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H03": {
+          "question": "Who owns the lead-scoring model?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-MKT",
+            "PROC-SALES-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H04": {
+          "question": "Can a department head approve a 150 euro per month software subscription without the full procurement process?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-FIN-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H05": {
+          "question": "By when should I be registered with a doctor after moving to Germany?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H06": {
+          "question": "How should I write to a mixed international group when I don't know their communication style?",
+          "status": "partial",
+          "status_correct": false,
+          "cited": [
+            "DOC-COMM-004",
+            "DOC-COMM-006"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H07": {
+          "question": "How are bug reports on a legacy NexFlow configuration handled?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-ENG-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H08": {
+          "question": "How many office locations does Nexora have?",
+          "status": "conflict",
+          "status_correct": true,
+          "cited": [
+            "DOC-CORP-001",
+            "DOC-DEPT-HR",
+            "DOC-DEPT-OPS"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H09": {
+          "question": "What is the dress code at the London office?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H10": {
+          "question": "Does Account Management still take over customers after go-live?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        }
+      }
+    },
+    "heldout_v2": {
+      "file": "heldout_v2_questions.json",
+      "questions": 10,
+      "summary": {
+        "status_accuracy": 0.8,
+        "key_fact_found": 0.875,
+        "names_found": null,
+        "no_leak": 1.0,
+        "citation_precision": 0.938,
+        "faithfulness": 1.0,
+        "hit@5": 1.0
+      },
+      "per_question": {
+        "V01": {
+          "question": "During which hours do Product and Engineering overlap?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-PROD"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "V02": {
+          "question": "Who is responsible for month-end close?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-FIN"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "V03": {
+          "question": "Who approves exceptions to HR policies?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-HR",
+            "PROC-FIN-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "V04": {
+          "question": "How deep can conditional logic be nested in NexAuto automations?",
+          "status": "partial",
+          "status_correct": false,
+          "cited": [
+            "DOC-PROD-NEXAUTO"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "V05": {
+          "question": "Who scopes a custom development engagement before it is quoted?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-PROD-CUSTDEV"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "V06": {
+          "question": "A customer's NexView dashboard only refreshes hourly - is that a bug?",
+          "status": "partial",
+          "status_correct": false,
+          "cited": [
+            "DOC-PROD-NEXVIEW"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "V07": {
+          "question": "How do colleagues in the UK usually give feedback?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-COMM-005"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "V08": {
+          "question": "What should I have done by the end of my first two weeks in Germany?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-CARE-003",
+            "DOC-CARE-004"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "V09": {
+          "question": "What is the company's policy on stock options for employees?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "V10": {
+          "question": "Who founded the Berlin office canteen?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        }
+      }
+    },
+    "heldout_v3": {
+      "file": "heldout_v3_questions.json",
+      "questions": 10,
+      "summary": {
+        "status_accuracy": 0.7,
+        "key_fact_found": 0.625,
+        "names_found": null,
+        "no_leak": 1.0,
+        "citation_precision": 0.917,
+        "faithfulness": 1.0,
+        "hit@5": 1.0
+      },
+      "per_question": {
+        "W01": {
+          "question": "How soon after a trip are my expenses paid back?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "W02": {
+          "question": "Who checks that a bug fix actually works for the customer before the ticket is closed?",
+          "status": "partial",
+          "status_correct": false,
+          "cited": [
+            "PROC-SUP-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "W03": {
+          "question": "What happens to system access that nobody has used for three months?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-DATA",
+            "PROC-IT-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "W04": {
+          "question": "Who can tell me how many sick days I get at my location?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-HR-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "W05": {
+          "question": "Who looks after the office building in Munich?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-CARE-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "W06": {
+          "question": "What score does a lead need before it is handed to an SDR?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-MKT",
+            "PROC-SALES-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "W07": {
+          "question": "Am I allowed to fly business class?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "W08": {
+          "question": "Where can I find the nearest hospital when I arrive in Munich?",
+          "status": "partial",
+          "status_correct": true,
+          "cited": [
+            "DOC-CARE-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "W09": {
+          "question": "What is the company car policy?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "W10": {
+          "question": "How big is the annual bonus for engineers?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        }
+      }
+    },
+    "heldout_v4": {
+      "file": "heldout_v4_questions.json",
+      "questions": 10,
+      "summary": {
+        "status_accuracy": 0.3,
+        "key_fact_found": 0.0,
+        "names_found": null,
+        "no_leak": 1.0,
+        "citation_precision": null,
+        "faithfulness": 1.0,
+        "hit@5": 0.571
+      },
+      "per_question": {
+        "X01": {
+          "question": "How often should customers hear from support while a P1 outage is still going on?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "X02": {
+          "question": "Who double-checks someone's code before it gets merged?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "X03": {
+          "question": "For how long does the team keep an eye on errors after a release goes out?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "X04": {
+          "question": "Does my boss have to OK a week of holiday?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "X05": {
+          "question": "How soon after a major outage must the lessons-learned review happen?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "X06": {
+          "question": "Who checks whether a new supplier is legit before we buy from them?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "X07": {
+          "question": "How many leave days do employees in the Madrid office get?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "X08": {
+          "question": "Does Nexora pay for a gym membership?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "X09": {
+          "question": "How do I book a meeting room in Bengaluru?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "X10": {
+          "question": "How many days of annual leave do part-time employees in London get?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        }
+      }
+    },
+    "heldout_v5": {
+      "file": "heldout_v5_questions.json",
+      "questions": 10,
+      "summary": {
+        "status_accuracy": 0.8,
+        "key_fact_found": 0.0,
+        "names_found": null,
+        "no_leak": 1.0,
+        "citation_precision": 0.5,
+        "faithfulness": 1.0,
+        "hit@5": 0.5
+      },
+      "per_question": {
+        "U01": {
+          "question": "What is my salary structure?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "U02": {
+          "question": "Who do I report to in absence of my manager?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "U03": {
+          "question": "How do I get the promotion?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "U04": {
+          "question": "What is the procedure to change the team?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "U05": {
+          "question": "How can I apply for certifications if any?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "U06": {
+          "question": "Who do I contact for reimbursement?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-FIN-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "U07": {
+          "question": "If I do overtime do I get paid extra?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "U08": {
+          "question": "I don't want to serve the notice period, what should I do?",
+          "status": "partial",
+          "status_correct": false,
+          "cited": [
+            "DOC-DEPT-ENG"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "U09": {
+          "question": "Can you teach me how to talk to the CEO?",
+          "status": "not_found",
+          "status_correct": false,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "U10": {
+          "question": "If I come late to the office will my salary be cut?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        }
+      }
+    },
+    "graph_dev": {
+      "file": "graph_dev_questions.json",
+      "questions": 22,
+      "summary": {
+        "status_accuracy": 1.0,
+        "key_fact_found": 1.0,
+        "names_found": 1.0,
+        "no_leak": 1.0,
+        "citation_precision": 1.0,
+        "faithfulness": 1.0,
+        "hit@5": 0.929
+      },
+      "per_question": {
+        "G01": {
+          "question": "Which teams are involved in customer onboarding?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IMPL-001"
+          ],
+          "faithful": true,
+          "graph": "involved",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G02": {
+          "question": "Who owns the procurement process?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": "owner",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G03": {
+          "question": "Which process could be affected if the NexConnect integration procedure changes?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IMPL-001"
+          ],
+          "faithful": true,
+          "graph": "impact",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G04": {
+          "question": "Why is the customer onboarding process delayed?",
+          "status": "partial",
+          "status_correct": true,
+          "cited": [
+            "PROC-IMPL-001",
+            "PROC-SALES-002"
+          ],
+          "faithful": true,
+          "graph": "delay",
+          "names_found": null,
+          "leaks": []
+        },
+        "G05": {
+          "question": "Who approves a customer implementation plan?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-DEPT-IMPL",
+            "DOC-FAQ-001",
+            "PROC-IT-001"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G06": {
+          "question": "What happens after a support engineer confirms a product defect?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-SUP-001"
+          ],
+          "faithful": true,
+          "graph": "next",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G07": {
+          "question": "Which process starts when a deal is closed?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-SALES-002"
+          ],
+          "faithful": true,
+          "graph": "next",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G08": {
+          "question": "Which policies govern the incident management process?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-CS-001",
+            "PROC-SUP-002"
+          ],
+          "faithful": true,
+          "graph": "policies",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G09": {
+          "question": "Which products does the Product department own?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": "department",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G10": {
+          "question": "Who is the head of the Finance department?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": "department",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G11": {
+          "question": "Which department does the Implementation Manager belong to?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": "which_department",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G12": {
+          "question": "What does Lena Hoffmann do?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": "person",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G13": {
+          "question": "Which processes does the CISO own?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": "role",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G14": {
+          "question": "Which processes use NexCRM?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-SALES-001",
+            "PROC-SALES-002"
+          ],
+          "faithful": true,
+          "graph": "uses",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G15": {
+          "question": "Who gave final approval for customer onboarding before 2025?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IMPL-001"
+          ],
+          "faithful": true,
+          "graph": "approver",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G16": {
+          "question": "Which roles take part in handling a P1 incident?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-SUP-002"
+          ],
+          "faithful": true,
+          "graph": "involved",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G17": {
+          "question": "Who takes part in the invoice and payment process?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "G18": {
+          "question": "Who takes part in the invoice and payment process?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-FIN-003"
+          ],
+          "faithful": true,
+          "graph": "involved",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "G19": {
+          "question": "Is Julia Zimmermann relocating to Germany?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "G20": {
+          "question": "How many days of annual leave do Germany-based employees get?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-HR-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "G21": {
+          "question": "Who approves bringing a dog to the office?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "G22": {
+          "question": "Which department owns the Bug Reporting and Escalation process?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": "which_department",
+          "names_found": 1.0,
+          "leaks": []
+        }
+      }
+    },
+    "graph_heldout": {
+      "file": "graph_heldout_questions.json",
+      "questions": 12,
+      "summary": {
+        "status_accuracy": 1.0,
+        "key_fact_found": 1.0,
+        "names_found": 1.0,
+        "no_leak": 1.0,
+        "citation_precision": 1.0,
+        "faithfulness": 1.0,
+        "hit@5": 0.875
+      },
+      "per_question": {
+        "H01": {
+          "question": "Who is involved in the employee onboarding process?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-HR-001"
+          ],
+          "faithful": true,
+          "graph": "involved",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "H02": {
+          "question": "If the Data Security Policy changes, which processes might be affected?",
+          "status": "partial",
+          "status_correct": true,
+          "cited": [
+            "PROC-HR-001",
+            "PROC-IT-001",
+            "PROC-IT-002",
+            "PROC-SUP-002"
+          ],
+          "faithful": true,
+          "graph": "impact",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "H03": {
+          "question": "Who owns the incident management process?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": "owner",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "H04": {
+          "question": "Why are bug reports on an old NexFlow version handled inconsistently?",
+          "status": "partial",
+          "status_correct": true,
+          "cited": [
+            "PROC-ENG-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H05": {
+          "question": "Which processes is the Account Executive part of?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "PROC-IMPL-001",
+            "PROC-SALES-001",
+            "PROC-SALES-002"
+          ],
+          "faithful": true,
+          "graph": "role",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "H06": {
+          "question": "Which processes does the Sales department own?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": "department",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "H07": {
+          "question": "What comes after lead qualification?",
+          "status": "partial",
+          "status_correct": true,
+          "cited": [
+            "PROC-SALES-001"
+          ],
+          "faithful": true,
+          "graph": "next",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "H08": {
+          "question": "Who heads the department that owns NexFlow?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": "head_of_owner",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "H09": {
+          "question": "Which department is responsible for customer escalations?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": "which_department",
+          "names_found": 1.0,
+          "leaks": []
+        },
+        "H10": {
+          "question": "Who is responsible for the invoice and payment process?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H11": {
+          "question": "What is the company policy on bringing pets to the office?",
+          "status": "not_found",
+          "status_correct": true,
+          "cited": [],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        },
+        "H12": {
+          "question": "What tone should I use when writing to colleagues in Germany?",
+          "status": "answered",
+          "status_correct": true,
+          "cited": [
+            "DOC-COMM-002"
+          ],
+          "faithful": true,
+          "graph": null,
+          "names_found": null,
+          "leaks": []
+        }
+      }
+    }
+  }
+}
